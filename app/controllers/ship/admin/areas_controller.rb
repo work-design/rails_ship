@@ -44,7 +44,14 @@ class Ship::Admin::AreasController < Ship::Admin::BaseController
   end
 
   def area_params
-    params[:area].permit(:nation, :province, :city, :popular, :published)
+    params.fetch(:area, {}).permit(
+      :nation,
+      :province,
+      :city,
+      :district,
+      :popular,
+      :published
+    )
   end
 
 end
