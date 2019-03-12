@@ -10,6 +10,7 @@ class RailsShipInit < ActiveRecord::Migration[5.2]
       t.boolean :popular, default: false
       t.timestamps
     end
+
     create_table :addresses do |t|
       t.references :area
       t.references :buyer, polymorphic: true

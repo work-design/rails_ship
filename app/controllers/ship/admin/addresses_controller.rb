@@ -1,4 +1,4 @@
-class Trade::Admin::AddressesController < Trade::Admin::BaseController
+class Ship::Admin::AddressesController < Ship::Admin::BaseController
   before_action :set_addresses, only: [:index]
   before_action :set_address, only: [:show, :edit, :update, :destroy]
 

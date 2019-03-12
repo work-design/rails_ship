@@ -1,4 +1,4 @@
-class Trade::Admin::AreasController < Trade::Admin::BaseController
+class Ship::Admin::AreasController < Ship::Admin::BaseController
   before_action :set_area, only: [:show, :edit, :update, :destroy]
 
   def index
