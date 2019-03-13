@@ -19,8 +19,8 @@ module RailsShip
       }
     end
 
-    initializer 'rails_auth.assets.precompile' do |app|
-      app.config.assets.precompile += ['rails_auth_manifest.js']
+    initializer 'rails_ship.assets.precompile' do |app|
+      app.config.assets.precompile += ['rails_ship_manifest.js']
     end
 
   end
