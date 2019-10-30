@@ -1,9 +1,9 @@
-class OrderShipment < ApplicationRecord
+module RailsShip::OrderShipment
   belongs_to :order
   belongs_to :shipment
 
 
-end unless RailsTrade.config.disabled_models.include?('OrderShipment')
+end
 
 # :order_id, :integer
 # :shipment_id, :integer

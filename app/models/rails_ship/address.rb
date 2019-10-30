@@ -1,4 +1,4 @@
-class Address < ApplicationRecord
+module RailsShip::Address 
   belongs_to :area, optional: true
   belongs_to :buyer, polymorphic: true
 
@@ -8,6 +8,4 @@ class Address < ApplicationRecord
     invoice: 'invoice'
   }
 
-
-
-end unless RailsTrade.config.disabled_models.include?('Address')
+end

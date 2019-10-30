@@ -1,8 +1,8 @@
-class Shipment < ApplicationRecord
+module RailsShip::Shipment
 
 
   def xx
 
   end
 
-end unless RailsTrade.config.disabled_models.include?('Shipment')
+end 
