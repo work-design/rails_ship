@@ -1,4 +1,4 @@
-module RailsShip::Rally
+module RailsShip::User
   extend ActiveSupport::Concern
 
   included do
