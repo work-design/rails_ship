@@ -1,6 +1,6 @@
 module RailsShip::Rally
   extend ActiveSupport::Concern
-  
+
   included do
     attribute :name, :string
 
