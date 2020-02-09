@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   scope :my, module: 'ship/my', as: 'my' do
     resources :addresses
+    resources :rallies
   end
 
 
