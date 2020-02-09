@@ -1,13 +1,10 @@
-module RailsShip::Shipment
+module RailsShip::PackageItem
   extend ActiveSupport::Concern
 
   included do
     belongs_to :package
-    belongs_to :address
+    belongs_to :trade_item
   end
 
-  def xx
-
-  end
 
 end
