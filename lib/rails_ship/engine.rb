@@ -13,9 +13,5 @@ module RailsShip
       }
     end
 
-    initializer 'rails_ship.assets.precompile' do |app|
-      app.config.assets.precompile += ['rails_ship_manifest.js']
-    end
-
   end
 end
