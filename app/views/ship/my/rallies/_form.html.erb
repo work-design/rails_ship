@@ -1,0 +1,7 @@
+<%= form_with model: @rally do |f| %>
+  <%= render 'shared/error_messages', target: @rally %>
+  <%= f.text_field :name %>
+  <%= f.text_field :detail %>
+  <%= f.text_field :area_id %>
+  <%= f.submit %>
+<% end %>
