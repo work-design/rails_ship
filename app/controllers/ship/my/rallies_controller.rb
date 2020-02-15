@@ -12,7 +12,9 @@ class Ship::My::RalliesController < Ship::My::BaseController
   def create
     @rally = Rally.new(rally_params)
 
-    unless @rally.save
+    if @rally.save
+      render 'create', locals: { return_to: my_rallies_url }
+    else
       render :new, locals: { model: @rally }, status: :unprocessable_entity
     end
   end

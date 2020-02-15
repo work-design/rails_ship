@@ -1,0 +1,17 @@
+<%= form_with theme: 'weui', model: [:my, @rally] do |f| %>
+  <%= render 'shared/error_messages', target: @rally %>
+  <%= f.text_field :name %>
+  <div class="weui-cell weui-cell_active weui-cell_vcode">
+    <div class="weui-cell__hd">
+      <label class="weui-label"><%= Rally.human_attribute_name(:area_id) %></label>
+    </div>
+    <div class="weui-cell__bd">
+      <%= f.hidden_field :area_id %>
+    </div>
+    <div class="weui-cell__ft">
+      <%= link_to t('.token'), areas_path, remote: true, class: 'weui-btn weui-btn_default weui-vcode-btn', data: { params: 'node_type=rally' } %>
+    </div>
+  </div>
+  <%= f.text_field :detail %>
+  <%= f.submit %>
+<% end %>

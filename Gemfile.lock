@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: d9a4e9a877f3541115fa640390b83581e55e9e47
+  revision: 2ce95a3a29c05db7afaeff6775dfe4228711f89c
   specs:
     rails_auth (1.0.6)
       bcrypt (~> 3.1)
@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 0bdfbb817a99189d3b061587ce392e6b47a74d94
+  revision: e7c231db79efe64a54a6d4c1eb91f2eea1feac71
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)
@@ -111,7 +111,7 @@ GEM
       activesupport (>= 4.2.0)
     http-2-next (0.2.1)
     http-form_data (2.2.0)
-    httpx (0.6.4)
+    httpx (0.6.5)
       http-2-next (>= 0.1.2)
       timers
     i18n (1.8.2)

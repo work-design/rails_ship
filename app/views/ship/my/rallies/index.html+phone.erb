@@ -1,0 +1,17 @@
+<div class="weui-panel">
+  <div class="weui-panel__hd">收货点</div>
+  <div class="weui-panel__bd">
+    <% @rallies.each do |rally| %>
+    <div class="weui-media-box weui-media-box_text">
+      <h6 class="weui-media-box__title"><%= rally.name %></h6>
+      <div class="weui-media-box__desc"><%= rally.area.full_name %><%= rally.detail %></div>
+    </div>
+    <% end %>
+  </div>
+  <div class="weui-panel__ft">
+    <%= link_to new_my_rally_path, class: 'weui-cell weui-cell_access weui-cell_link' do %>
+      <div class="weui-cell__bd"><%= t('.new') %></div>
+      <span class="weui-cell__ft"></span>
+    <% end %>
+  </div>
+</div>
