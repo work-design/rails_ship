@@ -22,6 +22,10 @@ class Ship::My::RalliesController < Ship::My::BaseController
   def show
   end
 
+  def share
+
+  end
+
   def join
     ru = current_user.rally_users.find_or_initialize_by(rally_id: @rally.id)
     ru.save

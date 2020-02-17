@@ -4,12 +4,14 @@
     <% @rallies.each do |rally| %>
     <div class="weui-media-box weui-media-box_appmsg">
       <div class="weui-media-box__bd">
-        <h6 class="weui-media-box__title"><%= rally.name %></h6>
+        <h6 class="weui-media-box__title">
+          <%= link_to rally.name, my_rally_path(rally) %>
+        </h6>
         <div class="weui-media-box__desc"><%= rally.area.full_name %><%= rally.detail %></div>
       </div>
       <div class="weui-media-box__ft">
         <div class="weui-btn weui-btn_default">
-          <%= link_to '召集', join_my_rally_url(rally.id, invited_code: current_user.id) %>
+          <%= link_to '召集', join_my_rally_url(rally.id, invited_code: current_user.id), remote: true %>
         </div>
       </div>
     </div>
