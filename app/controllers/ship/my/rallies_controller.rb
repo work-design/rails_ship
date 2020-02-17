@@ -2,15 +2,15 @@ class Ship::My::RalliesController < Ship::My::BaseController
   before_action :set_rally, only: [:show, :edit, :update, :destroy]
 
   def index
-    @rallies = Rally.page(params[:page])
+    @rallies = current_user.rallies.page(params[:page])
   end
 
   def new
-    @rally = Rally.new
+    @rally = current_user.rallies.build
   end
 
   def create
-    @rally = Rally.new(rally_params)
+    @rally = current_user.rallies.build(rally_params)
 
     if @rally.save
       render 'create', locals: { return_to: my_rallies_url }
