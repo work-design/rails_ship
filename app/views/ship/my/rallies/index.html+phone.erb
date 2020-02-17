@@ -11,7 +11,7 @@
       </div>
       <div class="weui-media-box__ft">
         <div class="weui-btn weui-btn_default">
-          <%= link_to '召集', join_my_rally_url(rally.id, invited_code: current_user.id), remote: true %>
+          <%= link_to '召集', my_rally_url(rally.id) %>
         </div>
       </div>
     </div>
