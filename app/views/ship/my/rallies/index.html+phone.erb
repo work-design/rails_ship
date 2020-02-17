@@ -9,7 +9,7 @@
       </div>
       <div class="weui-media-box__ft">
         <div class="weui-btn weui-btn_default">
-          <%= link_to 'xx', my_rallies_url(id: rally.id) %>
+          <%= link_to '召集', join_my_rally_url(rally.id, invited_code: current_user.id) %>
         </div>
       </div>
     </div>
