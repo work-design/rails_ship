@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       member do
         get :join
       end
+      resources :rally_users
     end
   end
 

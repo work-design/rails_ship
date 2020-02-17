@@ -3,7 +3,7 @@ module RailsShip::Shipment
 
   included do
     belongs_to :package
-    belongs_to :address
+    belongs_to :shipping, polymorphic: true
   end
 
   def xx

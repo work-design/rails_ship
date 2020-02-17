@@ -9,6 +9,8 @@ module RailsShip::RallyUser
     belongs_to :user
     belongs_to :inviter, class_name: 'User', optional: true
 
+    has_many :shipments, as: :shipping
+
     enum kind: {
 
     }
