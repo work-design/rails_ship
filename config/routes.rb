@@ -9,13 +9,6 @@ Rails.application.routes.draw do
   end
 
   scope :my, module: 'ship/my', as: 'my' do
-    resources :addresses
-    resources :rallies do
-      member do
-        get :join
-      end
-      resources :rally_users
-    end
   end
 
 end
