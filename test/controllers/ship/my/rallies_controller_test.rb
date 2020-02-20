@@ -17,7 +17,7 @@ class Ship::My::RalliesControllerTest < ActionDispatch::IntegrationTest
 
   test 'create ok' do
     assert_difference('Rally.count') do
-      post my_rallies_url, params: { #{singular_table_name}: { #{attributes_string} } }
+      post my_rallies_url, params: { rally: { } }
     end
 
     assert_response :success
@@ -34,7 +34,7 @@ class Ship::My::RalliesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'update ok' do
-    patch my_rally_url(@ship_my_rally), params: { #{singular_table_name}: { #{attributes_string} } }
+    patch my_rally_url(@ship_my_rally), params: { rally: { } }
     assert_response :success
   end
 
