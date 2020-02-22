@@ -1,4 +1,4 @@
-module RailsShip::PackageItem
+module RailsShip::Packaged
   extend ActiveSupport::Concern
 
   included do
