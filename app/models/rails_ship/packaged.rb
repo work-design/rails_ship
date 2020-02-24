@@ -6,5 +6,4 @@ module RailsShip::Packaged
     belongs_to :trade_item
   end
 
-
 end
