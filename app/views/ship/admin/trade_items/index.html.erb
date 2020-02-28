@@ -2,10 +2,10 @@
   <%= render 'filter' %>
 </div>
 
-<table class="ui bottom attached selectable table">
+<table class="ui bottom attached selectable table" data-controller="check">
   <thead>
     <tr>
-      <th data-controller="check">
+      <th>
         <%= check_box_tag 'xxd', 'xx', false, data: { action: 'check#toggleAll' } %>
         <%= link_to package_admin_address_trade_items_path(@address), data: { tooltip: t('.package'), action: 'check#applyFor' }, method: :post, remote: true, class: 'ui mini button' do %>
           <i class="fas fa-hand-holding-usd"></i>
@@ -24,7 +24,9 @@
   <tbody>
   <% @trade_items.each do |trade_item| %>
     <tr>
-      <td><%= check_box_tag 'xx' %></td>
+      <td>
+        <%= check_box_tag 'xx', trade_item.id, false, data: { action: 'check#toggle' } %>
+      </td>
       <td><%= trade_item.good_id %></td>
       <td><%= trade_item.number %></td>
       <td><%= trade_item.status %></td>

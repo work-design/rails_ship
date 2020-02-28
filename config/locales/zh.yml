@@ -1,0 +1,7 @@
+zh:
+  ship:
+    admin:
+      trade_items:
+        index:
+          title: 商品列表
+          package: 打包
