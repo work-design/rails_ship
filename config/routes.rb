@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
   scope :admin, module: 'ship/admin', as: 'admin' do
     resources :addresses do
-      resources :trade_items
+      resources :trade_items do
+        collection do
+          post :package
+        end
+      end
     end
   end
 

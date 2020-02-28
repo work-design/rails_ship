@@ -9,6 +9,10 @@ class Ship::Admin::TradeItemsController < Ship::Admin::BaseController
     @trade_items = @address.trade_items.default_where(q_params).page(params[:page])
   end
 
+  def package
+
+  end
+
   def show
   end
 

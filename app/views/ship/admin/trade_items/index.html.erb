@@ -5,6 +5,12 @@
 <table class="ui bottom attached selectable table">
   <thead>
     <tr>
+      <th data-controller="check">
+        <%= check_box_tag 'xxd', 'xx', false, data: { action: 'check#toggleAll' } %>
+        <%= link_to package_admin_address_trade_items_path(@address), data: { tooltip: t('.package'), action: 'check#applyFor' }, method: :post, remote: true, class: 'ui mini button' do %>
+          <i class="fas fa-hand-holding-usd"></i>
+        <% end %>
+      </th>
       <th><%= TradeItem.human_attribute_name(:good_id) %></th>
       <th><%= TradeItem.human_attribute_name(:number) %></th>
       <th><%= TradeItem.human_attribute_name(:status) %></th>
@@ -18,6 +24,7 @@
   <tbody>
   <% @trade_items.each do |trade_item| %>
     <tr>
+      <td><%= check_box_tag 'xx' %></td>
       <td><%= trade_item.good_id %></td>
       <td><%= trade_item.number %></td>
       <td><%= trade_item.status %></td>
