@@ -1,13 +1,12 @@
 <div class="ui modal">
   <i class="close icon"></i>
-  <div class="ui header blue">
-    Edit Address
+  <div class="ui header">
+    <%= t('.edit') %>>
   </div>
 
   <div class="content">
-    <%= form_with model: [:admin, @address], remote: true do |f| %>
+    <%= form_with model: [:admin, @address] do |f| %>
       <%= render partial: 'form', locals: { f: f } %>
-  <% end %>
+    <% end %>
   </div>
-
 </div>

@@ -1,30 +1,11 @@
 class Ship::Admin::AddressesController < Ship::Admin::BaseController
-  before_action :set_addresses, only: [:index]
   before_action :set_address, only: [:show, :edit, :update, :destroy]
 
   def index
-  end
+    q_params = {}
+    q_params.merge! params.permit('address_users.user_id')
 
-  def new
-    @address = Address.new(user_id: params[:user_id], kind: params[:kind], address_type: params[:address_type])
-  end
-
-  def create
-    @address = Address.new(address_params)
-
-    respond_to do |format|
-      if @address.save
-        format.html {
-          redirect_to admin_addresses_url(user_id: @address.user_id), notice: 'Address was successfully created.'
-        }
-        format.js
-        format.json { render json: @order, status: :created, location: @order }
-      else
-        format.html { render action: 'new' }
-        format.js
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
-    end
+    @addresses = Address.includes(:area).default_where(q_params).page(params[:page])
   end
 
   def show
@@ -54,16 +35,6 @@ class Ship::Admin::AddressesController < Ship::Admin::BaseController
   end
 
   private
-  def set_addresses
-    if params[:user_id]
-      @addresses = Address.includes(:area).where(user_id: params[:user_id])
-    elsif params[:buyer_id]
-      @addresses = Address.includes(:area).where(buyer_id: params[:buyer_id])
-    else
-      @addresses = Address.none
-    end
-  end
-
   def set_address
     @address = Address.find(params[:id])
   end
