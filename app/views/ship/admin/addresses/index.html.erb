@@ -21,7 +21,7 @@
         <%= link_to admin_address_path(address), data: { tooltip: t('.show') }, class: 'ui mini circular icon button' do %>
           <i class="fas fa-eye"></i>
         <% end %>
-        <%= link_to admin_trade_items_path(address_id: address.id), data: { tooltip: t('.show') }, class: 'ui mini circular icon button' do %>
+        <%= link_to admin_address_trade_items_path(address.id), data: { tooltip: t('.show') }, class: 'ui mini circular icon button' do %>
           <i class="fas fa-dolly"></i>
         <% end %>
         <%= link_to edit_admin_address_path(address), remote: true, class: 'ui mini circular icon button' do %>

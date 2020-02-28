@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   end
 
   scope :admin, module: 'ship/admin', as: 'admin' do
-    resources :addresses
+    resources :addresses do
+      resources :trade_items
+    end
   end
 
   scope :my, module: 'ship/my', as: 'my' do
