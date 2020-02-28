@@ -10,7 +10,15 @@ class Ship::Admin::TradeItemsController < Ship::Admin::BaseController
   end
 
   def package
+    pack = Package.new
+    trade_items = TradeItem.find params[:add_ids].split(',')
+    trade_items.each do |trade_item|
+      p = trade_item.packageds.build
+      p.package = pack
+      p.save
+    end
 
+    render 'create'
   end
 
   def show
