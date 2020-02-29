@@ -1,0 +1,43 @@
+<div class="ui top attached segment">
+  <%= render 'filter' %>
+</div>
+
+<table class="ui bottom attached selectable table">
+  <thead>
+    <tr>
+      <th><%= Package.human_attribute_name(:address) %></th>
+      <th><%= Package.human_attribute_name(:state) %></th>
+      <th><%= Package.human_attribute_name(:expected_on) %></th>
+      <th><%= Package.human_attribute_name(:item) %></th>
+      <th>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @packages.each do |package| %>
+    <tr>
+      <td><%= package.address.content %></td>
+      <td><%= package.state %></td>
+      <td><%= package.expected_on %></td>
+      <td>
+        <% package.packageds.each do |packaged| %>
+          <%= packaged.trade_item.good_name %>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to admin_package_path(package), data: { tooltip: t('.show') }, remote: true, class: 'ui mini circular icon button' do %>
+          <i class="fas fa-eye"></i>
+        <% end %>
+        <%= link_to edit_admin_package_path(package), data: { tooltip: t('.edit') }, remote: true, class: 'ui mini circular icon button' do %>
+          <i class="fas fa-pencil-alt"></i>
+        <% end %>
+        <%= link_to admin_package_path(package), method: :delete, data: { tooltip: t('.destroy'), confirm: t('.confirm') }, remote: true, class: 'ui mini circular icon button' do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @packages %>

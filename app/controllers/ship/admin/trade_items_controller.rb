@@ -10,8 +10,8 @@ class Ship::Admin::TradeItemsController < Ship::Admin::BaseController
   end
 
   def package
-    pack = Package.new
-    trade_items = TradeItem.find params[:add_ids].split(',')
+    pack = @address.packages.build
+    trade_items = @address.trade_items.paid.find params[:add_ids].split(',')
     trade_items.each do |trade_item|
       p = trade_item.packageds.build
       p.package = pack

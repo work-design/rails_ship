@@ -1,0 +1,8 @@
+<%= form_with model: @package do |f| %>
+  <%= render 'shared/error_messages', target: @package %>
+  <%= f.text_field :address %>
+  <%= f.text_field :state %>
+  <%= f.text_field :expected_on %>
+  <%= f.text_field :item %>
+  <%= f.submit %>
+<% end %>

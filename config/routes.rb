@@ -11,6 +11,7 @@ Rails.application.routes.draw do
         end
       end
     end
+    resources :packages, except: [:new, :create]
   end
 
   scope :my, module: 'ship/my', as: 'my' do

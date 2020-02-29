@@ -1,7 +1,14 @@
 zh:
   ship:
     admin:
+      title: 发货管理
+      addresses:
+        index:
+          title: 地址列表
       trade_items:
         index:
           title: 商品列表
           package: 打包
+      packages:
+        index:
+          title: 包裹列表
