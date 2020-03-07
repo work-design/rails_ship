@@ -7,8 +7,9 @@ module RailsShip::Package
     attribute :pick_mode, :string
 
     belongs_to :address
+    belongs_to :user
     has_many :shipments, dependent: :delete_all
-    has_many :packageds, dependent: :delete_all
+    has_many :packageds, dependent: :destroy
     has_many :trade_items, through: :packageds
 
     enum pick_mode: {

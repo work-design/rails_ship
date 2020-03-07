@@ -12,6 +12,11 @@ class Ship::Admin::TradeItemsController < Ship::Admin::BaseController
   def package
     pack = @address.packages.build
     trade_items = @address.trade_items.paid.find params[:add_ids].split(',')
+    user_ids = trade_items.pluck(:user_id).uniq
+    if user_ids.size > 1
+      render 'edit', locals: { message: 'user 不一致，不能打包' } and return
+    end
+    pack.user_id = user_ids[0]
     trade_items.each do |trade_item|
       p = trade_item.packageds.build
       p.package = pack
