@@ -6,7 +6,7 @@ class Ship::Admin::TradeItemsController < Ship::Admin::BaseController
     q_params = {
       status: 'paid'
     }
-    @trade_items = @address.trade_items.includes(:trade).default_where(q_params).page(params[:page])
+    @trade_items = @address.trade_items.includes(:trade, :produce_plan).default_where(q_params).page(params[:page])
   end
 
   def package

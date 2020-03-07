@@ -13,7 +13,9 @@
           </div>
         </div>
         <div class="weui-media-box__ft">
-          <div class="weui-btn weui-btn_mini weui-btn_primary">xx</div>
+          <%= link_to wait_my_principal_address_package_path(@address, package), method: :put, class: 'weui-btn weui-btn_mini weui-btn_primary' do %>
+            <%= t('.wait') %>
+          <% end %>
         </div>
       </div>
     <% end %>

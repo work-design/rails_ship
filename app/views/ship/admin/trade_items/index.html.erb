@@ -14,6 +14,7 @@
       <th><%= TradeItem.human_attribute_name(:good_id) %></th>
       <th><%= TradeItem.human_attribute_name(:number) %></th>
       <th><%= TradeItem.human_attribute_name('trade/user_id') %></th>
+      <th><%= TradeItem.human_attribute_name(:produce_plan_id) %></th>
       <th><%= TradeItem.human_attribute_name(:status) %></th>
       <th>
         <%= link_to new_admin_trade_item_path, remote: true, class: 'ui mini green button' do %>
@@ -31,6 +32,7 @@
       <td><%= trade_item.good_id %></td>
       <td><%= trade_item.number %></td>
       <td><%= trade_item.trade.user_id %></td>
+      <td><%= trade_item.produce_plan&.title %></td>
       <td><%= trade_item.status %></td>
       <td>
         <%= link_to admin_trade_item_path(trade_item), data: { tooltip: t('.show') }, remote: true, class: 'ui mini circular icon button' do %>

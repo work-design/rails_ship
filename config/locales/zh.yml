@@ -12,3 +12,8 @@ zh:
       packages:
         index:
           title: 包裹列表
+    my:
+      packages:
+        index:
+          title: 包裹列表
+          wait: 叫号

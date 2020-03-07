@@ -8,6 +8,7 @@ module RailsShip::Package
 
     belongs_to :address
     belongs_to :user
+    belongs_to :produce_plan, optional: true
     has_many :shipments, dependent: :delete_all
     has_many :packageds, dependent: :destroy
     has_many :trade_items, through: :packageds

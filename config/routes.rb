@@ -19,7 +19,11 @@ Rails.application.routes.draw do
       member do
         get :plans
       end
-      resources :packages
+      resources :packages do
+        member do
+          put :wait
+        end
+      end
     end
   end
 
