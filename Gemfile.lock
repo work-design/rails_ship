@@ -24,6 +24,18 @@ GIT
       httpx (~> 0.5)
       rails (~> 6.0)
 
+GIT
+  remote: https://github.com/work-design/rails_trade.git
+  revision: 22d6f4b1dccbbb9560f05d7fdd4255d6f95116fb
+  specs:
+    rails_trade (0.0.2)
+      money-rails (~> 1.12)
+      rails_audit (~> 1.0)
+      rails_auth (~> 1.0)
+      rails_com (~> 1.2)
+      rails_data (~> 1.0)
+      rails_role (~> 1.0)
+
 PATH
   remote: .
   specs:
@@ -110,7 +122,7 @@ GEM
       railties (>= 4.2.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    http-2-next (0.2.3)
+    http-2-next (0.2.4)
     http-form_data (2.2.0)
     httpx (0.6.7)
       http-2-next (>= 0.1.2)
@@ -207,13 +219,6 @@ GEM
     rails_role (1.0.0)
       acts_as_list
       rails (>= 4.2)
-    rails_trade (0.0.2)
-      money-rails (~> 1.12)
-      rails_audit (~> 1.0)
-      rails_auth (~> 1.0)
-      rails_com (~> 1.2)
-      rails_data (~> 1.0)
-      rails_role (~> 1.0)
     railties (6.0.0)
       actionpack (= 6.0.0)
       activesupport (= 6.0.0)
@@ -271,11 +276,13 @@ DEPENDENCIES
   kaminari
   pry-rails
   pry-stack_explorer
+  rails
   rails_auth!
   rails_com!
   rails_ship!
+  rails_trade!
   sdoc
   sqlite3
 
 BUNDLED WITH
-   1.17.2
+   2.1.2

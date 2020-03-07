@@ -1,24 +1,25 @@
-class Ship::Admin::TradeItemsController < Ship::Admin::BaseController
+class Ship::My::PackagesController < Ship::My::BaseController
   before_action :set_address
   before_action :set_trade_item, only: [:show, :edit, :update, :destroy]
 
   def index
     q_params = {
-      status: 'paid'
     }
-    @trade_items = @address.trade_items.includes(:trade).default_where(q_params).page(params[:page])
+    q_params.merge! params.permit(:produce_plan_id)
+    @produce_plan = ProducePlan.find params[:produce_plan_id]
+    @packages = @address.packages.default_where(q_params).page(params[:page])
   end
 
-  def package
-    pack = @address.packages.build
-    trade_items = @address.trade_items.paid.find params[:add_ids].split(',')
-    trade_items.each do |trade_item|
-      p = trade_item.packageds.build
-      p.package = pack
-      p.save
-    end
+  def new
+    @trade_item = TradeItem.new
+  end
 
-    render 'create'
+  def create
+    @trade_item = TradeItem.new(trade_item_params)
+
+    unless @trade_item.save
+      render :new, locals: { model: @trade_item }, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -41,7 +42,7 @@ class Ship::Admin::TradeItemsController < Ship::Admin::BaseController
 
   private
   def set_address
-    @address = Address.find params[:address_id]
+    @address = current_user.principal_addresses.find params[:principal_address_id]
   end
 
   def set_trade_item
@@ -50,9 +51,6 @@ class Ship::Admin::TradeItemsController < Ship::Admin::BaseController
 
   def trade_item_params
     params.fetch(:trade_item, {}).permit(
-      :good_id,
-      :number,
-      :status
     )
   end
 

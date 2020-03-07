@@ -21,8 +21,8 @@ Or install it yourself as:
 $ gem install rails_ship
 ```
 
-## Contributing
-Contribution directions go here.
+## 依赖
+* [rails_trade](https://github.com/work-design/rails_trade)
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

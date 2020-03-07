@@ -15,6 +15,12 @@ Rails.application.routes.draw do
   end
 
   scope :my, module: 'ship/my', as: 'my' do
+    resources :principal_addresses, only: [:index, :show] do
+      member do
+        get :plans
+      end
+      resources :packages
+    end
   end
 
 end
