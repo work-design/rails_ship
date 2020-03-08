@@ -3,10 +3,8 @@ class Ship::My::PackagesController < Ship::My::BaseController
   before_action :set_package, only: [:show, :wait, :edit, :update, :destroy]
 
   def index
-    q_params = {
-      'packages.product_plan_id': params[:produce_plan_id]
-    }
-    q_params.merge!
+    q_params = {}
+    q_params.merge! params.permit(:produce_plan_id)
     @produce_plan = ProducePlan.find params[:produce_plan_id]
     @produce_plan.wait_lists.find_or_create_by(address_id: @address.id)
 
