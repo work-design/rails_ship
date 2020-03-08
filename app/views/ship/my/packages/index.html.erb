@@ -13,8 +13,15 @@
           </div>
         </div>
         <div class="weui-media-box__ft">
-          <%= link_to wait_my_principal_address_package_path(@address, package), method: :put, class: 'weui-btn weui-btn_mini weui-btn_primary' do %>
-            <%= t('.wait') %>
+          <% if package.wait_item %>
+            <div class="weui-btn weui-btn_mini weui-btn_primary">
+              <p><%= package.wait_item.position %></p>
+              <p><%= package.state_i18n %></p>
+            </div>
+          <% else %>
+            <%= link_to wait_my_principal_address_package_path(@address, package), method: :put, class: 'weui-btn weui-btn_mini weui-btn_primary' do %>
+              <%= t('.wait') %>
+            <% end %>
           <% end %>
         </div>
       </div>

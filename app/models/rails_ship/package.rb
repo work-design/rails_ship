@@ -17,6 +17,9 @@ module RailsShip::Package
       by_self: 'by_self',
       by_man: 'by_man'
     }
+    enum state: {
+
+    }
 
   end
 
