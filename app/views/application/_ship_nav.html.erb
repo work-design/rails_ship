@@ -1,5 +1,4 @@
-<% if rails_role_user.any_role?('ship/admin') %>
-<div class="item">
+<div class="item" data-controller="menu">
   <a class="<%= active_helper(controllers: ['areas'], active_class: 'title active', item_class: 'title') %>">
     <i class="fas fa-truck fa-fw"></i>
     <span><%= t('ship.admin.title') %></span>
@@ -10,4 +9,3 @@
     <%= link_to t('ship.admin.packages.index.title'), admin_packages_path, class: active_helper(controllers: 'packages') %>
   </div>
 </div>
-<% end %>
