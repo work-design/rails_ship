@@ -7,7 +7,7 @@
     <tr>
       <th>
         <%= check_box_tag 'xxd', 'xx', false, data: { action: 'check#toggleAll' } %>
-        <%= link_to package_admin_address_trade_items_path(@address), data: { tooltip: t('.package'), action: 'check#applyFor' }, method: :post, remote: true, class: 'ui mini button' do %>
+        <%= link_to package_admin_address_trade_items_path(@address), aria: { label: t('.package'), action: 'check#applyFor' }, method: :post, remote: true, class: 'ui mini button' do %>
           <i class="fas fa-hand-holding-usd"></i>
         <% end %>
       </th>
@@ -35,13 +35,13 @@
       <td><%= trade_item.produce_plan&.title %></td>
       <td><%= trade_item.status %></td>
       <td>
-        <%= link_to admin_trade_item_path(trade_item), data: { tooltip: t('.show') }, remote: true, class: 'ui mini circular icon button' do %>
+        <%= link_to admin_trade_item_path(trade_item), aria: { label: t('.show') }, remote: true, class: 'ui mini circular icon button' do %>
           <i class="fas fa-eye"></i>
         <% end %>
-        <%= link_to edit_admin_trade_item_path(trade_item), data: { tooltip: t('.edit') }, remote: true, class: 'ui mini circular icon button' do %>
+        <%= link_to edit_admin_trade_item_path(trade_item), aria: { label: t('.edit') }, remote: true, class: 'ui mini circular icon button' do %>
           <i class="fas fa-pencil-alt"></i>
         <% end %>
-        <%= link_to admin_trade_item_path(trade_item), method: :delete, data: { tooltip: t('.destroy'), confirm: t('.confirm') }, remote: true, class: 'ui mini circular icon button' do %>
+        <%= link_to admin_trade_item_path(trade_item), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'ui mini circular icon button' do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </td>
