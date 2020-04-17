@@ -1,7 +1,7 @@
 <div class="<%= active_helper(modules: 'ship/admin', active_class: 'menu ex-accordion is-active', item_class: 'menu ex-accordion') %>" data-controller="menu">
-  <%= content_tag :div, class: 'menu-list' do -%>
+  <%= content_tag :div, class: 'menu-list' do %>
     <%= link_to t('ship.admin.addresses.index.title'), admin_addresses_path, class: active_helper(controllers: 'addresses') %>
-    <%= link_to t('ship.admin.packages.index.title'), admin_packages_path, class: active_helper(controllers: 'packages') %>
+    <%= link_to t('ship.admin.packages.index.title'), admin_packages_path, class: active_helper(controllers: 'packages') -%>
   <% end %>
   <a class="menu-label" data-action="menu#toggle">
     <i class="fas fa-truck fa-fw"></i>
