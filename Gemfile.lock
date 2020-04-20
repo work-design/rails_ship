@@ -1,13 +1,13 @@
 GIT
   remote: https://github.com/qinmingyuan/default_form.git
-  revision: 73fcec02ace864fa99d315f4425793c1bc700e8e
+  revision: d67c11d5f4488ce2181d4828513ec3bc1ba7d147
   specs:
     default_form (1.5.0)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: df105d0e899840d0b808ac467a1422db4551828c
+  revision: d7846cf9fa2caf1c6f1eed0f44bb516f74e73741
   specs:
     rails_auth (1.0.6)
       bcrypt (~> 3.1)
@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 08e9dee8e3e9ab2d87daca07e82357a9a20f67da
+  revision: 99fefad3dfb97018f1a2db18e3f08e2ffb4f3aa3
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)
@@ -26,7 +26,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_trade.git
-  revision: 474fcea9953bb6afb7a6574b9beebcbfdeed3777
+  revision: dd557522704297cbdcfb577e786909701575b5ab
   specs:
     rails_trade (0.0.2)
       money-rails (~> 1.12)
@@ -244,4 +244,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   2.1.2
+   2.1.4
