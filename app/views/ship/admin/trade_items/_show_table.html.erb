@@ -1,4 +1,4 @@
-<table class="ui very basic large table">
+<table class="table is-hoverable is-fullwidth">
   <thead>
     <tr>
       <th class="six wide">
@@ -9,15 +9,15 @@
   </thead>
   <tbody>
     <tr>
-      <td class="right aligned"><%= TradeItem.human_attribute_name(:good_id) %></td>
+      <td class="has-text-right"><%= TradeItem.human_attribute_name(:good_id) %></td>
       <td><%= @trade_item.good_id %></td>
     </tr>
     <tr>
-      <td class="right aligned"><%= TradeItem.human_attribute_name(:number) %></td>
+      <td class="has-text-right"><%= TradeItem.human_attribute_name(:number) %></td>
       <td><%= @trade_item.number %></td>
     </tr>
     <tr>
-      <td class="right aligned"><%= TradeItem.human_attribute_name(:status) %></td>
+      <td class="has-text-right"><%= TradeItem.human_attribute_name(:status) %></td>
       <td><%= @trade_item.status %></td>
     </tr>
   </tbody>

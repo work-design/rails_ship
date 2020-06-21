@@ -1,4 +1,4 @@
-<table class="ui very basic large table">
+<table class="table is-hoverable is-fullwidth">
   <thead>
     <tr>
       <th class="six wide">
@@ -9,19 +9,19 @@
   </thead>
   <tbody>
     <tr>
-      <td class="right aligned"><%= Package.human_attribute_name(:address) %></td>
+      <td class="has-text-right"><%= Package.human_attribute_name(:address) %></td>
       <td><%= @package.address %></td>
     </tr>
     <tr>
-      <td class="right aligned"><%= Package.human_attribute_name(:state) %></td>
+      <td class="has-text-right"><%= Package.human_attribute_name(:state) %></td>
       <td><%= @package.state %></td>
     </tr>
     <tr>
-      <td class="right aligned"><%= Package.human_attribute_name(:expected_on) %></td>
+      <td class="has-text-right"><%= Package.human_attribute_name(:expected_on) %></td>
       <td><%= @package.expected_on %></td>
     </tr>
     <tr>
-      <td class="right aligned"><%= Package.human_attribute_name(:item) %></td>
+      <td class="has-text-right"><%= Package.human_attribute_name(:item) %></td>
       <td><%= @package.item %></td>
     </tr>
   </tbody>
