@@ -1,5 +1,3 @@
-class Ship::Admin::BaseController < RailsShip.config.admin_controller.constantize
+class Ship::Admin::BaseController < AdminController
 
-
-
-end
+end unless defined? Ship::Admin::BaseController

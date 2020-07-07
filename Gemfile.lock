@@ -1,13 +1,13 @@
 GIT
   remote: https://github.com/qinmingyuan/default_form.git
-  revision: 10744237a6fc7f1a94ab07b2bfd2c38dc3a74f1c
+  revision: 99aded6b6ccf3a323eb361b9e23bb8c848e39bed
   specs:
     default_form (1.5.1)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: e684847634b71a9f3f6f7d48f2818a45e07449a4
+  revision: 0ee8e458accd8d59641d4ac342a84f072bd6a26e
   specs:
     rails_auth (1.0.6)
       bcrypt (~> 3.1)
@@ -16,17 +16,18 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: cb2893df63e71a121f804808892c0e3340212939
+  revision: cfec597782b003d11e83c0d5c3c7a296e26a715f
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)
       http-form_data (~> 2.2)
       httpx (~> 0.8)
+      kaminari
       rails (~> 6.0)
 
 GIT
   remote: https://github.com/work-design/rails_trade.git
-  revision: d64e637d033ca64e83161a8d45e8ae54b1e7c0c5
+  revision: 47f8a3b7199755d654905ba59a9deb38e8b86307
   specs:
     rails_trade (0.0.2)
       money-rails (~> 1.12)

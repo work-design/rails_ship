@@ -1,5 +1,3 @@
-class Ship::My::BaseController < RailsShip.config.my_controller.constantize
+class Ship::My::BaseController < MyController
 
-
-
-end
+end unless defined? Ship::My::BaseController
