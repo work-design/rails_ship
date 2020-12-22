@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope module: :ship do
+  scope module: :ship, defaults: { namespace: 'application', business: 'ship' } do
   end
 
   scope :admin, module: 'ship/admin', as: 'admin' do
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :packages, except: [:new, :create]
   end
 
-  scope :my, module: 'ship/my', as: 'my' do
+  scope :my, module: 'ship/my', as: :my, defaults: { namespace: 'my', business: 'ship' } do
     resources :principal_addresses, only: [:index, :show] do
       member do
         get :plans
