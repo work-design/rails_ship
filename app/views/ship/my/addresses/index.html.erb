@@ -6,7 +6,7 @@
   <div class="thirteen wide column">
     <div class="ui segment">
       <h1>Addresses</h1>
-      <%= link_to 'New Address', new_my_address_path, remote: true, class: 'ui mini button' %>
+      <%= link_to 'New Address', new_my_address_path, class: 'ui mini button' %>
     </div>
 
     <table class="ui table">
@@ -31,7 +31,7 @@
           </td>
           <td><%= address.address %></td>
           <td><%= link_to 'Show', address_path(address) %></td>
-          <td><%= link_to 'Edit', edit_my_address_path(address), remote: true %></td>
+          <td><%= link_to 'Edit', edit_my_address_path(address) %></td>
           <td><%= link_to 'Destroy', my_address_path(address), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>

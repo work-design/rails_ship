@@ -27,7 +27,7 @@
         <%= link_to admin_packages_path(address_id: address.id), aria: { label: t('ship.admin.packages.index.title') }, class: 'button is-small is-rounded is-light' do %>
           <i class="fas fa-box"></i>
         <% end %>
-        <%= link_to edit_admin_address_path(address), remote: true, class: 'button is-small is-rounded is-light' do %>
+        <%= link_to edit_admin_address_path(address), class: 'button is-small is-rounded is-light' do %>
           <i class="fas fa-pencil-alt"></i>
         <% end %>
       </td>

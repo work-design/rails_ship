@@ -9,11 +9,11 @@
   <div class="weui-form-preview__bd">
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= ProducePlan.human_attribute_name(:start_at) %></label>
-      <span class="weui-form-preview__value"><time><%= produce_plan.start_at.to_s(:rfc822) %></time></span>
+      <span class="weui-form-preview__value"><time data-controller="time"><%= produce_plan.start_at.to_s(:rfc822) %></time></span>
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= ProducePlan.human_attribute_name(:finish_at) %></label>
-      <span class="weui-form-preview__value"><time><%= produce_plan.finish_at.to_s(:rfc822) %></time></span>
+      <span class="weui-form-preview__value"><time data-controller="time"><%= produce_plan.finish_at.to_s(:rfc822) %></time></span>
     </div>
   </div>
   <div class="weui-form-preview__ft">
