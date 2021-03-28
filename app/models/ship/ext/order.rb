@@ -1,10 +1,7 @@
 module Ship
-  module Model::User
+  module Ext::Order
     extend ActiveSupport::Concern
 
-    included do
-
-    end
 
   end
 end
