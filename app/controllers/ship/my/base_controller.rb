@@ -1,3 +1,5 @@
-class Ship::My::BaseController < MyController
+module Ship
+  class My::BaseController < MyController
 
-end unless defined? Ship::My::BaseController
+  end
+end
