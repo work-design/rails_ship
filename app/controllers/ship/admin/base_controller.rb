@@ -1,3 +1,5 @@
-class Ship::Admin::BaseController < AdminController
+module Ship
+  class Admin::BaseController < AdminController
 
-end unless defined? Ship::Admin::BaseController
+  end
+end

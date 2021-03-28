@@ -1,40 +1,43 @@
-class Ship::Admin::PackagesController < Ship::Admin::BaseController
-  before_action :set_package, only: [:show, :edit, :update, :destroy]
+module Ship
+  class Admin::PackagesController < Admin::BaseController
+    before_action :set_package, only: [:show, :edit, :update, :destroy]
 
-  def index
-    q_params = {}
-    q_params.merge! params.permit(:address_id)
-    @packages = Package.includes(:packageds, address: :area).default_where(q_params).page(params[:page])
-  end
+    def index
+      q_params = {}
+      q_params.merge! params.permit(:address_id)
 
-  def show
-  end
-
-  def edit
-  end
-
-  def update
-    @package.assign_attributes(package_params)
-
-    unless @package.save
-      render :edit, locals: { model: @package }, status: :unprocessable_entity
+      @packages = Package.includes(:packageds, address: :area).default_where(q_params).page(params[:page])
     end
-  end
 
-  def destroy
-    @package.destroy
-  end
+    def show
+    end
 
-  private
-  def set_package
-    @package = Package.find(params[:id])
-  end
+    def edit
+    end
 
-  def package_params
-    params.fetch(:package, {}).permit(
-      :state,
-      :expected_on,
-    )
-  end
+    def update
+      @package.assign_attributes(package_params)
 
+      unless @package.save
+        render :edit, locals: { model: @package }, status: :unprocessable_entity
+      end
+    end
+
+    def destroy
+      @package.destroy
+    end
+
+    private
+    def set_package
+      @package = Package.find(params[:id])
+    end
+
+    def package_params
+      params.fetch(:package, {}).permit(
+        :state,
+        :expected_on,
+      )
+    end
+
+  end
 end
