@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     end
 
     namespace :my, defaults: { namespace: 'my' } do
+      resources :lines do
+        resources :locations
+      end
       resources :principal_addresses, only: [:index, :show] do
         member do
           get :plans
