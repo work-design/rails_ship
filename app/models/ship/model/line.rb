@@ -6,8 +6,8 @@ module Ship
       attribute :start_name, :string
       attribute :finish_name, :string
 
-      belongs_to :start_location, class_name: 'Location'
-      belongs_to :finish_location, class_name: 'Location'
+      belongs_to :start_location, class_name: 'Location', optional: true
+      belongs_to :finish_location, class_name: 'Location', optional: true
 
       has_many :locations
 

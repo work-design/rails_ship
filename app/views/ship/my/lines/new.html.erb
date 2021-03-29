@@ -4,13 +4,6 @@
       <th></th>
       <th>
         <%= form_with model: @line, url: { action: 'create' }, id: 'new_line' do |f| %>
-          <%= f.fields :locations do |ef| %>
-            <%= ef.hidden_field :poiname %>
-            <%= ef.hidden_field :poiaddress %>
-            <%= ef.hidden_field :cityname %>
-            <%= ef.hidden_field :lat %>
-            <%= ef.hidden_field :lng %>
-          <% end %>
         <% end %>
       </th>
     </tr>
