@@ -9,18 +9,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td class="has-text-right"><%= Ship::Line.human_attribute_name(:start_name) %></td>
-      <td>
-        <span id="line_locations_attributes_0_name"><%= @line.start_name %></span>
-        <%= button_to({ action: 'select', position: 'line_locations_attributes_0' }) do %>
-          <i class="fas fa-pencil-alt"></i>
-        <% end %>
-      </td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><%= Ship::Line.human_attribute_name(:finish_name) %></td>
-      <td><%= @line.finish_name %></td>
-    </tr>
+    <% @line.locations.each do |location| %>
+    
+    <% end %>
   </tbody>
 </table>

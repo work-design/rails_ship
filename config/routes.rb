@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     namespace :my, defaults: { namespace: 'my' } do
       resources :lines do
         collection do
+          post :add
           post :select
         end
         resources :locations

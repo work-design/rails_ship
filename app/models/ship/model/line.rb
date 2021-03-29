@@ -5,6 +5,7 @@ module Ship
     included do
       attribute :start_name, :string
       attribute :finish_name, :string
+      attribute :locations_count, :integer, default: 0
 
       belongs_to :start_location, class_name: 'Location', optional: true
       belongs_to :finish_location, class_name: 'Location', optional: true
