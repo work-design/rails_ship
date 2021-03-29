@@ -8,6 +8,10 @@ module Ship
 
     def new
       @line = Line.new
+      @line.locations.build
+    end
+
+    def select
     end
 
     def create

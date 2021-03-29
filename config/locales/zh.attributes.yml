@@ -1,0 +1,7 @@
+zh:
+  activerecord:
+    attributes:
+      ship/line:
+        start_name: 起点
+        finish_name: 终点
+

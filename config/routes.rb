@@ -18,6 +18,9 @@ Rails.application.routes.draw do
 
     namespace :my, defaults: { namespace: 'my' } do
       resources :lines do
+        collection do
+          post :select
+        end
         resources :locations
       end
       resources :principal_addresses, only: [:index, :show] do

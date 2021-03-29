@@ -1,0 +1,33 @@
+<table class="table is-fullwidth is-hoverable as-show" id="line-table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>
+        <%= form_with model: @line, url: { action: 'create' }, id: 'new_line' do |f| %>
+          <%= f.fields :locations do |ef| %>
+            <%= ef.hidden_field :poiname %>
+            <%= ef.hidden_field :poiaddress %>
+            <%= ef.hidden_field :cityname %>
+            <%= ef.hidden_field :lat %>
+            <%= ef.hidden_field :lng %>
+          <% end %>
+        <% end %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="has-text-right"><%= Ship::Line.human_attribute_name(:start_name) %></td>
+      <td>
+        <span id="line_locations_attributes_0_name"><%= @line.start_name %></span>
+        <%= button_to({ action: 'select', position: 'line_locations_attributes_0' }) do %>
+          <i class="fas fa-pencil-alt"></i>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td class="has-text-right"><%= Ship::Line.human_attribute_name(:finish_name) %></td>
+      <td><%= @line.finish_name %></td>
+    </tr>
+  </tbody>
+</table>

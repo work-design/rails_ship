@@ -10,6 +10,8 @@ module Ship
       belongs_to :finish_location, class_name: 'Location'
 
       has_many :locations
+
+      accepts_nested_attributes_for :locations
     end
 
     def name
