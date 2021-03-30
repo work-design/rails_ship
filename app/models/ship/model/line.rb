@@ -7,16 +7,16 @@ module Ship
       attribute :finish_name, :string
       attribute :locations_count, :integer, default: 0
 
-      belongs_to :start_location, class_name: 'Location', optional: true
-      belongs_to :finish_location, class_name: 'Location', optional: true
-
-      has_many :locations
-
+      has_many :locations, -> { order(position: :asc) }, dependent: :delete_all
       accepts_nested_attributes_for :locations
+
+      after_create_commit :sync_names
     end
 
-    def name
-
+    def sync_names
+      self.start_name = locations[0].poiname
+      self.finish_name = locations[1].poiname
+      self.save
     end
 
   end

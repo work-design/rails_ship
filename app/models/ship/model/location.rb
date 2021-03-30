@@ -13,7 +13,7 @@ module Ship
       belongs_to :area, optional: true
       belongs_to :line
 
-      acts_as_list
+      acts_as_list scope: [:line_id]
     end
 
   end
