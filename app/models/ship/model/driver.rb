@@ -4,7 +4,7 @@ module Ship
 
     included do
       attribute :name, :string
-      attribute :code, :string
+      attribute :number, :string
 
       belongs_to :user, class_name: 'Auth::User'
 

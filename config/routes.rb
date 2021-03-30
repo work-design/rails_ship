@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  namespace :ship do
+    namespace :my do
+      resources :drivers
+    end
+  end
+  namespace :ship do
+    namespace :my do
+      resources :cars
+    end
+  end
   namespace :ship, defaults: { business: 'ship' } do
 
     namespace :admin, defaults: { namespace: 'admin' } do

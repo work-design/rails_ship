@@ -7,7 +7,8 @@ module RailsShip
       g.rails = {
         assets: false,
         stylesheets: false,
-        helper: false
+        helper: false,
+        route: false
       }
       g.test_unit = {
         fixture: true,

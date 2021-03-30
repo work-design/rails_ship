@@ -4,6 +4,7 @@ module Ship
 
     included do
       has_one :driver, class_name: 'Ship::Driver'
+      has_many :cars, class_name: 'Ship::Car'
     end
 
   end
