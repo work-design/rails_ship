@@ -10,7 +10,7 @@ module Ship
       attribute :lng, :decimal, precision: 11, scale: 8
       attribute :position, :integer
 
-      belongs_to :area
+      belongs_to :area, optional: true
       belongs_to :line
 
       acts_as_list

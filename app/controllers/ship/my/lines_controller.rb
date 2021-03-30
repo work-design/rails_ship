@@ -55,7 +55,8 @@ module Ship
     def line_params
       params.fetch(:line, {}).permit(
         :start_name,
-        :finish_name
+        :finish_name,
+        locations_attributes: {}
       )
     end
 
