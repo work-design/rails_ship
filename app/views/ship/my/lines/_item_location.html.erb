@@ -1,12 +1,13 @@
 <tr id="tr_<%= location.position %>">
   <td class="has-text-right"><%= location.position %></td>
   <td>
-    <span id="<%= location.position %>_name"><%= location.position %></span>
-    <%= button_to({ action: 'select', position: location.position }) do %>
-      <i class="fas fa-pencil-alt"></i>
+    <%= button_to({ action: 'select', position: location.position }, form_class: 'button_box') do %>
+      <span id="<%= location.position %>_name"><%= location.position %></span>
     <% end %>
+  </td>
+  <td>
     <%= button_to({ action: 'add', position: location.position }) do %>
-      <i class="fas fa-plus"></i>
+      <i class="fas fa-plus fa-lg"></i>
     <% end %>
   </td>
 </tr>

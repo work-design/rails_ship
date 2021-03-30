@@ -7,7 +7,7 @@ module Ship
       attribute :finish_name, :string
       attribute :locations_count, :integer, default: 0
 
-      has_many :locations, -> { order(position: :asc) }, dependent: :delete_all
+      has_many :locations, -> { order(position: :asc) }, dependent: :delete_all, inverse_of: :line
       accepts_nested_attributes_for :locations
 
       after_create_commit :sync_names
