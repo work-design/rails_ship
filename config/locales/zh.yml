@@ -17,3 +17,12 @@ zh:
         index:
           title: 包裹列表
           wait: 叫号
+      lines:
+        index:
+          title: 我的线路
+      cars:
+        index:
+          title: 我的车辆
+      drivers:
+        show:
+          title: 司机认证
