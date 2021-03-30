@@ -1,11 +1,11 @@
-<tr>
+<tr id="tr_<%= location.position %>">
   <td class="has-text-right"><%= location.position %></td>
   <td>
-    <span id="line_locations_attributes_0_name"><%= location.position %></span>
-    <%= button_to({ action: 'select', position: 'line_locations_attributes_0' }) do %>
+    <span id="<%= location.position %>_name"><%= location.position %></span>
+    <%= button_to({ action: 'select', position: location.position }) do %>
       <i class="fas fa-pencil-alt"></i>
     <% end %>
-    <%= button_to({ action: 'add', position: 'line_locations_attributes_0' }) do %>
+    <%= button_to({ action: 'add', position: location.position }) do %>
       <i class="fas fa-plus"></i>
     <% end %>
   </td>

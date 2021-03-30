@@ -8,12 +8,17 @@ module Ship
 
     def new
       @line = Line.new
-      @line.locations.build
+      @location = @line.locations.build(position: 1)
+    end
+
+    def add
+      @line = Line.new
+      @location = @line.locations.build(position: params[:position].to_i + 1)
     end
 
     def select
       @line = Line.new
-      @line.locations.build(position: params[:position] || 1)
+      @location = @line.locations.build(position: params[:position] || 1)
     end
 
     def create

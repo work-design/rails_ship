@@ -4,13 +4,14 @@
       <th></th>
       <th>
         <%= form_with model: @line, url: { action: 'create' }, id: 'new_line' do |f| %>
+          <%= render partial: 'item_field', locals: { f: f } %>
         <% end %>
       </th>
     </tr>
   </thead>
   <tbody>
     <% @line.locations.each do |location| %>
-    
+      <%= render partial: 'item_location', locals: { location: location } %>
     <% end %>
   </tbody>
 </table>
