@@ -23,6 +23,7 @@ zh:
       cars:
         index:
           title: 我的车辆
+          new: 添加车辆
       drivers:
         show:
           title: 司机认证

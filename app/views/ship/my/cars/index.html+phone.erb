@@ -1,0 +1,22 @@
+<div class="weui-panel">
+  <div class="weui-panel__hd">
+    <%= t('.title') %>
+  </div>
+  <div class="weui-panel__bd">
+  <% @cars.each do |car| %>
+    <div class="weui-media-box weui-media-box_appmsg">
+      <div class="weui-media-box__hd">
+        <%= image_tag car.registration, class: 'weui-media-box__thumb' %>
+      </div>
+      <div class="weui-media-box__bd">
+        <h4 class="weui-media-box__title"><%= car.number %></h4>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  <div class="weui-panel__ft">
+    <div class="weui-cell weui-cell_link">
+      <%= render 'button' %>
+    </div>
+  </div>
+</div>
