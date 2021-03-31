@@ -1,4 +1,6 @@
-<%= form_with model: @car, url: { action: 'update', id: @car.id } do |f| %>
-  <%= render partial: 'form', locals: { f: f } %>
+<%= form_with model: car, url: { controller: 'ship/my/cars', action: 'update', id: car.id } do |f| %>
+  <%= render 'shared/error_messages', target: f.object %>
+  <%= f.text_field :location %>
+  <%= f.text_field :number %>
   <%= f.submit %>
 <% end %>

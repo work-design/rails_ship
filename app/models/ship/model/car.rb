@@ -16,6 +16,7 @@ module Ship
 
     def ocr_later
       CarOcrJob.perform_later(self)
+      for_update
     end
 
     def ocr
@@ -23,6 +24,10 @@ module Ship
       self.detail = r['FrontInfo']
       self.number = detail['PlateNo']
       self.save
+    end
+
+    def for_update
+      broadcast_action_to 'car_new', action: :update, target: 'car_update', partial: 'ship/my/cars/edit_form', locals: { car: self }
     end
 
   end
