@@ -2,10 +2,6 @@ module Ship
   class My::DriversController < My::BaseController
     before_action :set_driver, only: [:show, :edit, :update, :destroy]
 
-    def index
-      @drivers = Driver.page(params[:page])
-    end
-
     def new
       @driver = Driver.new
     end
@@ -38,7 +34,7 @@ module Ship
 
     private
     def set_driver
-      @driver = Driver.find(params[:id])
+      @driver = current_user.driver || current_user.build_driver
     end
 
     def driver_params
