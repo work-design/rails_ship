@@ -7,12 +7,12 @@ module Ship
     end
 
     def new
-      @car = Car.new
+      @car = current_user.cars.build
     end
 
     def create
-      @car = Car.new(car_params)
-
+      @car = current_user.cars.build(car_params)
+      binding.pry
       unless @car.save
         render :new, locals: { model: @car }, status: :unprocessable_entity
       end
@@ -45,6 +45,7 @@ module Ship
       params.fetch(:car, {}).permit(
         :location,
         :number,
+        :media_id,
         :registration
       )
     end

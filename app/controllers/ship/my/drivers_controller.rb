@@ -45,6 +45,7 @@ module Ship
       params.fetch(:driver, {}).permit(
         :name,
         :number,
+        :media_id,
         :license
       )
     end
