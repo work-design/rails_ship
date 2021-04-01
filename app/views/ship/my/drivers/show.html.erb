@@ -14,6 +14,18 @@
     <%= render 'uploader' %>
   <% else %>
     <%= image_tag @driver.license.url, class: 'image' %>
+    <div class="weui-form-preview">
+      <div class="weui-form-preview__bd">
+        <div class="weui-form-preview__item">
+          <div class="weui-form-preview__label"><%= Ship::Driver.human_attribute_name(:name) %></div>
+          <div class="weui-form-preview__value"><%= @driver.name %></div>
+        </div>
+        <div class="weui-form-preview__item">
+          <div class="weui-form-preview__label"><%= Ship::Driver.human_attribute_name(:number) %></div>
+          <div class="weui-form-preview__value"><%= @driver.number %></div>
+        </div>
+      </div>
+    </div>
   <% end %>
   </div>
 </div>
