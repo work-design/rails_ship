@@ -20,7 +20,11 @@ module Ship
     end
 
     def ocr
-      TencentHelper.license_ocr(license.url)
+      r = TencentHelper.license_ocr(license.url)
+      self.name = r['Name']
+      self.number = r['CardCode']
+      self.detail = r
+      self.save
     end
 
     def for_update
