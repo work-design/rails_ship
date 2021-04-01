@@ -14,5 +14,7 @@
   </div>
 </div>
 
+<%= render partial: 'edit_form', locals: { driver: @driver } %>
+
 <%= turbo_stream_from 'car_new' %>
 <div id="car_update"></div>
