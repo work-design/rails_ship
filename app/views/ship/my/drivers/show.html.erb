@@ -10,6 +10,10 @@
     </div>
   </div>
   <div class="weui-panel__bd">
+  <% if @driver.new_record? %>
+    <%= render 'uploader' %>
+  <% else %>
   
+  <% end %>
   </div>
 </div>
