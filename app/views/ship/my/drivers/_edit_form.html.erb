@@ -1,4 +1,6 @@
-<%= form_with model: @driver, url: { action: 'update' } do |f| %>
-  <%= render partial: 'form', locals: { f: f } %>
+<%= form_with model: driver, url: { action: 'update', id: driver.id } do |f| %>
+  <%= render 'shared/error_messages', target: f.object %>
+  <%= f.text_field :name %>
+  <%= f.text_field :number %>
   <%= f.submit %>
 <% end %>

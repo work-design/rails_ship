@@ -13,7 +13,7 @@
   <% if @driver.new_record? %>
     <%= render 'uploader' %>
   <% else %>
-  
+    <%= image_tag @driver.license.url, class: 'image' %>
   <% end %>
   </div>
 </div>

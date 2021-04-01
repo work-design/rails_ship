@@ -9,5 +9,10 @@
       <% end %>
     </div>
   </div>
-  
+  <div class="weui-panel__bd">
+    <%= render 'uploader' %>
+  </div>
 </div>
+
+<%= turbo_stream_from 'car_new' %>
+<div id="car_update"></div>
