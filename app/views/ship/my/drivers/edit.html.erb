@@ -1,0 +1,18 @@
+<%= content_for(:wechat_js) do %>
+  <%= wechat_config_js debug: false, apis: ['chooseImage', 'previewImage', 'uploadImage'] -%>
+  <meta name="turbo-visit-control" content="reload">
+<% end %>
+
+<div class="weui-panel">
+  <div class="weui-panel__hd level is-flex">
+    <div class="level-left">
+      <span class="level-item"><%= t('.title') %></span>
+    </div>
+    <div class="level-right mt-0">
+      <%= link_to({ action: 'show' }, class: 'weui-btn weui-btn_mini weui-btn_default level-item') do %>
+        <span><%= t('.show') %></span>
+      <% end %>
+    </div>
+  </div>
+  
+</div>

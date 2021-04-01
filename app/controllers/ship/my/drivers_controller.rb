@@ -2,18 +2,6 @@ module Ship
   class My::DriversController < My::BaseController
     before_action :set_driver, only: [:show, :edit, :update, :destroy]
 
-    def new
-      @driver = Driver.new
-    end
-
-    def create
-      @driver = Driver.new(driver_params)
-
-      unless @driver.save
-        render :new, locals: { model: @driver }, status: :unprocessable_entity
-      end
-    end
-
     def show
     end
 

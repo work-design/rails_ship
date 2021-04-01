@@ -27,3 +27,6 @@ zh:
       drivers:
         show:
           title: 司机认证
+        edit:
+          title: 司机认证
+          show: 返回

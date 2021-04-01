@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
 
     namespace :my, defaults: { namespace: 'my' } do
-      resource :drivers
+      resource :driver
       resources :cars
       resources :lines do
         collection do
