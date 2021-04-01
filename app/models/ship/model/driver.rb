@@ -24,7 +24,7 @@ module Ship
     end
 
     def for_update
-      broadcast_action_to 'car_new', action: :update, target: 'car_update', partial: 'ship/my/drivers/edit_form', locals: { driver: self }
+      broadcast_action_to 'driver_edit', action: :update, target: 'driver_update', partial: 'ship/my/drivers/edit_form', locals: { driver: self }
     end
 
   end
