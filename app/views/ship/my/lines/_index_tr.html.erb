@@ -1,10 +1,4 @@
-<tr id="tr_<%= model.id %>">
+<%= link_to({ action: 'show', id: model.id }, class: 'weui-cell weui-cell_active weui-cell_access') do %>
   <%= yield %>
-  <td>
-    <span>
-      <%= link_to({ action: 'show', id: model.id }, aria: { label: t('.show') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fas fa-info"></i>
-      <% end %>
-    </span>
-  </td>
-</tr>
+  <span class="weui-cell__ft"></span>
+<% end %>
