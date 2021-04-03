@@ -23,10 +23,10 @@ module Ship
         count = line.locations_count
       end
 
-      if count == position
-        '终点'
-      elsif position == 1
+      if position == 1
         '起点'
+      elsif position >= count
+        '终点'
       else
         "途经点#{position}"
       end
