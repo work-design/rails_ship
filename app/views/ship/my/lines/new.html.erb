@@ -11,9 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @line.locations.each do |location| %>
-      <%= render partial: 'item_location', locals: { location: location } %>
-    <% end %>
+    <%= render partial: 'item_location', collection: @line.locations, as: :location %>
   </tbody>
   <tfoot>
     <tr>
