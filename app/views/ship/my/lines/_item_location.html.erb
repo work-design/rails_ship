@@ -1,15 +1,13 @@
 <tr id="tr_<%= location.position %>">
   <td class="has-text-right"><%= location.position_text %></td>
   <td>
-    <%= button_to({ action: 'select', position: location.position }, form_class: 'button_box') do %>
-      <span id="<%= location.position %>_name"></span>
+    <%= button_to({ action: 'select', index: location.position - 1 }, form_class: 'button_box') do %>
+      <span id="<%= location.position - 1 %>_name"><%= location.poiname %></span>
     <% end %>
   </td>
   <td>
-    <button data-controller="former" data-former-id-value="" data-former-url-value="<%= url_for({ action: 'add', position: location.position }) %>">
+    <button data-controller="former" data-former-id-value="new_line" data-former-url-value="<%= url_for({ action: 'add', position: location.position }) %>" data-action="former#submit">
       <i class="fas fa-plus fa-lg"></i>
     </button>
-    <%= button_to({ action: 'add', position: location.position }, data: { controller: 'former', action: '' }) do %>
-    <% end %>
   </td>
 </tr>

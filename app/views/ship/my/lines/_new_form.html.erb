@@ -1,0 +1,23 @@
+<table class="table is-fullwidth is-hoverable as-show" id="line-table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>
+        <%= form_with model: @line, url: { action: 'create' }, id: 'new_line' do |f| %>
+          <%= render partial: 'item_field', locals: { f: f } %>
+        <% end %>
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: 'item_location', collection: @line.locations, as: :location %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="3">
+        <button type="submit" form="new_line" class="weui-btn weui-btn_primary">确认</button>
+      </td>
+    </tr>
+  </tfoot>
+</table>
