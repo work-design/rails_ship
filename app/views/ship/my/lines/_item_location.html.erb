@@ -6,7 +6,7 @@
     <% end %>
   </td>
   <td>
-    <%= button_to({ action: 'add', position: location.position }) do %>
+    <%= button_to({ action: 'add', position: location.position }, data: { controller: 'former', action: '' }) do %>
       <i class="fas fa-plus fa-lg"></i>
     <% end %>
   </td>
