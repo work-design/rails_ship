@@ -1,8 +1,6 @@
+<% @line.locations.each do |location| %>
 <tr>
-  <td><%= Ship::Line.human_attribute_name(:start_name) %></td>
-  <td><%= @line.start_name %></td>
+  <td><%= location.position_text %></td>
+  <td><%= location.poiname %></td>
 </tr>
-<tr>
-  <td><%= Ship::Line.human_attribute_name(:finish_name) %></td>
-  <td><%= @line.finish_name %></td>
-</tr>
+<% end %>
