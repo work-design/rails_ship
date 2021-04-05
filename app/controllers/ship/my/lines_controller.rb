@@ -13,7 +13,7 @@ module Ship
 
     def add
       @line = Line.new(line_params)
-      @line.locations.select(&->(i){ i.position >= params[:position].to_i }).each do |i|
+      @line.locations.select(&->(i){ i.position > params[:position].to_i }).each do |i|
         i.position += 1
       end
       @line.locations.build(position: params[:position].to_i + 1)
