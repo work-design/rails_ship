@@ -30,3 +30,10 @@ zh:
         edit:
           title: 司机认证
           show: 返回
+      favorites:
+        index:
+          title: 熟人司机
+    driver:
+      favorites:
+        index:
+          title: 熟人乘客

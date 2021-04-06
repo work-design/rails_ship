@@ -8,6 +8,8 @@ module Ship
       attribute :detail, :json
 
       belongs_to :user, class_name: 'Auth::User'
+      has_many :favorites, dependent: :delete_all
+      has_many :users, through: :favorites
 
       has_one_attached :license
 

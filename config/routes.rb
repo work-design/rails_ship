@@ -16,8 +16,13 @@ Rails.application.routes.draw do
       end
     end
 
+    namespace :driver, defaults: { namespace: 'driver' } do
+      resources :favorites
+    end
+
     namespace :my, defaults: { namespace: 'my' } do
       resource :driver
+      resources :favorites
       resources :cars
       resources :lines do
         collection do

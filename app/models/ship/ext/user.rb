@@ -5,6 +5,9 @@ module Ship
     included do
       has_one :driver, class_name: 'Ship::Driver'
       has_many :cars, class_name: 'Ship::Car'
+
+      has_many :favorites, class_name: 'Ship::Favorite'
+      has_many :drivers, class_name: 'Ship::Driver', through: :favorites
     end
 
   end
