@@ -21,7 +21,7 @@ module Ship
     def ocr
       r = TencentHelper.registration_ocr(registration.url)
       self.detail = r['FrontInfo']
-      self.number = detail['PlateNo']
+      self.number = detail['PlateNo'] if detail
       self.save
     end
 
