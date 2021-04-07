@@ -14,6 +14,8 @@ module Ship
       belongs_to :line, counter_cache: true
 
       acts_as_list scope: [:line_id]
+
+      after_save_commit :geo_later, if: -> { saved_change_to_lat? || saved_change_to_lng? }
     end
 
     def position_text
@@ -30,6 +32,10 @@ module Ship
       else
         "途经点#{position}"
       end
+    end
+
+    def geo_later
+      LocationGeoJob.perform_later(self)
     end
 
     # todo 依赖 rails profiled
