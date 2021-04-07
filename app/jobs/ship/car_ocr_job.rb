@@ -3,6 +3,7 @@ module Ship
 
     def perform(car)
       car.ocr
+      car.for_update
     end
 
   end

@@ -7,3 +7,5 @@ zh:
       ship/driver:
         name: 姓名
         number: 驾驶证号码
+      ship/car:
+        number: 车牌号

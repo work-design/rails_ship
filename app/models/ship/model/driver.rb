@@ -18,7 +18,6 @@ module Ship
 
     def ocr_later
       DriverOcrJob.perform_later(self)
-      for_update
     end
 
     def ocr

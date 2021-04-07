@@ -16,7 +16,6 @@ module Ship
 
     def ocr_later
       CarOcrJob.perform_later(self)
-      for_update
     end
 
     def ocr
