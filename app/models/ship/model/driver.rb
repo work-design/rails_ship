@@ -26,6 +26,7 @@ module Ship
       self.number = r['CardCode']
       self.detail = r
       self.save
+      r
     end
 
     def for_update

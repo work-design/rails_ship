@@ -23,6 +23,7 @@ module Ship
       self.detail = r['FrontInfo']
       self.number = detail['PlateNo'] if detail.is_a?(Hash)
       self.save
+      r
     end
 
     def for_update
