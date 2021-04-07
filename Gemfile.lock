@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 050ef66e9551fc7dfa88b743fed8df7e4a156137
+  revision: b22160a9a515e9504b4920c6a21902b30473bae2
   specs:
     rails_auth (1.1.0)
       bcrypt (~> 3.1)
@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 7bff5f43cf959d649ab2d4ada6fbb65a459b0761
+  revision: fbab86896e38c6ebe333d7b6073d5756aa243207
   specs:
     rails_com (1.2.9)
       acme-client

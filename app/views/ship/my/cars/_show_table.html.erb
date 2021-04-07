@@ -8,5 +8,5 @@
 </tr>
 <tr>
   <td class="has-text-right"><%= Ship::Car.human_attribute_name(:registration) %></td>
-  <td><%= image_tag @car.registration, class: 'image is-64x64' %></td>
+  <td><%= image_tag @car.registration, class: 'image is-64x64' if @car.registration.attached? %></td>
 </tr>

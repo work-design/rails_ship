@@ -4,19 +4,19 @@
   </div>
   <div class="weui-panel__bd">
   <% @cars.each do |car| %>
-    <div class="weui-media-box weui-media-box_appmsg">
+    <%= link_to({ action: 'show', id: car.id }, class: 'weui-media-box weui-media-box_appmsg') do %>
       <div class="weui-media-box__hd">
         <%= image_tag car.registration, class: 'weui-media-box__thumb' if car.registration.attached? %>
       </div>
       <div class="weui-media-box__bd">
         <h4 class="weui-media-box__title"><%= car.number %></h4>
       </div>
-    </div>
+    <% end %>
   <% end %>
   </div>
   <div class="weui-panel__ft">
     <div class="weui-cell weui-cell_link">
-      <%= render 'button' %>
     </div>
   </div>
 </div>
+<%= render 'button' %>

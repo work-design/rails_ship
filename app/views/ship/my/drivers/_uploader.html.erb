@@ -3,13 +3,13 @@
   <meta name="turbo-visit-control" content="reload">
 <% end %>
 
-<div class="weui-uploader">
+<div class="weui-uploader p-4">
   <div class="weui-uploader__hd">
     <div class="weui-uploader__title">驾驶证</div>
   </div>
   <div class="weui-uploader__bd">
-    <div class="weui-uploader__input-box" data-controller="wechat" style="width: 100%; height: 300px">
-      <%= image_pack_tag 'registration.jpg', data: { wechat_target: 'preview' } %>
+    <div class="weui-uploader__input-box" data-controller="wechat">
+      <%= image_pack_tag 'license.jpg', data: { wechat_target: 'preview' }, class: 'weui-uploader__preview' %>
       <div class="weui-uploader__input" data-action="click->wechat#chooseImage"></div>
       <%= form_with theme: nil, model: Wechat::Media.new, url: { controller: 'wechat/my/medias', action: 'create' } do |f| %>
         <%= f.hidden_field :source_type, value: @driver.class_name %>
