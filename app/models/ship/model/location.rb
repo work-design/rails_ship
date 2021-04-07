@@ -10,7 +10,7 @@ module Ship
       attribute :lng, :decimal, precision: 11, scale: 8
       attribute :position, :integer
 
-      belongs_to :area, optional: true
+      belongs_to :area, class_name: 'Profiled::Area', optional: true
       belongs_to :line, counter_cache: true
 
       acts_as_list scope: [:line_id]
@@ -30,6 +30,15 @@ module Ship
       else
         "途经点#{position}"
       end
+    end
+
+    # todo 依赖 rails profiled
+    def geo
+      result = QqMapHelper.geocoder(lat: lat, lng: lng)
+      r = result['address_component']
+      area = Profiled::Area.sure_find [r['province'], r['city'], r['district']]
+      self.area = area
+      self.save
     end
 
   end
