@@ -45,6 +45,7 @@ module Ship
       area = Profiled::Area.sure_find [r['province'], r['city'], r['district']]
       self.area = area
       self.save
+      result
     end
 
   end
