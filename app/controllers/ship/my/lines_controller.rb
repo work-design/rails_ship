@@ -3,16 +3,16 @@ module Ship
     before_action :set_line, only: [:show, :edit, :update, :destroy]
 
     def index
-      @lines = Line.page(params[:page])
+      @lines = current_user.lines.page(params[:page])
     end
 
     def new
-      @line = Line.new
+      @line = current_user.lines.build
       @line.locations.build(position: 1)
     end
 
     def add
-      @line = Line.new(line_params)
+      @line = current_user.lines.build(line_params)
       @line.locations.select(&->(i){ i.position > params[:position].to_i }).each do |i|
         i.position += 1
       end
@@ -20,11 +20,11 @@ module Ship
     end
 
     def select
-      @line = Line.new
+      @line = current_user.lines.build
     end
 
     def create
-      @line = Line.new(line_params)
+      @line = current_user.lines.build(line_params)
 
       unless @line.save
         render :new, locals: { model: @line }, status: :unprocessable_entity
@@ -51,7 +51,7 @@ module Ship
 
     private
     def set_line
-      @line = Line.find(params[:id])
+      @line = current_user.lines.find(params[:id])
     end
 
     def line_params

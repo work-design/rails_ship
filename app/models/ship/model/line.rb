@@ -7,6 +7,8 @@ module Ship
       attribute :finish_name, :string
       attribute :locations_count, :integer, default: 0
 
+      belongs_to :user, class_name: 'Auth::User'
+
       has_many :locations, -> { order(position: :asc) }, dependent: :delete_all, inverse_of: :line
       accepts_nested_attributes_for :locations
 

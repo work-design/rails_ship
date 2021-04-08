@@ -3,7 +3,7 @@ module Ship
     before_action :set_car, only: [:show, :edit, :update, :destroy]
 
     def index
-      @cars = Car.page(params[:page])
+      @cars = current_user.cars.page(params[:page])
     end
 
     def new
@@ -12,7 +12,7 @@ module Ship
 
     def create
       @car = current_user.cars.build(car_params)
-      binding.pry
+
       unless @car.save
         render :new, locals: { model: @car }, status: :unprocessable_entity
       end
@@ -38,7 +38,7 @@ module Ship
 
     private
     def set_car
-      @car = Car.find(params[:id])
+      @car = current_user.cars.find(params[:id])
     end
 
     def car_params
