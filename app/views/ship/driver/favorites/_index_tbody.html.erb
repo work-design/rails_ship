@@ -1,2 +1,6 @@
-<td><%= model.avatar %></td>
-<td><%= model.name %></td>
+<div class="weui-cell__hd">
+  <%= image_tag model.user.avatar %>
+</div>
+<div class="weui-cell__bd weui-cell_primary">
+  <span><%= model.user.name %></span>
+</div>

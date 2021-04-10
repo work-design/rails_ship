@@ -3,7 +3,7 @@ module Ship
     before_action :set_favorite, only: [:show, :edit, :update, :destroy]
 
     def index
-      @favorites = current_driver.favorites.page(params[:page])
+      @favorites = current_driver.favorites.includes(:user).page(params[:page])
     end
 
     def show
