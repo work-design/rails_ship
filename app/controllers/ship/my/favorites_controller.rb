@@ -3,19 +3,7 @@ module Ship
     before_action :set_favorite, only: [:show, :edit, :update, :destroy]
 
     def index
-      @favorites = Favorite.page(params[:page])
-    end
-
-    def new
-      @favorite = Favorite.new
-    end
-
-    def create
-      @favorite = Favorite.new(favorite_params)
-
-      unless @favorite.save
-        render :new, locals: { model: @favorite }, status: :unprocessable_entity
-      end
+      @favorites = current_user.favorites.page(params[:page])
     end
 
     def show
@@ -38,7 +26,7 @@ module Ship
 
     private
     def set_favorite
-      @favorite = Favorite.find(params[:id])
+      @favorite = current_user.favorites.find(params[:id])
     end
 
     def favorite_params

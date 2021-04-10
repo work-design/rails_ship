@@ -1,8 +1,8 @@
 <tr>
-  <td class="has-text-right"><%= Favorite.human_attribute_name(:driver_avatar) %></td>
-  <td><%= @favorite.driver_avatar %></td>
+  <td class="has-text-right"><%= Ship::Favorite.human_attribute_name(:driver_name) %></td>
+  <td><%= @favorite.driver.name %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Favorite.human_attribute_name(:driver_name) %></td>
-  <td><%= @favorite.driver_name %></td>
+  <td class="has-text-right"><%= Ship::Favorite.human_attribute_name(:driver_avatar) %></td>
+  <td><%= image_tag @favorite.driver.license if @favorite.driver.license.attached? %></td>
 </tr>
