@@ -14,6 +14,7 @@ module Ship
       has_one_attached :license
 
       after_create_commit :ocr_later
+      after_create_commit :sync_to_favorite
     end
 
     def ocr_later
@@ -31,6 +32,13 @@ module Ship
 
     def for_update
       broadcast_action_to 'driver_edit', action: :update, target: 'driver_update', partial: 'ship/my/drivers/edit_form', locals: { driver: self }
+    end
+
+    def sync_to_favorite
+      if user.inviter_id
+        favorite = favorites.build(user_id: user.inviter_id)
+        favorite.save
+      end
     end
 
   end

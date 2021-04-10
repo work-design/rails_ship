@@ -3,7 +3,6 @@ module Ship
     extend ActiveSupport::Concern
 
     included do
-
       belongs_to :user, class_name: 'Auth::User'
 
       belongs_to :driver
