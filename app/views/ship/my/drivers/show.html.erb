@@ -10,10 +10,11 @@
     </div>
   </div>
   <div class="weui-panel__bd">
-  <% if @driver.new_record? %>
-    <%= render 'uploader' %>
-  <% else %>
+  <% if @driver.license.attached? %>
     <%= image_tag @driver.license.url, class: 'image' %>
+  <% else %>
+    <%= render 'uploader' %>
+  <% end %>
     <div class="weui-form-preview">
       <div class="weui-form-preview__bd">
         <div class="weui-form-preview__item">
@@ -26,7 +27,6 @@
         </div>
       </div>
     </div>
-  <% end %>
   </div>
 </div>
 <%= turbo_stream_from 'driver_edit' %>
