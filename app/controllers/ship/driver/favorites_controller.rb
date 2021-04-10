@@ -3,19 +3,7 @@ module Ship
     before_action :set_favorite, only: [:show, :edit, :update, :destroy]
 
     def index
-      @favorites = Favorite.page(params[:page])
-    end
-
-    def new
-      @favorite = Favorite.new
-    end
-
-    def create
-      @favorite = Favorite.new(favorite_params)
-
-      unless @favorite.save
-        render :new, locals: { model: @favorite }, status: :unprocessable_entity
-      end
+      @favorites = current_driver.favorites.page(params[:page])
     end
 
     def show
@@ -43,8 +31,7 @@ module Ship
 
     def favorite_params
       params.fetch(:favorite, {}).permit(
-        :avatar,
-        :name
+        :remark
       )
     end
 
