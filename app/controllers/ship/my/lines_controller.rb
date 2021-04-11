@@ -3,7 +3,7 @@ module Ship
     before_action :set_line, only: [:show, :edit, :update, :destroy]
 
     def index
-      @lines = current_user.lines.page(params[:page])
+      @lines = current_user.lines.order(id: :asc).page(params[:page])
     end
 
     def new
