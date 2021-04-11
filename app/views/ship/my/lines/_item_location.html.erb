@@ -5,8 +5,8 @@
       <span id="<%= location.position - 1 %>_name"><%= location.poiname %></span>
     <% end %>
   </td>
-  <td>
-    <button data-controller="former" data-former-id-value="new_line" data-former-url-value="<%= url_for({ action: 'add', position: location.position }) %>" data-action="former#submit">
+  <td style="width: 5em">
+    <button class="button is-white" data-controller="former" data-former-id-value="new_line" data-former-url-value="<%= url_for({ action: 'add', position: location.position }) %>" data-action="former#submit">
       <i class="fas fa-plus fa-lg"></i>
     </button>
   </td>
