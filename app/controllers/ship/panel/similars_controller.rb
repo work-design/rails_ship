@@ -9,7 +9,7 @@ module Ship
 
     def new
       @similars = @line.similars.page(params[:page])
-      @lines = Line.page(params[:page])
+      @lines = Line.where.not(id: @line.similar_ids).page(params[:page])
     end
 
     def create
