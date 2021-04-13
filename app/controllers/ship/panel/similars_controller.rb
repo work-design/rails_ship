@@ -8,14 +8,16 @@ module Ship
     end
 
     def new
-      @similars = Line.page(params[:page])
+      @similars = @line.similars.page(params[:page])
+      @lines = Line.page(params[:page])
     end
 
     def create
-      @line_similar = @line.line_similars.build(similar_params)
+      @line_similar = @line.line_similars.build
+      @line_similar.similar_id = params[:similar_id]
 
-      unless @similar.save
-        render :new, locals: { model: @similar }, status: :unprocessable_entity
+      unless @line_similar.save
+        render :new, locals: { model: @line_similar }, status: :unprocessable_entity
       end
     end
 
@@ -34,7 +36,8 @@ module Ship
     end
 
     def destroy
-      @similar.destroy
+      @line_similar = @line.line_similars.find_by(similar_id: params[:id])
+      @line_similar.destroy
     end
 
     private
@@ -49,6 +52,7 @@ module Ship
     def similar_params
       params.fetch(:line_similar, {}).permit(
         :name,
+        :similar_id,
         :position
       )
     end

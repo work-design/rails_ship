@@ -1,5 +1,16 @@
-<%= render layout: 'index_table', locals: { cache_key: Ship::Line.column_names.hash } do %>
-  <%= render partial: 'index_tbody', layout: 'index_tr', collection: @similars, as: :model %>
-<% end %>
-
-<%= paginate @similars %>
+<div class="columns">
+  <div class="column">
+    <%= render layout: 'index_table', locals: { cache_key: Ship::Line.column_names.hash } do %>
+      <%= render partial: 'index_tbody', layout: 'index_tr_remove', collection: @similars, as: :model %>
+    <% end %>
+  
+    <%= paginate @similars %>
+  </div>
+  <div class="column">
+    <%= render layout: 'index_table', locals: { cache_key: Ship::Line.column_names.hash } do %>
+      <%= render partial: 'index_tbody', layout: 'index_tr', collection: @lines, as: :model %>
+    <% end %>
+  
+    <%= paginate @lines %>
+  </div>
+</div>
