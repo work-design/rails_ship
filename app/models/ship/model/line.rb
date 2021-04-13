@@ -3,6 +3,7 @@ module Ship
     extend ActiveSupport::Concern
 
     included do
+      attribute :name, :string
       attribute :start_name, :string
       attribute :finish_name, :string
       attribute :locations_count, :integer, default: 0
@@ -11,6 +12,8 @@ module Ship
 
       has_many :locations, -> { order(position: :asc) }, dependent: :delete_all, inverse_of: :line
       accepts_nested_attributes_for :locations
+      has_many :line_similars, dependent: :delete_all
+      has_many :similars, through: :line_similars
 
       after_create_commit :sync_names
     end

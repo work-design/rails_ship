@@ -1,0 +1,10 @@
+<div class="<%= active_helper(modules: 'ship/panel', active: 'menu ex-accordion is-active', item: 'menu ex-accordion') %>" data-controller="menu">
+  <%= content_tag :div, class: 'menu-list' do %>
+    <%= link_to t('ship.panel.lines.index.title'), { controller: 'ship/panel/lines' }, class: active_helper(controllers: 'lines', active: 'is-active') -%>
+  <% end %>
+  <a class="menu-label" data-action="menu#toggle">
+    <i class="fas fa-truck fa-fw"></i>
+    <span><%= t('ship.panel.title') %></span>
+    <i class="fas dropdown"></i>
+  </a>
+</div>

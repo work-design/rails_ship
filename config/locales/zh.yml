@@ -1,5 +1,13 @@
 zh:
   ship:
+    panel:
+      title: 运输管理
+      lines:
+        index:
+          title: 路线
+      similars:
+        index:
+          title: 相似路线
     admin:
       title: 发货管理
       addresses:
