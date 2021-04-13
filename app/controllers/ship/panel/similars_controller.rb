@@ -8,11 +8,11 @@ module Ship
     end
 
     def new
-      @similar = Similar.new
+      @similars = Line.page(params[:page])
     end
 
     def create
-      @similar = Similar.new(similar_params)
+      @line_similar = @line.line_similars.build(similar_params)
 
       unless @similar.save
         render :new, locals: { model: @similar }, status: :unprocessable_entity
@@ -47,10 +47,9 @@ module Ship
     end
 
     def similar_params
-      params.fetch(:similar, {}).permit(
+      params.fetch(:line_similar, {}).permit(
         :name,
-        :start_name,
-        :finish_name
+        :position
       )
     end
 
