@@ -1,10 +1,10 @@
 module Ship
   class Panel::SimilarsController < Panel::BaseController
-    before_action
+    before_action :set_line
     before_action :set_similar, only: [:show, :edit, :update, :destroy]
 
     def index
-      @similars = @Line.similars.page(params[:page])
+      @similars = @line.similars.page(params[:page])
     end
 
     def new

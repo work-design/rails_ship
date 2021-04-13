@@ -4,6 +4,7 @@ zh:
       ship/line:
         start_name: 起点
         finish_name: 终点
+        locations_count: 车站数
       ship/driver:
         name: 姓名
         number: 驾驶证号码
