@@ -1,0 +1,30 @@
+<table class="table is-fullwidth is-hoverable as-show">
+  <thead>
+    <tr>
+      <th class="has-text-left">
+        <%= link_to({ action: 'index' }, class: 'button is-borderless') do %>
+          <i class="fas fa-angle-left fa-lg"></i>
+        <% end %>
+      </th>
+      <th class="has-text-right">
+        <button class="button is-borderless" data-controller="weui-actionsheet" data-weui-actionsheet-id-value="actionsheet" data-action="weui-actionsheet#toggle">
+          <i class="fas fa-ellipsis-h fa-lg"></i>
+        </button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render 'show_table' %>
+  </tbody>
+</table>
+
+<div class="weui-panel">
+  <div class="weui-panel__hd"><%= t('.title') %></div>
+  <div class="weui-panel__bd">
+    <div class="weui-cells mt-0">
+      <%= render partial: 'index_tbody', layout: 'index_tr', collection: @similars, as: :model %>
+    </div>
+  </div>
+</div>
+
+<%= render 'actionsheet' %>

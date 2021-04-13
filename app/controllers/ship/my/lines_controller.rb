@@ -36,6 +36,7 @@ module Ship
     end
 
     def show
+      @similars = @line.similars
     end
 
     def edit
