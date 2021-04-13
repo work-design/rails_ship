@@ -43,6 +43,7 @@ Rails.application.routes.draw do
       resources :cars
       resources :lines do
         collection do
+          get :requirement
           post :add
           post :select
         end

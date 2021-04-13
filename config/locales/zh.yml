@@ -27,7 +27,11 @@ zh:
           wait: 叫号
       lines:
         index:
-          title: 我的线路
+          title: 找车
+          new: 添加路线
+        requirement:
+          title: 找人/找货
+          new: 添加路线
       cars:
         index:
           title: 我的车辆

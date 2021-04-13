@@ -6,6 +6,10 @@ module Ship
       @lines = current_user.lines.order(id: :asc).page(params[:page])
     end
 
+    def requirement
+      @lines = current_user.lines.order(id: :asc).page(params[:page])
+    end
+
     def new
       @line = current_user.lines.build
       @line.locations.build(position: 1)
