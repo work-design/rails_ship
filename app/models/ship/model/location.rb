@@ -9,6 +9,7 @@ module Ship
       attribute :lat, :decimal, precision: 10, scale: 8
       attribute :lng, :decimal, precision: 11, scale: 8
       attribute :position, :integer
+      attribute :coordinate, :point
 
       belongs_to :area, class_name: 'Profiled::Area', optional: true
       belongs_to :line, counter_cache: true

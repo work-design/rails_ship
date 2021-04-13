@@ -1,28 +1,16 @@
-<table class="table is-hoverable is-fullwidth">
-  <thead>
-    <tr>
-      <th class="six wide">
-        <%= link_to t('.edit'), edit_admin_package_path(@package), class: 'ui mini blue right floated button' %>
-      </th>
-      <th class="ten wide"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="has-text-right"><%= Package.human_attribute_name(:address) %></td>
-      <td><%= @package.address %></td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><%= Package.human_attribute_name(:state) %></td>
-      <td><%= @package.state %></td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><%= Package.human_attribute_name(:expected_on) %></td>
-      <td><%= @package.expected_on %></td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><%= Package.human_attribute_name(:item) %></td>
-      <td><%= @package.item %></td>
-    </tr>
-  </tbody>
-</table>
+<tr>
+  <td class="has-text-right"><%= Ship::Package.human_attribute_name(:address) %></td>
+  <td><%= @package.address %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Ship::Package.human_attribute_name(:state) %></td>
+  <td><%= @package.state %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Ship::Package.human_attribute_name(:expected_on) %></td>
+  <td><%= @package.expected_on %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Ship::Package.human_attribute_name(:item) %></td>
+  <td><%= @package.item %></td>
+</tr>

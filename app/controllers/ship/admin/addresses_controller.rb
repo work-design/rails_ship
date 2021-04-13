@@ -6,7 +6,7 @@ module Ship
       q_params = {}
       q_params.merge! params.permit('address_users.user_id')
 
-      @addresses = Address.includes(:area).default_where(q_params).page(params[:page])
+      @addresses = Address.default_where(q_params).page(params[:page])
     end
 
     def show

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       resources :lines do
         resources :locations
       end
+      root 'home#index'
     end
 
     namespace :driver, defaults: { namespace: 'driver' } do

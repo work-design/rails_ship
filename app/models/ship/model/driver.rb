@@ -5,7 +5,7 @@ module Ship
     included do
       attribute :name, :string
       attribute :number, :string
-      attribute :detail, :json
+      attribute :detail, :jsonb, default: {}
 
       belongs_to :user, class_name: 'Auth::User'
       has_many :favorites, dependent: :delete_all

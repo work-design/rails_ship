@@ -6,7 +6,7 @@ module Ship
       q_params = {}
       q_params.merge! params.permit(:address_id)
 
-      @packages = Package.includes(:packageds, address: :area).default_where(q_params).page(params[:page])
+      @packages = Package.includes(:packageds, :address).default_where(q_params).page(params[:page])
     end
 
     def show
