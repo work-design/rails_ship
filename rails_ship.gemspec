@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.email = ['mingyuan0715@foxmail.com']
   s.homepage = 'https://github.com/work-design/rails_ship'
   s.summary = 'Ship logic'
-  s.description = ' Description of RailsShip.'
-  s.license = 'LGPL-3.0'
+  s.description = '运输解决方案'
+  s.license = 'MIT'
 
   s.files = Dir[
     '{app,config,db,lib}/**/*',
@@ -20,6 +20,4 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails_com', '~> 1.2'
   s.add_dependency 'rails_trade'
-
-  s.add_development_dependency 'sqlite3'
 end
