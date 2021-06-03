@@ -1,0 +1,4 @@
+<%= form_with model: @package, url: { action: 'create' } do |f| %>
+  <%= render 'form', locals: { f: f } %>
+  <%= f.submit %>
+<% end %>
