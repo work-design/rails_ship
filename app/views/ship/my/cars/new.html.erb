@@ -10,7 +10,7 @@
   </div>
   <div class="weui-uploader__bd">
     <div class="weui-uploader__input-box" data-controller="wechat">
-      <%= image_pack_tag 'registration.jpg', data: { wechat_target: 'preview' }, class: 'weui-uploader__preview' %>
+      <%= image_vite_tag 'registration.jpg', data: { wechat_target: 'preview' }, class: 'weui-uploader__preview' %>
       <div class="weui-uploader__input" data-action="click->wechat#chooseImage"></div>
       <%= form_with theme: nil, model: Wechat::Media.new, url: { controller: 'wechat/my/medias', action: 'create' } do |f| %>
         <%= f.hidden_field :source_type, value: @car.class_name %>
