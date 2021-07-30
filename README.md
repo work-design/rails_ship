@@ -24,5 +24,5 @@ $ gem install rails_ship
 ## 依赖
 * [rails_trade](https://github.com/work-design/rails_trade)
 
-## License
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+## 许可证
+遵循 [MIT](https://opensource.org/licenses/MIT) 协议
