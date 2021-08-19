@@ -1,5 +1,5 @@
 <%= form_with theme: 'weui', model: car, url: { controller: 'ship/my/cars', action: 'update', id: car.id } do |f| %>
-  <%= render 'shared/error_messages', target: f.object %>
+  <%= render 'error_messages', target: f.object %>
   <%= f.text_field :location %>
   <%= f.text_field :number %>
   <%= f.submit nil, wrap: { all: nil } %>

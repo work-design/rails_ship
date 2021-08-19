@@ -1,5 +1,5 @@
 <%= form_with theme: 'weui', model: driver, url: { controller: 'ship/my/drivers', action: 'update', id: driver.id }, method: :patch, class: 'weui-form weui-form_normal pt-0' do |f| %>
-  <%= render 'shared/error_messages', target: f.object %>
+  <%= render 'error_messages', target: f.object %>
   <%= f.text_field :name %>
   <%= f.text_field :number %>
   <%= f.submit nil, wrap: { all: nil } %>
