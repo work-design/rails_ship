@@ -1,4 +1,8 @@
 # RailsShip
+
+[![测试](https://github.com/work-design/rails_ship/actions/workflows/test.yml/badge.svg)](https://github.com/work-design/rails_ship/actions/workflows/test.yml)
+[![Docker构建](https://github.com/work-design/rails_ship/actions/workflows/cd.yml/badge.svg)](https://github.com/work-design/rails_ship/actions/workflows/cd.yml)
+[![Gem](https://github.com/work-design/rails_ship/actions/workflows/gempush.yml/badge.svg)](https://github.com/work-design/rails_ship/actions/workflows/gempush.yml)
 Short description and motivation.
 
 ## Usage
