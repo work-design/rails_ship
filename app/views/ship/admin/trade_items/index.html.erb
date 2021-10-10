@@ -6,7 +6,7 @@
       <th>
         <%= check_box_tag 'xxd', 'xx', false, data: { action: 'check#toggleAll' } %>
         <%= link_to package_admin_address_trade_items_path(@address), aria: { label: t('.package'), action: 'check#applyFor' }, method: :post, class: 'ui mini button' do %>
-          <i class="fas fa-hand-holding-usd"></i>
+          <i class="fa-light fa-hand-holding-usd"></i>
         <% end %>
       </th>
       <th><%= TradeItem.human_attribute_name(:good_id) %></th>
@@ -16,7 +16,7 @@
       <th><%= TradeItem.human_attribute_name(:status) %></th>
       <th>
         <%= link_to new_admin_trade_item_path, class: 'button is-link is-small' do %>
-          <i class="fas fa-plus"></i><%= t('.new') %>
+          <i class="fa-light fa-plus"></i><%= t('.new') %>
         <% end %>
       </th>
     </tr>
@@ -34,13 +34,13 @@
       <td><%= trade_item.status %></td>
       <td>
         <%= link_to admin_trade_item_path(trade_item), aria: { label: t('.show') }, class: 'button is-small is-rounded is-light' do %>
-          <i class="fas fa-eye"></i>
+          <i class="fa-light fa-eye"></i>
         <% end %>
         <%= link_to edit_admin_trade_item_path(trade_item), aria: { label: t('.edit') }, class: 'button is-small is-rounded is-light' do %>
-          <i class="fas fa-pencil-alt"></i>
+          <i class="fa-light fa-pencil-alt"></i>
         <% end %>
         <%= link_to admin_trade_item_path(trade_item), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, class: 'button is-small is-rounded is-light' do %>
-          <i class="fas fa-trash-alt"></i>
+          <i class="fa-light fa-trash-alt"></i>
         <% end %>
       </td>
     </tr>
