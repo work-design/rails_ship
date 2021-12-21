@@ -9,24 +9,6 @@ module Ship
       @packages = Package.includes(:packageds, :address).default_where(q_params).page(params[:page])
     end
 
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-      @package.assign_attributes(package_params)
-
-      unless @package.save
-        render :edit, locals: { model: @package }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @package.destroy
-    end
-
     private
     def set_package
       @package = Package.find(params[:id])

@@ -21,20 +21,6 @@ module Ship
       end
     end
 
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-      @similar.assign_attributes(similar_params)
-
-      unless @similar.save
-        render :edit, locals: { model: @similar }, status: :unprocessable_entity
-      end
-    end
-
     def destroy
       @line_similar = @line.line_similars.find_by(similar_id: params[:id])
       @line_similar.destroy

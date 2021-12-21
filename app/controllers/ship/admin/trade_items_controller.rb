@@ -33,24 +33,6 @@ module Ship
       render 'create'
     end
 
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-      @trade_item.assign_attributes(trade_item_params)
-
-      unless @trade_item.save
-        render :edit, locals: { model: @trade_item }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @trade_item.destroy
-    end
-
     private
     def set_address
       @address = Address.find params[:address_id]
