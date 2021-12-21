@@ -9,32 +9,6 @@ module Ship
       @addresses = Address.default_where(q_params).page(params[:page])
     end
 
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-      respond_to do |format|
-        if @address.update(address_params)
-          format.html { redirect_to admin_addresses_url(user_id: @address.user_id), notice: 'Address was successfully updated.' }
-          format.js
-        else
-          format.html { render :edit }
-          format.js
-        end
-      end
-    end
-
-    def destroy
-      @address.destroy
-      respond_to do |format|
-        format.html { redirect_to admin_addresses_url(user_id: @address.user_id), notice: 'Address was successfully destroyed.' }
-        format.js
-      end
-    end
-
     private
     def set_address
       @address = Address.find(params[:id])
