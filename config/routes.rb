@@ -1,15 +1,10 @@
 Rails.application.routes.draw do
+  namespace :ship do
+    namespace :admin do
+      resources :stations
+    end
+  end
 
-  namespace :ship do
-    namespace :panel do
-      resources :similars
-    end
-  end
-  namespace :ship do
-    namespace :panel do
-      resources :lines
-    end
-  end
   namespace :ship, defaults: { business: 'ship' } do
 
     namespace :panel, defaults: { namespace: 'panel' } do
@@ -19,6 +14,7 @@ Rails.application.routes.draw do
     end
 
     namespace :admin, defaults: { namespace: 'admin' } do
+      resources :stations
       resources :addresses do
         resources :trade_items do
           collection do

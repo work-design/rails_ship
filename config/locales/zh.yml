@@ -20,6 +20,9 @@ zh:
       packages:
         index:
           title: 包裹列表
+      stations:
+        index:
+          title: 站点
     my:
       packages:
         index:

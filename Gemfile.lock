@@ -213,6 +213,7 @@ GEM
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
+    pg (1.2.3)
     racc (1.6.0)
     rack (2.2.3)
     rack-test (1.1.0)
@@ -272,6 +273,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  pg
   rails
   rails_auth!
   rails_com!
