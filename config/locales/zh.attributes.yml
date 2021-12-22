@@ -13,3 +13,6 @@ zh:
         registration: 行驶证
         number: 车牌号
         detail: 详情
+      profiled/address:
+        floor: 楼层
+        room: 房间

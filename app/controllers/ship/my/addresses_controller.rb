@@ -9,11 +9,11 @@ module Ship
     end
 
     def new
-      @address = Address.new
+      @address = current_user.addresses.build(station_id: params[:station_id])
     end
 
     def create
-      @address = Address.new(address_params)
+      @address = current_user.addresses.build(address_params)
 
       if @address.save
         render 'create'
@@ -28,15 +28,16 @@ module Ship
     end
 
     def set_address
-      @address = Address.find(params[:id])
+      @address = Profiled::Address.find(params[:id])
     end
 
     def address_params
       params.fetch(:address, {}).permit(
         :station_id,
-        :contact_person,
+        :contact,
         :tel,
-        :address
+        :floor,
+        :room
       )
     end
 

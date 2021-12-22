@@ -9,6 +9,12 @@ module Ship
       belongs_to :station, class_name: 'Ship::Station', optional: true
 
       has_many :packages, class_name: 'Ship::Package'
+
+      before_validation :sync_area, if: -> { station_id_changed? && station.present? }
+    end
+
+    def sync_area
+      self.area_id = station.area_id
     end
 
   end

@@ -5,8 +5,8 @@
       <span><%= model.tel %></span>
     </span>
     <span class="is-size-7">
-      <span><%= model.area.full_name %></span>
-      <span><%= model.detail %></span>
+      <span><%= Profiled::Address.human_attribute_name(:floor) %></span>
+      <span><%= model.floor %></span>
     </span>
   </span>
   <span class="weui-cell__ft" data-controller="input">
