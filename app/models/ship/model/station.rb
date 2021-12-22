@@ -6,7 +6,9 @@ module Ship
       attribute :name, :string
       attribute :detail, :string
 
-      belongs_to :area
+      belongs_to :organ, class_name: 'Org::Organ'
+      belongs_to :area, class_name: 'Profiled::Area'
+      has_taxons :area
 
       has_many :addresses
     end
