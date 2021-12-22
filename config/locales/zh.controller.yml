@@ -48,6 +48,9 @@ zh:
       favorites:
         index:
           title: 熟人司机
+      stations:
+        index:
+          title: 站点
     driver:
       favorites:
         index:
