@@ -3,15 +3,15 @@ module Ship
     before_action :set_address, only: [:show, :edit, :update, :destroy]
 
     def index
-      @addresses = current_cart.addresses.includes(:area).page(params[:page])
+      @addresses = current_user.addresses.includes(:area).page(params[:page])
     end
 
     def new
-      @address = current_cart.addresses.build
+      @address = Address.new
     end
 
     def create
-      @address = current_cart.addresses.build(address_params)
+      @address = Address.new(address_params)
 
       if @address.save
         render 'create'

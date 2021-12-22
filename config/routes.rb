@@ -40,9 +40,8 @@ Rails.application.routes.draw do
         end
         resources :locations
       end
-      resources :stations do
-        resources :addresses
-      end
+      resources :stations
+      resources :addresses
       resources :principal_addresses, only: [:index, :show] do
         member do
           get :plans

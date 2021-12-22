@@ -51,6 +51,9 @@ zh:
       stations:
         index:
           title: 站点
+      addresses:
+        index:
+          title: 地址
     driver:
       favorites:
         index:
