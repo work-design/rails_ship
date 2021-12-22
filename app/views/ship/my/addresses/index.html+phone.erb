@@ -11,8 +11,8 @@
 <% @addresses.group_by(&:station).except!(nil).each do |station, addresses| %>
 <div class="weui-panel">
   <div class="weui-panel__hd">
-    <span><%= station.area.full_name %></span>
     <span><%= station.name %></span>
+    <span class="has-text-grey has-text-weight-normal">（<%= station.area.full_name %>）</span>
   </div>
   <div class="weui-panel__bd">
     <%= render partial: 'address', collection: addresses, as: :model %>
@@ -29,8 +29,8 @@
 <% @stations.each do |station| %>
 <div class="weui-panel">
   <div class="weui-panel__hd">
-    <span><%= station.area.full_name %></span>
     <span><%= station.name %></span>
+    <span class="has-text-grey has-text-weight-normal">（<%= station.area.full_name %>）</span>
   </div>
   <div class="weui-panel__bd">
   </div>
