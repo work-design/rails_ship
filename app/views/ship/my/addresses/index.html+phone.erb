@@ -18,8 +18,8 @@
     <%= render partial: 'address', collection: addresses, as: :model %>
   </div>
   <div class="weui-panel__ft">
-    <%= link_to({ action: 'new' }, class: 'weui-cell weui-cell_access weui-cell_link') do %>
-      <div class="weui-cell__bd">添加</div>
+    <%= link_to({ action: 'new', station_id: station.id }, class: 'weui-cell weui-cell_access weui-cell_link') do %>
+      <div class="weui-cell__bd">完善地址</div>
       <span class="weui-cell__ft"></span>
     <% end %>
   </div>
@@ -36,7 +36,7 @@
   </div>
   <div class="weui-panel__ft">
     <%= link_to({ action: 'new', station_id: station.id }, class: 'weui-cell weui-cell_access weui-cell_link') do %>
-      <div class="weui-cell__bd">添加</div>
+      <div class="weui-cell__bd">完善地址</div>
       <span class="weui-cell__ft"></span>
     <% end %>
   </div>
