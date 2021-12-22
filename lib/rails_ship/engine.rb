@@ -6,10 +6,10 @@ module RailsShip
     config.generators do |g|
       g.rails = {
         assets: false,
-        stylesheets: false,
-        helper: false,
-        route: false
+        stylesheets: false
       }
+      g.helper false
+      g.resource_route false
       g.test_unit = {
         fixture: true,
         fixture_replacement: :factory_girl

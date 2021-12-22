@@ -20,26 +20,6 @@ module Ship
       end
     end
 
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-      @address.assign_attributes address_params
-
-      if @address.save
-        render 'update'
-      else
-        render :edit, locals: { model: @address }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @address.destroy
-    end
-
     private
     def set_address
       @address = Address.find(params[:id])
@@ -47,7 +27,7 @@ module Ship
 
     def address_params
       params.fetch(:address, {}).permit(
-        :area_id,
+        :station_id,
         :contact_person,
         :tel,
         :address
