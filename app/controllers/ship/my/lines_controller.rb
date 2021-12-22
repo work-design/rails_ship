@@ -39,21 +39,6 @@ module Ship
       @similars = @line.similars
     end
 
-    def edit
-    end
-
-    def update
-      @line.assign_attributes(line_params)
-
-      unless @line.save
-        render :edit, locals: { model: @line }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @line.destroy
-    end
-
     private
     def set_line
       @line = current_user.lines.find(params[:id])

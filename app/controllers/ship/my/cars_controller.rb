@@ -18,24 +18,6 @@ module Ship
       end
     end
 
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-      @car.assign_attributes(car_params)
-
-      unless @car.save
-        render :edit, locals: { model: @car }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @car.destroy
-    end
-
     private
     def set_car
       @car = current_user.cars.find(params[:id])

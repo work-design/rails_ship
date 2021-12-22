@@ -8,7 +8,7 @@ module Ship
     end
 
     def new
-      @location = Location.new
+      @location = @line.locations.build
     end
 
     def create
@@ -17,24 +17,6 @@ module Ship
       unless @location.save
         render :new, locals: { model: @location }, status: :unprocessable_entity
       end
-    end
-
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-      @location.assign_attributes(location_params)
-
-      unless @location.save
-        render :edit, locals: { model: @location }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @location.destroy
     end
 
     private

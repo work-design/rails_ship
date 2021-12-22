@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  namespace :ship do
-    namespace :admin do
-      resources :stations
-    end
-  end
 
   namespace :ship, defaults: { business: 'ship' } do
 
@@ -44,6 +39,9 @@ Rails.application.routes.draw do
           post :select
         end
         resources :locations
+      end
+      resources :stations do
+        resources :addresses
       end
       resources :principal_addresses, only: [:index, :show] do
         member do
