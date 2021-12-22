@@ -10,7 +10,7 @@ module Ship
       belongs_to :area, class_name: 'Profiled::Area'
       has_taxons :area
 
-      has_many :addresses
+      has_many :addresses, class_name: 'Profiled::Address'
     end
 
   end

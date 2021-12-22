@@ -3,7 +3,9 @@ module Ship
     before_action :set_address, only: [:show, :edit, :update, :destroy]
 
     def index
-      @addresses = current_user.addresses.includes(:area).page(params[:page])
+      @addresses = current_user.addresses.includes(:area)
+      station_ids = @addresses.pluck(:station_id)
+      @stations = Station.default_where(default_params).where.not(id: station_ids)
     end
 
     def new
@@ -21,6 +23,10 @@ module Ship
     end
 
     private
+    def set_stations
+      @stations = Station.default_where(default_params)
+    end
+
     def set_address
       @address = Address.find(params[:id])
     end
