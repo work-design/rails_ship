@@ -20,7 +20,7 @@
     </div>
   </div>
   <div class="weui-panel__ft">
-    <%= link_to({ action: 'new', station_id: station.id }, class: 'weui-cell weui-cell_access weui-cell_link') do %>
+    <%= link_to({ action: 'new', station_id: station.id, return_to: params[:return_to] }, class: 'weui-cell weui-cell_access weui-cell_link') do %>
       <div class="weui-cell__bd">完善地址</div>
       <span class="weui-cell__ft"></span>
     <% end %>
@@ -37,7 +37,7 @@
   <div class="weui-panel__bd">
   </div>
   <div class="weui-panel__ft">
-    <%= link_to({ action: 'new', station_id: station.id }, class: 'weui-cell weui-cell_access weui-cell_link') do %>
+    <%= link_to({ action: 'new', station_id: station.id, return_to: params[:return_to] }, class: 'weui-cell weui-cell_access weui-cell_link') do %>
       <div class="weui-cell__bd">完善地址</div>
       <span class="weui-cell__ft"></span>
     <% end %>

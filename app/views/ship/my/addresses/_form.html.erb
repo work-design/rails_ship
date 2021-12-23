@@ -1,3 +1,4 @@
+<%= hidden_field_tag :return_to, params[:return_to] %>
 <%= f.hidden_field :station_id %>
 <%= f.text_field :contact, value: current_user.name %>
 <%= f.text_field :tel, value: current_account.identity %>
