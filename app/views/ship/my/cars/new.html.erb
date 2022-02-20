@@ -1,15 +1,13 @@
-<%= content_for(:wechat_js) do %>
-  <%= wechat_config_js debug: false, apis: ['chooseImage', 'previewImage', 'uploadImage'] -%>
-  <meta name="turbo-visit-control" content="reload">
-<% end %>
-
 <div class="weui-uploader p-4">
   <div class="weui-uploader__hd">
     <h1 class="weui-uploader__title">上传行驶证</h1>
     <div class="weui-uploader__info"></div>
   </div>
   <div class="weui-uploader__bd">
-    <div class="weui-uploader__input-box" data-controller="wechat">
+    <div class="weui-uploader__input-box"
+         data-controller="wechat"
+         data-wechat-apis-value="<%= ['chooseImage', 'previewImage', 'uploadImage'].to_json %>"
+         data-wechat-options-value="<%= current_wechat_app.js_config(request.original_url).to_json %>">
       <%= image_vite_tag 'registration.jpg', data: { wechat_target: 'preview' }, class: 'weui-uploader__preview' %>
       <div class="weui-uploader__input" data-action="click->wechat#chooseImage"></div>
       <%= form_with theme: nil, model: Wechat::Media.new, url: { controller: 'wechat/my/medias', action: 'create' } do |f| %>
