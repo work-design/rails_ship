@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: d38d37b3867bc036eea8a99feb4d13e611dcb902
+  revision: da132d037d68251a76aef916cc4176f75c0b2049
   specs:
     rails_com (1.3.0)
       acme-client
@@ -37,7 +37,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_trade.git
-  revision: e65c528a698251e5998c89b250d0972984e1e7cf
+  revision: 1170d23375563a8a9eb5acc65b02cab8dc86ca75
   specs:
     rails_trade (0.0.3)
       money-rails (~> 1.14)
@@ -167,7 +167,7 @@ GEM
       activesupport (>= 5.0)
     http-2-next (0.5.0)
     http-form_data (2.3.0)
-    httpx (0.19.2)
+    httpx (0.19.3)
       http-2-next (>= 0.4.1)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
@@ -196,7 +196,7 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.7.1)
+    mini_portile2 (2.8.0)
     minitest (5.15.0)
     monetize (1.12.0)
       money (~> 6.12)
@@ -227,10 +227,10 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
-    nokogiri (1.13.1)
-      mini_portile2 (~> 2.7.0)
+    nokogiri (1.13.3)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    pg (1.3.2)
+    pg (1.3.3)
     racc (1.6.0)
     rack (2.2.3)
     rack-test (1.1.0)
