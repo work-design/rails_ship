@@ -1,6 +1,7 @@
 <%= hidden_field_tag :return_to, params[:return_to] %>
-<%= f.hidden_field :station_id %>
 <%= f.text_field :contact, value: current_user.name %>
 <%= f.text_field :tel, value: current_account.identity %>
+<%= f.text_field :station_id, value: f.object.station.name, disabled: true, wrap: { all: 'weui-cell weui-cell_active weui-cell_disabled' } %>
+<%= f.hidden_field :station_id %>
 <%= f.text_field :floor %>
 <%= f.text_field :room %>

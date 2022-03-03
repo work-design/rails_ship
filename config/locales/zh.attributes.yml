@@ -16,3 +16,4 @@ zh:
       profiled/address:
         floor: 楼层
         room: 房间
+        station_id: 站点

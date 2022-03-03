@@ -1,4 +1,4 @@
-<div class="weui-cell weui-cell_active weui-cell_access">
+<%= link_to({ station_id: model.id }, class: 'weui-cell weui-cell_active weui-cell_access') do %>
   <div class="weui-cell__hd">
     <span><%= model.name %></span>
   </div>
@@ -6,4 +6,4 @@
     <span class="has-text-grey has-text-weight-normal"><%= model.area.full_name %></span>
   </div>
   <div class="weui-cell__ft"></div>
-</div>
+<% end %>
