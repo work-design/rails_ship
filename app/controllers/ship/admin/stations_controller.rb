@@ -1,6 +1,13 @@
 module Ship
   class Admin::StationsController < Admin::BaseController
 
+    def index
+      q_params = {}
+      q_params.merge! default_params
+
+      @stations = Station.default_where(q_params).page(params[:page])
+    end
+
     def new
       @station = Station.new
       @station.area = Profiled::Area.new
