@@ -8,6 +8,7 @@
   </div>
 </div>
 
+<% if @station %>
 <div class="weui-panel">
   <div class="weui-panel__hd">
     <span><%= @station.name %></span>
@@ -25,9 +26,16 @@
     <% end %>
   </div>
 </div>
+<% end %>
 
 <div class="weui-panel">
-  <div class="weui-panel__hd">选择其他站点</div>
+  <div class="weui-panel__hd">
+  <% if @station %>
+    <span>选择其他站点</span>
+  <% else %>
+    <span>选择站点</span>
+  <% end %>
+  </div>
   <div class="weui-panel__bd">
     <%= render partial: 'station', collection: @stations, as: :model %>
   </div>

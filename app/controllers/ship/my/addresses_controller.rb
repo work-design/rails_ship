@@ -7,8 +7,8 @@ module Ship
         @station = Station.find params[:station_id]
         @addresses = current_user.addresses.where(station_id: params[:station_id]).includes(:area)
       else
-        @station = current_cart.address.station
-        @addresses = current_user.addresses.where(station_id: @station.id).includes(:area)
+        @station = current_cart.address&.station
+        @addresses = current_user.addresses.where(station_id: @station&.id).includes(:area)
       end
 
       @stations = Station.default_where(default_params).where.not(id: @station.id)
