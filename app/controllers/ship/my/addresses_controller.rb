@@ -11,7 +11,7 @@ module Ship
         @addresses = current_user.addresses.where(station_id: @station&.id).includes(:area)
       end
 
-      @stations = Station.default_where(default_params).where.not(id: @station.id)
+      @stations = Station.default_where(default_params).where.not(id: @station&.id)
     end
 
     def new
