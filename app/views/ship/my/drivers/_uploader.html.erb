@@ -3,10 +3,12 @@
     <div class="weui-uploader__title">驾驶证</div>
   </div>
   <div class="weui-uploader__bd">
-    <div class="weui-uploader__input-box"
-         data-controller="wechat"
-         data-wechat-apis-value="<%= ['chooseImage', 'previewImage', 'uploadImage'].to_json %>"
-         data-wechat-options-value="<%= current_wechat_app.js_config(request.original_url).to_json %>">
+    <div
+      class="weui-uploader__input-box"
+      data-controller="wechat"
+      data-wechat-apis-value="<%= ['chooseImage', 'previewImage', 'uploadImage'].to_json %>"
+      data-wechat-options-value="<%= current_wechat_app&.js_config(request.original_url).to_json %>"
+    >
       <%= image_tag 'license.jpg', data: { wechat_target: 'preview' }, class: 'weui-uploader__preview' %>
       <div class="weui-uploader__input" data-action="click->wechat#chooseImage"></div>
       <%= form_with theme: nil, model: Wechat::Media.new, url: { controller: 'wechat/my/medias', action: 'create' } do |f| %>
