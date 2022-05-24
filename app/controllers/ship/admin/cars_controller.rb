@@ -1,3 +1,5 @@
-class Ship::Admin::CarsController < Ship::Admin::BaseController
+module Ship
+  class Admin::CarsController < Admin::BaseController
 
+  end
 end
