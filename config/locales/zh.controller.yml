@@ -32,6 +32,9 @@ zh:
       stations:
         index:
           title: 站点
+      box_specifications:
+        index:
+          title: 物流箱规格
     my:
       packages:
         index:
