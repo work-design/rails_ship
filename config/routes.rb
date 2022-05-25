@@ -23,6 +23,7 @@ Rails.application.routes.draw do
         resources :locations
       end
       resources :box_specifications
+      resources :boxes
       root 'home#index'
     end
 
