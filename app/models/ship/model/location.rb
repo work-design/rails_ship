@@ -3,6 +3,7 @@ module Ship
     extend ActiveSupport::Concern
 
     included do
+      attribute :name, :string
       attribute :poiname, :string
       attribute :poiaddress, :string
       attribute :cityname, :string
@@ -12,6 +13,7 @@ module Ship
       attribute :coordinate, :point
 
       belongs_to :area, class_name: 'Profiled::Area', optional: true
+
       belongs_to :line, counter_cache: true
 
       acts_as_list scope: [:line_id]
