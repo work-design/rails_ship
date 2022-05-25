@@ -1,0 +1,11 @@
+<th>
+  <%= check_box_tag 'xxd', 'xx', false, data: { action: 'check#toggleAll' } %>
+  <%= link_to({ action: 'package' }, aria: { label: t('.package'), action: 'check#applyFor' }, method: :post, class: 'button is-small') do %>
+    <i class="fa-light fa-hand-holding-usd"></i>
+  <% end if params[:address_id] %>
+</th>
+<th><%= Trade::TradeItem.human_attribute_name(:good_id) %></th>
+<th><%= Trade::TradeItem.human_attribute_name(:number) %></th>
+<th><%= Trade::TradeItem.human_attribute_name('trade/user_id') %></th>
+<th><%= Trade::TradeItem.human_attribute_name(:produce_plan_id) %></th>
+<th><%= Trade::TradeItem.human_attribute_name(:status) %></th>

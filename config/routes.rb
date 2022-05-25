@@ -10,11 +10,10 @@ Rails.application.routes.draw do
 
     namespace :admin, defaults: { namespace: 'admin' } do
       resources :stations
-      resources :addresses do
-        resources :trade_items do
-          collection do
-            post :package
-          end
+      resources :addresses
+      resources :trade_items do
+        collection do
+          post :package
         end
       end
       resources :packages, except: [:new, :create]

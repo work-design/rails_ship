@@ -1,24 +1,12 @@
-<table class="table is-hoverable is-fullwidth">
-  <thead>
-    <tr>
-      <th class="six wide">
-        <%= link_to t('.edit'), edit_admin_trade_item_path(@trade_item), class: 'ui mini blue right floated button' %>
-      </th>
-      <th class="ten wide"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="has-text-right"><%= TradeItem.human_attribute_name(:good_id) %></td>
-      <td><%= @trade_item.good_id %></td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><%= TradeItem.human_attribute_name(:number) %></td>
-      <td><%= @trade_item.number %></td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><%= TradeItem.human_attribute_name(:status) %></td>
-      <td><%= @trade_item.status %></td>
-    </tr>
-  </tbody>
-</table>
+<tr>
+  <td class="has-text-right"><%= Trade::TradeItem.human_attribute_name(:good_id) %></td>
+  <td><%= @trade_item.good_id %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Trade::TradeItem.human_attribute_name(:number) %></td>
+  <td><%= @trade_item.number %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Trade::TradeItem.human_attribute_name(:status) %></td>
+  <td><%= @trade_item.status %></td>
+</tr>

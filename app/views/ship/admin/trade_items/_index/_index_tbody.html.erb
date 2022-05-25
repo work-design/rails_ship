@@ -1,0 +1,8 @@
+<td>
+  <%= check_box_tag 'xx', model.id, false, data: { action: 'check#toggle' } %>
+</td>
+<td><%= model.good_id %></td>
+<td><%= model.number %></td>
+<td><%= model.trade.user_id %></td>
+<td><%= model.produce_plan&.title %></td>
+<td><%= model.status %></td>

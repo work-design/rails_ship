@@ -1,13 +1,13 @@
 module Ship
   class Admin::TradeItemsController < Admin::BaseController
-    before_action :set_address
+    #before_action :set_address
     before_action :set_trade_item, only: [:show, :edit, :update, :destroy]
 
     def index
       q_params = {
         status: 'paid'
       }
-      @trade_items = @address.trade_items.includes(:trade, :produce_plan).default_where(q_params).page(params[:page])
+      @trade_items = Trade::TradeItem.includes(:produce_plan, :address, :order).where.not(address_id: nil).default_where(q_params).page(params[:page])
     end
 
     def package
@@ -39,7 +39,7 @@ module Ship
     end
 
     def set_trade_item
-      @trade_item = TradeItem.find(params[:id])
+      @trade_item = Trade::TradeItem.find(params[:id])
     end
 
     def trade_item_params
