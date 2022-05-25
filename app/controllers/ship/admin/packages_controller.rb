@@ -17,7 +17,7 @@ module Ship
     def package_params
       params.fetch(:package, {}).permit(
         :state,
-        :expected_on,
+        :expected_on
       )
     end
 

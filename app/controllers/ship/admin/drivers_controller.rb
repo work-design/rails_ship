@@ -1,3 +1,5 @@
-class Ship::Admin::DriversController < Ship::Admin::BaseController
+module Ship
+  class Admin::DriversController < Admin::BaseController
 
+  end
 end
