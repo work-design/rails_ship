@@ -13,6 +13,15 @@ zh:
       addresses:
         index:
           title: 地址列表
+      cars:
+        index:
+          title: 车辆管理
+      lines:
+        index:
+          title: 线路
+      locations:
+        index:
+          title: 途经点
       trade_items:
         index:
           title: 商品列表

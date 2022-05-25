@@ -17,6 +17,13 @@ module Ship
       acts_as_list scope: [:line_id]
 
       after_save_commit :geo_later, if: -> { saved_change_to_lat? || saved_change_to_lng? }
+      #after_create_commit :sync_names_to_line
+    end
+
+    def sync_names_to_line
+      self.start_name = locations[0].poiname
+      self.finish_name = locations[1].poiname
+      self.save
     end
 
     def position_text

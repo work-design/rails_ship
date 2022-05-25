@@ -8,20 +8,16 @@ module Ship
       attribute :finish_name, :string
       attribute :locations_count, :integer, default: 0
 
-      belongs_to :user, class_name: 'Auth::User'
-
       has_many :locations, -> { order(position: :asc) }, dependent: :delete_all, inverse_of: :line
       accepts_nested_attributes_for :locations
       has_many :line_similars, dependent: :delete_all
       has_many :similars, through: :line_similars
 
-      after_create_commit :sync_names
+      before_validation :set_name, if: -> { start_name_changed? || finish_name_changed? }
     end
 
-    def sync_names
-      self.start_name = locations[0].poiname
-      self.finish_name = locations[1].poiname
-      self.save
+    def set_name
+      self.name ||= [start_name.to_s, finish_name.to_s].join('-')
     end
 
   end
