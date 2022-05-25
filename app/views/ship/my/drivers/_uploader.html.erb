@@ -7,7 +7,7 @@
       class="weui-uploader__input-box"
       data-controller="wechat"
       data-wechat-apis-value="<%= ['chooseImage', 'previewImage', 'uploadImage'].to_json %>"
-      data-wechat-options-value="<%= current_wechat_app&.js_config(request.original_url).to_json %>"
+      data-wechat-options-value="<%= current_js_app&.js_config(request.original_url).to_json %>"
     >
       <%= image_tag 'license.jpg', data: { wechat_target: 'preview' }, class: 'weui-uploader__preview' %>
       <div class="weui-uploader__input" data-action="click->wechat#chooseImage"></div>
