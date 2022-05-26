@@ -30,6 +30,10 @@ Rails.application.routes.draw do
       resources :favorites
     end
 
+    namespace :me, defaults: { namespace: 'me' } do
+      resources :packages
+    end
+
     namespace :my, defaults: { namespace: 'my' } do
       resource :driver
       resources :favorites

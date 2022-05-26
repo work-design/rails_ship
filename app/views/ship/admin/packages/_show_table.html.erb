@@ -1,6 +1,9 @@
 <tr>
   <td class="has-text-right"><%= Ship::Package.human_attribute_name(:address) %></td>
-  <td><%= @package.address %></td>
+  <td>
+    <p><%= @package.address.area.full_name %></p>
+    <p><%= @package.address.detail %></p>
+  </td>
 </tr>
 <tr>
   <td class="has-text-right"><%= Ship::Package.human_attribute_name(:state) %></td>
@@ -11,6 +14,6 @@
   <td><%= @package.expected_on %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Ship::Package.human_attribute_name(:item) %></td>
-  <td><%= @package.item %></td>
+  <td class="has-text-right"><%= Ship::Package.human_attribute_name(:enter_url) %></td>
+  <td><%= image_tag @package.qrcode_enter_url %></td>
 </tr>

@@ -2,7 +2,8 @@
 <td><%= model.state %></td>
 <td><%= model.expected_on %></td>
 <td>
-  <% model.packageds.each do |packaged| %>
-    <%= packaged.trade_item.good_name %>
-  <% end %>
+<% model.packageds.each do |packaged| %>
+  <p><%= packaged.trade_item.good_name %></p>
+<% end %>
 </td>
+<td><time data-controller="time"><%= model.created_at.to_s(:iso8601) %></time></td>
