@@ -33,7 +33,7 @@ module Ship
 
     private
     def set_address
-      @address = Address.find params[:address_id]
+      @address = Profiled::Address.find params[:address_id]
     end
 
     def set_trade_item
