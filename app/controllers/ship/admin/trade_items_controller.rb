@@ -1,6 +1,6 @@
 module Ship
   class Admin::TradeItemsController < Admin::BaseController
-    #before_action :set_address
+    before_action :set_address, only: [:package]
     before_action :set_trade_item, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -12,7 +12,7 @@ module Ship
 
     def package
       pack = @address.packages.build
-      trade_items = @address.trade_items.paid.find params[:add_ids].split(',')
+      trade_items = @address.trade_items.paid.find params[:ids].split(',')
       user_ids = trade_items.pluck(:user_id).uniq
       if user_ids.size > 1
         render 'edit', locals: { message: 'user 不一致，不能打包' } and return

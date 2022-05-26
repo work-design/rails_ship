@@ -1,8 +1,14 @@
 <th>
-  <%= check_box_tag 'xxd', 'xx', false, data: { action: 'check#toggleAll' } %>
-  <%= link_to({ action: 'package' }, aria: { label: t('.package'), action: 'check#applyFor' }, method: :post, class: 'button is-small') do %>
-    <i class="fa-light fa-hand-holding-usd"></i>
-  <% end if params[:address_id] %>
+  <div data-controller="check" data-check-name-value="xx">
+    <%= check_box_tag 'xxd', 'xx', false, id: nil, data: { action: 'check#toggleAll' } %>
+    <%= form_with url: { action: 'package' }, aria: { label: t('.package') }, method: :post, class: 'button_to' do |f| %>
+      <%= f.hidden_field :ids, data: { check_target: 'ids' } %>
+      <%= f.hidden_field :address_id, value: params[:address_id] %>
+      <%= button_tag data: { action: 'check#doSubmit' }, class: 'button is-small is-dark' do %>
+        <i class="fa-light fa-hand-holding-usd"></i>
+      <% end %>
+    <% end if params[:address_id] %>
+  </div>
 </th>
 <th><%= Trade::TradeItem.human_attribute_name(:good_id) %></th>
 <th><%= Trade::TradeItem.human_attribute_name(:number) %></th>
