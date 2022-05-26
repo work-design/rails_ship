@@ -24,7 +24,7 @@ zh:
           title: 途经点
       trade_items:
         index:
-          title: 商品列表
+          title: 订单
           package: 打包
       packages:
         index:

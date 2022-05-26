@@ -4,15 +4,15 @@ module Ship
     before_action :set_trade_item, only: [:show, :edit, :update, :destroy]
 
     def index
-      q_params = {
-        status: 'paid'
-      }
-      @trade_items = Trade::TradeItem.includes(:produce_plan, :address, :order).where.not(address_id: nil).default_where(q_params).page(params[:page])
+      q_params = {}
+      q_params.merge! params.permit(:user_id, :address_id)
+
+      @trade_items = Trade::TradeItem.includes(:produce_plan, :address, :order).deliverable.where.not(address_id: nil).default_where(q_params).page(params[:page])
     end
 
     def package
       pack = @address.packages.build
-      trade_items = @address.trade_items.paid.find params[:ids].split(',')
+      trade_items = @address.trade_items.deliverable.find params[:ids].split(',')
       user_ids = trade_items.pluck(:user_id).uniq
       if user_ids.size > 1
         render 'edit', locals: { message: 'user 不一致，不能打包' } and return
@@ -29,8 +29,6 @@ module Ship
         p.package = pack
         p.save
       end
-
-      render 'create'
     end
 
     private
