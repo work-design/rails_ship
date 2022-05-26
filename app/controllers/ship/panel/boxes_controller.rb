@@ -8,7 +8,7 @@ module Ship
 
     private
     def set_box_specification
-      @box_specifications = BoxSpecification.find params[:box_specification_id]
+      @box_specification = BoxSpecification.find params[:box_specification_id]
     end
 
   end
