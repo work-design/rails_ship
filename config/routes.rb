@@ -6,6 +6,9 @@ Rails.application.routes.draw do
       resources :lines do
         resources :similars
       end
+      resources :box_specifications do
+        resources :boxes
+      end
     end
 
     namespace :admin, defaults: { namespace: 'admin' } do

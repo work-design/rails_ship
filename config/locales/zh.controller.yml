@@ -8,6 +8,12 @@ zh:
       similars:
         index:
           title: 相似路线
+      box_specifications:
+        index:
+          title: 物流箱
+      boxes:
+        index:
+          title: 物流箱明细
     admin:
       title: 发货管理
       addresses:
