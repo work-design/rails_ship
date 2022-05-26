@@ -7,12 +7,13 @@ module Ship
       attribute :expected_on, :date
       attribute :pick_mode, :string
 
-      belongs_to :address
-      belongs_to :user
-      belongs_to :produce_plan, optional: true
+      belongs_to :address, class_name: 'Profiled::Address'
+      belongs_to :user, class_name: 'Auth::User', optional: true
+      belongs_to :produce_plan, class_name: 'Factory::ProducePlan', optional: true if defined? RailsFactory
+
       has_many :shipments, dependent: :delete_all
       has_many :packageds, dependent: :destroy
-      has_many :trade_items, through: :packageds
+      has_many :trade_items, class_name: 'Trade::TradeItem', through: :packageds
 
       enum pick_mode: {
         by_self: 'by_self',
