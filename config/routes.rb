@@ -24,7 +24,12 @@ Rails.application.routes.draw do
       resources :lines do
         resources :locations
       end
-      resources :box_specifications
+      resources :box_specifications do
+        collection do
+          get :buy
+          get :rent
+        end
+      end
       resources :boxes
       root 'home#index'
     end

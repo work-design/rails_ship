@@ -41,6 +41,10 @@ zh:
       box_specifications:
         index:
           title: 物流箱规格
+        rent:
+          title: 租物流箱
+        buy:
+          title: 购买物流箱
       boxes:
         index:
           title: 物流箱

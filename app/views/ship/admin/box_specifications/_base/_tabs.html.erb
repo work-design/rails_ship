@@ -1,0 +1,13 @@
+<div class="tabs">
+  <ul>
+    <li class="<%= active_helper(action: 'index', active: 'is-active') %>">
+      <%= link_to t('ship.admin.box_specifications.index.title'), { action: 'index' } %>
+    </li>
+    <li class="<%= active_helper(action: 'rent', active: 'is-active') %>">
+      <%= link_to t('ship.admin.box_specifications.rent.title'), { action: 'rent' } %>
+    </li>
+    <li class="<%= active_helper(action: 'buy', active: 'is-active') %>">
+      <%= link_to t('ship.admin.box_specifications.rent.title'), { action: 'buy' } %>
+    </li>
+  </ul>
+</div>
