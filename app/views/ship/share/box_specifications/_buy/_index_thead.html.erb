@@ -1,5 +1,8 @@
 <th><%= Ship::BoxSpecification.human_attribute_name(:name) %></th>
-<th><%= Ship::BoxSpecification.human_attribute_name(:width) %></th>
-<th><%= Ship::BoxSpecification.human_attribute_name(:length) %></th>
-<th><%= Ship::BoxSpecification.human_attribute_name(:height) %></th>
+<th>
+  <span><%= Ship::BoxSpecification.human_attribute_name(:width) %></span>
+  <span><%= Ship::BoxSpecification.human_attribute_name(:length) %></span>
+  <span><%= Ship::BoxSpecification.human_attribute_name(:height) %></span>
+</th>
+<th><%= Ship::BoxSpecification.human_attribute_name(:cost) %></th>
 <th class="has-text-centered">买入</th>
