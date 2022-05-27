@@ -11,6 +11,8 @@ module Ship
 
       has_one_attached :logo
 
+      belongs_to :organ, class_name: 'Org::Organ', optional: true
+
       has_many :boxes, dependent: :nullify
     end
 

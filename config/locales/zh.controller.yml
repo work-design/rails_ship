@@ -40,6 +40,13 @@ zh:
           title: 站点
       box_specifications:
         index:
+          title: 物流箱生产
+      boxes:
+        index:
+          title: 物流箱
+    share:
+      box_specifications:
+        index:
           title: 物流箱规格
         rent:
           title: 租物流箱

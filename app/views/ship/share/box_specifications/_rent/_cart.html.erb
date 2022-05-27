@@ -1,4 +1,4 @@
-<% trade_item = current_organ.find_trade_item(good_type: model.class_name, good_id: model.id, aim: 'rent') %>
+<% trade_item = current_organ.get_trade_item(good_type: model.class_name, good_id: model.id, aim: 'rent') %>
 
 <%= button_to({ controller: 'trade/my/trade_items', action: 'update', id: trade_item.id }, method: :patch, params: { '[trade_item]number': trade_item.number - 1 }, class: 'mr-1', form: { data: { turbo_scroll: true, turbo_scroll_container: 'production_body' } }) do %>
   <i class="fa-solid fa-circle-minus fa-xl has-text-dark-grey"></i>

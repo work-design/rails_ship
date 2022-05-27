@@ -25,13 +25,19 @@ Rails.application.routes.draw do
         resources :locations
       end
       resources :box_specifications do
+        resources :boxes
+      end
+      root 'home#index'
+    end
+
+    namespace :share, defaults: { namespace: 'share' } do
+      resources :box_specifications do
         collection do
           get :buy
           get :rent
         end
       end
       resources :boxes
-      root 'home#index'
     end
 
     namespace :driver, defaults: { namespace: 'driver' } do
