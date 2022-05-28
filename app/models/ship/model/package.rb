@@ -11,7 +11,9 @@ module Ship
       belongs_to :user, class_name: 'Auth::User', optional: true
       belongs_to :produce_plan, class_name: 'Factory::ProducePlan', optional: true if defined? RailsFactory
 
-      has_many :shipments, dependent: :delete_all
+      belongs_to :box, optional: true
+
+      has_many :shipments, dependent: :destroy_async
       has_many :packageds, dependent: :destroy
       has_many :trade_items, class_name: 'Trade::TradeItem', through: :packageds
 
