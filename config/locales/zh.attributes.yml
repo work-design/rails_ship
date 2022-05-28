@@ -13,6 +13,11 @@ zh:
         registration: 行驶证
         number: 车牌号
         detail: 详情
+      ship/box_specification:
+        width: 宽
+        length: 长
+        height: 高
+        boxes_count: 箱子数
       profiled/address:
         floor: 楼层
         room: 房间
