@@ -1,7 +1,7 @@
 module Ship
   class Buy::OrdersController < Trade::Me::OrdersController
     include Controller::Buy
-    before_action :set_order, only: [:show, :edit, :update]
+    before_action :set_order, only: [:show, :edit, :update, :payment_types, :edit_payment_type]
 
     def index
       q_params = {}

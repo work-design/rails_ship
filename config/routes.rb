@@ -41,7 +41,12 @@ Rails.application.routes.draw do
     end
 
     namespace :buy, defaults: { namespace: 'buy' } do
-      resources :orders
+      resources :orders do
+        member do
+          get :payment_types
+          get 'payment_type' => :edit_payment_type
+        end
+      end
     end
 
     namespace :driver, defaults: { namespace: 'driver' } do
