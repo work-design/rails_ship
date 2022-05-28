@@ -3,11 +3,20 @@ module Ship
     extend ActiveSupport::Concern
 
     included do
+      attribute :brand, :string, comment: '车品牌'
       attribute :location, :string
-      attribute :number, :string
+      attribute :number, :string, comment: '车牌号'
       attribute :detail, :json
 
+      enum kind: {
+        freight: 'freight',
+        passenger: 'passenger'
+      }
+
       belongs_to :user, class_name: 'Auth::User'
+
+      has_many :car_drivers, dependent: :destroy_async
+      has_many :drivers, through: :car_drivers
 
       has_one_attached :registration
 

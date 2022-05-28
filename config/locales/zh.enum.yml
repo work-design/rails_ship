@@ -1,0 +1,7 @@
+zh:
+  activerecord:
+    enum:
+      ship/car:
+        kind:
+          freight: 载货
+          passenger: 载客

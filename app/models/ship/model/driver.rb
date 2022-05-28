@@ -8,15 +8,18 @@ module Ship
       attribute :detail, :jsonb, default: {}
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
-      belongs_to :user, class_name: 'Auth::User'
+      belongs_to :user, class_name: 'Auth::User', optional: true
+      belongs_to :member, class_name: 'Org::Member', optional: true
 
-      has_many :favorites, dependent: :delete_all
+      has_many :favorites, dependent: :destroy_async
       has_many :users, through: :favorites
+      has_many :car_drivers, dependent: :destroy_async
+      has_many :cars, through: :car_drivers
 
       has_one_attached :license
 
       after_create_commit :ocr_later
-      after_create_commit :sync_to_favorite
+      after_create_commit :sync_to_favorite, if: -> { user&.inviter_id }
     end
 
     def ocr_later
@@ -37,10 +40,8 @@ module Ship
     end
 
     def sync_to_favorite
-      if user.inviter_id
-        favorite = favorites.build(user_id: user.inviter_id)
-        favorite.save
-      end
+      favorite = favorites.build(user_id: user.inviter_id)
+      favorite.save
     end
 
   end

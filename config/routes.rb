@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       end
       resources :packages, except: [:new, :create]
       resources :cars
+      resources :drivers
       resources :lines do
         resources :locations
       end
