@@ -38,7 +38,10 @@ Rails.application.routes.draw do
         end
       end
       resources :boxes
-      resources :orders, only: [:create]
+    end
+
+    namespace :buy, defaults: { namespace: 'buy' } do
+      resources :orders
     end
 
     namespace :driver, defaults: { namespace: 'driver' } do
