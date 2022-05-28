@@ -7,6 +7,7 @@
     <%= link_to t('ship.admin.lines.index.title'), { controller: 'ship/admin/lines' }, class: active_helper(controllers: ['lines', 'locations'], active: 'is-active') %>
     <%= link_to t('ship.admin.stations.index.title'), { controller: 'ship/admin/stations' }, class: active_helper(controllers: 'stations', active: 'is-active') %>
     <%= link_to t('ship.share.boxes.index.title'), { controller: 'ship/share/boxes' }, class: active_helper(controllers: 'boxes', active: 'is-active') %>
+    <%= link_to t('ship.buy.orders.index.title'), { controller: 'ship/buy/orders' }, class: active_helper(controllers: 'orders', active: 'is-active') %>
     <%= link_to t('ship.share.box_specifications.index.title'), { controller: 'ship/share/box_specifications' }, class: active_helper(controllers: 'box_specifications', active: 'is-active') -%>
   <% end %>
   <a class="menu-label" data-action="menu#toggle">

@@ -1,5 +1,9 @@
 module Ship
-  class Share::OrdersController < Trade::My::OrdersController
+  class Buy::OrdersController < Trade::Me::OrdersController
+
+    def index
+      
+    end
 
     def create
       @order = current_member.orders.build

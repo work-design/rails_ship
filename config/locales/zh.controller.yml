@@ -55,6 +55,10 @@ zh:
       boxes:
         index:
           title: 物流箱
+    buy:
+      orders:
+        index:
+          title: 物流箱订单
     my:
       packages:
         index:
