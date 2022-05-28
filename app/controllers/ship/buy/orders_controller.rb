@@ -1,6 +1,7 @@
 module Ship
   class Buy::OrdersController < Trade::Me::OrdersController
     include Controller::Buy
+    before_action :set_order, only: [:show, :edit, :update]
 
     def index
       q_params = {}
@@ -23,6 +24,11 @@ module Ship
       else
         render :new, locals: { model: current_organ }, status: :unprocessable_entity
       end
+    end
+
+    private
+    def set_order
+      @order = current_organ.member_orders.find params[:id]
     end
 
   end
