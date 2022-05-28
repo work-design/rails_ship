@@ -25,15 +25,17 @@ module Ship
       enum state: {
         init: 'init',
         packaged: 'packaged',
+        box_in: 'box_in',
         loaded: 'loaded',
         sent_out: 'sent_out',
+        box_out: 'box_out',
         delivered: 'delivered',
         received: 'received'
       }, _prefix: true
     end
 
     def enter_url
-      Rails.application.routes.url_for(controller: 'ship/me/packages', action: 'show', id: self.id)
+      Rails.application.routes.url_for(controller: 'ship/me/packages', action: 'qrcode', id: self.id)
     end
 
     def qrcode_enter_url
