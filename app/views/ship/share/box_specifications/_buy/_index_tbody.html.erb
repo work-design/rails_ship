@@ -1,4 +1,7 @@
-<td><%= model.name %></td>
+<td>
+  <p><%= model.name %></p>
+  <p class="has-text-grey"><%= model.organ&.name %></p>
+</td>
 <td>
   <span><%= model.width %></span>
   <span class="has-text-grey">x</span>
