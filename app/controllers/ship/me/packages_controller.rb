@@ -1,5 +1,5 @@
 module Ship
-  class Admin::PackagesController < Admin::BaseController
+  class Me::PackagesController < Me::BaseController
     before_action :set_package, only: [:show, :qrcode, :edit, :update, :destroy]
     before_action :set_package_from_scan, only: [:box_in, :box_out]
 

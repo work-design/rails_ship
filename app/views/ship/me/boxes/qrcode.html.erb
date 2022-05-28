@@ -1,11 +1,9 @@
-<div
-  class=""
-  data-controller="scan"
-  data-scan-debug-value="false"
-  data-scan-apis-value="<%= ['scanQRCode'].to_json %>"
-  data-scan-options-value="<%= current_js_app&.js_config(request.original_url).to_json %>"
-  data-scan-params-value="<%= { box_id: @box.id }.to_json %>"
->
-  <button class="button is-success" data-action="scan#report" data-report-url="<%= url_for(controller: 'factory/me/packages', action: 'box_in') %>">入仓</button>
-  <button class="button is-info" data-action="scan#report" data-report-url="<%= url_for(controller: 'factory/me/packages', action: 'box_out') %>">出仓</button>
+<div class="weui-panel">
+  <div class="weui-panel__hd"></div>
+  <div class="weui-panel__bd">
+    <%= render 'box' %>
+  </div>
+  <div class="weui-panel__ft py-2">
+    <%= render 'buttons' %>
+  </div>
 </div>

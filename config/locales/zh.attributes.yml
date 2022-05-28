@@ -19,6 +19,8 @@ zh:
         height: 高
         boxes_count: 箱子数
         organ_id: 生产厂家
+      ship/box:
+        box_specification_id: 规格
       profiled/address:
         floor: 楼层
         room: 房间
