@@ -1,8 +1,12 @@
 module Ship
   class Buy::OrdersController < Trade::Me::OrdersController
+    include Controller::Buy
 
     def index
-      
+      q_params = {}
+      q_params.merge! params.permit(:id, :payment_type, :payment_status, :state)
+
+      @orders = current_organ.member_orders.includes(:trade_items).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def create
