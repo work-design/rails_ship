@@ -3,19 +3,23 @@ module Ship
     extend ActiveSupport::Concern
 
     included do
-      attribute :state, :string
+      attribute :type, :string
+      attribute :left_at, :datetime
+      attribute :arrived_at, :datetime
 
-      belongs_to :package
-      belongs_to :address
+      belongs_to :line
+      belongs_to :car
+      belongs_to :driver
       belongs_to :shipping, polymorphic: true
 
+      has_many :shipment_packages, dependent: :destroy_async
+      has_many :packages, through: :shipment_packages
+
       enum state: {
-        prepare: 'prepare',
-        packing: 'packing',
-        transporting: 'transporting',
-        dispatching: 'dispatching',
-        received: 'received'
-      }
+        prepared: 'prepared',
+        left: 'left',
+        arrived: 'arrived'
+      }, _prefix: true
     end
 
   end

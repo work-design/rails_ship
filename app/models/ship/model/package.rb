@@ -13,7 +13,8 @@ module Ship
 
       belongs_to :box, optional: true
 
-      has_many :shipments, dependent: :destroy_async
+      has_many :package_shipments, dependent: :destroy_async
+      has_many :shipments, through: :package_shipments
       has_many :packageds, dependent: :destroy
       has_many :trade_items, class_name: 'Trade::TradeItem', through: :packageds
 
@@ -22,8 +23,13 @@ module Ship
         by_man: 'by_man'
       }
       enum state: {
-
-      }
+        init: 'init',
+        packaged: 'packaged',
+        loaded: 'loaded',
+        sent_out: 'sent_out',
+        delivered: 'delivered',
+        received: 'received'
+      }, _prefix: true
     end
 
     def enter_url
