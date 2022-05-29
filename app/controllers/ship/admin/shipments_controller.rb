@@ -1,6 +1,6 @@
 module Ship
   class Admin::ShipmentsController < Admin::BaseController
-    before_action :set_cars, only: [:new, :create, :edit, :update]
+    before_action :set_cars, :set_lines, :set_drivers, only: [:new, :create, :edit, :update]
 
     private
     def set_cars
@@ -11,7 +11,7 @@ module Ship
       @lines = Line.default_where(default_params)
     end
 
-    def set_driver
+    def set_drivers
       @drivers = Driver.default_where(default_params)
     end
 

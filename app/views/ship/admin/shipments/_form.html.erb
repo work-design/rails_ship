@@ -1,7 +1,7 @@
-<%= f.text_field :car_id %>
-<%= f.text_field :line_id %>
-<%= f.text_field :driver_id %>
-<%= f.text_field :load_on %>
+<%= f.collection_select :line_id, @lines, :id, :name %>
+<%= f.collection_select :car_id, @cars, :id, :number %>
+<%= f.collection_select :driver_id, @drivers, :id, :name %>
+<%= f.date_field :load_on %>
 <%= f.text_field :state %>
-<%= f.text_field :left_at %>
+<%= f.datetime_field :left_at %>
 <%= f.text_field :arrived_at %>

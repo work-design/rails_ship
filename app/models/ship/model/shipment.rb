@@ -11,7 +11,7 @@ module Ship
       belongs_to :line
       belongs_to :car
       belongs_to :driver
-      belongs_to :shipping, polymorphic: true
+      belongs_to :shipping, polymorphic: true, optional: true
 
       has_many :item_shipments, dependent: :destroy_async
       has_many :items, through: :item_shipments
