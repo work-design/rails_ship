@@ -21,6 +21,10 @@ zh:
         organ_id: 生产厂家
       ship/box:
         box_specification_id: 规格
+      ship/shipment:
+        line_id: 路线
+        car_id: 车牌号
+        driver_id: 司机
       profiled/address:
         floor: 楼层
         room: 房间

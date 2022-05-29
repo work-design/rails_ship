@@ -1,16 +1,16 @@
 <div class="weui-form-preview">
   <div class="weui-form-preview__bd">
     <div class="weui-form-preview__item">
-      <label class="weui-form-preview__label"><%= Ship::Box.human_attribute_name(:box_specification_id) %></label>
-      <span class="weui-form-preview__value"><%= @box.box_specification.measure %></span>
+      <label class="weui-form-preview__label"><%= Ship::Shipment.human_attribute_name(:line_id) %></label>
+      <span class="weui-form-preview__value"><%= @shipment.line.name %></span>
     </div>
     <div class="weui-form-preview__item">
-      <label class="weui-form-preview__label"><%= Ship::Box.human_attribute_name(:code) %></label>
-      <span class="weui-form-preview__value"><%= @box.code %></span>
+      <label class="weui-form-preview__label"><%= Ship::Shipment.human_attribute_name(:car_id) %></label>
+      <span class="weui-form-preview__value"><%= @shipment.car.number %></span>
     </div>
     <div class="weui-form-preview__item">
-      <label class="weui-form-preview__label"><%= Ship::Box.human_attribute_name(:status) %></label>
-      <span class="weui-form-preview__value"><%= @box.status_i18n %></span>
+      <label class="weui-form-preview__label"><%= Ship::Shipment.human_attribute_name(:driver_id) %></label>
+      <span class="weui-form-preview__value"><%= @shipment.driver.name %></span>
     </div>
   </div>
 </div>
