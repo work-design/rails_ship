@@ -2,6 +2,10 @@ zh:
   activerecord:
     enum:
       ship/car:
-        kind:
+        carriage:
           freight: 载货
           passenger: 载客
+        kind:
+          van: 箱式货车（小型）
+          minibus: 面包车
+          truck: 卡车

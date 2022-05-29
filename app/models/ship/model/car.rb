@@ -6,11 +6,17 @@ module Ship
       attribute :brand, :string, comment: '车品牌'
       attribute :location, :string
       attribute :number, :string, comment: '车牌号'
+      attribute :tel, :string, comment: '随车电话'
       attribute :detail, :json
 
-      enum kind: {
+      enum carriage: {
         freight: 'freight',
         passenger: 'passenger'
+      }
+      enum kind: {
+        van: 'van',
+        minibus: 'minibus',
+        truck: 'truck'
       }
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true

@@ -2,3 +2,4 @@
 <%= f.text_field :number %>
 <%= f.text_area :detail %>
 <%= f.text_field :brand %>
+<%= f.select :kind, options_for_select(Ship::Car.options_i18n(:kind), @car.kind) %>
