@@ -13,6 +13,8 @@ module Ship
       belongs_to :driver
       belongs_to :shipping, polymorphic: true
 
+      has_many :item_shipments, dependent: :destroy_async
+      has_many :items, through: :item_shipments
       has_many :shipment_packages, dependent: :destroy_async
       has_many :packages, through: :shipment_packages
 
