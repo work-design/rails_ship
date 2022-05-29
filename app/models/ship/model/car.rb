@@ -13,7 +13,7 @@ module Ship
         passenger: 'passenger'
       }
 
-      belongs_to :user, class_name: 'Auth::User'
+      belongs_to :organ, class_name: 'Org::Organ', optional: true
 
       has_many :car_drivers, dependent: :destroy_async
       has_many :drivers, through: :car_drivers

@@ -14,6 +14,8 @@ module Ship
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 
       belongs_to :box_specification, counter_cache: true
+
+      has_many :packages, dependent: :nullify
     end
 
     def price
