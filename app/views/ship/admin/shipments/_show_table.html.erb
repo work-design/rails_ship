@@ -1,4 +1,8 @@
 <tr>
+  <td class="has-text-right"><%= Ship::Shipment.human_attribute_name(:enter_url) %></td>
+  <td><%= image_tag @shipment.qrcode_enter_url %></td>
+</tr>
+<tr>
   <td class="has-text-right"><%= Ship::Shipment.human_attribute_name(:car_id) %></td>
   <td><%= @shipment.car_id %></td>
 </tr>

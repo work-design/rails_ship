@@ -25,5 +25,13 @@ module Ship
       }, _prefix: true
     end
 
+    def enter_url
+      Rails.application.routes.url_for(controller: 'ship/me/shipments', action: 'qrcode', id: self.id)
+    end
+
+    def qrcode_enter_url
+      QrcodeHelper.data_url(enter_url)
+    end
+
   end
 end
