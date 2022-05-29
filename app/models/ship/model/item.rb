@@ -5,7 +5,7 @@ module Ship
     included do
       attribute :package_name, :string
       attribute :package_number, :integer
-      attribute :package_type, :string
+      attribute :package_kind, :string
       attribute :weight, :integer
       attribute :volume, :integer
       attribute :price, :decimal

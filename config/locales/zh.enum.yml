@@ -9,3 +9,22 @@ zh:
           van: 箱式货车（小型）
           minibus: 面包车
           truck: 卡车
+      ship/item:
+        settle_kind:
+          spot_payment: 现付
+          freight_collect: 到付
+          included_goods: 包邮
+          time_payment: 定期付款
+        settle_period:
+          daily: 日结
+          weekly: 周结
+          monthly: 月结
+          bimonthly: 双月结
+          quarterly: 季度结算
+        weight:
+          gram: 克
+          kilogram: 千克
+        volume:
+          cubic_meter: 立方米
+          cubic_kilometer: 立方千米
+          cubic_millimeter: 立方毫米

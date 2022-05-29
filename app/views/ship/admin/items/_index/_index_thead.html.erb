@@ -1,0 +1,19 @@
+<th>
+  <p><%= Ship::Item.human_attribute_name(:package_name) %></p>
+  <p><%= Ship::Item.human_attribute_name(:package_number) %></p>
+  <p class="has-text-grey"><%= Ship::Item.human_attribute_name(:package_kind) %></p>
+</th>
+<th>
+  <p><%= Ship::Item.human_attribute_name(:weight) %></p>
+  <p><%= Ship::Item.human_attribute_name(:weight_unit) %></p>
+</th>
+<th>
+  <p><%= Ship::Item.human_attribute_name(:volume) %></p>
+  <p><%= Ship::Item.human_attribute_name(:volume_unit) %></p>
+</th>
+<th><%= Ship::Item.human_attribute_name(:price) %></th>
+<th>
+  <p><%= Ship::Item.human_attribute_name(:settle_ratio) %></p>
+  <p><%= Ship::Item.human_attribute_name(:settle_kind) %></p>
+  <p><%= Ship::Item.human_attribute_name(:settle_period) %></p>
+</th>
