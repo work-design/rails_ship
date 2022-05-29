@@ -29,6 +29,14 @@ module Ship
       after_create_commit :ocr_later
     end
 
+    def enter_url
+      Rails.application.routes.url_for(controller: 'ship/me/cars', action: 'qrcode', id: self.id)
+    end
+
+    def qrcode_enter_url
+      QrcodeHelper.data_url(enter_url)
+    end
+
     def ocr_later
       CarOcrJob.perform_later(self)
     end

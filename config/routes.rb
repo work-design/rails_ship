@@ -73,6 +73,15 @@ Rails.application.routes.draw do
           get :qrcode
         end
       end
+      resources :cars do
+        collection do
+          post :package_in
+          post :package_out
+        end
+        member do
+          get :qrcode
+        end
+      end
     end
 
     namespace :my, defaults: { namespace: 'my' } do

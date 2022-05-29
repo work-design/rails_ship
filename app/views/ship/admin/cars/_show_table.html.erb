@@ -10,3 +10,7 @@
   <td class="has-text-right"><%= Ship::Car.human_attribute_name(:detail) %></td>
   <td><%= @car.detail %></td>
 </tr>
+<tr>
+  <td class="has-text-right"><%= Ship::Car.human_attribute_name(:enter_url) %></td>
+  <td><%= image_tag @car.qrcode_enter_url %></td>
+</tr>
