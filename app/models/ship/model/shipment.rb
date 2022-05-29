@@ -6,6 +6,7 @@ module Ship
       attribute :type, :string
       attribute :left_at, :datetime
       attribute :arrived_at, :datetime
+      attribute :load_on, :date
 
       belongs_to :line
       belongs_to :car

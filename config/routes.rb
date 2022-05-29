@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       resources :lines do
         resources :locations
       end
+      resources :shipments
       resources :box_specifications do
         resources :boxes
       end

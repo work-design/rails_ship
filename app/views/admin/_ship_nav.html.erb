@@ -19,6 +19,16 @@
 </div>
 <div class="<%= active_helper(modules: 'ship/admin', active: 'menu ex-accordion is-active', item: 'menu ex-accordion') %>" data-controller="menu">
   <%= content_tag :div, class: 'menu-list' do %>
+    <%= link_to t('ship.admin.shipments.index.title'), { controller: 'ship/admin/shipments' }, class: active_helper(controllers: 'shipments', active: 'is-active') -%>
+  <% end %>
+  <a class="menu-label" data-action="menu#toggle">
+    <i class="fa-solid fa-truck fa-fw"></i>
+    <span>运次管理</span>
+    <i class="fa-solid dropdown"></i>
+  </a>
+</div>
+<div class="<%= active_helper(modules: 'ship/admin', active: 'menu ex-accordion is-active', item: 'menu ex-accordion') %>" data-controller="menu">
+  <%= content_tag :div, class: 'menu-list' do %>
     <%= link_to t('ship.admin.box_specifications.index.title'), { controller: 'ship/admin/box_specifications' }, class: active_helper(controllers: 'box_specifications', active: 'is-active') -%>
   <% end %>
   <a class="menu-label" data-action="menu#toggle">
