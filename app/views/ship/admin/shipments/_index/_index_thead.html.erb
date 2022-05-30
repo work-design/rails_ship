@@ -5,5 +5,7 @@
 </th>
 <th><%= Ship::Shipment.human_attribute_name(:load_on) %></th>
 <th><%= Ship::Shipment.human_attribute_name(:state) %></th>
-<th><%= Ship::Shipment.human_attribute_name(:left_at) %></th>
-<th><%= Ship::Shipment.human_attribute_name(:arrived_at) %></th>
+<th>
+  <p><%= Ship::Shipment.human_attribute_name(:left_at) %></p>
+  <p><%= Ship::Shipment.human_attribute_name(:arrived_at) %></p>
+</th>

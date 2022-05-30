@@ -26,6 +26,8 @@ zh:
         car_id: 车牌号
         driver_id: 司机
         load_on: 装货日期
+        left_at: 发车时间
+        arrived_at: 到达时间
       ship/shipment_item:
         item_type: 包裹类型
       ship/package:

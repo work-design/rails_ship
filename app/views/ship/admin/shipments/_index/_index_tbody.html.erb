@@ -5,5 +5,7 @@
 </td>
 <td><%= model.load_on %></td>
 <td><%= model.state %></td>
-<td><%= model.left_at %></td>
-<td><%= model.arrived_at %></td>
+<td>
+  <p><time data-controller="time"><%= model.left_at&.to_fs(:iso8601) %></time></p>
+  <p><time data-controller="time"><%= model.arrived_at&.to_fs(:iso8601) %></time></p>
+</td>
