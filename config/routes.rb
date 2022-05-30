@@ -88,6 +88,8 @@ Rails.application.routes.draw do
         collection do
           post :package_in
           post :package_out
+          post :loaded
+          post :unloaded
         end
         member do
           get :qrcode

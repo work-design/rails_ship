@@ -1,5 +1,5 @@
 module Ship
-  module Model::ItemShipment
+  module Model::ShipmentItem
     extend ActiveSupport::Concern
 
     included do
