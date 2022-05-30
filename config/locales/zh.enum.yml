@@ -38,3 +38,7 @@ zh:
           cubic_meter: 立方米
           cubic_kilometer: 立方千米
           cubic_millimeter: 立方毫米
+      ship/shipment_item:
+        item_type:
+          Ship::Box: 物流箱
+          Ship::Package: 普通包裹

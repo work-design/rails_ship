@@ -17,7 +17,7 @@ module Ship
       has_many :items, through: :item_shipments
       has_many :shipment_packages, dependent: :destroy_async
       has_many :packages, through: :shipment_packages
-      has_many :shipment_items, dependent: :destroy_async
+      has_many :shipment_items, ->{ order(id: :desc) }, dependent: :destroy_async
 
       enum state: {
         prepared: 'prepared',
