@@ -26,6 +26,10 @@ zh:
         car_id: 车牌号
         driver_id: 司机
         load_on: 装货日期
+      ship/package:
+        boxed_in_at: 入仓时间
+        boxed_out_at: 出仓时间
+        state: 状态
       profiled/address:
         floor: 楼层
         room: 房间
