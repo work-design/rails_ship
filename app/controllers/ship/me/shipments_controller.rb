@@ -30,6 +30,7 @@ module Ship
     def loaded
       if @item
         si = @shipment.shipment_items.find_or_initialize_by(item_type: @item.class_name, item_id: @item.id)
+        si.state = 'loaded'
         si.loaded_at = Time.current
         si.save
       end
@@ -38,6 +39,7 @@ module Ship
     def unloaded
       if @item
         si = @shipment.shipment_items.find_or_initialize_by(item_type: @item.class_name, item_id: @item.id)
+        si.state = 'unloaded'
         si.unloaded_at = Time.current
         si.save
       end
