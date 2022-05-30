@@ -9,6 +9,16 @@ zh:
           van: 箱式货车（小型）
           minibus: 面包车
           truck: 卡车
+      ship/package:
+        state:
+          init: 初始状态
+          packaged: 已打包
+          box_in: 放入物流箱
+          loaded: 已装车
+          sent_out: 已发车
+          box_out: 取出物流箱
+          delivered: 已交货
+          received: 收货
       ship/item:
         settle_kind:
           spot_payment: 现付
