@@ -12,5 +12,9 @@
       <label class="weui-form-preview__label"><%= Ship::Shipment.human_attribute_name(:driver_id) %></label>
       <span class="weui-form-preview__value"><%= @shipment.driver.name %></span>
     </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= Ship::Shipment.human_attribute_name(:load_on) %></label>
+      <span class="weui-form-preview__value"><%= @shipment.load_on %></span>
+    </div>
   </div>
 </div>

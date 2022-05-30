@@ -13,7 +13,7 @@ module Ship
       has_many :line_similars, dependent: :delete_all
       has_many :similars, through: :line_similars
 
-      before_validation :set_name, if: -> { name.blank? && (start_name_changed? || finish_name_changed?) }
+      before_validation :set_name, if: -> { start_name_changed? || finish_name_changed? }
     end
 
     def set_name

@@ -25,6 +25,7 @@ zh:
         line_id: 路线
         car_id: 车牌号
         driver_id: 司机
+        load_on: 装货日期
       profiled/address:
         floor: 楼层
         room: 房间
