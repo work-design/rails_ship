@@ -1,0 +1,10 @@
+<table class="table is-striped is-borderless is-fullwidth">
+  <thead>
+    <tr class="has-text-weight-normal is-size-7">
+      <th>金额</th>
+      <th class="has-text-centered">类别</th>
+      <th class="has-text-centered"><%= Ship::Package.human_attribute_name(:state) %></th>
+    </tr>
+  </thead>
+  <%= render partial: 'package', collection: @box.packages, as: :model %>
+</table>

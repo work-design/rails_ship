@@ -14,6 +14,7 @@ module Ship
       if @package
         @package.box_id = @box.id
         @package.state = 'box_in'
+        @package.boxed_in_at = Time.current
         @package.save
       end
     end
@@ -22,6 +23,7 @@ module Ship
       if @package
         @package.box_id = @box.id
         @package.state = 'box_out'
+        @package.boxed_out_at = Time.current
         @package.save
       end
     end

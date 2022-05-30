@@ -6,6 +6,8 @@ module Ship
       attribute :state, :string
       attribute :expected_on, :date
       attribute :pick_mode, :string
+      attribute :boxed_in_at, :datetime
+      attribute :boxed_out_at, :datetime
 
       belongs_to :address, class_name: 'Profiled::Address'
       belongs_to :user, class_name: 'Auth::User', optional: true
