@@ -18,7 +18,7 @@ zh:
       title: 发货管理
       addresses:
         index:
-          title: 地址列表
+          title: 待发货地址
       cars:
         index:
           title: 车辆管理

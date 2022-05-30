@@ -4,9 +4,11 @@ module Ship
 
     def index
       q_params = {}
-      q_params.merge! params.permit('address_users.user_id')
+      q_params.merge! default_params
+      q_params.merge! params.permit(:user_id)
 
-      @addresses = Profiled::Address.default_where(q_params).page(params[:page])
+      r = Trade::TradeItem.packable.default_where(q_params).select(:address_id).group(:address_id).count
+      @addresses = Profiled::Address.find(r.keys).zip r.values
     end
 
     private
