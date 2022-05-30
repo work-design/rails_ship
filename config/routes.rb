@@ -58,20 +58,16 @@ Rails.application.routes.draw do
 
     namespace :me, defaults: { namespace: 'me' } do
       resources :packages do
-        collection do
-          post :box_in
-          post :box_out
-        end
         member do
+          post :in
+          post :out
           get :qrcode
         end
       end
       resources :boxes do
-        collection do
-          post :package_in
-          post :package_out
-        end
         member do
+          post :in
+          post :out
           get :qrcode
         end
       end
@@ -85,13 +81,9 @@ Rails.application.routes.draw do
         end
       end
       resources :shipments do
-        collection do
-          post :package_in
-          post :package_out
+        member do
           post :loaded
           post :unloaded
-        end
-        member do
           get :qrcode
         end
       end
