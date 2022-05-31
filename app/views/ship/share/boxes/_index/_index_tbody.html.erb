@@ -4,3 +4,5 @@
   <p><%= model.box_specification.measure %></p>
 </td>
 <td><%= model.status %></td>
+<td class="has-text-grey"><%= model.trade_item_id %></td>
+<td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>
