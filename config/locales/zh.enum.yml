@@ -42,3 +42,6 @@ zh:
         item_type:
           Ship::Box: 物流箱
           Ship::Package: 普通包裹
+        state:
+          loaded: 已装车
+          unloaded: 已卸车

@@ -1,5 +1,9 @@
 <td><%= model.address.content %></td>
 <td><%= model.state_i18n %></td>
+<td>
+  <p><time data-controller="time"><%= model.loaded_at&.to_fs(:iso8601) %></time></p>
+  <p><time data-controller="time"><%= model.unloaded_at&.to_fs(:iso8601) %></time></p>
+</td>
 <td><%= model.expected_on %></td>
 <td>
 <% model.packageds.each do |packaged| %>
