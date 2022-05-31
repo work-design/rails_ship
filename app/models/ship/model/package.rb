@@ -8,6 +8,8 @@ module Ship
       attribute :pick_mode, :string
       attribute :boxed_in_at, :datetime
       attribute :boxed_out_at, :datetime
+      attribute :loaded_at, :datetime
+      attribute :unloaded_at, :datetime
 
       belongs_to :address, class_name: 'Profiled::Address'
       belongs_to :user, class_name: 'Auth::User', optional: true
@@ -30,6 +32,7 @@ module Ship
         box_in: 'box_in',
         loaded: 'loaded',
         sent_out: 'sent_out',
+        unloaded: 'unloaded',
         box_out: 'box_out',
         delivered: 'delivered',
         received: 'received'

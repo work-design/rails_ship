@@ -4,12 +4,20 @@ module Ship
 
     included do
       attribute :code
+      attribute :loaded_at, :datetime
+      attribute :unloaded_at, :datetime
 
       enum status: {
         free: 'free',
         hired: 'hired',
         used: 'used'
-      }
+      }, _prefix: true
+      enum state: {
+        grid_in: 'grid_in',
+        grid_out: 'grid_out',
+        loaded: 'loaded',
+        unloaded: 'unloaded'
+      }, _prefix: true
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 
