@@ -34,7 +34,11 @@ zh:
       trade_items:
         index:
           title: 订单
+        packable:
+          title: 待打包订单
           package: 打包
+        packaged:
+          title: 已打包订单
       packages:
         index:
           title: 包裹列表

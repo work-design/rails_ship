@@ -1,0 +1,10 @@
+<div class="tabs">
+  <ul>
+    <li class="<%= active_helper(action: 'packable', active: 'is-active') %>">
+      <%= link_to t('ship.admin.trade_items.packable.title'), { action: 'packable' } %>
+    </li>
+    <li class="<%= active_helper(action: 'packaged', active: 'is-active') %>">
+      <%= link_to t('ship.admin.trade_items.packaged.title'), { action: 'packaged' } %>
+    </li>
+  </ul>
+</div>

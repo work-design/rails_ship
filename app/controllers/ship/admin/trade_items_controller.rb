@@ -1,6 +1,6 @@
 module Ship
   class Admin::TradeItemsController < Admin::BaseController
-    before_action :set_address, only: [:package]
+    before_action :set_address, only: [:packable, :package, :packaged]
     before_action :set_trade_item, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -9,6 +9,14 @@ module Ship
       q_params.merge! params.permit(:user_id, :address_id)
 
       @trade_items = Trade::TradeItem.includes(:produce_plan, :address, :order).deliverable.where.not(address_id: nil).default_where(q_params).page(params[:page])
+    end
+
+    def packable
+      @trade_items = @address.trade_items.packable.page(params[:page])
+    end
+
+    def packaged
+      @trade_items = @address.trade_items.packaged.page(params[:page])
     end
 
     def package

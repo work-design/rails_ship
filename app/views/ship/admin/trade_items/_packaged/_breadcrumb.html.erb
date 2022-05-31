@@ -1,0 +1,12 @@
+<div class="breadcrumb has-succeeds-separator">
+  <ul>
+    <li><%= link_to t('ship.admin.addresses.index.title'), { controller: 'addresses' } %></li>
+    <li>
+      <span class="px-3">
+        <span><%= @address.area.full_name %></span>
+        <span><%= @address.detail %></span>
+      </span>
+    </li>
+    <li class="is-active"><%= t('.title') %></li>
+  </ul>
+</div>

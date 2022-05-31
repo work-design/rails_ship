@@ -13,12 +13,16 @@ Rails.application.routes.draw do
 
     namespace :admin, defaults: { namespace: 'admin' } do
       resources :stations
-      resources :addresses
-      resources :trade_items, except: [:destroy] do
-        collection do
-          post :package
+      resources :addresses do
+        resources :trade_items, only: [] do
+          collection do
+            get :packable
+            get :packaged
+            post :package
+          end
         end
       end
+      resources :trade_items, except: [:destroy]
       resources :packages, except: [:new, :create]
       resources :cars
       resources :drivers
