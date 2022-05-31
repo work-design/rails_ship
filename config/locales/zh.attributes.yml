@@ -30,6 +30,9 @@ zh:
         arrived_at: 到达时间
       ship/shipment_item:
         item_type: 包裹类型
+        loaded_at: 装车时间
+        unloaded_at: 卸车时间
+        state: 状态
       ship/package:
         boxed_in_at: 入仓时间
         boxed_out_at: 出仓时间
