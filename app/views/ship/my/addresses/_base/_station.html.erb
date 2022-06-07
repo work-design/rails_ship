@@ -1,0 +1,17 @@
+<div class="weui-panel">
+  <div class="weui-panel__hd">
+    <span><%= @station.name %></span>
+    <span class="has-text-grey has-text-weight-normal">（<%= @station.area.full_name %>）</span>
+  </div>
+  <div class="weui-panel__bd">
+    <div class="weui-cells weui-cells_radio">
+      <%= render partial: 'address', collection: @addresses, as: :model %>
+    </div>
+  </div>
+  <div class="weui-panel__ft">
+    <%= link_to({ action: 'new', station_id: @station.id, return_to: params[:return_to] }, class: 'weui-cell weui-cell_access weui-cell_link') do %>
+      <div class="weui-cell__bd">完善地址</div>
+      <span class="weui-cell__ft"></span>
+    <% end %>
+  </div>
+</div>
