@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-
   namespace :ship, defaults: { business: 'ship' } do
-
     namespace :panel, defaults: { namespace: 'panel' } do
       resources :lines do
         resources :similars
@@ -10,7 +8,6 @@ Rails.application.routes.draw do
         resources :boxes
       end
     end
-
     namespace :admin, defaults: { namespace: 'admin' } do
       resources :stations
       resources :addresses do
@@ -36,7 +33,6 @@ Rails.application.routes.draw do
       end
       root 'home#index'
     end
-
     namespace :share, defaults: { namespace: 'share' } do
       resources :box_specifications do
         collection do
@@ -46,7 +42,6 @@ Rails.application.routes.draw do
       end
       resources :boxes
     end
-
     namespace :buy, defaults: { namespace: 'buy' } do
       resources :orders do
         member do
@@ -55,11 +50,9 @@ Rails.application.routes.draw do
         end
       end
     end
-
     namespace :driver, defaults: { namespace: 'driver' } do
       resources :favorites
     end
-
     namespace :me, defaults: { namespace: 'me' } do
       resources :packages do
         member do
@@ -92,7 +85,6 @@ Rails.application.routes.draw do
         end
       end
     end
-
     namespace :my, defaults: { namespace: 'my' } do
       resource :driver
       resources :favorites
@@ -106,8 +98,7 @@ Rails.application.routes.draw do
         resources :locations
       end
       resources :stations
-      resources :addresses
-      resources :principal_addresses, only: [:index, :show] do
+      resources :addresses do
         member do
           get :plans
         end
@@ -118,7 +109,5 @@ Rails.application.routes.draw do
         end
       end
     end
-
   end
-
 end

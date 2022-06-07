@@ -1,0 +1,19 @@
+<%= render 'top_bar' %>
+
+<% if @station %>
+  <% render 'station' %>
+<% end %>
+
+<div class="weui-panel">
+  <div class="weui-panel__hd">
+  <% if @station %>
+    <span>选择其他站点</span>
+  <% else %>
+    <span>选择站点</span>
+  <% end %>
+  </div>
+  <div class="weui-panel__bd">
+    <%= render partial: 'station', collection: @stations, as: :model %>
+  </div>
+  <div class="weui-panel__ft"></div>
+</div>

@@ -27,7 +27,6 @@ module Ship
     end
 
     def price
-
     end
 
     def enter_url
