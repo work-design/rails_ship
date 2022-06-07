@@ -48,6 +48,7 @@ Rails.application.routes.draw do
           get :payment_types
           get 'payment_type' => :edit_payment_type
         end
+        resources :trade_items
       end
     end
     namespace :driver, defaults: { namespace: 'driver' } do
