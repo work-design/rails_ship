@@ -50,6 +50,7 @@ Rails.application.routes.draw do
         end
         resources :trade_items
       end
+      resources :rents
     end
     namespace :driver, defaults: { namespace: 'driver' } do
       resources :favorites
