@@ -81,6 +81,8 @@ zh:
       rents:
         index:
           title: 租用
+        promote:
+          title: 租金价格
     my:
       packages:
         index:
