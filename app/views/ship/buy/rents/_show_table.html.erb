@@ -4,15 +4,19 @@
 </tr>
 <tr>
   <td class="has-text-right"><%= Lease::Rent.human_attribute_name(:start_at) %></td>
-  <td><%= @rent.start_at %></td>
-</tr>
-<tr>
-  <td class="has-text-right"><%= Lease::Rent.human_attribute_name(:finish_at) %></td>
-  <td><%= @rent.finish_at %></td>
+  <td><time data-controller="time"><%= @rent.start_at.to_fs(:iso8601) %></time></td>
 </tr>
 <tr>
   <td class="has-text-right"><%= Lease::Rent.human_attribute_name(:estimate_finish_at) %></td>
-  <td><%= @rent.estimate_finish_at %></td>
+  <td><time data-controller="time"><%= @rent.estimate_finish_at&.to_fs(:iso8601) %></time></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Lease::Rent.human_attribute_name(:finish_at) %></td>
+  <td><time data-controller="time"><%= @rent.finish_at&.to_fs(:iso8601) %></time></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Lease::Rent.human_attribute_name(:duration) %></td>
+  <td><%= @rent.duration.inspect %></td>
 </tr>
 <tr>
   <td class="has-text-right"><%= Lease::Rent.human_attribute_name(:price) %></td>
