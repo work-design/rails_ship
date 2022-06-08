@@ -1,10 +1,19 @@
 module Ship
   class Share::BoxesController < Share::BaseController
-    before_action :set_box_specifications, only: [:index]
+    before_action :set_box_specifications, only: [:index, :invest]
 
     def index
       q_params = {
         held_organ_id: current_organ.id
+      }
+      q_params.merge! params.permit(:box_specification_id)
+
+      @boxes = Box.includes(:box_specification, :trade_item).default_where(q_params).page(params[:page])
+    end
+
+    def invest
+      q_params = {
+        invest_organ_id: current_organ.id
       }
       q_params.merge! params.permit(:box_specification_id)
 

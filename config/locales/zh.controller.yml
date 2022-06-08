@@ -68,6 +68,8 @@ zh:
       boxes:
         index:
           title: 物流箱
+        invest:
+          title: 持有物流箱
     buy:
       orders:
         index:

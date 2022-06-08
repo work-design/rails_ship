@@ -40,7 +40,11 @@ Rails.application.routes.draw do
           get :rent
         end
       end
-      resources :boxes
+      resources :boxes do
+        collection do
+          get :invest
+        end
+      end
     end
     namespace :buy, defaults: { namespace: 'buy' } do
       resources :orders do
