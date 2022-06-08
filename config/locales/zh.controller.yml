@@ -74,9 +74,13 @@ zh:
         index:
           title: 出租明细
     buy:
+      title: 订购/租用
       orders:
         index:
           title: 物流箱订单
+      rents:
+        index:
+          title: 租用
     my:
       packages:
         index:

@@ -1,5 +1,7 @@
-<th><%= Rent.human_attribute_name(:rentable) %></th>
-<th><%= Rent.human_attribute_name(:start_at) %></th>
-<th><%= Rent.human_attribute_name(:finish_at) %></th>
-<th><%= Rent.human_attribute_name(:estimate_finish_at) %></th>
-<th><%= Rent.human_attribute_name(:price) %></th>
+<th><%= Lease::Rent.human_attribute_name(:rentable) %></th>
+<th>
+  <p><%= Lease::Rent.human_attribute_name(:start_at) %></p>
+  <p><%= Lease::Rent.human_attribute_name(:estimate_finish_at) %></p>
+</th>
+<th><%= Lease::Rent.human_attribute_name(:finish_at) %></th>
+<th><%= Lease::Rent.human_attribute_name(:price) %></th>

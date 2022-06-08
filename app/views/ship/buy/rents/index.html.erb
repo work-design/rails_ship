@@ -1,0 +1,7 @@
+<%= render 'filter_table' %>
+
+<%= render layout: 'index_table' do %>
+  <%= render partial: 'index_tbody', layout: 'index_tr', collection: @rents, as: :model %>
+<% end %>
+
+<%= paginate @rents %>

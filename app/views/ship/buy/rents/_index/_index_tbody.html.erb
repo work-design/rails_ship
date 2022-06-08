@@ -1,5 +1,9 @@
-<td><%= model.rentable %></td>
-<td><%= model.start_at %></td>
-<td><%= model.finish_at %></td>
-<td><%= model.estimate_finish_at %></td>
+<td>
+  <p><%= model.rentable_type_i18n %></p>
+</td>
+<td>
+  <p><time data-controller="time"><%= model.start_at.to_fs(:iso8601) %></time></p>
+  <p><time data-controller="time"><%= model.estimate_finish_at&.to_fs(:iso8601) %></time></p>
+</td>
+<td><time data-controller="time"><%= model.finish_at&.to_fs(:iso8601) %></time></td>
 <td><%= model.price %></td>
