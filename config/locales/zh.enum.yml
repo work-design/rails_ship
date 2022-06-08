@@ -45,3 +45,11 @@ zh:
         state:
           loaded: 已装车
           unloaded: 已卸车
+      ship/box:
+        status:
+          born: 生产出
+          free: 空闲
+          using: 使用中
+        rented:
+          true: 租用中
+          false: 持有中

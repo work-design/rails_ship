@@ -3,15 +3,15 @@ module Ship
     extend ActiveSupport::Concern
 
     included do
-      attribute :code
+      attribute :code, :string
       attribute :loaded_at, :datetime
       attribute :unloaded_at, :datetime
 
       enum status: {
+        born: 'born',
         free: 'free',
-        hired: 'hired',
-        used: 'used'
-      }, _prefix: true
+        using: 'using'
+      }, _default: 'born', _prefix: true
       enum state: {
         grid_in: 'grid_in',
         grid_out: 'grid_out',

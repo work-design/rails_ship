@@ -3,6 +3,12 @@
   <p><%= model.box_specification.name %></p>
   <p><%= model.box_specification.measure %></p>
 </td>
-<td><%= model.status %></td>
-<td class="has-text-grey"><%= model.trade_item_id %></td>
+<td>
+  <p><%= model.status_i18n %></p>
+  <p><%= model.rented_i18n %></p>
+</td>
+<td>
+  <p><%= model.trade_item_id %></p>
+  <p><%= model.trade_item.aim_i18n %></p>
+</td>
 <td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>
