@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       resources :lines do
         resources :similars
       end
-      resources :box_specifications do
+      resources :box_specifications, only: [:index, :show] do
         resources :boxes
       end
     end
