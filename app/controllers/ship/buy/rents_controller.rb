@@ -1,6 +1,6 @@
 module Ship
   class Buy::RentsController < Buy::BaseController
-    before_action :set_rent, only: [:show, :edit, :update]
+    before_action :set_rent, only: [:show, :promote, :edit, :update]
 
     def index
       q_params = {
@@ -9,6 +9,10 @@ module Ship
       q_params.merge! params.permit(:id, :payment_type, :payment_status, :state)
 
       @rents = Lease::Rent.includes(:trade_item).default_where(q_params).order(id: :desc).page(params[:page])
+    end
+
+    def promote
+      @promote = @rent.trade_item.good.available_promotes[0]
     end
 
     private

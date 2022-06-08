@@ -1,0 +1,21 @@
+<td>
+  <p>
+    <span class="pr-1"><%= model.min %></span>
+    <% if model.contain_min %>
+      <i class="fa-light fa-check has-text-success"></i>
+    <% else %>
+      <i class="fa-light fa-times has-text-danger"></i>
+    <% end %>
+  </p>
+  <p>
+    <span class="pr-1"><%= model.max %></span>
+    <% if model.contain_max %>
+      <i class="fa-light fa-check has-text-success"></i>
+    <% else %>
+      <i class="fa-light fa-times has-text-danger"></i>
+    <% end %>
+  </p>
+</td>
+<td><%= model.parameter %></td>
+<td><%= model.base_price %></td>
+<td><%= simple_format(model.extra) %></td>
