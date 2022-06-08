@@ -70,6 +70,9 @@ zh:
           title: 物流箱
         invest:
           title: 持有物流箱
+      rents:
+        index:
+          title: 出租明细
     buy:
       orders:
         index:

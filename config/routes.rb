@@ -44,6 +44,7 @@ Rails.application.routes.draw do
         collection do
           get :invest
         end
+        resources :rents
       end
     end
     namespace :buy, defaults: { namespace: 'buy' } do
