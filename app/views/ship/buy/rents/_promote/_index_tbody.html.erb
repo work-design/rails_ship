@@ -16,6 +16,10 @@
     <% end %>
   </p>
 </td>
-<td><%= model.parameter %></td>
+<td>
+  <span><%= model.parameter %></span>
+  <span>/</span>
+  <span><%= model.unit_code %></span>
+</td>
 <td><%= model.base_price %></td>
 <td><%= simple_format(model.extra) %></td>
