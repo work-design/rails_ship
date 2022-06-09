@@ -81,6 +81,7 @@ zh:
       rents:
         index:
           title: 租用
+          compute: 刷新价格
         promote:
           title: 租金价格
     my:
