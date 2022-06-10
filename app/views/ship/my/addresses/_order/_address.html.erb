@@ -7,7 +7,7 @@
     </span>
   </span>
   <span class="weui-cell__ft" data-controller="input">
-    <%= radio_button_tag 'order[address_id]', address.id, false, class: 'weui-check', id: "address_id_#{address.id}", form: 'new_order', data: { action: 'input#form' } %>
+    <%= radio_button_tag 'order[address_id]', address.id, address.id.to_s == params[:address_id], class: 'weui-check', id: "address_id_#{address.id}", form: 'new_order', data: { action: 'input#form' } %>
     <span class="weui-icon-checked"></span>
   </span>
 </label>
