@@ -112,7 +112,7 @@ Rails.application.routes.draw do
       resources :stations
       resources :addresses do
         collection do
-          get :order
+          post :order
         end
         member do
           get :plans

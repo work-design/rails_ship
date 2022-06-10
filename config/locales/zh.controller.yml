@@ -115,6 +115,8 @@ zh:
       addresses:
         index:
           title: 地址
+        order:
+          title: 选择地址
     driver:
       favorites:
         index:
