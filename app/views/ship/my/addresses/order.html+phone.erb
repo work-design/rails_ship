@@ -1,0 +1,14 @@
+<%= render 'top_bar' %>
+
+<div class="weui-panel">
+  <div class="weui-panel__hd"><%= t('.title') %></div>
+  <div class="weui-panel__bd">
+    <%= render partial: 'address', collection: @addresses, as: :address %>
+  </div>
+  <div class="weui-panel__ft">
+    <%= link_to({ action: 'new' }, class: 'weui-cell weui-cell_access weui-cell_link') do %>
+      <div class="weui-cell__bd"><%= t('.new') %></div>
+      <span class="weui-cell__ft"></span>
+    <% end %>
+  </div>
+</div>

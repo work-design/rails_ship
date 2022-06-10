@@ -111,6 +111,9 @@ Rails.application.routes.draw do
       end
       resources :stations
       resources :addresses do
+        collection do
+          get :order
+        end
         member do
           get :plans
         end

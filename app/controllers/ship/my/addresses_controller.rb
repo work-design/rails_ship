@@ -14,6 +14,10 @@ module Ship
       @stations = Station.default_where(default_params).where.not(id: @station&.id)
     end
 
+    def order
+      @addresses = current_user.addresses.includes(:area).page(params[:page])
+    end
+
     def new
       @address = current_user.addresses.build(station_id: params[:station_id])
     end
