@@ -7,7 +7,7 @@
 </td>
 <td><time data-controller="time"><%= model.finish_at&.to_fs(:iso8601) %></time></td>
 <td>
-<% if model.duration.zero? %>
+<% if model.ongoing? %>
   <time data-controller="count-up" data-count-up-time-value="<%= model.start_at.to_fs(:iso8601) %>" class="has-text-mono"><%= exact_distance_time(model.start_at, Time.current) %></time>
 <% else %>
   <%= model.duration.inspect %>
