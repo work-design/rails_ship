@@ -1,14 +1,32 @@
 module Ship
   class Admin::BoxesController < Admin::BaseController
     before_action :set_box_specification
+    before_action :set_new_box, only: [:index, :new, :create]
 
     def index
-      @boxes = @box_specification.boxes.page(params[:page])
+      @boxes = @box_specification.boxes.order(id: :desc).page(params[:page])
+    end
+
+    def batch
+      5.times do
+        @box_specification.boxes.build
+      end
+      @box_specification.save
     end
 
     private
     def set_box_specification
       @box_specification = BoxSpecification.find params[:box_specification_id]
+    end
+
+    def set_new_box
+      @box = @box_specification.boxes.build(box_params)
+    end
+
+    def box_params
+      params.fetch(:box, {}).permit(
+        :code
+      )
     end
 
   end

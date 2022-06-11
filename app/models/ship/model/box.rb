@@ -24,6 +24,8 @@ module Ship
       belongs_to :box_specification, counter_cache: true
 
       has_many :packages, dependent: :nullify
+
+      before_validation :init_code, if: -> { code.blank? }
     end
 
     def price
@@ -35,6 +37,10 @@ module Ship
 
     def qrcode_enter_url
       QrcodeHelper.data_url(enter_url)
+    end
+
+    def init_code
+      self.code = UidHelper.usec_uuid('BOX')
     end
 
   end

@@ -33,7 +33,11 @@ Rails.application.routes.draw do
       resources :shipments
       resources :items
       resources :box_specifications do
-        resources :boxes
+        resources :boxes do
+          collection do
+            post :batch
+          end
+        end
       end
       root 'home#index'
     end

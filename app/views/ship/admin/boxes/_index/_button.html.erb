@@ -1,0 +1,9 @@
+<div class="buttons are-small mb-0">
+  <%= form_with theme: nil, model: @box, url: { action: 'create' } do |f| %>
+    <%= f.hidden_field :code %>
+    <%= f.submit '新增', class: 'button is-info' %>
+  <% end %>
+  <%= form_with theme: nil, url: { action: 'batch' }, class: 'ml-2' do |f| %>
+    <%= f.submit '批量新增', class: 'button is-info' %>
+  <% end %>
+</div>
