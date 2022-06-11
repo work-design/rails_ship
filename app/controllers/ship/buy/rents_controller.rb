@@ -19,7 +19,7 @@ module Ship
     end
 
     def compute
-      @promote.compute
+      @rent.compute_later
     end
 
     private
