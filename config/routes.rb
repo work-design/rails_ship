@@ -66,6 +66,7 @@ Rails.application.routes.draw do
       resources :rents do
         member do
           get :promote
+          get :job
           put :compute
         end
       end

@@ -84,6 +84,8 @@ zh:
           compute: 刷新价格
         promote:
           title: 租金价格
+        job:
+          title: 价格更新
     my:
       packages:
         index:

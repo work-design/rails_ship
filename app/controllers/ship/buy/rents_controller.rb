@@ -1,6 +1,6 @@
 module Ship
   class Buy::RentsController < Buy::BaseController
-    before_action :set_rent, only: [:show, :promote, :edit, :update, :compute]
+    before_action :set_rent, only: [:show, :promote, :edit, :update, :job, :compute]
 
     def index
       q_params = {
@@ -13,6 +13,9 @@ module Ship
 
     def promote
       @promote = @rent.promote
+    end
+
+    def job
     end
 
     def compute
