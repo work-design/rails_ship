@@ -1,3 +1,4 @@
 <td><%= model.name %></td>
 <td><%= model.measure %></td>
+<td><%= model.cost.to_money.format(html_wrap: true).html_safe %></td>
 <td><%= model.boxes_count %></td>
