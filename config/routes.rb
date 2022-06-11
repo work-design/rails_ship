@@ -9,7 +9,11 @@ Rails.application.routes.draw do
       end
     end
     namespace :admin, defaults: { namespace: 'admin' } do
-      resources :stations
+      resources :stations do
+        member do
+          patch :actions
+        end
+      end
       resources :addresses do
         resources :trade_items, only: [] do
           collection do
