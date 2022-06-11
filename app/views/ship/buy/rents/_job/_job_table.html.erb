@@ -6,6 +6,10 @@
     </tr>
     <tr>
       <td class="has-text-right"><%= Lease::Rent.human_attribute_name(:job_id) %></td>
+      <td><time data-controller="time"><%= @rent.job.scheduled_at.to_fs(:iso8601) %></time></td>
+    </tr>
+    <tr>
+      <td class="has-text-right"><%= Lease::Rent.human_attribute_name(:job_id) %></td>
       <td><%= @rent.job.status %></td>
     </tr>
   </tbody>
