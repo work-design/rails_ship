@@ -1,5 +1,6 @@
 <table class="table is-fullwidth is-hoverable as-show">
   <tbody>
+    <% if @rent.job %>
     <tr>
       <td class="has-text-right"><%= GoodJob::ActiveJobJob.human_attribute_name(:active_job_id) %></td>
       <td><%= @rent.job.active_job_id %></td>
@@ -12,6 +13,7 @@
       <td class="has-text-right"><%= GoodJob::ActiveJobJob.human_attribute_name(:status) %></td>
       <td><%= @rent.job.status %></td>
     </tr>
+    <% end %>
   </tbody>
   <tfoot>
     <tr>
