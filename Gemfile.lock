@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: ad3eeeb426c8a9873a9acf6ddb5760db5a1a749b
+  revision: 13a9d887ce9d39bcdd097146d5f6377e6b6361c8
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: a6e56ba5b6debc0443c2e68eeb059ff33ece12a3
+  revision: 71f46f102fe12f65c75435fac1810921783678c4
   specs:
     rails_com (1.3.0)
       acme-client
@@ -26,14 +26,14 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_profile.git
-  revision: 4f669fa5b9f1190f076c869791819155d0bb5b71
+  revision: 401da180389c1b1b6b45a2d39559c9667c500263
   specs:
     rails_profile (0.0.1)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_trade.git
-  revision: 845877dd16372dd21bd495aacdfee8d109dc6c28
+  revision: f413ab4ddb25daddfb6e5c351d87f867185cea8d
   specs:
     rails_trade (0.0.3)
       money-rails (~> 1.14)

@@ -1,15 +1,15 @@
 <table class="table is-fullwidth is-hoverable as-show">
   <tbody>
     <tr>
-      <td class="has-text-right"><%= Lease::Rent.human_attribute_name(:job_id) %></td>
+      <td class="has-text-right"><%= GoodJob::ActiveJobJob.human_attribute_name(:active_job_id) %></td>
       <td><%= @rent.job.active_job_id %></td>
     </tr>
     <tr>
-      <td class="has-text-right"><%= Lease::Rent.human_attribute_name(:job_id) %></td>
+      <td class="has-text-right"><%= GoodJob::ActiveJobJob.human_attribute_name(:scheduled_at) %></td>
       <td><time data-controller="time"><%= @rent.job.scheduled_at.to_fs(:iso8601) %></time></td>
     </tr>
     <tr>
-      <td class="has-text-right"><%= Lease::Rent.human_attribute_name(:job_id) %></td>
+      <td class="has-text-right"><%= GoodJob::ActiveJobJob.human_attribute_name(:status) %></td>
       <td><%= @rent.job.status %></td>
     </tr>
   </tbody>
