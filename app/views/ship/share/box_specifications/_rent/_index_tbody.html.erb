@@ -1,12 +1,14 @@
 <td><%= model.name %></td>
-<td>
-  <span><%= model.width %></span>
-  <span class="has-text-grey">x</span>
-  <span><%= model.length %></span>
-  <span class="has-text-grey">x</span>
-  <span><%= model.height %></span>
+<td><%= model.measure %></td>
+<td class="has-text-danger">
+<% model.available_promotes.each do |promote| %>
+  <p>
+    <span><%= promote.promote_charges[0].parameter.to_money.format(html_wrap: true).html_safe %></span>
+    <span>/</span>
+    <span><%= promote.unit_code %></span>
+  </p>
+<% end %>
 </td>
-<td class="has-text-danger"><%= model.price.to_money.format(html_wrap: true).html_safe %></td>
 <td>
   <div class="is-flex is-justify-content-center">
     <%= render partial: 'cart', locals: { model: model } %>
