@@ -1,5 +1,8 @@
 <td><%= model.code %></td>
 <td><%= model.box_specification_id %></td>
 <td><%= model.status_i18n %></td>
+<td>
+  <p><%= model.held_organ&.name %></p>
+</td>
 <td><%= model.rented %></td>
 <td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>
