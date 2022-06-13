@@ -11,7 +11,7 @@ module Ship
     end
 
     def create
-      @order = current_member.orders.build
+      @order = current_member.orders.build(order_params)
       @trade_items = Trade::TradeItem.where(id: params[:ids].split(','))
       @trade_items.each do |trade_item|
         trade_item.order = @order
@@ -29,6 +29,10 @@ module Ship
     private
     def set_order
       @order = current_organ.member_orders.find params[:id]
+    end
+
+    def order_params
+      params.permit(:pay_later)
     end
 
   end
