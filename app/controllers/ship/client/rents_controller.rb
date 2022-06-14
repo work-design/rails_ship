@@ -1,5 +1,5 @@
 module Ship
-  class Buy::RentsController < Buy::BaseController
+  class Client::RentsController < Client::BaseController
     before_action :set_rent, only: [:show, :promote, :edit, :update, :job, :compute]
 
     def index
