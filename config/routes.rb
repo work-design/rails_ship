@@ -139,4 +139,8 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resolve 'Ship::BoxSpecification' do |box_specification, options|
+    [:ship, box_specification, options]
+  end
 end
