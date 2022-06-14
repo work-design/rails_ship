@@ -60,7 +60,7 @@ Rails.application.routes.draw do
         resources :rents
       end
     end
-    namespace :buy, defaults: { namespace: 'buy' } do
+    namespace :client, defaults: { namespace: 'client' } do
       resources :orders do
         member do
           get :payment_types
