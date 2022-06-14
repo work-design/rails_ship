@@ -1,0 +1,19 @@
+<div class="weui-media-box weui-media-box_appmsg" id="production_<%= model.id %>">
+  <%= link_to({ action: 'show', id: model.id }, text: true, class: 'weui-media-box__hd') do %>
+    <%= image_tag model.logo, class: 'weui-media-box__thumb' if model.logo.attached? %>
+  <% end %>
+  <div class="weui-media-box__bd is-flex is-flex-direction-column">
+    <%= link_to({ action: 'show', id: model.id }, text: true, class: 'weui-media-box__title') do %>
+      <%= model.name %>
+    <% end %>
+    <p class="weui-media-box__desc pt-0">
+      <%= model.height %>
+    </p>
+    <div class="is-flex is-align-items-center">
+      <span class="has-text-danger"><%= model.cost.to_money.format(html_wrap: true).html_safe %></span>
+    </div>
+    <div class="is-flex is-justify-content-flex-end pt-2">
+      <%= render partial: 'cart', locals: { model: model } if current_cart %>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   namespace :ship, defaults: { business: 'ship' } do
+    resources :box_specifications do
+      collection do
+        get :rent
+      end
+    end
     namespace :panel, defaults: { namespace: 'panel' } do
       resources :lines do
         resources :similars

@@ -1,5 +1,10 @@
 zh:
   ship:
+    box_specifications:
+      index:
+        title: 买入物流箱
+      rent:
+        title: 租用物流箱
     panel:
       title: 运输管理
       lines:
