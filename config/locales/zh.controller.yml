@@ -78,7 +78,7 @@ zh:
       rents:
         index:
           title: 出租明细
-    buy:
+    client:
       title: 订购/租用
       orders:
         index:
