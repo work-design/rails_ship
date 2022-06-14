@@ -7,13 +7,20 @@
       <%= model.name %>
     <% end %>
     <p class="weui-media-box__desc pt-0">
-      <%= model.height %>
+      <%= model.measure %>
     </p>
     <div class="is-flex is-align-items-center">
-      <span class="has-text-danger"><%= model.cost.to_money.format(html_wrap: true).html_safe %></span>
+      <span class="has-text-danger"><%= model.price.to_money.format(html_wrap: true).html_safe %></span>
     </div>
-    <div class="is-flex is-justify-content-flex-end pt-2">
-      <%= render partial: 'cart', locals: { model: model } if current_cart %>
+    <div class="is-level is-flex is-justify-content-space-between pt-2">
+      <div class="level-left">
+        <div class="level-item">可租用： <%= model.rentals_count %></div>
+      </div>
+      <div class="level-right mt-0">
+        <div class="level-item">
+          <%= render partial: 'cart', locals: { model: model } if current_cart %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
