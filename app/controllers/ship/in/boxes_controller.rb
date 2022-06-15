@@ -1,5 +1,5 @@
 module Ship
-  class Into::BoxesController < Into::BaseController
+  class In::BoxesController < In::BaseController
     before_action :set_box_specifications, only: [:index, :invest, :rent]
 
     def index

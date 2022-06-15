@@ -46,7 +46,7 @@ Rails.application.routes.draw do
       end
       root 'home#index'
     end
-    namespace :into, defaults: { namespace: 'into' } do
+    namespace :in, defaults: { namespace: 'in' } do
       resources :box_specifications do
         collection do
           get :buy
@@ -58,7 +58,6 @@ Rails.application.routes.draw do
           get :invest
           get :rent
         end
-        resources :rents
       end
       resources :orders do
         member do
@@ -73,6 +72,11 @@ Rails.application.routes.draw do
           get :job
           put :compute
         end
+      end
+    end
+    namespace :out, defaults: { namespace: 'out' } do
+      resources do
+        resources :rents
       end
     end
     namespace :our, defaults: { namespace: 'our' } do

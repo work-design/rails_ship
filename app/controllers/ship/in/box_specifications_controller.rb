@@ -1,5 +1,5 @@
 module Ship
-  class Into::BoxSpecificationsController < Into::BaseController
+  class In::BoxSpecificationsController < In::BaseController
 
     def index
       @box_specifications = BoxSpecification.page(params[:page])

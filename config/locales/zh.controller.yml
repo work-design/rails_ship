@@ -62,7 +62,7 @@ zh:
       items:
         index:
           title: 运单管理
-    into:
+    in:
       title: 订购/租用
       box_specifications:
         index:

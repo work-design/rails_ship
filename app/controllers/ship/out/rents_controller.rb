@@ -1,5 +1,5 @@
 module Ship
-  class Into::RentsController < Into::BaseController
+  class Out::RentsController < Out::BaseController
     before_action :set_box
 
     def index

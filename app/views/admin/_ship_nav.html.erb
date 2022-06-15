@@ -12,14 +12,14 @@
 </div>
 <div class="<%= active_helper(modules: ['ship/client'], active: 'menu ex-accordion is-active', item: 'menu ex-accordion is-active') %>" data-controller="menu">
   <%= content_tag :div, class: 'menu-list' do %>
-    <%= link_to t('ship.into.boxes.index.title'), { controller: 'ship/into/boxes' }, class: active_helper(controllers: 'boxes', active: 'is-active') %>
-    <%= link_to t('ship.into.box_specifications.index.title'), { controller: 'ship/into/box_specifications' }, class: active_helper(controllers: 'box_specifications', active: 'is-active') %>
-    <%= link_to t('ship.into.orders.index.title'), { controller: 'ship/into/orders' }, class: active_helper(controllers: 'orders', active: 'is-active') %>
-    <%= link_to t('ship.into.rents.index.title'), { controller: 'ship/into/rents' }, class: active_helper(controllers: 'rents', active: 'is-active') -%>
+    <%= link_to t('ship.in.boxes.index.title'), { controller: 'ship/in/boxes' }, class: active_helper(controllers: 'boxes', active: 'is-active') %>
+    <%= link_to t('ship.in.box_specifications.index.title'), { controller: 'ship/in/box_specifications' }, class: active_helper(controllers: 'box_specifications', active: 'is-active') %>
+    <%= link_to t('ship.in.orders.index.title'), { controller: 'ship/in/orders' }, class: active_helper(controllers: 'orders', active: 'is-active') %>
+    <%= link_to t('ship.in.rents.index.title'), { controller: 'ship/in/rents' }, class: active_helper(controllers: 'rents', active: 'is-active') -%>
   <% end %>
   <a class="menu-label" data-action="menu#toggle">
     <i class="fa-solid fa-fw fa-box-circle-check"></i>
-    <span><%= t('ship.into.title') %></span>
+    <span><%= t('ship.in.title') %></span>
     <i class="fa-solid dropdown"></i>
   </a>
 </div>
