@@ -15,7 +15,7 @@
   <% end %>
   <span class="has-text-grey pl-2">下单： <%= trade_item.member.name %></span>
 <% else %>
-  <%= form_with theme: nil, url: { controller: 'trade/into/trade_items', action: 'cost' }, data: { turbo_scroll: true, turbo_scroll_container: 'production_body' }, class: 'button_to' do |f| %>
+  <%= form_with theme: nil, url: { controller: 'trade/my_ext/trade_items', action: 'cost' }, data: { turbo_scroll: true, turbo_scroll_container: 'production_body' }, class: 'button_to' do |f| %>
     <%= f.hidden_field :good_type, value: model.class_name %>
     <%= f.hidden_field :good_id, value: model.id %>
     <%= f.hidden_field :aim, value: 'invest' %>
