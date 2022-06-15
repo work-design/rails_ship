@@ -56,6 +56,7 @@ Rails.application.routes.draw do
       resources :boxes do
         collection do
           get :invest
+          get :rent
         end
         resources :rents
       end

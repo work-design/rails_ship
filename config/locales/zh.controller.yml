@@ -73,9 +73,11 @@ zh:
           title: 购买物流箱
       boxes:
         index:
-          title: 物流箱
+          title: 所有物流箱
         invest:
-          title: 持有物流箱
+          title: 买入
+        rent:
+          title: 租入
       orders:
         index:
           title: 物流箱订单

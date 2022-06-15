@@ -1,6 +1,6 @@
 module Ship
   class Into::BoxesController < Into::BaseController
-    before_action :set_box_specifications, only: [:index, :invest]
+    before_action :set_box_specifications, only: [:index, :invest, :rent]
 
     def index
       q_params = {
@@ -13,7 +13,8 @@ module Ship
 
     def invest
       q_params = {
-        held_organ_id: current_organ.id
+        held_organ_id: current_organ.id,
+        rented: false
       }
       q_params.merge! params.permit(:box_specification_id)
 
