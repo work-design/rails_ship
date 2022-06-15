@@ -75,7 +75,7 @@ Rails.application.routes.draw do
       end
     end
     namespace :out, defaults: { namespace: 'out' } do
-      resources do
+      resources :boxes do
         resources :rents
       end
     end
