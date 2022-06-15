@@ -3,6 +3,7 @@
 <td><%= model.status_i18n %></td>
 <td>
   <p><%= model.held_organ&.name %></p>
+  <p class="has-text-info"><%= model.owned_organ&.name %></p>
 </td>
 <td><%= model.rented %></td>
 <td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>

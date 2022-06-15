@@ -4,7 +4,7 @@ module Ship
     before_action :set_new_box, only: [:index, :new, :create]
 
     def index
-      @boxes = @box_specification.boxes.order(id: :desc).page(params[:page])
+      @boxes = @box_specification.boxes.includes(:held_organ, :owned_organ).order(id: :desc).page(params[:page])
     end
 
     def batch

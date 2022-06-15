@@ -13,8 +13,7 @@ module Ship
 
     def invest
       q_params = {
-        held_organ_id: current_organ.id,
-        rented: false
+        owned_organ_id: current_organ.id
       }
       q_params.merge! params.permit(:box_specification_id)
 
