@@ -127,6 +127,10 @@ zh:
           title: 地址
         order:
           title: 选择地址
+    our:
+      boxes:
+        index:
+          title: 物流箱（公司）
     driver:
       favorites:
         index:
