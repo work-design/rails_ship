@@ -2,7 +2,7 @@ module Ship
   class My::BoxesController < My::BaseController
 
     def index
-      @boxes = current_user.boxes.order(id: :desc).page(params[:page])
+      @boxes = current_user.boxes.includes(:box_specification).order(id: :desc).page(params[:page])
     end
 
     private
