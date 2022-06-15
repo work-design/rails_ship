@@ -1,5 +1,9 @@
 module Ship
-  class Share::BoxSpecificationsController < Share::BaseController
+  class Into::BoxSpecificationsController < Into::BaseController
+
+    def index
+      @box_specifications = BoxSpecification.page(params[:page])
+    end
 
     def rent
       @box_specifications = BoxSpecification.includes(:available_promotes).page(params[:page])

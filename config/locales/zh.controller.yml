@@ -62,7 +62,8 @@ zh:
       items:
         index:
           title: 运单管理
-    share:
+    into:
+      title: 订购/租用
       box_specifications:
         index:
           title: 物流箱规格
@@ -75,11 +76,6 @@ zh:
           title: 物流箱
         invest:
           title: 持有物流箱
-      rents:
-        index:
-          title: 出租明细
-    client:
-      title: 订购/租用
       orders:
         index:
           title: 物流箱订单
@@ -91,6 +87,10 @@ zh:
           title: 租金价格
         job:
           title: 价格更新
+    out:
+      rents:
+        index:
+          title: 出租明细
     my:
       packages:
         index:

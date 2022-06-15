@@ -46,7 +46,7 @@ Rails.application.routes.draw do
       end
       root 'home#index'
     end
-    namespace :share, defaults: { namespace: 'share' } do
+    namespace :into, defaults: { namespace: 'into' } do
       resources :box_specifications do
         collection do
           get :buy
@@ -59,8 +59,22 @@ Rails.application.routes.draw do
         end
         resources :rents
       end
+      resources :orders do
+        member do
+          get :payment_types
+          get 'payment_type' => :edit_payment_type
+        end
+        resources :trade_items
+      end
+      resources :rents do
+        member do
+          get :promote
+          get :job
+          put :compute
+        end
+      end
     end
-    namespace :client, defaults: { namespace: 'client' } do
+    namespace :our, defaults: { namespace: 'our' } do
       resources :orders do
         member do
           get :payment_types
