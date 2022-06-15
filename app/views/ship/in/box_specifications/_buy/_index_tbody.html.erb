@@ -10,8 +10,6 @@
   <span><%= model.height %></span>
 </td>
 <td class="has-text-danger"><%= model.cost.to_money.format(html_wrap: true).html_safe %></td>
-<td>
-  <div class="is-flex is-justify-content-center">
-    <%= render partial: 'cart', locals: { model: model } %>
-  </div>
+<td class="has-text-centered">
+  <%= render partial: 'cart', locals: { model: model } %>
 </td>
