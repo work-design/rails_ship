@@ -10,6 +10,8 @@ module Ship
 
       has_many :favorites, class_name: 'Ship::Favorite'
       has_many :drivers, class_name: 'Ship::Driver', through: :favorites
+
+      has_many :boxes, class_name: 'Ship::Box', foreign_key: :held_user_id
     end
 
   end

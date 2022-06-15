@@ -89,6 +89,7 @@ Rails.application.routes.draw do
           put :compute
         end
       end
+      resources :boxes
     end
     namespace :driver, defaults: { namespace: 'driver' } do
       resources :favorites
@@ -138,6 +139,7 @@ Rails.application.routes.draw do
         resources :locations
       end
       resources :stations
+      resources :boxes
       resources :addresses do
         collection do
           post :order

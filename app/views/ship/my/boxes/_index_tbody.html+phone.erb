@@ -1,0 +1,6 @@
+<strong class="weui-media-box__title"><%= link_to model.code, { action: 'show', id: model.id }, text: true %></strong>
+<p class="weui-media-box__desc"><%= model.box_specification.measure %></p>
+<div class="weui-media-box__desc">
+  <p><%= model.status_i18n %></p>
+  <p><%= model.rented_i18n %></p>
+</div>
