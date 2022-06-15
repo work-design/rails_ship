@@ -13,7 +13,10 @@
   <%= button_to({ controller: 'trade/my/trade_items', action: 'update', id: trade_item.id }, method: :patch, params: { '[trade_item]number': trade_item.number + 1 }, class: 'ml-1', form: { data: { turbo_scroll: true, turbo_scroll_container: 'production_body' } }) do %>
     <i class="fa-solid fa-circle-plus fa-xl has-text-dark-grey"></i>
   <% end %>
-  <span class="has-text-grey pl-2">下单： <%= trade_item.member.name %></span>
+  <span class="has-text-grey pl-2">
+    <span>下单人： </span>
+    <span><%= trade_item.member.name %></span>
+  </span>
 <% else %>
   <%= form_with theme: nil, url: { controller: 'trade/my_ext/trade_items', action: 'cost' }, data: { turbo_scroll: true, turbo_scroll_container: 'production_body' }, class: 'button_to' do |f| %>
     <%= f.hidden_field :good_type, value: model.class_name %>
