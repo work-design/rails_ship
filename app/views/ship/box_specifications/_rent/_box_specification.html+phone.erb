@@ -18,7 +18,7 @@
       </div>
       <div class="level-right mt-0">
         <div class="level-item">
-          <%= render partial: 'cart', locals: { model: model } if current_cart %>
+          <%= render partial: 'cart', locals: { model: model, cart: @cart } %>
         </div>
       </div>
     </div>
