@@ -2,7 +2,7 @@
   <div class="weui-cell__hd">预计结束时间</div>
   <div class="weui-cell__bd"></div>
   <div class="weui-cell__ft">
-    <time data-controller="time"><%= model.estimate_finish_at&.to_fs(:iso8601) %></time>
+    <time data-controller="time"><%= @trade_item.rent_estimate_finish_at&.to_fs(:iso8601) %></time>
   </div>
 </div>
 
@@ -21,13 +21,13 @@
       </div>
     </div>
     <div class="weui-half-screen-dialog__bd">
-      <%= form_with(model: model, url: { controller: 'rents', action: 'create', rented_id: model.id }, method: :patch) do |f| %>
-        <%= f.datetime_field :estimate_finish_at %>
+      <%= form_with(model: @order, url: { controller: 'trade/my/orders', action: 'trial' }) do |f| %>
+        <%= f.fields :trade_items, model: @trade_item do |ef| %>
+          <%= ef.datetime_field :rent_estimate_finish_at %>
+        <% end %>
         <%= f.submit '确认' %>
       <% end %>
     </div>
-    <div class="weui-half-screen-dialog__ft">
-
-    </div>
+    <div class="weui-half-screen-dialog__ft"></div>
   </div>
 </div>

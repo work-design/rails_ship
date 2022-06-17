@@ -13,6 +13,11 @@ module Ship
       @box_specifications = BoxSpecification.page(params[:page])
     end
 
+    def show
+      @order = current_user.orders.build
+      @trade_item = @order.trade_items.build
+    end
+
     private
     def set_box_specification
       @box_specification = BoxSpecification.find params[:id]
