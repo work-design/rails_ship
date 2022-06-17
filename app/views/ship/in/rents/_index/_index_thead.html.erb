@@ -1,8 +1,8 @@
-<th><%= Lease::Rent.human_attribute_name(:rentable) %></th>
+<th><%= Trade::TradeItem.human_attribute_name(:rentable) %></th>
 <th>
-  <p><%= Lease::Rent.human_attribute_name(:start_at) %></p>
-  <p><%= Lease::Rent.human_attribute_name(:estimate_finish_at) %></p>
+  <p><%= Trade::TradeItem.human_attribute_name(:rent_start_at) %></p>
+  <p><%= Trade::TradeItem.human_attribute_name(:rent_estimate_finish_at) %></p>
 </th>
-<th><%= Lease::Rent.human_attribute_name(:finish_at) %></th>
-<th><%= Lease::Rent.human_attribute_name(:duration) %></th>
-<th><%= Lease::Rent.human_attribute_name(:price) %></th>
+<th><%= Trade::TradeItem.human_attribute_name(:rent_finish_at) %></th>
+<th><%= Trade::TradeItem.human_attribute_name(:duration) %></th>
+<th><%= Trade::TradeItem.human_attribute_name(:amount) %></th>
