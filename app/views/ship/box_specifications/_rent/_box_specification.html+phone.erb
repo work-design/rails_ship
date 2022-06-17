@@ -10,7 +10,13 @@
       <%= model.measure %>
     </p>
     <div class="is-flex is-align-items-center">
-      <span class="has-text-danger"><%= model.price.to_money.format(html_wrap: true).html_safe %></span>
+    <% model.rent_promotes.each do |promote| %>
+      <p class="has-text-danger">
+        <span><%= promote.promote_charges[0].parameter.to_money.format(html_wrap: true).html_safe %></span>
+        <span>/</span>
+        <span><%= promote.unit_code_i18n %></span>
+      </p>
+    <% end %>
     </div>
     <div class="is-level is-flex is-justify-content-space-between pt-2">
       <div class="level-left">

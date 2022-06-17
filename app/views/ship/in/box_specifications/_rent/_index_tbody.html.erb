@@ -1,11 +1,11 @@
 <td><%= model.name %></td>
 <td><%= model.measure %></td>
 <td class="has-text-danger">
-<% model.available_promotes.each do |promote| %>
+<% model.rent_promotes.each do |promote| %>
   <p>
     <span><%= promote.promote_charges[0].parameter.to_money.format(html_wrap: true).html_safe %></span>
     <span>/</span>
-    <span><%= promote.unit_code %></span>
+    <span><%= promote.unit_code_i18n %></span>
   </p>
 <% end %>
 </td>
