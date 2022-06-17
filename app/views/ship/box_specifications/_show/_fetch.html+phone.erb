@@ -1,0 +1,33 @@
+<div class="weui-cell weui-cell_access" data-controller="weui-dialog" data-weui-dialog-id-value="fetch_dialog" data-action="click->weui-dialog#toggle">
+  <div class="weui-cell__hd">预计结束时间</div>
+  <div class="weui-cell__bd"></div>
+  <div class="weui-cell__ft">
+    <time data-controller="time"><%= model.estimate_finish_at&.to_fs(:iso8601) %></time>
+  </div>
+</div>
+
+<div data-controller="weui-dialog time-range" id="fetch_dialog" class="weui-dialog__wrap">
+  <div class="weui-mask" data-action="click->weui-dialog#close"></div>
+  <div class="weui-half-screen-dialog weui-half-screen-dialog_large" data-weui-dialog-target="dialog">
+    <div class="weui-half-screen-dialog__hd">
+      <div class="weui-half-screen-dialog__hd__side"></div>
+      <div class="weui-half-screen-dialog__hd__main">
+        <div class="weui-half-screen-dialog__title">选择时间</div>
+      </div>
+      <div class="weui-half-screen-dialog__hd__side">
+        <button class="weui-icon-btn" data-action="weui-dialog#close">
+          <i class="weui-icon-close-thin"></i>
+        </button>
+      </div>
+    </div>
+    <div class="weui-half-screen-dialog__bd">
+      <%= form_with(model: model, url: { controller: 'rents', action: 'create', rented_id: model.id }, method: :patch) do |f| %>
+        <%= f.datetime_field :estimate_finish_at %>
+        <%= f.submit '确认' %>
+      <% end %>
+    </div>
+    <div class="weui-half-screen-dialog__ft">
+
+    </div>
+  </div>
+</div>

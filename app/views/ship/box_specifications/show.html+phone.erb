@@ -7,3 +7,10 @@
   </div>
   <p class="has-text-danger"><%= @box_specification.price.to_money.format(html_wrap: true).html_safe %></p>
 </div>
+
+<div class="weui-panel">
+  <div class="weui-panel__hd">租期试算</div>
+  <div class="weui-panel__bd">
+    <%= render partial: 'fetch', locals: { model: @box_specification.rents.build } %>
+  </div>
+</div>
