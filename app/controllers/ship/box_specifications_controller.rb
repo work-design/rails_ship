@@ -1,6 +1,6 @@
 module Ship
   class BoxSpecificationsController < BaseController
-    before_action :set_box_specification, only: [:show]
+    before_action :set_box_specification, only: [:show, :update]
     before_action :set_use_cart, only: [:index]
     before_action :set_rent_cart, only: [:rent]
     before_action :set_cart, only: [:show]
@@ -14,8 +14,14 @@ module Ship
     end
 
     def show
-      @order = current_user.orders.build
+      @order = current_user.orders.build(order_params)
       @trade_item = @order.trade_items.build
+    end
+
+    def update
+      @order = current_user.orders.build(order_params)
+      @trade_item = @order.trade_items[0]
+      @trade_item.compute
     end
 
     private
@@ -33,6 +39,18 @@ module Ship
 
     def set_rent_cart
       @cart = current_carts.find_or_create_by(good_type: 'Ship::BoxSpecification', aim: 'rent')
+    end
+
+    def order_params
+      p = params.fetch(:order, {}).permit(
+        :quantity,
+        :payment_id,
+        :payment_type,
+        :address_id,
+        :note,
+        trade_items_attributes: {}
+      )
+      p.merge! default_form_params
     end
 
   end
