@@ -14,3 +14,13 @@
   <td class="has-text-right"><%= Ship::BoxSpecification.human_attribute_name(:height) %></td>
   <td><%= @box_specification.height %></td>
 </tr>
+<tr>
+  <td class="has-text-right"><%= Ship::BoxSpecification.human_attribute_name(:covers) %></td>
+  <td>
+    <div class="is-flex">
+    <% @box_specification.covers.each do |image| %>
+      <%= image_tag image, class: 'image is-128x128 mr-4' %>
+    <% end %>
+    </div>
+  </td>
+</tr>

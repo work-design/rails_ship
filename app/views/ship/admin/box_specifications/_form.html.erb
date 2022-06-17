@@ -5,3 +5,4 @@
 <%= f.number_field :height, required: true %>
 <%= f.number_field :cost %>
 <%= f.file_field :logo %>
+<%= render 'com/attachments/list_field', target: f.object.covers, f: f %>
