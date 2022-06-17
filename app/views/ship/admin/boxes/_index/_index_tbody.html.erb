@@ -5,5 +5,11 @@
   <p><%= model.held_organ&.name %></p>
   <p class="has-text-info"><%= model.owned_organ&.name %></p>
 </td>
+<td>
+  <%= form_with theme: nil, model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
+    <%= f.check_box :rentable, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
+    <label data-action="click->input#check"></label>
+  <% end %>
+</td>
 <td><%= model.rented %></td>
 <td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>

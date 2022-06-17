@@ -25,7 +25,8 @@ module Ship
 
     def box_params
       params.fetch(:box, {}).permit(
-        :code
+        :code,
+        :rentable
       )
     end
 
