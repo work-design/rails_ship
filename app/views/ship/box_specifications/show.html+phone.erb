@@ -6,6 +6,13 @@
     <span><%= @box_specification.measure %></span>
   </div>
   <p class="has-text-danger"><%= @box_specification.price.to_money.format(html_wrap: true).html_safe %></p>
+  <% @box_specification.rent_promotes.each do |promote| %>
+    <p class="has-text-danger">
+      <span><%= promote.promote_charges[0].parameter.to_money.format(html_wrap: true).html_safe %></span>
+      <span>/</span>
+      <span><%= promote.unit_code_i18n %></span>
+    </p>
+  <% end %>
 </div>
 
 <%= render 'rent_price' %>
