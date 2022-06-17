@@ -11,6 +11,7 @@ module Ship
       attribute :unit, :string
 
       has_one_attached :logo
+      has_many_attached :covers
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 
