@@ -5,9 +5,13 @@
     <span><%= @box_specification.name %></span>
     <span><%= @box_specification.measure %></span>
   </div>
-  <p class="has-text-danger"><%= @box_specification.price.to_money.format(html_wrap: true).html_safe %></p>
+  <p>
+    <span class="has-text-grey"><%= Ship::BoxSpecification.human_attribute_name(:price) %></span>
+    <span class="has-text-danger"><%= @box_specification.price.to_money.format(html_wrap: true).html_safe %></span>
+  </p>
   <% @box_specification.rent_promotes.each do |promote| %>
     <p class="has-text-danger">
+      <span class="has-text-grey">租金：</span>
       <span><%= promote.promote_charges[0].parameter.to_money.format(html_wrap: true).html_safe %></span>
       <span>/</span>
       <span><%= promote.unit_code_i18n %></span>
