@@ -1,1 +1,9 @@
 <%= render partial: 'covers', locals: { model: @box_specification } if @box_specification.covers.length > 0 %>
+
+<div class="box is-radiusless is-sticky" style="z-index: 3">
+  <div class="has-text-bold">
+    <span><%= @box_specification.name %></span>
+    <span><%= @box_specification.measure %></span>
+  </div>
+  <p class="has-text-danger"><%= @box_specification.price.to_money.format(html_wrap: true).html_safe %></p>
+</div>
