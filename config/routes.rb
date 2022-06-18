@@ -66,6 +66,7 @@ Rails.application.routes.draw do
         end
         resources :trade_items
       end
+      resources :trade_items
       resources :rents do
         member do
           get :promote
