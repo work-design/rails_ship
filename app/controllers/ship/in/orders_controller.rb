@@ -11,12 +11,6 @@ module Ship
 
     def create
       @order = current_member.orders.build(order_params)
-      @trade_items = Trade::TradeItem.where(id: params[:ids].split(','))
-      @trade_items.each do |trade_item|
-        trade_item.order = @order
-        trade_item.status = 'ordered'
-        trade_item.address_id = params[:address_id]
-      end
 
       if @order.save
         render 'create'
@@ -31,7 +25,10 @@ module Ship
     end
 
     def order_params
-      params.permit(:pay_later)
+      params.fetch(:order, {}).permit(
+        :pay_later,
+        :current_cart_id
+      )
     end
 
   end
