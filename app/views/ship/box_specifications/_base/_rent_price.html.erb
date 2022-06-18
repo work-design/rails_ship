@@ -4,6 +4,6 @@
     <span class="has-text-danger"><%= @order.amount.to_money.format(html_safe: true).html_safe %></span>
   </div>
   <div class="weui-panel__bd">
-    <%= render partial: 'fetch', locals: { model: @box_specification.rents.build } %>
+    <%= render partial: 'fetch' %>
   </div>
 </div>
