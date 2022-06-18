@@ -3,7 +3,7 @@
   <p class="has-text-grey"><%= model.organ&.name %></p>
 </td>
 <td><%= model.measure %></td>
-<td class="has-text-danger"><%= model.cost.to_money.format(html_wrap: true).html_safe %></td>
+<td class="has-text-danger"><%= model.price.to_money.format(html_wrap: true).html_safe %></td>
 <td class="has-text-centered">
   <%= render partial: 'cart', locals: { model: model } %>
 </td>
