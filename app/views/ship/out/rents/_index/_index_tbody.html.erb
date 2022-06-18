@@ -1,6 +1,6 @@
 <td>
-  <p><time data-controller="time"><%= model.start_at.to_fs(:iso8601) %></time></p>
-  <p><time data-controller="time"><%= model.estimate_finish_at&.to_fs(:iso8601) %></time></p>
+  <p><time data-controller="time"><%= model.rent_start_at.to_fs(:iso8601) %></time></p>
+  <p><time data-controller="time"><%= model.rent_estimate_finish_at&.to_fs(:iso8601) %></time></p>
 </td>
-<td><time data-controller="time"><%= model.finish_at&.to_fs(:iso8601) %></time></td>
+<td><time data-controller="time"><%= model.rent_finish_at&.to_fs(:iso8601) %></time></td>
 <td><%= model.price %></td>
