@@ -3,7 +3,7 @@
     <th colspan="2"></th>
     <th><%= @cart.amount.to_money.format(html_wrap: true).html_safe %></th>
     <th class="has-text-centered">
-      <%= form_with url: { controller: 'ship/in/orders', action: 'create' }, class: 'button_to' do |f| %>
+      <%= form_with scope: 'order', url: { controller: 'ship/in/orders', action: 'create' }, class: 'button_to' do |f| %>
         <%= f.hidden_field :current_cart_id, value: @cart.id %>
         <%= button_tag class: 'button is-success' do %>
           <i class="fa-light fa-credit-card"></i>
