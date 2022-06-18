@@ -17,11 +17,11 @@ module Ship
 
     private
     def set_rent_cart
-      @cart = current_organ.organ_carts.find_or_create_by(good_type: 'Ship::BoxSpecification', aim: 'rent')
+      @cart = current_member.carts.find_or_create_by(good_type: 'Ship::BoxSpecification', aim: 'rent')
     end
 
     def set_use_cart
-      @cart = current_organ.organ_carts.find_or_create_by(good_type: 'Ship::BoxSpecification', aim: 'use')
+      @cart = current_member.carts.find_or_create_by(good_type: 'Ship::BoxSpecification', aim: 'use')
     end
 
   end

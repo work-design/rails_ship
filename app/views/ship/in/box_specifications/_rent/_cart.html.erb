@@ -4,7 +4,9 @@
 <%= form_with theme: nil, scope: 'trade_item', url: { controller: 'trade/in/trade_items', action: 'update', id: trade_item.id }, method: :patch, class: 'button_to', data: { turbo_scroll: true } do |f| %>
   <%= f.hidden_field :current_cart_id, value: @cart.id %>
   <%= f.hidden_field :number, value: trade_item.number - 1 %>
-  <i class="fa-solid fa-circle-minus fa-xl has-text-dark-grey"></i>
+  <%= button_tag class: 'mr-1' do %>
+    <i class="fa-solid fa-circle-minus fa-xl has-text-dark-grey"></i>
+  <% end %>
 <% end if trade_item.number > 1 %>
 <%= button_to({ controller: 'trade/in/trade_items', action: 'destroy', id: trade_item.id }, method: :delete, class: 'mr-1', form: { data: { turbo_scroll: true } }) do %>
   <i class="fa-solid fa-circle-minus fa-xl has-text-dark-grey"></i>
