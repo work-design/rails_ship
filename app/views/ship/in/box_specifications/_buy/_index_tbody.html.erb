@@ -2,13 +2,7 @@
   <p><%= model.name %></p>
   <p class="has-text-grey"><%= model.organ&.name %></p>
 </td>
-<td>
-  <span><%= model.width %></span>
-  <span class="has-text-grey">x</span>
-  <span><%= model.length %></span>
-  <span class="has-text-grey">x</span>
-  <span><%= model.height %></span>
-</td>
+<td><%= model.measure %></td>
 <td class="has-text-danger"><%= model.cost.to_money.format(html_wrap: true).html_safe %></td>
 <td class="has-text-centered">
   <%= render partial: 'cart', locals: { model: model } %>
