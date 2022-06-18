@@ -1,0 +1,13 @@
+<tfoot>
+  <tr>
+    <th colspan="2"></th>
+    <th><%= @cart.amount.to_money.format(html_wrap: true).html_safe %></th>
+    <th class="has-text-centered">
+      <%= link_to({ controller: 'ship/in/orders', action: 'new', current_cart_id: @cart.id }, class: 'button is-success') do %>
+        <i class="fa-light fa-credit-card"></i>
+        <span class="pl-1"><%= t('.pay') %></span>
+      <% end %>
+    </th>
+    <th></th>
+  </tr>
+</tfoot>
