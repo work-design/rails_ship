@@ -9,6 +9,7 @@ module Ship
       attribute :height, :integer
       attribute :boxes_count, :integer, default: 0
       attribute :unit, :string
+      attribute :code, :string
 
       has_one_attached :logo
       has_many_attached :covers
