@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       end
     end
     namespace :panel, defaults: { namespace: 'panel' } do
+      root 'home#index'
       resources :lines do
         resources :similars
       end

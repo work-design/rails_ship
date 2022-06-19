@@ -7,6 +7,9 @@ zh:
         title: 租用物流箱
     panel:
       title: 运输管理
+      home:
+        index:
+          title: 运输
       lines:
         index:
           title: 路线
