@@ -11,5 +11,11 @@
     <label data-action="click->input#check"></label>
   <% end %>
 </td>
-<td><%= model.rented %></td>
+<td>
+<% if model.rented %>
+  <i class="fa-solid fa-check has-text-success"></i>
+<% else %>
+  <i class="fa-solid fa-times has-text-danger"></i>
+<% end %>
+</td>
 <td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>

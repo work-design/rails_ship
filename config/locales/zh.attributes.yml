@@ -23,6 +23,7 @@ zh:
         box_specification_id: 规格
         trade_item_id: 对应订单
         rents_count: 出租记录
+        rented: 是否已租出
       ship/shipment:
         line_id: 路线
         car_id: 车牌号
