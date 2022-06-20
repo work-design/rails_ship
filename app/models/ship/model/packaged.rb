@@ -9,17 +9,18 @@ module Ship
 
       belongs_to :package, inverse_of: :packageds
 
-      before_save :sync_trade_item_status
       after_create :update_status
+      after_save :sync_trade_item_status, if: -> { saved_change_to_trade_item_id? }
       after_destroy :revert_status
-    end
-
-    def sync_trade_item_status
-      self.trade_item_status = trade_item.status
     end
 
     def update_status
       self.trade_item.update status: 'packaged'
+    end
+
+    def sync_trade_item_status
+      self.trade_item_status = trade_item.status
+      self.save
     end
 
     def revert_status
