@@ -9,16 +9,6 @@ module Ship
       @orders = current_organ.member_orders.includes(:trade_items).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
-    def create
-      @order = current_member.orders.build(order_params)
-
-      if @order.save
-        render 'create'
-      else
-        render :new, locals: { model: current_organ }, status: :unprocessable_entity
-      end
-    end
-
     private
     def set_order
       @order = current_organ.member_orders.find params[:id]
@@ -27,7 +17,8 @@ module Ship
     def order_params
       params.fetch(:order, {}).permit(
         :pay_later,
-        :current_cart_id
+        :current_cart_id,
+        :note
       )
     end
 
