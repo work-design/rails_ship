@@ -1,8 +1,8 @@
 <td><%= check_box_tag 'xx', model.id, false, id: nil %></td>
-<td><%= model.good.name %></td>
+<td><%= model.good_name %></td>
 <td><%= model.number %></td>
 <td>
-  <span><%= model.user.name %></span>
+  <span><%= model.user&.name %></span>
   <span class="has-text-grey">（<%= model.user_id %>）</span>
 </td>
 <td>
