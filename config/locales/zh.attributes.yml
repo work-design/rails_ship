@@ -24,6 +24,8 @@ zh:
         trade_item_id: 对应订单
         rents_count: 出租记录
         rented: 是否已租出
+        owned_organ_id: 所有权
+        held_organ_id: 持有者
       ship/shipment:
         line_id: 路线
         car_id: 车牌号
