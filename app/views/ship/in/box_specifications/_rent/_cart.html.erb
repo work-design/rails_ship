@@ -1,4 +1,4 @@
-<% trade_item = @cart.find_trade_item(good_type: model.class_name, good_id: model.id, aim: 'rent') %>
+<% trade_item = @cart.organ_trade_item(good_id: model.id, aim: 'rent') %>
 
 <% if trade_item %>
 <%= form_with theme: nil, scope: 'trade_item', url: { controller: 'trade/in/trade_items', action: 'update', id: trade_item.id }, method: :patch, class: 'button_to', data: { turbo_scroll: true } do |f| %>
