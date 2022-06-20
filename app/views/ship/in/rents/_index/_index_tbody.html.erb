@@ -19,6 +19,6 @@
     <i class="fa-light fa-seal-question"></i>
   <% end %>
   <%= link_to({ action: 'job', id: model.id }, data: { turbo_frame: 'modal' }, class: 'pl-1') do %>
-    <%= model.order.amount.to_money.format(html_wrap: true).html_safe %>
+    <%= model.trade_item.amount.to_money.format(html_wrap: true).html_safe %>
   <% end %>
 </td>
