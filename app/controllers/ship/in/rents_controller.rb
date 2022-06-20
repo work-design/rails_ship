@@ -25,7 +25,7 @@ module Ship
 
     private
     def set_rent
-      @rent = Trade::TradeItem.find params[:id]
+      @rent = Trade::Rent.find params[:id]
     end
 
     def rent_params
