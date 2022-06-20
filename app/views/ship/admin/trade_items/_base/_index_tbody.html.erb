@@ -1,6 +1,6 @@
 <td>
   <p>
-    <span><%= model.good.name %></span>
+    <span><%= model.good_name %></span>
     <span class="has-text-grey">（<%= model.good_id %>）</span>
   </p>
   <p><%= model.aim_i18n %></p>
@@ -8,7 +8,7 @@
 <td><%= model.number %></td>
 <td>
   <p>
-    <span><%= model.user.name %></span>
+    <span><%= model.user&.name %></span>
     <span class="has-text-grey">（<%= model.user_id %>）</span>
   </p>
   <p>
