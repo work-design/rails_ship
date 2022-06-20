@@ -4,11 +4,13 @@ module Ship
     before_action :set_trade_item, only: [:show, :edit, :update, :destroy]
 
     def index
-      q_params = {}
+      q_params = {
+        status: ['paid', 'packaged']
+      }
       q_params.merge! default_params
-      q_params.merge! params.permit(:user_id, :address_id)
+      q_params.merge! params.permit(:user_id, :address_id, :status)
 
-      @trade_items = Trade::TradeItem.includes(:produce_plan, :address, :order).deliverable.where.not(address_id: nil).default_where(q_params).page(params[:page])
+      @trade_items = Trade::TradeItem.includes(:produce_plan, :address, :order, :user).where.not(address_id: nil).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def packable
