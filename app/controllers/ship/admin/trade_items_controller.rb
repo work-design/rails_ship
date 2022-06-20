@@ -16,7 +16,7 @@ module Ship
     end
 
     def packaged
-      @trade_items = @address.trade_items.packaged.page(params[:page])
+      @trade_items = @address.trade_items.packaged.order(id: :desc).page(params[:page])
     end
 
     def package
