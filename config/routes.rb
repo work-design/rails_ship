@@ -36,6 +36,9 @@ Rails.application.routes.draw do
         end
       end
       resources :addresses do
+        collection do
+          get :packaged
+        end
         resources :trade_items, only: [] do
           collection do
             get :packable

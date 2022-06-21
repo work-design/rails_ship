@@ -7,7 +7,15 @@ module Ship
       q_params.merge! default_params
       q_params.merge! params.permit(:user_id)
 
-      r = Trade::TradeItem.packable.default_where(q_params).select(:address_id).group(:address_id).count
+      r = Trade::TradeItem.packable.default_where(q_params).select(:address_id).page(params[:page]).group(:address_id).count
+      @addresses = Profiled::Address.find(r.keys).zip r.values
+    end
+
+    def packaged
+      trade_q_params = {}
+      trade_q_params.merge! default_params
+
+      r = Trade::TradeItem.packaged.default_where(trade_q_params).select(:address_id).page(params[:page]).group(:address_id).count
       @addresses = Profiled::Address.find(r.keys).zip r.values
     end
 

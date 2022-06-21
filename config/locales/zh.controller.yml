@@ -27,6 +27,8 @@ zh:
       addresses:
         index:
           title: 待发货地址
+        packaged:
+          title: 已打包
       cars:
         index:
           title: 车辆管理

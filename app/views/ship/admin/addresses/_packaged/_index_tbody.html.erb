@@ -1,0 +1,9 @@
+<td><%= model[0].contact %></td>
+<td><%= model[0].tel %></td>
+<td><%= model[0].detail %></td>
+<td>
+  <%= link_to({ controller: 'trade_items', action: 'packaged', address_id: model[0].id }, aria: { label: t('ship.admin.trade_items.index.title') }, class: 'button is-small is-rounded is-light') do %>
+    <i class="fa-light fa-dolly"></i>
+    <span class="pl-1"><%= model[1] %></span>
+  <% end %>
+</td>

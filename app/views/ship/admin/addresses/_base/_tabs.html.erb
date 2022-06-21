@@ -1,0 +1,10 @@
+<div class="tabs">
+  <ul>
+    <li class="<%= active_helper(action: 'index', active: 'is-active') %>">
+      <%= link_to t('ship.admin.addresses.index.title'), { action: 'index' } %>
+    </li>
+    <li class="<%= active_helper(action: 'packaged', active: 'is-active') %>">
+      <%= link_to t('ship.admin.addresses.packaged.title'), { action: 'packaged' } %>
+    </li>
+  </ul>
+</div>
