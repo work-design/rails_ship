@@ -3,7 +3,7 @@ module Ship
     before_action :set_box, only: [:qrcode]
 
     def qrcode
-      redirect_to controller: 'ship/me/boxes', action: 'qrcode', id: params[:id], host: @box.organ.host, allow_other_host: true
+      redirect_to({ controller: 'ship/me/boxes', action: 'qrcode', id: params[:id], host: @box.organ.host }, allow_other_host: true)
     end
 
     private
