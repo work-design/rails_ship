@@ -35,6 +35,7 @@ module Ship
       elsif @package
         si = @shipment.shipment_items.find_or_initialize_by(package_id: @package.id)
         si.state = 'unloaded'
+        si.status = 'never_loaded' if si.new_record?
         si.unloaded_at = Time.current
       end
 

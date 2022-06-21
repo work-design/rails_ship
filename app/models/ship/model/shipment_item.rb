@@ -11,6 +11,10 @@ module Ship
         unloaded: 'unloaded'
       }, _prefix: true
 
+      enum status: {
+        never_loaded: 'never_loaded'
+      }, _prefix: true
+
       belongs_to :shipment
       belongs_to :package
       belongs_to :box, optional: true
