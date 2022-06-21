@@ -42,6 +42,9 @@ zh:
         boxed_in_at: 入仓时间
         boxed_out_at: 出仓时间
         state: 状态
+      ship/station:
+        area_id: 所在区域
+        detail: 详细地址
       profiled/address:
         floor: 楼层
         room: 房间
