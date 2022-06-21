@@ -11,17 +11,31 @@ module Ship
         unloaded: 'unloaded'
       }, _prefix: true
 
-      belongs_to :item, polymorphic: true
       belongs_to :shipment
+      belongs_to :package
+      belongs_to :box, optional: true
 
+      before_save :sync_box_from_package
       after_save_commit :sync_state_to_item, if: -> { saved_change_to_state? }
     end
 
     def sync_state_to_item
-      item.state = self.state
-      item.loaded_at = self.loaded_at
-      item.unloaded_at = self.unloaded_at
-      item.save
+      package.state = self.state
+      package.loaded_at = self.loaded_at
+      package.unloaded_at = self.unloaded_at
+
+      if box
+        box.state = self.state
+        box.loaded_at = self.loaded_at
+        box.unloaded_at = self.unloaded_at
+
+        self.class.transaction do
+          box.save!
+          package.save!
+        end
+      else
+        package.save
+      end
     end
 
   end

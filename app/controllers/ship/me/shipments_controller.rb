@@ -1,7 +1,7 @@
 module Ship
   class Me::ShipmentsController < Me::BaseController
     before_action :set_shipment, only: [:qrcode, :loaded, :unloaded]
-    before_action :set_item_from_scan, only: [:loaded, :unloaded]
+    before_action :set_box_from_scan, :set_package_from_scan, only: [:loaded, :unloaded]
 
     def index
       q_params = {}
@@ -11,17 +11,24 @@ module Ship
     end
 
     def loaded
-      if @item
-        si = @shipment.shipment_items.find_or_initialize_by(item_type: @item.class_name, item_id: @item.id)
-        si.state = 'loaded'
-        si.loaded_at = Time.current
-        si.save
+      if @box
+        @box.packages.state_box_in.each do |package|
+          si = @shipment.shipment_items.find_or_initialize_by(box_id: @box.id, package_id: package.id)
+          si.state = 'loaded'
+          si.loaded_at = Time.current
+        end
+      elsif @package
+        si = @shipment.shipment_items.find_or_initialize_by(package_id: @package.id)
+      else
+        si = nil
       end
+
+      @shipment.save
     end
 
     def unloaded
-      if @item
-        si = @shipment.shipment_items.find_or_initialize_by(item_type: @item.class_name, item_id: @item.id)
+      if @box
+        si = @shipment.shipment_items.find_by(box_id: @item.id)
         si.state = 'unloaded'
         si.unloaded_at = Time.current
         si.save
@@ -36,14 +43,17 @@ module Ship
       @shipment = Shipment.find(params[:id])
     end
 
-    def set_item_from_scan
+    def set_package_from_scan
       p = params[:result].scan(RegexpUtil.more_between('packages/', '/qrcode'))
       if p.present?
-        @item = Package.find p[0]
+        @package = Package.find p[0]
       end
+    end
+
+    def set_box_from_scan
       b = params[:result].scan(RegexpUtil.more_between('boxes/', '/qrcode'))
       if b.present?
-        @item = Box.find b[0]
+        @box = Box.find b[0]
       end
     end
 
