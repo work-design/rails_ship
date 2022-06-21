@@ -48,7 +48,11 @@ Rails.application.routes.draw do
         end
       end
       resources :trade_items, except: [:destroy]
-      resources :packages, except: [:new, :create]
+      resources :packages, except: [:new, :create] do
+        collection do
+          get :address
+        end
+      end
       resources :cars
       resources :drivers
       resources :lines do

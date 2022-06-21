@@ -52,6 +52,8 @@ zh:
       packages:
         index:
           title: 包裹列表
+        address:
+          title: 包裹列表
       stations:
         index:
           title: 站点
