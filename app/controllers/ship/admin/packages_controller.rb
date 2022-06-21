@@ -1,6 +1,7 @@
 module Ship
   class Admin::PackagesController < Admin::BaseController
     before_action :set_package, only: [:show, :edit, :update, :destroy]
+    before_action :set_address, only: [:address]
 
     def index
       q_params = {}

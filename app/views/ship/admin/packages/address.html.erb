@@ -1,5 +1,11 @@
 <%= render 'filter_form' %>
-<%= render 'filter_table' %>
+
+<div class="box">
+  <i class="fa-solid fa-location-dot has-text-danger"></i>
+  <span><%= @address.contact %></span>
+  <span><%= @address.tel %></span>
+  <span><%= @address.content %></span>
+</div>
 
 <%= render layout: 'index_table' do %>
   <%= render partial: 'index_tbody', layout: 'index_tr', collection: @packages, as: :model %>
