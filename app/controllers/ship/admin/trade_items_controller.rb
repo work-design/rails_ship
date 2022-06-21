@@ -22,7 +22,7 @@ module Ship
     end
 
     def package
-      pack = @address.packages.build
+      pack = @address.packages.build(default_form_params)
       trade_items = @address.trade_items.deliverable.find params[:ids].split(',')
       user_ids = trade_items.pluck(:user_id).uniq
       if user_ids.size > 1

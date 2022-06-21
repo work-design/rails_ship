@@ -8,6 +8,8 @@ module Ship
       attribute :arrived_at, :datetime
       attribute :load_on, :date
 
+      belongs_to :organ, class_name: 'Org::Organ', optional: true
+
       belongs_to :line
       belongs_to :car
       belongs_to :driver
@@ -20,14 +22,15 @@ module Ship
       has_many :shipment_items, ->{ order(id: :desc) }, dependent: :destroy_async
 
       enum state: {
+        preparing: 'preparing',
         prepared: 'prepared',
         left: 'left',
         arrived: 'arrived'
-      }, _prefix: true
+      }, _prefix: true, _default: 'preparing'
     end
 
     def enter_url
-      Rails.application.routes.url_for(controller: 'ship/me/shipments', action: 'qrcode', id: self.id)
+      Rails.application.routes.url_for(controller: 'ship/shipments', action: 'qrcode', id: self.id)
     end
 
     def qrcode_enter_url

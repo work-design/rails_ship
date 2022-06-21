@@ -11,6 +11,7 @@ module Ship
       attribute :loaded_at, :datetime
       attribute :unloaded_at, :datetime
 
+      belongs_to :organ, class_name: 'Org::Organ', optional: true
       belongs_to :address, class_name: 'Profiled::Address'
       belongs_to :user, class_name: 'Auth::User', optional: true
       belongs_to :produce_plan, class_name: 'Factory::ProducePlan', optional: true if defined? RailsFactory
@@ -36,11 +37,11 @@ module Ship
         box_out: 'box_out',
         delivered: 'delivered',
         received: 'received'
-      }, _prefix: true
+      }, _prefix: true, _default: 'init'
     end
 
     def enter_url
-      Rails.application.routes.url_for(controller: 'ship/me/packages', action: 'qrcode', id: self.id)
+      Rails.application.routes.url_for(controller: 'ship/packages', action: 'qrcode', id: self.id)
     end
 
     def qrcode_enter_url

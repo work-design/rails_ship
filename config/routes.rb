@@ -5,7 +5,17 @@ Rails.application.routes.draw do
         get :rent
       end
     end
-    resources :boxes do
+    resources :boxes, only: [] do
+      member do
+        get :qrcode
+      end
+    end
+    resources :shipments, only: [] do
+      member do
+        get :qrcode
+      end
+    end
+    resources :packages, only: [] do
       member do
         get :qrcode
       end
