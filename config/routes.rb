@@ -5,6 +5,11 @@ Rails.application.routes.draw do
         get :rent
       end
     end
+    resources :boxes do
+      member do
+        get :qrcode
+      end
+    end
     namespace :panel, defaults: { namespace: 'panel' } do
       root 'home#index'
       resources :lines do
