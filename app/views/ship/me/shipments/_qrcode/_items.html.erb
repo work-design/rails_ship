@@ -2,7 +2,10 @@
   <thead>
     <tr class="has-text-weight-normal is-size-7">
       <th><%= Ship::ShipmentItem.human_attribute_name(:state) %></th>
-      <th class="has-text-centered"><%= Ship::ShipmentItem.human_attribute_name(:item_type) %></th>
+      <th class="has-text-centered">
+        <p><%= Ship::ShipmentItem.human_attribute_name(:package_id) %></p>
+        <p><%= Ship::ShipmentItem.human_attribute_name(:box_id) %></p>
+      </th>
       <th class="has-text-centered">
         <p><%= Ship::ShipmentItem.human_attribute_name(:loaded_at) %></p>
         <p><%= Ship::ShipmentItem.human_attribute_name(:unloaded_at) %></p>

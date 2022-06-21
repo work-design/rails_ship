@@ -31,6 +31,7 @@ module Ship
         @shipment.shipment_items.state_loaded.where(box_id: @box.id).each do |si|
           si.state = 'unloaded'
           si.unloaded_at = Time.current
+          si.save
         end
       elsif @package
         si = @shipment.shipment_items.find_or_initialize_by(package_id: @package.id)

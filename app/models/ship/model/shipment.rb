@@ -7,6 +7,7 @@ module Ship
       attribute :left_at, :datetime
       attribute :arrived_at, :datetime
       attribute :load_on, :date
+      attribute :shipment_items_count, :integer, default: 0
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 

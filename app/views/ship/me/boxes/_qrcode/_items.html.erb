@@ -2,7 +2,9 @@
   <thead>
     <tr class="has-text-weight-normal is-size-7">
       <th><%= Ship::Package.human_attribute_name(:state) %></th>
-      <th class="has-text-centered">类别</th>
+      <th class="has-text-centered">
+        <p><%= Ship::Package.human_attribute_name(:id) %></p>
+      </th>
       <th class="has-text-centered">
         <p><%= Ship::Package.human_attribute_name(:boxed_in_at) %></p>
         <p><%= Ship::Package.human_attribute_name(:boxed_out_at) %></p>

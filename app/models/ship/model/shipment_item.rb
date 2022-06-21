@@ -15,11 +15,10 @@ module Ship
         never_loaded: 'never_loaded'
       }, _prefix: true
 
-      belongs_to :shipment
+      belongs_to :shipment, counter_cache: true
       belongs_to :package
       belongs_to :box, optional: true
 
-      before_save :sync_box_from_package
       after_save_commit :sync_state_to_item, if: -> { saved_change_to_state? }
     end
 
