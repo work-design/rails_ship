@@ -24,6 +24,8 @@ module Ship
       belongs_to :box_specification, counter_cache: true
 
       has_many :packages, dependent: :nullify
+      has_many :shipment_items, as: :item
+      has_many :shipments, through: :shipment_items
 
       before_validation :init_code, if: -> { code.blank? }
     end

@@ -18,8 +18,8 @@ module Ship
 
       belongs_to :box, optional: true
 
-      has_many :package_shipments, dependent: :destroy_async
-      has_many :shipments, through: :package_shipments
+      has_many :shipment_items, as: :item, dependent: :destroy_async
+      has_many :shipments, through: :shipment_items
       has_many :packageds, dependent: :destroy
       has_many :trade_items, class_name: 'Trade::TradeItem', through: :packageds
 
