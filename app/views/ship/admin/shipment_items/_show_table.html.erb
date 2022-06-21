@@ -1,0 +1,24 @@
+<tr>
+  <td class="has-text-right"><%= Ship::ShipmentItem.human_attribute_name(:state) %></td>
+  <td><%= @shipment_item.state %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Ship::ShipmentItem.human_attribute_name(:status) %></td>
+  <td><%= @shipment_item.status %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Ship::ShipmentItem.human_attribute_name(:package_id) %></td>
+  <td><%= @shipment_item.package_id %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Ship::ShipmentItem.human_attribute_name(:box_id) %></td>
+  <td><%= @shipment_item.box_id %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Ship::ShipmentItem.human_attribute_name(:loaded_at) %></td>
+  <td><%= @shipment_item.loaded_at %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Ship::ShipmentItem.human_attribute_name(:unloaded_at) %></td>
+  <td><%= @shipment_item.unloaded_at %></td>
+</tr>

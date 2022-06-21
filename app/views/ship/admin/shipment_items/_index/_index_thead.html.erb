@@ -1,0 +1,8 @@
+<th><%= Ship::ShipmentItem.human_attribute_name(:state) %></th>
+<th><%= Ship::ShipmentItem.human_attribute_name(:status) %></th>
+<th><%= Ship::ShipmentItem.human_attribute_name(:package_id) %></th>
+<th><%= Ship::ShipmentItem.human_attribute_name(:box_id) %></th>
+<th>
+  <p class="has-text-success"><%= Ship::ShipmentItem.human_attribute_name(:loaded_at) %></p>
+  <p class="has-text-danger"><%= Ship::ShipmentItem.human_attribute_name(:unloaded_at) %></p>
+</th>

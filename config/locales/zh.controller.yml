@@ -62,9 +62,9 @@ zh:
       shipments:
         index:
           title: 运次管理
-      items:
+      shipment_items:
         index:
-          title: 运单管理
+          title: 装车详情
     in:
       title: 订购/租用
       box_specifications:

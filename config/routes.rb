@@ -51,8 +51,9 @@ Rails.application.routes.draw do
       resources :lines do
         resources :locations
       end
-      resources :shipments
-      resources :items
+      resources :shipments do
+        resources :shipment_items
+      end
       resources :box_specifications do
         resources :boxes do
           collection do
