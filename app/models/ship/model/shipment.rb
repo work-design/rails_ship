@@ -15,7 +15,7 @@ module Ship
       belongs_to :driver
       belongs_to :shipping, polymorphic: true, optional: true
 
-      has_many :shipment_items, dependent: :destroy_async
+      has_many :shipment_items, autosave: true, dependent: :destroy_async
       has_many :packages, through: :shipment_items
       has_many :boxes, through: :shipment_items
 
