@@ -15,6 +15,7 @@ zh:
           packaged: 已打包
           box_in: 放入物流箱
           loaded: 已装车
+          unloaded: 已卸车
           sent_out: 已发车
           box_out: 取出物流箱
           delivered: 已交货
