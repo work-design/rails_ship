@@ -25,8 +25,13 @@ module Ship
       if @box
         @package.box = @box # 测试是否一致
         @package.state = 'box_out'
-        @package.save
+        @package.status = 'scan_out'
+      else
+        @package.state = 'box_out'
+        @package.status = 'confirm_out'
       end
+
+      @package.save
     end
 
     # 直接装车

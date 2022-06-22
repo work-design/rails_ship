@@ -39,6 +39,10 @@ module Ship
         delivered: 'delivered',
         received: 'received'
       }, _prefix: true, _default: 'init'
+      enum status: {
+        confirm_out: 'confirm_out',
+        scan_out: 'scan_out'
+      }, _prefix: true
     end
 
     def enter_url
