@@ -1,10 +1,10 @@
 <tr>
   <td class="has-text-right"><%= Ship::ShipmentItem.human_attribute_name(:state) %></td>
-  <td><%= @shipment_item.state %></td>
+  <td><%= @shipment_item.state_i18n %></td>
 </tr>
 <tr>
   <td class="has-text-right"><%= Ship::ShipmentItem.human_attribute_name(:status) %></td>
-  <td><%= @shipment_item.status %></td>
+  <td><%= @shipment_item.status_i18n %></td>
 </tr>
 <tr>
   <td class="has-text-right"><%= Ship::ShipmentItem.human_attribute_name(:package_id) %></td>
@@ -16,9 +16,9 @@
 </tr>
 <tr>
   <td class="has-text-right"><%= Ship::ShipmentItem.human_attribute_name(:loaded_at) %></td>
-  <td><%= @shipment_item.loaded_at %></td>
+  <td><time data-controller="time"><%= @shipment_item.loaded_at&.to_fs(:iso8601) %></time></td>
 </tr>
 <tr>
   <td class="has-text-right"><%= Ship::ShipmentItem.human_attribute_name(:unloaded_at) %></td>
-  <td><%= @shipment_item.unloaded_at %></td>
+  <td><time data-controller="time"><%= @shipment_item.unloaded_at&.to_fs(:iso8601) %></time></td>
 </tr>
