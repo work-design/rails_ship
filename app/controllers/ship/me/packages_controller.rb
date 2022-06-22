@@ -61,6 +61,7 @@ module Ship
     end
 
     def set_box_from_scan
+      return unless params[:result].present?
       r = params[:result].scan(RegexpUtil.more_between('boxes/', '/qrcode'))
       if r.present?
         @box = Box.find r[0]
@@ -68,6 +69,7 @@ module Ship
     end
 
     def set_shipment_from_scan
+      return unless params[:result].present?
       r = params[:result].scan(RegexpUtil.more_between('shipments/', '/qrcode'))
       if r.present?
         @shipment = Shipment.find r[0]
