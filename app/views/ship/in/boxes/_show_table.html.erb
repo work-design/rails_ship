@@ -14,3 +14,11 @@
   <td class="has-text-right"><%= Ship::Box.human_attribute_name(:enter_url) %></td>
   <td><%= image_tag @box.qrcode_enter_url %></td>
 </tr>
+<tr>
+  <td class="has-text-right"><%= Ship::Box.human_attribute_name(:trade_item_id) %></td>
+  <td><%= @box.trade_item_id %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Trade::TradeItem.human_attribute_name(:aim) %></td>
+  <td><%= box.trade_item.aim_i18n %></td>
+</tr>
