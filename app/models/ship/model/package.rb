@@ -18,6 +18,7 @@ module Ship
 
       belongs_to :box, optional: true
 
+      has_one :shipment_item, -> { order(id: :desc) }
       has_many :shipment_items
       has_many :shipments, through: :shipment_items
       has_many :packageds, dependent: :destroy

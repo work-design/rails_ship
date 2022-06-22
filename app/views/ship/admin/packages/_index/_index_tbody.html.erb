@@ -1,9 +1,18 @@
 <td><%= model.address.content %></td>
-<td><%= model.state_i18n %></td>
-<td><%= model.box&.code %></td>
 <td>
-  <p><time data-controller="time"><%= model.loaded_at&.to_fs(:iso8601) %></time></p>
-  <p><time data-controller="time"><%= model.unloaded_at&.to_fs(:iso8601) %></time></p>
+  <span><%= model.state_i18n %></span>
+  <%= link_to({ controller: 'admin/shipment_items', action: 'show', shipment_id: model.shipment_item.shipment_id, id: model.shipment_item.id }, data: { turbo_frame: 'modal' }) do %>
+    <i class="fa-solid fa-location-arrow"></i>
+  <% end if model.shipment_item %>
+</td>
+<td>
+  <p><%= model.box&.code %></p>
+  <p class="has-text-info-dark"><time data-controller="time"><%= model.boxed_in_at&.to_fs(:iso8601) %></time></p>
+  <p class="has-text-warning-dark"><time data-controller="time"><%= model.boxed_out_at&.to_fs(:iso8601) %></time></p>
+</td>
+<td>
+  <p class="has-text-info-dark"><time data-controller="time"><%= model.loaded_at&.to_fs(:iso8601) %></time></p>
+  <p class="has-text-warning-dark"><time data-controller="time"><%= model.unloaded_at&.to_fs(:iso8601) %></time></p>
 </td>
 <td><%= model.expected_on %></td>
 <td>
