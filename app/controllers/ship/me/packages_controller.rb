@@ -23,33 +23,35 @@ module Ship
     # 出物流箱
     def out
       if @box
-        @package.box = @box # 测试是否一致
-        @package.state = 'box_out'
-        @package.status = 'scan_out'
+        @package.box == @box # todo 测试是否一致
+        @package.confirm_mode = 'scan'
       else
-        @package.state = 'box_out'
-        @package.status = 'confirm_out'
+        @package.confirm_mode = 'confirm'
       end
 
+      @package.box_id = nil
+      @package.state = 'box_out'
       @package.save
     end
 
     # 直接装车
     def loaded
       if @shipment
-        @package.assign_attributes params.permit(:box_id)
+        @package.confirm_mode = 'scan'
         @package.state = 'loaded'
-        @package.save
       end
+      @package.save
     end
 
     # 卸车
     def unloaded
       if @shipment
-        @package.assign_attributes params.permit(:box_id)
-        @package.state = 'unloaded'
-        @package.save
+        @package.confirm_mode = 'scan'
+      else
+        @package.confirm_mode = 'button'
       end
+      @package.state = 'unloaded'
+      @package.save
     end
 
     def qrcode

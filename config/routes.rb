@@ -129,6 +129,8 @@ Rails.application.routes.draw do
         member do
           post :in
           post :out
+          post :loaded
+          post :unloaded
           get :qrcode
         end
       end

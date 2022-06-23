@@ -46,6 +46,7 @@ zh:
         loaded_at: 装车时间
         unloaded_at: 卸货时间
         state: 状态
+        confirm_mode: 确认模式
         expected_on: 预计到达
       ship/station:
         area_id: 所在区域

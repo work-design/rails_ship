@@ -6,6 +6,7 @@ module Ship
       attribute :state, :string
       attribute :expected_on, :date
       attribute :pick_mode, :string
+      attribute :confirm_mode, :string
       attribute :boxed_in_at, :datetime
       attribute :boxed_out_at, :datetime
       attribute :loaded_at, :datetime
@@ -39,9 +40,10 @@ module Ship
         delivered: 'delivered',
         received: 'received'
       }, _prefix: true, _default: 'init'
-      enum status: {
-        confirm_out: 'confirm_out',
-        scan_out: 'scan_out'
+
+      enum confirm_mode: {
+        button: 'button',
+        scan: 'scan'
       }, _prefix: true
     end
 

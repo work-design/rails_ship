@@ -20,6 +20,9 @@ zh:
           box_out: 取出物流箱
           delivered: 已交货
           received: 收货
+        confirm_mode:
+          scan: 扫码确认
+          button: 按钮确认
       ship/item:
         settle_kind:
           spot_payment: 现付
