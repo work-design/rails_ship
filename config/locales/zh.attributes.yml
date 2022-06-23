@@ -39,7 +39,7 @@ zh:
         unloaded_at: 卸车时间
         state: 状态
       ship/package:
-        address_id: 地址
+        address_id: 收货地址
         box_id: 所在物流箱
         boxed_in_at: 入箱时间
         boxed_out_at: 出箱时间
