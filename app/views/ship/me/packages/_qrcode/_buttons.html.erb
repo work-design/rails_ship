@@ -5,12 +5,14 @@
   data-scan-options-value="<%= current_js_app&.js_config(request.original_url).to_json %>"
 >
   <div class="buttons are-large is-centered">
-  <% if ['box_in'].exclude?(@package.state) %>
-    <button class="button is-success" data-action="scan#report" data-report-url="<%= url_for(controller: 'ship/me/packages', action: 'in', id: @package.id) %>">放入物流箱</button>
-  <% elsif @package.state == 'box_in' %>
+    <% if ['box_in'].exclude?(@package.state) %>
+      <button class="button is-success" data-action="scan#report" data-report-url="<%= url_for(controller: 'ship/me/packages', action: 'in', id: @package.id) %>">放入物流箱</button>
+    <% end %>
     <%= button_to({ controller: 'ship/me/packages', action: 'out', id: @package.id }, class: 'button is-info') do %>
       <span>取出</span>
-    <% end %>
-  <% end %>
+    <% end if ['box_in'].include?(@package.state)  %>
+    <%= button_to({ controller: 'ship/me/packages', action: 'unloaded', id: @package.id }, class: 'button is-info') do %>
+      <span>卸货</span>
+    <% end if ['loaded'].include?(@package.state) %>
   </div>
 </div>
