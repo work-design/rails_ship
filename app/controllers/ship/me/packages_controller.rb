@@ -16,6 +16,8 @@ module Ship
       if @box
         @package.box = @box
         @package.state = 'box_in'
+        @package.confirm_mode = 'scan'
+        @package.boxed_in_at = Time.current
         @package.save
       end
     end
@@ -29,6 +31,7 @@ module Ship
         @package.confirm_mode = 'button'
       end
 
+      @package.boxed_out_at = Time.current
       @package.box_id = nil
       @package.state = 'box_out'
       @package.save
@@ -39,6 +42,7 @@ module Ship
       if @shipment
         @package.confirm_mode = 'scan'
         @package.state = 'loaded'
+        @package.loaded_at = Time.current
       end
       @package.save
     end
@@ -50,6 +54,7 @@ module Ship
       else
         @package.confirm_mode = 'button'
       end
+      @package.unloaded_at = Time.current
       @package.state = 'unloaded'
       @package.save
     end
