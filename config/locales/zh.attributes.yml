@@ -40,11 +40,13 @@ zh:
         state: 状态
       ship/package:
         address_id: 地址
-        boxed_in_at: 入仓时间
-        boxed_out_at: 出仓时间
+        box_id: 所在物流箱
+        boxed_in_at: 入箱时间
+        boxed_out_at: 出箱时间
         loaded_at: 装车时间
         unloaded_at: 卸货时间
         state: 状态
+        expected_on: 预计到达
       ship/station:
         area_id: 所在区域
         detail: 详细地址

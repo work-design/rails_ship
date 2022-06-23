@@ -1,4 +1,8 @@
 <tr>
+  <td class="has-text-right"><%= Ship::Package.human_attribute_name(:id) %></td>
+  <td><%= @package.id %></td>
+</tr>
+<tr>
   <td class="has-text-right"><%= Ship::Package.human_attribute_name(:address) %></td>
   <td>
     <p><%= @package.address.area.full_name %></p>
