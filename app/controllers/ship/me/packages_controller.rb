@@ -26,7 +26,7 @@ module Ship
         @package.box == @box # todo 测试是否一致
         @package.confirm_mode = 'scan'
       else
-        @package.confirm_mode = 'confirm'
+        @package.confirm_mode = 'button'
       end
 
       @package.box_id = nil
