@@ -32,6 +32,7 @@ module Ship
       end
 
       @package.boxed_out_at = Time.current
+      @package.last_box_id = @package.box_id
       @package.box_id = nil
       @package.state = 'box_out'
       @package.save

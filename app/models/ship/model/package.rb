@@ -18,6 +18,7 @@ module Ship
       belongs_to :produce_plan, class_name: 'Factory::ProducePlan', optional: true if defined? RailsFactory
 
       belongs_to :box, optional: true
+      belongs_to :last_box, class_name: 'Box', optional: true
 
       has_one :shipment_item, -> { order(id: :desc) }
       has_many :shipment_items
