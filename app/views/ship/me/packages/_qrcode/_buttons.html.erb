@@ -8,6 +8,9 @@
     <% if ['box_in'].exclude?(@package.state) %>
       <button class="button is-success" data-action="scan#report" data-report-url="<%= url_for(controller: 'ship/me/packages', action: 'in', id: @package.id) %>">放入物流箱</button>
     <% end %>
+    <% if ['box_in', 'loaded'].exclude?(@package.state) %>
+      <button class="button is-success" data-action="scan#report" data-report-url="<%= url_for(controller: 'ship/me/packages', action: 'loaded', id: @package.id) %>">装车</button>
+    <% end %>
     <%= button_to({ controller: 'ship/me/packages', action: 'out', id: @package.id }, class: 'button is-info') do %>
       <span>取出</span>
     <% end if ['box_in'].include?(@package.state)  %>
