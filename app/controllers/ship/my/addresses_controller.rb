@@ -1,6 +1,7 @@
 module Ship
   class My::AddressesController < My::BaseController
     before_action :set_address, only: [:show, :edit, :update, :destroy]
+    before_action :set_new_address, only: [:new, :create, :order_new, :order_create]
 
     def index
       if params[:station_id]
@@ -22,19 +23,17 @@ module Ship
       @address = current_user.addresses.build(station_id: params[:station_id])
     end
 
-    def create
-      @address = current_user.addresses.build(address_params)
-
-      if @address.save
-        render 'create'
-      else
-        render :new, locals: { model: @address }, status: :unprocessable_entity
-      end
+    def order_create
+      @address.save
     end
 
     private
     def set_stations
       @stations = Station.default_where(default_params)
+    end
+
+    def set_new_address
+      @address = current_user.addresses.build(address_params)
     end
 
     def set_address

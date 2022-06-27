@@ -175,6 +175,8 @@ Rails.application.routes.draw do
       resources :addresses do
         collection do
           post :order
+          post :order_new
+          post :order_create
         end
         member do
           get :plans
