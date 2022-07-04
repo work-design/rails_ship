@@ -25,7 +25,7 @@ Rails.application.routes.draw do
       resources :lines do
         resources :similars
       end
-      resources :box_specifications, only: [:index, :show] do
+      resources :box_specifications do
         resources :boxes
       end
     end
@@ -61,7 +61,7 @@ Rails.application.routes.draw do
       resources :shipments do
         resources :shipment_items
       end
-      resources :box_specifications do
+      resources :box_specifications, only: [:index, :show] do
         resources :boxes do
           collection do
             post :batch
