@@ -30,11 +30,7 @@ Rails.application.routes.draw do
       end
     end
     namespace :admin, defaults: { namespace: 'admin' } do
-      resources :stations do
-        member do
-          patch :actions
-        end
-      end
+      resources :stations
       resources :addresses do
         collection do
           get :packaged
