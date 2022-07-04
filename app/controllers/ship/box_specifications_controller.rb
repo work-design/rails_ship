@@ -37,15 +37,15 @@ module Ship
     end
 
     def set_cart
-      @cart = current_carts.find_or_create_by(good_type: 'Ship::BoxSpecification', aim: nil)
+      @cart = current_carts.unscope(where: :organ_id).find_or_create_by(organ_id: nil, good_type: 'Ship::BoxSpecification', aim: nil)
     end
 
     def set_use_cart
-      @cart = current_carts.find_or_create_by(good_type: 'Ship::BoxSpecification', aim: 'use')
+      @cart = current_carts.unscope(where: :organ_id).find_or_create_by(organ_id: nil, good_type: 'Ship::BoxSpecification', aim: 'use')
     end
 
     def set_rent_cart
-      @cart = current_carts.find_or_create_by(good_type: 'Ship::BoxSpecification', aim: 'rent')
+      @cart = current_carts.unscope(where: :organ_id).find_or_create_by(organ_id: nil, good_type: 'Ship::BoxSpecification', aim: 'rent')
     end
 
     def order_params
