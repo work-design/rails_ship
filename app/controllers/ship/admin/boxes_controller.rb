@@ -9,7 +9,7 @@ module Ship
 
     def batch
       5.times do
-        @box_specification.boxes.build(default_form_params)
+        @box_specification.boxes.build(box_params)
       end
       @box_specification.save
     end
