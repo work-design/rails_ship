@@ -23,8 +23,6 @@ module Ship
       @trade_item = @order.trade_items[0]
       @trade_item.valid?
       @trade_item.compute
-
-      #binding.b
     end
 
     private
