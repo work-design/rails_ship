@@ -1,0 +1,10 @@
+<tr>
+  <td class="<%= ['box_in'].include?(model.state) ? 'has-text-success' : 'has-text-danger' %>"><%= model.state_i18n %></td>
+  <td class="has-text-centered">
+    <span class="tag"><%= model.id %></span>
+  </td>
+  <td class="has-text-right">
+    <p><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.boxed_in_at&.to_fs(:iso8601) %></time></p>
+    <p><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.boxed_out_at&.to_fs(:iso8601) %></time></p>
+  </td>
+</tr>
