@@ -9,7 +9,7 @@ module Ship
 
     def batch
       5.times do
-        @box_specification.boxes.build
+        @box_specification.boxes.build(default_form_params)
       end
       @box_specification.save
     end
@@ -24,10 +24,12 @@ module Ship
     end
 
     def box_params
-      params.fetch(:box, {}).permit(
+      p = params.fetch(:box, {}).permit(
         :code,
         :rentable
       )
+      p.merge! owned_organ_id: current_organ.id, held_organ_id: current_organ.organ_id if current_organ
+      p
     end
 
   end
