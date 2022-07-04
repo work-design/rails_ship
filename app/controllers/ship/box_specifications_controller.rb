@@ -9,14 +9,14 @@ module Ship
       q_params = {}
       q_params.merge! default_params
 
-      @box_specifications = BoxSpecification.default_where(q_params).page(params[:page])
+      @box_specifications = BoxSpecification.page(params[:page])
     end
 
     def rent
       q_params = {}
       q_params.merge! default_params
 
-      @box_specifications = BoxSpecification.default_where(q_params).page(params[:page])
+      @box_specifications = BoxSpecification.page(params[:page])
     end
 
     def show

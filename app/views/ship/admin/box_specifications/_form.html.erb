@@ -1,8 +1,0 @@
-<%= f.text_field :name %>
-<%= f.text_field :unit %>
-<%= f.number_field :width, required: true %>
-<%= f.number_field :length, required: true %>
-<%= f.number_field :height, required: true %>
-<%= f.number_field :price %>
-<%= f.file_field :logo %>
-<%= render 'com/attachments/list_field', target: f.object.covers, f: f %>
