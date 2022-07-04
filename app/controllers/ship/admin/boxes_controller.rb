@@ -28,7 +28,7 @@ module Ship
         :code,
         :rentable
       )
-      p.merge! owned_organ_id: current_organ.id, held_organ_id: current_organ.organ_id if current_organ
+      p.merge! owned_organ_id: current_organ.id, held_organ_id: current_organ.id if current_organ
       p
     end
 
