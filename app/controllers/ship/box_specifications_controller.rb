@@ -6,11 +6,17 @@ module Ship
     before_action :set_cart, only: [:show]
 
     def index
-      @box_specifications = BoxSpecification.page(params[:page])
+      q_params = {}
+      q_params.merge! default_params
+
+      @box_specifications = BoxSpecification.default_where(q_params).page(params[:page])
     end
 
     def rent
-      @box_specifications = BoxSpecification.page(params[:page])
+      q_params = {}
+      q_params.merge! default_params
+
+      @box_specifications = BoxSpecification.default_where(q_params).page(params[:page])
     end
 
     def show
