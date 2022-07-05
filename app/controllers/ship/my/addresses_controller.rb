@@ -2,14 +2,14 @@ module Ship
   class My::AddressesController < My::BaseController
     before_action :set_address, only: [:show, :edit, :update, :destroy]
     before_action :set_new_address, only: [:new, :create, :order_new, :order_create]
+    before_action :set_cart, only: [:index]
 
     def index
       if params[:station_id]
         @station = Station.find params[:station_id]
         @addresses = current_user.addresses.where(station_id: params[:station_id]).includes(:area)
-      else
-        @station = current_cart.address&.station
-        @addresses = current_user.addresses.where(station_id: @station&.id).includes(:area)
+      elsif params[:cart_id]
+        @addresses = current_user.addresses.includes(:area)
       end
 
       @stations = Station.default_where(default_params).where.not(id: @station&.id)
@@ -30,6 +30,10 @@ module Ship
     private
     def set_stations
       @stations = Station.default_where(default_params)
+    end
+
+    def set_cart
+      @cart = Trade::Cart.find params[:cart_id] if params[:cart_id]
     end
 
     def set_new_address

@@ -10,12 +10,12 @@
     </span>
   </span>
   <span class="weui-cell__ft" data-controller="input">
-    <% if model.id != current_cart.address_id %>
+    <% if model.id != @cart.address_id %>
       <span class="has-text-grey is-size-7">选为默认</span>
     <% end %>
-    <%= form_with theme: nil, scope: 'cart', url: { controller: 'trade/my/carts', action: 'update' }, method: :patch do |f| %>
+    <%= form_with theme: nil, scope: 'cart', url: { controller: 'trade/my/carts', action: 'update', id: params[:cart_id] }, method: :patch do |f| %>
       <%= hidden_field_tag :return_to, params[:return_to] %>
-      <%= f.radio_button :address_id, model.id, checked: model.id == current_cart.address_id, class: 'weui-check', data: { action: 'input#form' } %>
+      <%= f.radio_button :address_id, model.id, checked: model.id == @cart.address_id, class: 'weui-check', data: { action: 'input#form' } %>
       <span class="weui-icon-checked"></span>
     <% end %>
   </span>
