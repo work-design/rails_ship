@@ -2,7 +2,7 @@ module Ship
   class My::AddressesController < My::BaseController
     before_action :set_address, only: [:show, :edit, :update, :destroy]
     before_action :set_new_address, only: [:new, :create, :order_new, :order_create]
-    before_action :set_cart, only: [:index]
+    before_action :set_cart, only: [:index, :new, :create]
 
     def index
       if params[:station_id]
@@ -20,7 +20,22 @@ module Ship
     end
 
     def new
-      @address = current_user.addresses.build(station_id: params[:station_id])
+      if params[:station_id]
+        @address = current_user.addresses.build(station_id: params[:station_id])
+      else
+        @address = current_user.addresses.build
+        @address.area = Profiled::Area.new
+      end
+      @address.contact = current_user.name
+      @address.tel = current_account.identity if current_account.is_a?(Auth::MobileAccount)
+    end
+
+    def create
+      @cart.address = @address
+      @address.class.transaction do
+        @address.save
+        @cart.save
+      end
     end
 
     def order_create
@@ -44,11 +59,23 @@ module Ship
       @address = Profiled::Address.find(params[:id])
     end
 
+    def _prefixes
+      super do |pres|
+        if ['new'].include?(params[:action])
+          pres + ['profiled/my/addresses']
+        else
+          pres
+        end
+      end
+    end
+
     def address_params
       params.fetch(:address, {}).permit(
         :station_id,
+        :area_id,
         :contact,
         :tel,
+        :detail,
         :floor,
         :room
       )

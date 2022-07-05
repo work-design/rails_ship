@@ -1,0 +1,10 @@
+<div class="weui-panel">
+  <div class="weui-panel__hd">填写收货地址</div>
+  <div class="weui-panel__bd">
+    <%= form_with theme: 'weui', model: @address, url: { action: 'create' } do |f| %>
+      <%= hidden_field_tag :cart_id, params[:cart_id] %>
+      <%= render partial: 'form', locals: { f: f } %>
+      <%= f.submit '提交', wrap: { submit: nil } %>
+    <% end %>
+  </div>
+</div>
