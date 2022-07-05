@@ -6,6 +6,7 @@ gem 'rails'
 gem 'pg'
 gem 'propshaft'
 
+gem 'rails_extend', github: 'work-design/rails_extend'
 gem 'rails_com', github: 'work-design/rails_com'
 gem 'rails_org', github: 'work-design/rails_org'
 gem 'rails_notice', github: 'work-design/rails_notice'
