@@ -35,13 +35,12 @@ zh:
           monthly: 月结
           bimonthly: 双月结
           quarterly: 季度结算
-        weight:
-          gram: 克
-          kilogram: 千克
-        volume:
-          cubic_meter: 立方米
-          cubic_kilometer: 立方千米
-          cubic_millimeter: 立方毫米
+      ship/shipment:
+        state:
+          preparing: 装车中
+          prepared: 装车完待发车
+          left: 已发车
+          arrived: 已到达
       ship/shipment_item:
         item_type:
           Ship::Box: 物流箱

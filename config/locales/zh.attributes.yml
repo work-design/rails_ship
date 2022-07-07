@@ -33,6 +33,7 @@ zh:
         load_on: 装货日期
         left_at: 发车时间
         arrived_at: 到达时间
+        state: 状态
       ship/shipment_item:
         item_type: 包裹类型
         loaded_at: 装车时间
