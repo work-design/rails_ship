@@ -26,6 +26,14 @@ module Ship
         left: 'left',
         arrived: 'arrived'
       }, _prefix: true, _default: 'preparing'
+
+      after_save_commit :sync_state_to_item, if: -> { saved_change_to_state? }
+    end
+
+    def sync_state_to_item
+      shipment_items.each do |shipment_item|
+        shipment_item.state = 'unloaded'
+      end
     end
 
     def enter_url
