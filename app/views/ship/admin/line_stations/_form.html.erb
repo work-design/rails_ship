@@ -1,5 +1,1 @@
-<%= f.text_field :name %>
-<%= f.text_field :poiname %>
-<%= f.text_field :poiaddress %>
-<%= f.text_field :cityname %>
-
+<%= f.collection_select :station_id, @stations, :id, :name %>

@@ -39,7 +39,7 @@ zh:
       lines:
         index:
           title: 线路
-      locations:
+      line_stations:
         index:
           title: 途经点
       trade_items:

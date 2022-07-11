@@ -23,7 +23,7 @@ module Ship
 
     def sync_names_to_line
       self.start_name = line_stations[0].station.name
-      self.finish_name = line_stations[1].station.name
+      self.finish_name = line_stations[-1].station.name
       self.save
     end
 
