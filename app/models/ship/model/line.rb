@@ -9,7 +9,7 @@ module Ship
       attribute :locations_count, :integer, default: 0
 
       has_many :line_stations, -> { includes(:station) }, dependent: :destroy_async
-      has_many :stations, -> { order(position: :asc) }, through: :line_stations, inverse_of: :line
+      has_many :stations, -> { order(position: :asc) }, through: :line_stations, inverse_of: :lines
       accepts_nested_attributes_for :stations
       has_many :line_similars, dependent: :delete_all
       has_many :similars, through: :line_similars
