@@ -53,6 +53,8 @@ zh:
       ship/station:
         area_id: 所在区域
         detail: 详细地址
+        lat: 纬度
+        lng: 经度
       profiled/address:
         floor: 楼层
         room: 房间

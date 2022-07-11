@@ -52,7 +52,7 @@ Rails.application.routes.draw do
       resources :cars
       resources :drivers
       resources :lines do
-        resources :locations
+        resources :line_stations
       end
       resources :shipments do
         resources :shipment_items

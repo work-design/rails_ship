@@ -8,7 +8,7 @@ module Ship
       attribute :finish_name, :string
       attribute :locations_count, :integer, default: 0
 
-      has_many :line_stations, dependent: :destroy_async
+      has_many :line_stations, -> { includes(:station) }, dependent: :destroy_async
       has_many :stations, -> { order(position: :asc) }, through: :line_stations, inverse_of: :line
       accepts_nested_attributes_for :stations
       has_many :line_similars, dependent: :delete_all
@@ -19,6 +19,12 @@ module Ship
 
     def set_name
       self.name = [start_name.to_s, finish_name.to_s].join('-')
+    end
+
+    def sync_names_to_line
+      self.start_name = line_stations[0].station.name
+      self.finish_name = line_stations[1].station.name
+      self.save
     end
 
   end

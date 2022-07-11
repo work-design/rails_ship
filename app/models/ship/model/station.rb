@@ -10,7 +10,6 @@ module Ship
       attribute :cityname, :string
       attribute :lat, :decimal, precision: 10, scale: 8
       attribute :lng, :decimal, precision: 11, scale: 8
-      attribute :position, :integer
       attribute :coordinate, :point
 
       belongs_to :organ, class_name: 'Org::Organ'
@@ -21,17 +20,7 @@ module Ship
       has_many :lines, through: :line_stations
       has_many :addresses, class_name: 'Profiled::Address'
 
-
-      acts_as_list scope: [:line_id]
-
       after_save_commit :geo_later, if: -> { saved_change_to_lat? || saved_change_to_lng? }
-      #after_create_commit :sync_names_to_line
-    end
-
-    def sync_names_to_line
-      self.start_name = locations[0].poiname
-      self.finish_name = locations[1].poiname
-      self.save
     end
 
     def position_text
