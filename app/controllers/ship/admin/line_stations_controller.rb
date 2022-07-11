@@ -18,7 +18,7 @@ module Ship
     end
 
     def set_stations
-      @stations = Station.default_where(default_params)
+      @stations = Station.where.not(id: @line.station_ids).default_where(default_params)
     end
 
     def line_station_params
