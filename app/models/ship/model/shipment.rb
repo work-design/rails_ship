@@ -33,6 +33,8 @@ module Ship
     def sync_state_to_item
       shipment_items.each do |shipment_item|
         shipment_item.state = 'unloaded'
+        shipment_item.unload_at = Time.current
+        shipment_item.save
       end
     end
 
