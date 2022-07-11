@@ -8,8 +8,9 @@ module Ship
       attribute :finish_name, :string
       attribute :locations_count, :integer, default: 0
 
-      has_many :locations, -> { order(position: :asc) }, dependent: :delete_all, inverse_of: :line
-      accepts_nested_attributes_for :locations
+      has_many :line_stations, dependent: :destroy_async
+      has_many :stations, -> { order(position: :asc) }, through: :line_stations, inverse_of: :line
+      accepts_nested_attributes_for :stations
       has_many :line_similars, dependent: :delete_all
       has_many :similars, through: :line_similars
 
