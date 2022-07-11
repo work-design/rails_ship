@@ -9,7 +9,7 @@ module Ship
     end
 
     def stations
-      @stations = @shipment.line.stations
+      @line_stations = @shipment.line.line_stations.includes(:station)
     end
 
     private
