@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 676dbb5fd3ecd5e94cb8bc2b90dcd31771aac9b1
+  revision: 8a574173f26db51e39c6c42894738630f09764d8
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -54,7 +54,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_trade.git
-  revision: 27241bfdb38a9b0e18bee3922fef265b41d48330
+  revision: c8371552ed31dd4d6faaa825fc3808d38881c5c5
   specs:
     rails_trade (0.0.3)
       money-rails (~> 1.14)
@@ -162,7 +162,7 @@ GEM
     http-form_data (2.3.0)
     httpx (0.20.3)
       http-2-next (>= 0.4.1)
-    i18n (1.10.0)
+    i18n (1.11.0)
       concurrent-ruby (~> 1.0)
     jwt (2.4.1)
     kaminari (1.2.2)
