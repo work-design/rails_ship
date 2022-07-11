@@ -14,11 +14,11 @@ module Ship
       has_many :line_similars, dependent: :delete_all
       has_many :similars, through: :line_similars
 
-      before_validation :set_name, if: -> { start_name_changed? || finish_name_changed? }
+      before_validation :set_name, if: -> { name.blank? && (start_name_changed? || finish_name_changed?) }
     end
 
     def set_name
-      self.name = [start_name.to_s, finish_name.to_s].join('-')
+      self.name ||= [start_name.to_s, finish_name.to_s].join('-')
     end
 
     def sync_names_to_line
