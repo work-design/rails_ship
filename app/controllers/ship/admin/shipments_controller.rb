@@ -1,10 +1,15 @@
 module Ship
   class Admin::ShipmentsController < Admin::BaseController
     before_action :set_cars, :set_lines, :set_drivers, only: [:new, :create, :edit, :update]
+    before_action :set_shipment, only: [:show, :stations, :edit, :update, :destroy]
 
     def xx
       @shipment.state = 'arrived'
       @shipment.save
+    end
+
+    def stations
+      @stations = @shipment.line.stations
     end
 
     private

@@ -2,6 +2,9 @@
   <%= yield %>
   <td>
     <div data-show-target="item" style="visibility: hidden">
+      <%= link_to({ action: 'stations', id: model.id }, aria: { label: t('ship.admin.shipments.stations.title') }, class: 'button is-small is-rounded is-light') do %>
+        <i class="fa-light fa-location-dot"></i>
+      <% end %>
       <%= link_to({ controller: 'shipment_items', shipment_id: model.id }, aria: { label: t('ship.admin.shipment_items.index.title') }, class: 'button is-small is-rounded is-light') do %>
         <i class="fa-light fa-list-check"></i>
       <% end %>
