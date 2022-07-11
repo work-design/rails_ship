@@ -6,7 +6,7 @@ module Ship
       attribute :name, :string
       attribute :start_name, :string
       attribute :finish_name, :string
-      attribute :locations_count, :integer, default: 0
+      attribute :line_stations_count, :integer, default: 0
 
       has_many :line_stations, -> { includes(:station) }, dependent: :destroy_async
       has_many :stations, -> { order(position: :asc) }, through: :line_stations, inverse_of: :lines
