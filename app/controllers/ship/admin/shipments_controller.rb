@@ -12,6 +12,13 @@ module Ship
       @line_stations = @shipment.line.line_stations.includes(:station)
     end
 
+    def packages
+      q_params = {
+        'address.station_id': params[:station_id]
+      }
+      @packages = Package.default_where(q_params).page(params[:page])
+    end
+
     private
     def set_cars
       @cars = Car.default_where(default_params)

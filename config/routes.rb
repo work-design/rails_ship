@@ -58,6 +58,7 @@ Rails.application.routes.draw do
         resources :shipment_items
         member do
           get :stations
+          get :packages
         end
       end
       resources :box_specifications, only: [:index, :show] do
