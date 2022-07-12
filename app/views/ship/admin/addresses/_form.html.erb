@@ -1,8 +1,4 @@
-<%= f.hidden_field :area_id %>
-<%= f.hidden_field :user_id %>
-<%= f.select :kind, options_for_select(Profiled::Address.options_i18n(:kind)) %>
-<%= f.select :proxy_shipment, options_for_select(Profiled::Address.options_i18n(:proxy_shipment)) %>
-<%= f.text_field :contact_person %>
+<%= f.collection_select :station_id, @stations, :id, :name %>
+<%= f.text_field :contact %>
 <%= f.text_field :tel %>
-<%= f.text_field :address %>
-<%= f.text_field :postcode %>
+<%= f.text_area :detail %>

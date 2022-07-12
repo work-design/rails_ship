@@ -1,6 +1,7 @@
 module Ship
   class Admin::AddressesController < Admin::BaseController
     before_action :set_address, only: [:show, :edit, :update, :destroy]
+    before_action :set_stations, only: [:edit, :update]
 
     def index
       q_params = {}
@@ -24,10 +25,14 @@ module Ship
       @address = Profiled::Address.find(params[:id])
     end
 
+    def set_stations
+      @stations = Station.default_where(default_params)
+    end
+
     def address_params
       params.fetch(:address, {}).permit(
         :area_id,
-        :state_id,
+        :station_id,
         :contact,
         :tel,
         :detail
