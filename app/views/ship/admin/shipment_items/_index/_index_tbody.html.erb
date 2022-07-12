@@ -1,7 +1,9 @@
 <td><%= model.state_i18n %></td>
 <td><%= model.status_i18n %></td>
-<td><%= model.package_id %></td>
-<td><%= model.box&.code %></td>
+<td>
+  <p><%= model.package_id %></p>
+  <p><%= model.box&.code %></p>
+</td>
 <td>
   <p class="has-text-success"><time data-controller="time"><%= model.loaded_at&.to_fs(:iso8601) %></time></p>
   <p class="has-text-danger"><time data-controller="time"><%= model.unloaded_at&.to_fs(:iso8601) %></time></p>
