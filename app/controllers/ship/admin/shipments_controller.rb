@@ -1,7 +1,8 @@
 module Ship
   class Admin::ShipmentsController < Admin::BaseController
     before_action :set_cars, :set_lines, :set_drivers, only: [:new, :create, :edit, :update]
-    before_action :set_shipment, only: [:show, :stations, :edit, :update, :destroy]
+    before_action :set_shipment, only: [:show, :stations, :packages, :edit, :update, :destroy]
+    before_action :set_station, only: [:packages]
 
     def xx
       @shipment.state = 'arrived'
@@ -34,6 +35,10 @@ module Ship
 
     def set_shipment
       @shipment = Shipment.find params[:id]
+    end
+
+    def set_station
+      @station = Station.find params[:station_id]
     end
 
   end
