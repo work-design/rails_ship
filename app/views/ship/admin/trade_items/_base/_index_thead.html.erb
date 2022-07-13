@@ -1,7 +1,8 @@
-<th><%= Trade::TradeItem.human_attribute_name(:good_id) %></th>
-<th><%= Trade::TradeItem.human_attribute_name(:number) %></th>
 <th>
-  <p><%= Trade::TradeItem.human_attribute_name(:user_id) %></p>
+  <span><%= Trade::TradeItem.human_attribute_name(:good_id) %></span>
+  <span class="has-text-grey">(<%= Trade::TradeItem.human_attribute_name(:number) %>)</span>
+</th>
+<th>
   <p><%= Trade::TradeItem.human_attribute_name(:address_id) %></p>
 </th>
 <th><%= Trade::TradeItem.human_attribute_name(:produce_plan_id) %></th>
