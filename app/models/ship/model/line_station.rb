@@ -5,7 +5,7 @@ module Ship
     included do
       attribute :position, :integer
 
-      belongs_to :line
+      belongs_to :line, counter_cache: true
       belongs_to :station
 
       acts_as_list scope: [:line_id]
