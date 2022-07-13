@@ -21,22 +21,17 @@ module Ship
       }, _prefix: true
 
       belongs_to :shipment, counter_cache: true
-      belongs_to :package
-      belongs_to :box, optional: true
+      belongs_to :package, counter_cache: true
+      belongs_to :box, counter_cache: true, optional: true
 
       after_save_commit :sync_state_to_item, if: -> { saved_change_to_state? }
     end
 
     def sync_state_to_item
       package.state = self.state
-      package.loaded_at = self.loaded_at
-      package.unloaded_at = self.unloaded_at
 
       if box
         box.state = self.state
-        box.loaded_at = self.loaded_at
-        box.unloaded_at = self.unloaded_at
-
         self.class.transaction do
           box.save!
           package.save!

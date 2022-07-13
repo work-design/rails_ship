@@ -4,6 +4,7 @@ module Ship
 
     included do
       attribute :code, :string
+      attribute :shipment_items_count, :integer, default: 0
 
       enum status: {
         born: 'born',
