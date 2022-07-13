@@ -35,7 +35,8 @@ zh:
         arrived_at: 到达时间
         state: 状态
       ship/shipment_item:
-        item_type: 包裹类型
+        shipment_id: 所在运次
+        box_id: 物流箱
         loaded_at: 装车时间
         unloaded_at: 卸车时间
         state: 状态

@@ -3,7 +3,7 @@
     <tr class="has-text-weight-normal is-size-7">
       <th><%= Ship::ShipmentItem.human_attribute_name(:state) %></th>
       <th class="has-text-centered">
-        <p><%= Ship::ShipmentItem.human_attribute_name(:id) %></p>
+        <p><%= Ship::ShipmentItem.human_attribute_name(:shipment_id) %></p>
       </th>
       <th class="has-text-centered">
         <p><%= Ship::ShipmentItem.human_attribute_name(:loaded_at) %></p>
@@ -11,5 +11,5 @@
       </th>
     </tr>
   </thead>
-  <%= render partial: 'shipment_item', collection: @package.shipment_items, as: :model %>
+  <%= render partial: 'shipment_item', collection: @package.shipment_items.includes(:shipment), as: :model %>
 </table>

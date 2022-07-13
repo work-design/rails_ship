@@ -1,7 +1,8 @@
 <tr>
   <td class="<%= ['loaded'].include?(model.state) ? 'has-text-success' : 'has-text-danger' %>"><%= model.state_i18n %></td>
   <td class="has-text-centered">
-    <span class="tag"><%= model.id %></span>
+    <p><%= model.shipment.line.name %></p>
+    <p><%# model.shipment %></p>
   </td>
   <td class="has-text-right">
     <p><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.loaded_at&.to_fs(:iso8601) %></time></p>
