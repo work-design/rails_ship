@@ -12,6 +12,14 @@ module Ship
       @addresses = Profiled::Address.find(r.keys).zip r.values
     end
 
+    def from
+      q_params = {}
+      q_params.merge! default_params
+
+      r = Trade::TradeItem.packable.default_where(q_params).select(:from_address_id).page(params[:page]).group(:from_address_id).count
+      @addresses = Profiled::Address.find(r.keys).zip r.values
+    end
+
     def packaged
       trade_q_params = {}
       trade_q_params.merge! default_params

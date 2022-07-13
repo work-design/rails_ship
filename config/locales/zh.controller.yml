@@ -27,6 +27,8 @@ zh:
       title: 发货管理
       addresses:
         index:
+          title: 待收货地址
+        from:
           title: 待发货地址
         packaged:
           title: 已打包

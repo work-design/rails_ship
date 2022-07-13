@@ -33,6 +33,7 @@ Rails.application.routes.draw do
       resources :stations
       resources :addresses do
         collection do
+          get :from
           get :packaged
         end
         resources :trade_items, only: [] do
