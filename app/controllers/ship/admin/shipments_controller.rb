@@ -1,8 +1,8 @@
 module Ship
   class Admin::ShipmentsController < Admin::BaseController
     before_action :set_cars, :set_lines, :set_drivers, only: [:new, :create, :edit, :update]
-    before_action :set_shipment, only: [:show, :stations, :packages, :edit, :update, :destroy]
-    before_action :set_station, only: [:packages]
+    before_action :set_shipment, only: [:show, :stations, :packages, :loaded, :edit, :update, :destroy]
+    before_action :set_station, only: [:packages, :loaded]
 
     def xx
       @shipment.state = 'arrived'
@@ -17,6 +17,17 @@ module Ship
       q_params = {
         'address.station_id': params[:station_id]
       }
+      q_params.merge! params.permit('address.station_id')
+
+      @packages = Package.default_where(q_params).page(params[:page])
+    end
+
+    def loaded
+      q_params = {
+        'address.station_id': params[:station_id]
+      }
+      q_params.merge! params.permit('address.station_id')
+
       @packages = Package.default_where(q_params).page(params[:page])
     end
 

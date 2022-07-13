@@ -65,6 +65,7 @@ Rails.application.routes.draw do
         member do
           get :stations
           get :packages
+          get :loaded
         end
       end
       resources :box_specifications, only: [:index, :show] do

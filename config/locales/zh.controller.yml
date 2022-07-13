@@ -75,7 +75,9 @@ zh:
         stations:
           title: 途经点
         packages:
-          title: 包裹列表
+          title: 一键卸车
+        loaded:
+          title: 一键装车
       shipment_items:
         index:
           title: 装车详情
