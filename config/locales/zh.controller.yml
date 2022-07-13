@@ -57,6 +57,8 @@ zh:
           title: 包裹列表
         address:
           title: 包裹列表
+        shipment_items:
+          title: 运输详情
       packageds:
         index:
           title: 包裹详情

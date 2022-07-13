@@ -50,6 +50,9 @@ Rails.application.routes.draw do
         collection do
           get :address
         end
+        member do
+          get :shipment_items
+        end
       end
       resources :cars
       resources :drivers

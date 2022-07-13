@@ -1,6 +1,6 @@
 module Ship
   class Admin::PackagesController < Admin::BaseController
-    before_action :set_package, only: [:show, :edit, :update, :destroy]
+    before_action :set_package, only: [:show, :shipment_items, :edit, :update, :destroy]
     before_action :set_address, only: [:address]
 
     def index
@@ -17,6 +17,10 @@ module Ship
       q_params.merge! params.permit(:address_id)
 
       @packages = Package.includes(:packageds).default_where(q_params).order(id: :desc).page(params[:page])
+    end
+
+    def shipment_items
+      @shipment_items = @package.shipment_items
     end
 
     private
