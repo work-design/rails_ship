@@ -8,10 +8,6 @@
   <p class="has-text-info-dark"><%= Ship::Package.human_attribute_name(:boxed_in_at) %></p>
   <p class="has-text-warning-dark"><%= Ship::Package.human_attribute_name(:boxed_out_at) %></p>
 </th>
-<th>
-  <p class="has-text-info-dark"><%= Ship::Package.human_attribute_name(:loaded_at) %></p>
-  <p class="has-text-warning-dark"><%= Ship::Package.human_attribute_name(:unloaded_at) %></p>
-</th>
 <th><%= Ship::Package.human_attribute_name(:expected_on) %></th>
-<th><%= Ship::Package.human_attribute_name(:item) %></th>
+<th><%= Ship::Package.human_attribute_name(:packaged_count) %></th>
 <th><%= Ship::Package.human_attribute_name(:created_at) %></th>

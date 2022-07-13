@@ -6,8 +6,7 @@ module Ship
       attribute :trade_item_status, :string
 
       belongs_to :trade_item, class_name: 'Trade::TradeItem'
-
-      belongs_to :package, inverse_of: :packageds
+      belongs_to :package, inverse_of: :packageds, counter_cache: true
 
       after_create :update_status
       after_save :sync_trade_item_status, if: -> { saved_change_to_trade_item_id? }

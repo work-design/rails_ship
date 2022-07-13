@@ -45,6 +45,7 @@ Rails.application.routes.draw do
       end
       resources :trade_items, except: [:destroy]
       resources :packages, except: [:new, :create] do
+        resources :packageds
         collection do
           get :address
         end
