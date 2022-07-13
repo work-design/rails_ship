@@ -9,9 +9,8 @@ module Ship
       attribute :confirm_mode, :string
       attribute :boxed_in_at, :datetime
       attribute :boxed_out_at, :datetime
-      attribute :loaded_at, :datetime
-      attribute :unloaded_at, :datetime
       attribute :packageds_count, :integer, default: 0
+      attribute :shipment_items_count, :integer, default: 0
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
       belongs_to :address, class_name: 'Profiled::Address'

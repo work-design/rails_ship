@@ -15,7 +15,7 @@
 </td>
 <td><%= model.expected_on %></td>
 <td>
-  <%= link_to({ controller: 'packageds', package_id: model.id }) do %>
+  <%= link_to({ controller: 'packageds', package_id: model.id }, data: { turbo_frame: 'modal' }) do %>
     <span><%= model.packageds_count %></span>
   <% end %>
 </td>
