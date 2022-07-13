@@ -1,5 +1,8 @@
 <tr>
-  <td class="<%= ['loaded'].include?(model.state) ? 'has-text-success' : 'has-text-danger' %>"><%= model.state_i18n %></td>
+  <td>
+    <p class="<%= ['loaded'].include?(model.state) ? 'has-text-success' : 'has-text-danger' %>"><%= model.state_i18n %></p>
+    <p><span class="tag"><%= model.confirm_mode_i18n %></span></p>
+  </td>
   <td class="has-text-centered">
     <p><%= model.shipment.line.name %></p>
     <p><%# model.shipment %></p>

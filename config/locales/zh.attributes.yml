@@ -40,6 +40,7 @@ zh:
         loaded_at: 装车时间
         unloaded_at: 卸车时间
         state: 状态
+        confirm_mode: 确认模式
       ship/package:
         address_id: 收货地址
         box_id: 所在物流箱

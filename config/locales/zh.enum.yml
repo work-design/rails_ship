@@ -42,12 +42,12 @@ zh:
           left: 已发车
           arrived: 已到达
       ship/shipment_item:
-        item_type:
-          Ship::Box: 物流箱
-          Ship::Package: 普通包裹
         state:
           loaded: 已装车
           unloaded: 已卸车
+        confirm_mode:
+          scan: 扫码确认
+          button: 按钮确认
       ship/box:
         status:
           born: 生产出
