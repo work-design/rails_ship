@@ -20,6 +20,8 @@ module Ship
         never_loaded: 'never_loaded'
       }, _prefix: true
 
+      belongs_to :loaded_station, class_name: 'Station', optional: true
+      belongs_to :unloaded_station, class_name: 'Station', optional: true
       belongs_to :shipment, counter_cache: true
       belongs_to :package, counter_cache: true
       belongs_to :box, counter_cache: true, optional: true

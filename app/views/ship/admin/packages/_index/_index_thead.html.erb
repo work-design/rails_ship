@@ -1,6 +1,8 @@
 <th>
-  <p><%= Ship::Package.human_attribute_name(:address_id) %></p>
-  <p class="has-text-warning-dark"><%= Profiled::Address.human_attribute_name(:station_id) %></p>
+  <p>
+    <span><%= Ship::Package.human_attribute_name(:address_id) %></span>
+    <span class="has-text-grey"><%= Profiled::Address.human_attribute_name(:station_id) %></span>
+  </p>
 </th>
 <th><%= Ship::Package.human_attribute_name(:state) %></th>
 <th>
