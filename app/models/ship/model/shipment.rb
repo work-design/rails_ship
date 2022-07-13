@@ -8,6 +8,7 @@ module Ship
       attribute :arrived_at, :datetime
       attribute :load_on, :date
       attribute :shipment_items_count, :integer, default: 0
+      attribute :expected_minutes, :integer, comment: '预计路途分钟数'
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 

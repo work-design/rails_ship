@@ -6,6 +6,11 @@ module Ship
       attribute :loaded_at, :datetime
       attribute :unloaded_at, :datetime
 
+      enum confirm_mode: {
+        button: 'button',
+        scan: 'scan'
+      }, _prefix: true
+
       enum state: {
         loaded: 'loaded',
         unloaded: 'unloaded'

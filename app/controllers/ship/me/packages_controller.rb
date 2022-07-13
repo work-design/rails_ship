@@ -41,22 +41,25 @@ module Ship
     # 直接装车
     def loaded
       if @shipment
-        @package.confirm_mode = 'scan'
-        @package.state = 'loaded'
-        @package.loaded_at = Time.current
+        si = @shipment.shipment_items.find_or_initialize_by(package_id: @package.id)
+        si.state = 'loaded'
+        si.loaded_at = Time.current
+        si.confirm_mode = 'scan'
+        si.save
       end
-      @package.save
     end
 
     # 卸车
     def unloaded
       if @shipment
-        @package.confirm_mode = 'scan'
+        si = @shipment.shipment_items.find_or_initialize_by(package_id: @package.id)
+        si.state = 'unloaded'
+        si.unloaded_at = Time.current
+        si.confirm_mode = 'scan'
+        si.save
       else
         @package.confirm_mode = 'button'
       end
-      @package.unloaded_at = Time.current
-      @package.state = 'unloaded'
       @package.save
     end
 
