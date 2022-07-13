@@ -53,7 +53,11 @@ Rails.application.routes.draw do
       resources :cars
       resources :drivers
       resources :lines do
-        resources :line_stations
+        resources :line_stations do
+          member do
+            patch :reorder
+          end
+        end
       end
       resources :shipments do
         resources :shipment_items
