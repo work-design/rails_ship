@@ -69,6 +69,8 @@ zh:
           title: 运次管理
         stations:
           title: 途经点
+        packages:
+          title: 包裹列表
       shipment_items:
         index:
           title: 装车详情
