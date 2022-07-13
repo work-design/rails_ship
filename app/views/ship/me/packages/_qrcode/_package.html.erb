@@ -30,18 +30,6 @@
         <span class="weui-form-preview__value"><time data-controller="time"><%= @package.boxed_out_at.to_fs(:iso8601) %></time></span>
       </div>
     <% end %>
-    <% if ['loaded', 'unloaded'].include?(@package.state) %>
-      <div class="weui-form-preview__item">
-        <label class="weui-form-preview__label"><%= Ship::Package.human_attribute_name(:loaded_at) %></label>
-        <span class="weui-form-preview__value"><time data-controller="time"><%= @package.loaded_at.to_fs(:iso8601) %></time></span>
-      </div>
-    <% end %>
-    <% if ['unloaded'].include?(@package.state) %>
-      <div class="weui-form-preview__item">
-        <label class="weui-form-preview__label"><%= Ship::Package.human_attribute_name(:unloaded_at) %></label>
-        <span class="weui-form-preview__value"><time data-controller="time"><%= @package.unloaded_at.to_fs(:iso8601) %></time></span>
-      </div>
-    <% end %>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::Package.human_attribute_name(:box_id) %></label>
       <span class="weui-form-preview__value"><%= @package.box&.code %></span>

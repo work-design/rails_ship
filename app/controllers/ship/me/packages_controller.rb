@@ -52,15 +52,18 @@ module Ship
     # 卸车
     def unloaded
       if @shipment
-        si = @shipment.shipment_items.find_or_initialize_by(package_id: @package.id)
+        si = @shipment.shipment_items.find_by(package_id: @package.id)
         si.state = 'unloaded'
         si.unloaded_at = Time.current
         si.confirm_mode = 'scan'
         si.save
-      else
-        @package.confirm_mode = 'button'
+      elsif params[:shipment_item_id]
+        si = @package.shipment_items.find params[:shipment_item_id]
+        si.state = 'unloaded'
+        si.unloaded_at = Time.current
+        si.confirm_mode = 'button'
+        si.save
       end
-      @package.save
     end
 
     def qrcode

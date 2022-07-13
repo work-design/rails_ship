@@ -2,6 +2,6 @@
   <div class="weui-panel__hd">包裹</div>
   <div class="weui-panel__bd">
     <%= render 'package' %>
-    <%= render 'shipment_items' %>
+    <%= render partial: 'shipment_item', collection: @package.shipment_items.includes(:shipment), as: :model %>
   </div>
 </div>

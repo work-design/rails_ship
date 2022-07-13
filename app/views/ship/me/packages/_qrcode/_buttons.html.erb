@@ -14,8 +14,5 @@
     <%= button_to({ controller: 'ship/me/packages', action: 'out', id: @package.id }, class: 'button is-warning') do %>
       <span>取出</span>
     <% end if ['box_in'].include?(@package.state)  %>
-    <%= button_to({ controller: 'ship/me/packages', action: 'unloaded', id: @package.id }, class: 'button is-warning') do %>
-      <span>卸货</span>
-    <% end if ['loaded'].include?(@package.shipment_item&.state) %>
   </div>
 </div>
