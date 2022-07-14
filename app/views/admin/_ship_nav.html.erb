@@ -30,6 +30,7 @@
     <i class="fa-solid dropdown"></i>
   </a>
   <div class="menu-list" data-empty-target="content">
+    <%= link_to t('ship.admin.lines.index.title'), { controller: 'ship/admin/lines' }, class: active_helper(controllers: ['lines', 'locations'], active: 'is-active') %>
     <%= link_to t('ship.admin.shipments.index.title'), { controller: 'ship/admin/shipments' }, class: active_helper(controllers: 'shipments', active: 'is-active') %>
   </div>
 </div>
@@ -42,7 +43,6 @@
   <div class="menu-list" data-empty-target="content">
     <%= link_to t('ship.admin.cars.index.title'), { controller: 'ship/admin/cars' }, class: active_helper(controllers: 'cars', active: 'is-active') %>
     <%= link_to t('ship.admin.drivers.index.title'), { controller: 'ship/admin/drivers' }, class: active_helper(controllers: 'drivers', active: 'is-active') %>
-    <%= link_to t('ship.admin.lines.index.title'), { controller: 'ship/admin/lines' }, class: active_helper(controllers: ['lines', 'locations'], active: 'is-active') %>
     <%= link_to t('ship.admin.stations.index.title'), { controller: 'ship/admin/stations' }, class: active_helper(controllers: 'stations', active: 'is-active') %>
   </div>
 </div>
