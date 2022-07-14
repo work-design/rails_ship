@@ -1,3 +1,1 @@
-<%= f.text_field :good_id %>
-<%= f.text_field :number %>
-<%= f.text_field :status %>
+<%= f.collection_select :from_station, @stations, :id, :name %>
