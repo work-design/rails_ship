@@ -11,7 +11,7 @@ module Ship
       q_params.merge! default_params
       q_params.merge! params.permit(:user_id, :address_id, :status)
 
-      @trade_items = Trade::TradeItem.includes(:produce_plan, :address, :from_address, :order, :user).where.not(address_id: nil).default_where(q_params).order(id: :desc).page(params[:page])
+      @trade_items = Trade::TradeItem.includes(:produce_plan, :order, :user, :station, :from_station, address: :area, from_address: :area).where.not(address_id: nil).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def packable
