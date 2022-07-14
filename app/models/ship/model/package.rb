@@ -15,6 +15,7 @@ module Ship
       belongs_to :organ, class_name: 'Org::Organ', optional: true
       belongs_to :address, class_name: 'Profiled::Address'
       belongs_to :from_station, class_name: 'Station', optional: true
+      belongs_to :next_station, class_name: 'Station', optional: true
       belongs_to :user, class_name: 'Auth::User', optional: true
       belongs_to :produce_plan, class_name: 'Factory::ProducePlan', optional: true if defined? RailsFactory
 

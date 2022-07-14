@@ -21,6 +21,11 @@ module Ship
       has_many :addresses, class_name: 'Profiled::Address'
 
       after_save_commit :geo_later, if: -> { saved_change_to_lat? || saved_change_to_lng? }
+      after_save_commit :sync_to_line, if: -> { saved_change_to_name? }
+    end
+
+    def sync_to_line
+      lines.each(&:sync_names_to_line)
     end
 
     def position_text

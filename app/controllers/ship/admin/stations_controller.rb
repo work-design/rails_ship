@@ -5,7 +5,7 @@ module Ship
       q_params = {}
       q_params.merge! default_params
 
-      @stations = Station.default_where(q_params).page(params[:page])
+      @stations = Station.includes(:area).default_where(q_params).order(id: :asc).page(params[:page])
     end
 
     def new
