@@ -1,0 +1,10 @@
+<table class="table as-search">
+  <tr>
+    <th>途径</th>
+    <td>
+      <% @shipment.line.line_stations.each do |line_station| %>
+        <%= link_to line_station.station.name, filter_params(station_id: line_station.station_id, except: [:id]), class: active_params(station_id: line_station.station_id, active: 'button is-info', item: 'button is-light') %>
+      <% end %>
+    </td>
+  </tr>
+</table>
