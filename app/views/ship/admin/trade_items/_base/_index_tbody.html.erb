@@ -3,6 +3,10 @@
   <span class="has-text-grey">（<%= model.number %>）</span>
 </td>
 <td>
+  <p class="has-text-success"><%= model.from_station&.name %></p>
+  <p class="has-text-danger"><%= model.station&.name %></p>
+</td>
+<td>
   <p class="has-text-success">
   <% if model.from_address %>
     <span><%= model.from_address.area.full_name %></span>
