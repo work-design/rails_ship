@@ -14,6 +14,9 @@ zh:
       lines:
         index:
           title: 路线
+      line_stations:
+        index:
+          title: 途经点
       similars:
         index:
           title: 相似路线

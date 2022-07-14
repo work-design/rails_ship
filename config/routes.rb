@@ -24,6 +24,11 @@ Rails.application.routes.draw do
       root 'home#index'
       resources :lines do
         resources :similars
+        resources :line_stations do
+          member do
+            patch :reorder
+          end
+        end
       end
       resources :box_specifications do
         resources :boxes
