@@ -3,7 +3,8 @@
   <span class="has-text-grey">(<%= Trade::TradeItem.human_attribute_name(:number) %>)</span>
 </th>
 <th>
-  <p><%= Trade::TradeItem.human_attribute_name(:address_id) %></p>
+  <p class="has-text-success"><%= Trade::TradeItem.human_attribute_name(:from_address_id) %></p>
+  <p class="has-text-danger"><%= Trade::TradeItem.human_attribute_name(:address_id) %></p>
 </th>
 <th><%= Trade::TradeItem.human_attribute_name(:produce_plan_id) %></th>
 <th><%= Trade::TradeItem.human_attribute_name(:status) %></th>

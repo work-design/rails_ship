@@ -3,8 +3,16 @@
   <span class="has-text-grey">（<%= model.number %>）</span>
 </td>
 <td>
-  <span><%= model.address.area.full_name %></span>
-  <span><%= model.address.detail %></span>
+  <p class="has-text-success">
+  <% if model.from_address %>
+    <span><%= model.from_address.area.full_name %></span>
+    <span><%= model.from_address.detail %></span>
+  <% end %>
+  </p>
+  <p class="has-text-danger">
+    <span><%= model.address.area.full_name %></span>
+    <span><%= model.address.detail %></span>
+  </p>
 </td>
 <td><%= model.produce_plan&.title %></td>
 <td><%= model.status_i18n %></td>
