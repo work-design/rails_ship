@@ -5,11 +5,11 @@
   <div class="weui-media-box__ft is-flex-direction-column is-justify-content-space-evenly">
     <%= link_to({ action: 'loaded', from_station_id: model.station_id }, class: 'button is-small is-rounded is-light') do %>
       <i class="fa-solid fa-person-dolly has-text-success"></i>
-      <span><%= t('ship.admin.shipments.loaded.title') %></span>
+      <span class="pl-1"><%= t('ship.admin.shipments.loaded.title') %></span>
     <% end %>
     <%= link_to({ action: 'packages', station_id: model.station_id }, class: 'button is-small is-rounded is-light') do %>
       <i class="fa-solid fa-person-dolly-empty has-text-danger"></i>
-      <span><%= t('ship.admin.shipments.packages.title') %></span>
+      <span class="pl-1"><%= t('ship.admin.shipments.packages.title') %></span>
     <% end %>
   </div>
 </div>
