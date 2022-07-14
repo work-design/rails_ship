@@ -5,8 +5,8 @@
       <%= form_with url: { action: 'loaded_create' }, method: :post, class: 'button_to ml-2' do |f| %>
         <%= f.hidden_field :ids, data: { check_target: 'ids' } %>
         <%= f.hidden_field :address_id, value: params[:address_id] %>
-        <%= button_tag data: { action: 'check#doSubmit' }, aria: { label: t('.package') }, class: 'button is-small is-dark' do %>
-          <i class="fa-solid fa-person-dolly has-text-success"></i>
+        <%= button_tag data: { action: 'check#doSubmit' }, aria: { label: t('.package') }, class: 'button is-small is-light' do %>
+          <i class="fa-solid fa-person-dolly-empty has-text-danger"></i>
         <% end %>
       <% end %>
     </div>
