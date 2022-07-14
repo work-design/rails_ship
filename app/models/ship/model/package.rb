@@ -53,11 +53,13 @@ module Ship
     end
 
     def sync_station
+      return unless address
       self.station_id ||= address.station_id
     end
 
     def sync_from_station
-      self.form_station_id ||= from_address.station_id
+      return unless from_address
+      self.from_station_id ||= from_address.station_id
     end
 
     def enter_url
