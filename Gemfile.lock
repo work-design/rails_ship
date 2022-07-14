@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 8a574173f26db51e39c6c42894738630f09764d8
+  revision: 1668d3b93fbfad42d8393ab127af9af5017b181f
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -33,7 +33,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_notice.git
-  revision: 9466b5ecddd76cb3b61d71db5d6b14394575c4d5
+  revision: bebb759741d03730ebe3296a9701cd5ca5720ce3
   specs:
     rails_notice (1.0.3)
       rails_extend
@@ -47,7 +47,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_profile.git
-  revision: 3730ad558088fd983df67a1d09561417adabc9a6
+  revision: e920dd11f23094a4220133c37d700413624d61fe
   specs:
     rails_profile (0.0.1)
       rails_com (~> 1.2)
@@ -162,7 +162,7 @@ GEM
     http-form_data (2.3.0)
     httpx (0.20.3)
       http-2-next (>= 0.4.1)
-    i18n (1.11.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     jwt (2.4.1)
     kaminari (1.2.2)
