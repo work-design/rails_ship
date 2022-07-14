@@ -69,6 +69,7 @@ Rails.application.routes.draw do
           get :stations
           get :packages
           get :loaded
+          post 'loaded' => :loaded_create
         end
       end
       resources :box_specifications, only: [:index, :show] do
