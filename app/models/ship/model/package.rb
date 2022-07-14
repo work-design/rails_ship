@@ -35,11 +35,9 @@ module Ship
       enum state: {
         init: 'init',
         packaged: 'packaged',
-        box_in: 'box_in',
         loaded: 'loaded',
         sent_out: 'sent_out',
         unloaded: 'unloaded',
-        box_out: 'box_out',
         delivered: 'delivered',
         received: 'received'
       }, _prefix: true, _default: 'init'

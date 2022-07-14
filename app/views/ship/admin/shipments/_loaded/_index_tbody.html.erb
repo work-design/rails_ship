@@ -1,4 +1,4 @@
-<td><%= check_box_tag 'xx', model.id, false, id: nil %></td>
+<td><%= check_box_tag 'xx', model.id, @shipment.loaded_package_ids.include?(model.id), id: nil %></td>
 <td><%= model.address.station&.name %></td>
 <td><%= model.address.content %></td>
 <td>

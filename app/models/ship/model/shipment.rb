@@ -19,6 +19,8 @@ module Ship
 
       has_many :shipment_items, autosave: true, dependent: :destroy_async
       has_many :packages, through: :shipment_items
+      has_many :loaded_shipment_items, -> { state_loaded }, class_name: 'ShipmentItem'
+      has_many :loaded_packages, through: :loaded_shipment_items, source: :package
       has_many :boxes, through: :shipment_items
 
       enum state: {
