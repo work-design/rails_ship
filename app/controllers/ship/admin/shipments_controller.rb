@@ -31,6 +31,15 @@ module Ship
       @packages = Package.default_where(q_params).page(params[:page])
     end
 
+    def loaded_create
+      packages = Package.find params[:ids].split(',')
+
+      packages.each do |package|
+        @shipment.shipment_items.build(package_id: package.id)
+      end
+      @shipment.save
+    end
+
     private
     def set_cars
       @cars = Car.default_where(default_params)

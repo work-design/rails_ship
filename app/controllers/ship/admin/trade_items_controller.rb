@@ -24,16 +24,13 @@ module Ship
     def package
       pack = @address.packages.build(default_form_params)
       trade_items = @address.trade_items.deliverable.find params[:ids].split(',')
-      user_ids = trade_items.pluck(:user_id).uniq
-      if user_ids.size > 1
-        render 'edit', locals: { message: 'user 不一致，不能打包' } and return
-      end
+
       produce_plan_ids = trade_items.pluck(:produce_plan_id).uniq
       if produce_plan_ids.size > 1
         render 'edit', locals: { message: 'produce plan 不一致，不能打包' } and return
       end
 
-      pack.user_id = user_ids[0]
+      pack.user_id = @address.user_id
       pack.produce_plan_id = produce_plan_ids[0]
       trade_items.each do |trade_item|
         p = trade_item.packageds.build
