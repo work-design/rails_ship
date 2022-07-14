@@ -33,13 +33,6 @@ module Ship
         cubic_millimeter: 'cubic_millimeter'
       }
 
-      belongs_to :organ, class_name: 'Org::Organ', optional: true
-
-      belongs_to :package, optional: true
-      belongs_to :box, optional: true
-      belongs_to :destination, class_name: 'Profiled::Address', optional: true
-      belongs_to :departure, class_name: 'Profiled::Address', optional: true
-
       has_many :item_shipments, dependent: :destroy_async
       has_many :shipment, through: :item_shipments
     end
