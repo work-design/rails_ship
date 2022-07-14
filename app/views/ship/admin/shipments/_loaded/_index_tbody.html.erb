@@ -1,7 +1,6 @@
 <td><%= check_box_tag 'xx', model.id, false, id: nil %></td>
-<td>
-  <p><%= model.address.content %></p>
-</td>
+<td><%= model.address.station&.name %></td>
+<td><%= model.address.content %></td>
 <td>
   <span><%= model.state_i18n %></span>
   <%= link_to({ controller: 'admin/shipment_items', action: 'show', shipment_id: model.shipment_item.shipment_id, id: model.shipment_item.id }, data: { turbo_frame: 'modal' }) do %>
