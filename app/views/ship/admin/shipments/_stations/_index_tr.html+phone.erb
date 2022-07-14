@@ -2,9 +2,14 @@
   <div class="weui-media-box__bd">
     <%= yield %>
   </div>
-  <div class="weui-media-box__ft">
-    <%= button_to({ action: 'actions', id: model.id }, class: 'button is-borderless') do %>
-      <i class="fa-light fa-ellipsis-h fa-lg"></i>
+  <div class="weui-media-box__ft is-flex-direction-column is-justify-content-space-evenly">
+    <%= link_to({ action: 'loaded', from_station_id: model.station_id }, class: 'button is-small is-rounded is-light') do %>
+      <i class="fa-solid fa-person-dolly has-text-success"></i>
+      <span><%= t('ship.admin.shipments.loaded.title') %></span>
+    <% end %>
+    <%= link_to({ action: 'packages', station_id: model.station_id }, class: 'button is-small is-rounded is-light') do %>
+      <i class="fa-solid fa-person-dolly-empty has-text-danger"></i>
+      <span><%= t('ship.admin.shipments.packages.title') %></span>
     <% end %>
   </div>
 </div>
