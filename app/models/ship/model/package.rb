@@ -47,6 +47,17 @@ module Ship
         button: 'button',
         scan: 'scan'
       }, _prefix: true
+
+      before_validation :sync_station, if: -> { address_id.present? && address_id_changed? }
+      before_validation :sync_from_station, if: -> { from_address_id.present? && from_address_id_changed? }
+    end
+
+    def sync_station
+      self.station_id ||= address.station_id
+    end
+
+    def sync_from_station
+      self.form_station_id ||= from_address.station_id
     end
 
     def enter_url
