@@ -1,1 +1,2 @@
 <%= f.date_field :expected_on %>
+<%= f.collection_select :from_station_id, @stations, :id, :name %>

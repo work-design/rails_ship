@@ -2,7 +2,7 @@
   <%= yield %>
   <td>
     <div data-show-target="item" style="visibility: hidden">
-      <%= link_to({ action: 'loaded', station_id: model.station_id }, aria: { label: t('ship.admin.shipments.loaded.title') }, class: 'button is-small is-rounded is-light') do %>
+      <%= link_to({ action: 'loaded', from_station_id: model.station_id }, aria: { label: t('ship.admin.shipments.loaded.title') }, class: 'button is-small is-rounded is-light') do %>
         <i class="fa-solid fa-person-dolly has-text-success"></i>
       <% end %>
       <%= link_to({ action: 'packages', station_id: model.station_id }, aria: { label: t('ship.admin.shipments.packages.title') }, class: 'button is-small is-rounded is-light') do %>

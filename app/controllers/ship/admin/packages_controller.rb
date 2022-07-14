@@ -2,6 +2,7 @@ module Ship
   class Admin::PackagesController < Admin::BaseController
     before_action :set_package, only: [:show, :shipment_items, :edit, :update, :destroy]
     before_action :set_address, only: [:address]
+    before_action :set_stations, only: [:edit, :update]
 
     def index
       q_params = {}
@@ -32,10 +33,16 @@ module Ship
       @address = Profiled::Address.find params[:address_id]
     end
 
+    def set_stations
+      @stations = Station.default_where(default_params)
+    end
+
     def package_params
       p = params.fetch(:package, {}).permit(
         :state,
-        :expected_on
+        :expected_on,
+        :from_address_id,
+        :from_station_id
       )
       p.merge! default_form_params
     end
