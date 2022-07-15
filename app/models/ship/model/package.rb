@@ -41,7 +41,7 @@ module Ship
       belongs_to :station, optional: true
       belongs_to :box, optional: true
       belongs_to :last_box, class_name: 'Box', optional: true
-      belongs_to :shipment_item, optional: true
+      belongs_to :current_shipment, class_name: 'Shipment', optional: true
 
       has_many :shipment_items, inverse_of: :package
       has_many :shipments, through: :shipment_items

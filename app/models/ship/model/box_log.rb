@@ -8,5 +8,6 @@ module Ship
     end
 
   end
+
 end
 

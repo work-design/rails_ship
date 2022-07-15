@@ -21,7 +21,7 @@ module Ship
       q_params = {}
       q_params.merge! params.permit(:from_station_id, :station_id)
 
-      @packages = Package.where(shipment_id: nil).includes(:station, address: :area).default_where(q_params).order(id: :desc).page(params[:page])
+      @packages = Package.where(current_shipment_id: [@shipment.id, nil]).includes(:station, address: :area).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def loaded_create
