@@ -14,20 +14,6 @@ module Ship
       @line_stations = @shipment.line.line_stations.includes(:station)
     end
 
-    def unloaded
-      q_params = {}
-      q_params.merge! params.permit(:station_id)
-
-      @packages = @shipment.packages.default_where(q_params).order(id: :desc).page(params[:page])
-    end
-
-    def transfer
-      q_params = {
-      }
-
-      @packages = @shipment.packages.where.not(station_id: @shipment.line.line_stations.pluck(:station_id)).default_where(q_params).page(params[:page])
-    end
-
     def loaded
       q_params = {}
       q_params.merge! params.permit(:from_station_id, :station_id)
@@ -47,6 +33,34 @@ module Ship
       @shipment.class.transaction do
         ss.each(&:save)
       end
+    end
+
+    def unloaded
+      q_params = {}
+      q_params.merge! params.permit(:station_id)
+
+      @packages = @shipment.packages.default_where(q_params).order(id: :desc).page(params[:page])
+    end
+
+    def unloaded_create
+      packages = Package.find params[:ids].split(',')
+
+      ss = packages.map do |package|
+        si = @shipment.shipment_items.find_or_initialize_by(package_id: package.id)
+        si.state = 'loaded'
+        si.loaded_at ||= Time.current
+        si
+      end
+      @shipment.class.transaction do
+        ss.each(&:save)
+      end
+    end
+
+    def transfer
+      q_params = {
+      }
+
+      @packages = @shipment.packages.where.not(station_id: @shipment.line.line_stations.pluck(:station_id)).default_where(q_params).page(params[:page])
     end
 
     private
