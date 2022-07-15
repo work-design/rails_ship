@@ -3,7 +3,7 @@
 <td><%= model.address.content %></td>
 <td>
   <span><%= model.state_i18n %></span>
-  <%= link_to({ controller: 'admin/shipment_items', shipment_id: model.shipment_item.shipment_id }, data: { turbo_frame: 'modal' }, class: 'tag is-info') do %>
+  <%= link_to({ controller: 'packages', action: 'shipment_items', id: model.id }, data: { turbo_frame: 'modal' }, class: 'tag is-info') do %>
     <i class="fa-solid fa-location-arrow"></i>
     <span class="pl-1"><%= model.shipment_items_count %></span>
   <% end %>
