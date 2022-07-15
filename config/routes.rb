@@ -72,7 +72,7 @@ Rails.application.routes.draw do
         resources :shipment_items
         member do
           get :stations
-          get :packages
+          get :unloaded
           get :loaded
           post 'loaded' => :loaded_create
         end

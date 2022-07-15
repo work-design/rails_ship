@@ -79,7 +79,7 @@ zh:
           title: 运次管理
         stations:
           title: 途经点
-        packages:
+        unloaded:
           title: 一键卸车
         loaded:
           title: 一键装车

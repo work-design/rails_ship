@@ -1,0 +1,9 @@
+<table class="table as-search">
+  <tr>
+    <th>途径</th>
+    <td>
+      <%= link_to @station.name, filter_params(station_id: @station.id, except: [:id]), class: active_params(station_id: @station.id, active: 'button is-info', item: 'button is-light') %>
+      <%= link_to '其他', filter_params(station_id: @station.id, except: [:id]), class: active_params(station_id: @station.id, active: 'button is-info', item: 'button is-light') %>
+    </td>
+  </tr>
+</table>
