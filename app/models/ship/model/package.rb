@@ -24,7 +24,7 @@ module Ship
       belongs_to :last_box, class_name: 'Box', optional: true
 
       has_one :shipment_item, -> { order(id: :desc) }
-      has_many :shipment_items
+      has_many :shipment_items, inverse_of: :package
       has_many :shipments, through: :shipment_items
       has_many :packageds, dependent: :destroy
       has_many :trade_items, class_name: 'Trade::TradeItem', through: :packageds

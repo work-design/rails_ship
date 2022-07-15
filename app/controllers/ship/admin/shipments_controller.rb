@@ -1,7 +1,7 @@
 module Ship
   class Admin::ShipmentsController < Admin::BaseController
     before_action :set_cars, :set_lines, :set_drivers, only: [:new, :create, :edit, :update]
-    before_action :set_shipment, only: [:show, :stations, :unloaded, :transfer, :loaded, :edit, :update, :destroy]
+    before_action :set_shipment, only: [:show, :stations, :unloaded, :transfer, :loaded, :loaded_create, :edit, :update, :destroy]
     before_action :set_station, only: [:unloaded, :transfer]
     before_action :set_from_station, only: [:loaded]
 
@@ -38,10 +38,15 @@ module Ship
     def loaded_create
       packages = Package.find params[:ids].split(',')
 
-      packages.each do |package|
-        @shipment.shipment_items.build(package_id: package.id)
+      ss = packages.map do |package|
+        si = @shipment.shipment_items.find_or_initialize_by(package_id: package.id)
+        si.state = 'loaded'
+        si.loaded_at ||= Time.current
+        si
       end
-      @shipment.save
+      @shipment.class.transaction do
+        ss.each(&:save)
+      end
     end
 
     private
