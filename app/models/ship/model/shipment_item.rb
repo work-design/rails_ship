@@ -27,21 +27,15 @@ module Ship
       belongs_to :box, counter_cache: true, optional: true
 
       after_save_commit :sync_state_to_item, if: -> { saved_change_to_state? }
-      after_save_commit :sync_current_shipment_item, if: -> { saved_change_to_state? && ['loaded'].include?(state) }
-      after_save_commit :remove_current_shipment_item, if: -> { saved_change_to_state? && ['unloaded'].include?(state) }
-    end
-
-    def sync_current_shipment_item
-      package.current_shipment = shipment
-      package.save
-    end
-
-    def remove_current_shipment_item
-      package.update current_shipment_id: nil
     end
 
     def sync_state_to_item
       package.state = self.state
+      if ['loaded'].include?(state)
+        package.current_shipment = shipment
+      elsif ['unloaded'].include?(state)
+        package.current_shipment_id = nil
+      end
 
       if box
         box.state = self.state
