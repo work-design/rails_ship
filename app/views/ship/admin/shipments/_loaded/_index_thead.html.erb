@@ -3,7 +3,7 @@
     <%= check_box_tag 'xxd', 'xx', false, id: nil, data: { action: 'check#toggleAll' } %>
     <%= form_with url: { action: 'loaded_create' }, method: :post, class: 'button_to ml-2' do |f| %>
       <%= f.hidden_field :ids, data: { check_target: 'ids' } %>
-      <%= button_tag data: { action: 'check#doSubmit' }, aria: { label: t('.package') }, class: 'button is-small is-dark' do %>
+      <%= button_tag data: { action: 'check#doSubmit' }, aria: { label: t('.title') }, class: 'button is-small is-dark' do %>
         <i class="fa-solid fa-person-dolly has-text-success"></i>
       <% end %>
     <% end %>
