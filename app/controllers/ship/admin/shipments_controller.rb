@@ -1,7 +1,10 @@
 module Ship
   class Admin::ShipmentsController < Admin::BaseController
     before_action :set_cars, :set_lines, :set_drivers, only: [:new, :create, :edit, :update]
-    before_action :set_shipment, only: [:show, :stations, :unloaded, :transfer, :loaded, :loaded_create, :edit, :update, :destroy]
+    before_action :set_shipment, only: [
+      :show, :edit, :update, :destroy,
+      :stations, :unloaded, :unloaded_create, :transfer, :loaded, :loaded_create
+    ]
     before_action :set_station, only: [:unloaded, :transfer]
     before_action :set_from_station, only: [:loaded]
 
@@ -18,7 +21,7 @@ module Ship
       q_params = {}
       q_params.merge! params.permit(:from_station_id, :station_id)
 
-      @packages = Package.default_where(q_params).order(id: :desc).page(params[:page])
+      @packages = Package.includes(:station, address: :area).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def loaded_create
@@ -39,7 +42,7 @@ module Ship
       q_params = {}
       q_params.merge! params.permit(:station_id)
 
-      @packages = @shipment.packages.default_where(q_params).order(id: :desc).page(params[:page])
+      @packages = @shipment.packages.includes(:station, address: :area).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def unloaded_create
@@ -47,8 +50,8 @@ module Ship
 
       ss = packages.map do |package|
         si = @shipment.shipment_items.find_or_initialize_by(package_id: package.id)
-        si.state = 'loaded'
-        si.loaded_at ||= Time.current
+        si.state = 'unloaded'
+        si.unloaded_at ||= Time.current
         si
       end
       @shipment.class.transaction do
