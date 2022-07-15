@@ -12,23 +12,6 @@ module Ship
       attribute :packageds_count, :integer, default: 0
       attribute :shipment_items_count, :integer, default: 0
 
-      belongs_to :organ, class_name: 'Org::Organ', optional: true
-      belongs_to :address, class_name: 'Profiled::Address'
-      belongs_to :from_address, class_name: 'Profiled::Address', optional: true
-      belongs_to :user, class_name: 'Auth::User', optional: true
-      belongs_to :produce_plan, class_name: 'Factory::ProducePlan', optional: true if defined? RailsFactory
-
-      belongs_to :from_station, class_name: 'Station', optional: true
-      belongs_to :station, optional: true
-      belongs_to :box, optional: true
-      belongs_to :last_box, class_name: 'Box', optional: true
-
-      has_one :shipment_item, -> { order(id: :desc) }
-      has_many :shipment_items, inverse_of: :package
-      has_many :shipments, through: :shipment_items
-      has_many :packageds, dependent: :destroy
-      has_many :trade_items, class_name: 'Trade::TradeItem', through: :packageds
-
       enum pick_mode: {
         by_self: 'by_self',
         by_man: 'by_man'
@@ -47,6 +30,23 @@ module Ship
         button: 'button',
         scan: 'scan'
       }, _prefix: true
+
+      belongs_to :organ, class_name: 'Org::Organ', optional: true
+      belongs_to :address, class_name: 'Profiled::Address'
+      belongs_to :from_address, class_name: 'Profiled::Address', optional: true
+      belongs_to :user, class_name: 'Auth::User', optional: true
+      belongs_to :produce_plan, class_name: 'Factory::ProducePlan', optional: true if defined? RailsFactory
+
+      belongs_to :from_station, class_name: 'Station', optional: true
+      belongs_to :station, optional: true
+      belongs_to :box, optional: true
+      belongs_to :last_box, class_name: 'Box', optional: true
+      belongs_to :shipment_item, optional: true
+
+      has_many :shipment_items, inverse_of: :package
+      has_many :shipments, through: :shipment_items
+      has_many :packageds, dependent: :destroy
+      has_many :trade_items, class_name: 'Trade::TradeItem', through: :packageds
 
       before_validation :sync_station, if: -> { address_id.present? && address_id_changed? }
       before_validation :sync_from_station, if: -> { from_address_id.present? && from_address_id_changed? }
