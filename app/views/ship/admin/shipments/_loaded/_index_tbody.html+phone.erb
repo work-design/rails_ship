@@ -1,11 +1,12 @@
-<td><%= model.address.station&.name %></td>
-<td><%= model.address.content %></td>
-<td>
-
-</td>
-<td>
+<p>
+  <span><%= model.address.content %></span>
+  <span class="tag is-success"><%= model.station&.name %></span>
+</p>
+<div>
   <p><%= model.box&.code %></p>
   <p class="has-text-info-dark"><time data-controller="time"><%= model.boxed_in_at&.to_fs(:iso8601) %></time></p>
   <p class="has-text-warning-dark"><time data-controller="time"><%= model.boxed_out_at&.to_fs(:iso8601) %></time></p>
-</td>
-<td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>
+</div>
+<p class="is-size-7 has-text-grey">
+  <time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time>
+</p>
