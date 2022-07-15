@@ -72,8 +72,8 @@ Rails.application.routes.draw do
         resources :shipment_items
         member do
           get :stations
-          get :unloaded
-          get :loaded
+          get 'unloaded/:station_id' => :unloaded
+          get 'loaded/:from_station_id' => :loaded
           post 'loaded' => :loaded_create
         end
       end
