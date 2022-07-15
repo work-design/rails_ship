@@ -21,6 +21,14 @@ module Ship
       @packages = @shipment.packages.default_where(q_params).page(params[:page])
     end
 
+    def transfer
+      q_params = {
+        'station_id-not': @shipment.line.line_stations.pluck(:station_id)
+      }
+
+      @packages = @shipment.packages.default_where(q_params).page(params[:page])
+    end
+
     def loaded
       q_params = {}
       q_params.merge! params.permit(:from_station_id, :station_id)
