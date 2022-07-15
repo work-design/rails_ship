@@ -3,6 +3,10 @@
     <%= yield %>
   </div>
   <div class="weui-media-box__ft pr-2">
-    <%= check_box_tag 'xx', model.id, @shipment.loaded_package_ids.include?(model.id), id: nil %>
+  <% if @shipment.loaded_package_ids.include?(model.id) %>
+    <%= check_box_tag 'xx', model.id, true, disabled: true, id: nil %>
+  <% elsif @shipment.package_ids.exclude?(model.id) %>
+    <%= check_box_tag 'xx', model.id, false, id: nil %>
+  <% end %>
   </div>
 </div>
