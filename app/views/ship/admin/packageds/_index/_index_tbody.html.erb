@@ -1,16 +1,8 @@
 <td>
-  <p>
-    <span><%= model.trade_item.good_name %></span>
-    <span class="has-text-grey">（<%= model.trade_item.good_id %>）</span>
-  </p>
-  <p><%= model.trade_item.aim_i18n %></p>
+  <span><%= model.trade_item.good_name %></span>
 </td>
 <td><%= model.trade_item.number %></td>
 <td>
-  <p>
-    <span><%= model.trade_item.user&.name %></span>
-    <span class="has-text-grey">（<%= model.trade_item.user_id %>）</span>
-  </p>
   <p>
     <span><%= model.trade_item.address.area.full_name %></span>
     <span><%= model.trade_item.address.detail %></span>
