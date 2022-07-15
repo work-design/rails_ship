@@ -18,7 +18,7 @@ module Ship
       q_params = {}
       q_params.merge! params.permit(:station_id)
 
-      @packages = @shipment.packages.default_where(q_params).page(params[:page])
+      @packages = @shipment.packages.default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def transfer
@@ -32,7 +32,7 @@ module Ship
       q_params = {}
       q_params.merge! params.permit(:from_station_id, :station_id)
 
-      @packages = Package.default_where(q_params).page(params[:page])
+      @packages = Package.default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def loaded_create
