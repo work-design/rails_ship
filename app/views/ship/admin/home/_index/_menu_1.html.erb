@@ -1,0 +1,22 @@
+<div class="weui-panel" data-controller="empty">
+  <div class="weui-panel__hd">
+    <i class="fa-solid fa-truck fa-fw"></i>
+    <span><%= t('ship.admin.title') %></span>
+  </div>
+  <div class="weui-panel__bd">
+    <div class="weui-cells" data-empty-target="content">
+      <%= link_to({ controller: 'ship/admin/addresses' }, class: 'weui-cell weui-cell_active weui-cell_access') do %>
+        <div class="weui-cell__bd"><%= t('ship.admin.addresses.index.title') %></div>
+        <div class="weui-cell__ft"></div>
+      <% end %>
+      <%= link_to({ controller: 'ship/admin/trade_items' }, class: 'weui-cell weui-cell_active weui-cell_access') do %>
+        <div class="weui-cell__bd"><%= t('ship.admin.trade_items.index.title') %></div>
+        <div class="weui-cell__ft"></div>
+      <% end %>
+      <%= link_to({ controller: 'ship/admin/packages' }, class: 'weui-cell weui-cell_active weui-cell_access') do %>
+        <div class="weui-cell__bd"><%= t('ship.admin.packages.index.title') %></div>
+        <div class="weui-cell__ft"></div>
+      <% end %>
+    </div>
+  </div>
+</div>
