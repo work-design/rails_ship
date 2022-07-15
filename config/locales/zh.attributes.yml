@@ -42,7 +42,10 @@ zh:
         state: 状态
         confirm_mode: 确认模式
       ship/package:
+        from_station_id: 发货网点
+        from_address_id: 发货地址
         address_id: 收货地址
+        station_id: 到达网点
         box_id: 所在物流箱
         last_box_id: 之前物流箱
         boxed_in_at: 入箱时间
