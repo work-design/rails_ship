@@ -8,9 +8,9 @@
   </p>
 </td>
 <td>
-  <span><%= model.state_i18n %></span>
   <%= link_to({ action: 'shipment_items', id: model.id }, data: { turbo_frame: 'modal' }, class: 'tag') do %>
-    <i class="fa-solid fa-location-arrow"></i>
+    <i class="fa-solid fa-person-dolly has-text-success"></i>
+    <span class="pl-1"><%= model.state_i18n %></span>
     <span class="pl-1"><%= model.shipment_items_count %></span>
   <% end %>
 </td>
