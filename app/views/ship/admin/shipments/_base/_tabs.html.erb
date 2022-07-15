@@ -1,0 +1,10 @@
+<div class="tabs is-boxed">
+  <ul>
+    <li class="<%= active_helper(action: 'unloaded', active: 'is-active', item: nil) %>">
+      <%= link_to t('ship.admin.shipments.unloaded.title'), { action: 'unloaded' } %>
+    </li>
+    <li class="<%= active_helper(action: 'transfer', active: 'is-active', item: nil) %>">
+      <%= link_to t('ship.admin.shipments.transfer.title'), { action: 'transfer' } %>
+    </li>
+  </ul>
+</div>

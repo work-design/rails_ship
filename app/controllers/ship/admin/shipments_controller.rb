@@ -1,8 +1,8 @@
 module Ship
   class Admin::ShipmentsController < Admin::BaseController
     before_action :set_cars, :set_lines, :set_drivers, only: [:new, :create, :edit, :update]
-    before_action :set_shipment, only: [:show, :stations, :unloaded, :loaded, :edit, :update, :destroy]
-    before_action :set_station, only: [:unloaded]
+    before_action :set_shipment, only: [:show, :stations, :unloaded, :transfer, :loaded, :edit, :update, :destroy]
+    before_action :set_station, only: [:unloaded, :transfer]
     before_action :set_from_station, only: [:loaded]
 
     def xx
@@ -23,10 +23,9 @@ module Ship
 
     def transfer
       q_params = {
-        'station_id-not': @shipment.line.line_stations.pluck(:station_id)
       }
 
-      @packages = @shipment.packages.default_where(q_params).page(params[:page])
+      @packages = @shipment.packages.where.not(station_id: @shipment.line.line_stations.pluck(:station_id)).default_where(q_params).page(params[:page])
     end
 
     def loaded

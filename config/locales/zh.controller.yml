@@ -81,6 +81,8 @@ zh:
           title: 途经点
         unloaded:
           title: 一键卸车
+        transfer:
+          title: 中转卸车
         loaded:
           title: 一键装车
       shipment_items:
