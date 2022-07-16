@@ -8,6 +8,13 @@ module Ship
     before_action :set_station, only: [:unloaded, :transfer]
     before_action :set_from_station, only: [:loaded]
 
+    def index
+      q_params = {}
+      q_params.merge! default_params
+
+      @shipments = Shipment.includes(:line, :car, :driver).default_where(q_params).page(params[:page])
+    end
+
     def xx
       @shipment.state = 'arrived'
       @shipment.save
