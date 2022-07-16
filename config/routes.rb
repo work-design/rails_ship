@@ -89,7 +89,7 @@ Rails.application.routes.draw do
       root 'home#index'
     end
     namespace :in, defaults: { namespace: 'in' } do
-      resources :box_specifications do
+      resources :box_specifications, only: [:index, :show] do
         collection do
           get :buy
           get :rent
