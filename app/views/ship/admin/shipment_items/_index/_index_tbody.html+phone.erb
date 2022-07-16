@@ -1,0 +1,7 @@
+<p><%= model.state_i18n %></p>
+<p><%= model.package.address.content %></p>
+<p><%= model.box&.code %></p>
+<p class="is-size-7">
+  <time data-controller="time" class="has-text-success"><%= model.loaded_at&.to_fs(:iso8601) %></time>
+  <time data-controller="time" class="has-text-danger"><%= model.unloaded_at&.to_fs(:iso8601) %></time>
+</p>
