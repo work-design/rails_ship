@@ -28,6 +28,9 @@ zh:
           title: 物流箱明细
     admin:
       title: 发货管理
+      home:
+        index:
+          title: 物流管理
       addresses:
         index:
           title: 待收货地址
