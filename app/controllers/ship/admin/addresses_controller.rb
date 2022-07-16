@@ -1,6 +1,6 @@
 module Ship
   class Admin::AddressesController < Admin::BaseController
-    before_action :set_address, only: [:show, :edit, :update, :destroy]
+    before_action :set_address, only: [:show, :edit, :update, :destroy, :actions]
     before_action :set_stations, only: [:edit, :update]
 
     def index
