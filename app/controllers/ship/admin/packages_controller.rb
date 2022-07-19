@@ -3,6 +3,7 @@ module Ship
     before_action :set_package, only: [:show, :pdf, :print_data, :shipment_items, :edit, :update, :destroy]
     before_action :set_address, only: [:address]
     before_action :set_stations, only: [:edit, :update]
+    skip_before_action :require_login, only: [:print_data] if whether_filter :require_login
 
     def index
       q_params = {}
