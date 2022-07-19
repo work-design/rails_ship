@@ -1,6 +1,6 @@
 module Ship
   class Admin::PackagesController < Admin::BaseController
-    before_action :set_package, only: [:show, :pdf, :shipment_items, :edit, :update, :destroy]
+    before_action :set_package, only: [:show, :pdf, :print_data, :shipment_items, :edit, :update, :destroy]
     before_action :set_address, only: [:address]
     before_action :set_stations, only: [:edit, :update]
 
@@ -26,6 +26,10 @@ module Ship
 
     def pdf
       send_data @package.to_pdf.render, type: 'application/pdf', disposition: 'inline'
+    end
+
+    def print_data
+      render json: @package.to_cpcl.bytes
     end
 
     private

@@ -62,9 +62,17 @@ module Ship
       self.from_station_id ||= from_address.station_id
     end
 
+    def to_cpcl
+      cpcl = BaseCpcl.new
+      cpcl.text address.detail
+      cpcl.text address.area.full_name
+      cpcl.right_qrcode(enter_url)
+      cpcl.render
+    end
+
     def to_pdf
       pdf = BasePdf.new(width: 78.mm, height: 40.mm)
-      pdf.text id.to_s, size: 12
+      pdf.text address.detail, size: 12
       pdf.text organ&.name
       pdf.bounding_box([pdf.bounds.right - 60, pdf.bounds.top], width: 60, height: 60) do
         pdf.image StringIO.new(qrcode_enter_png.to_blob), fit: [60, 60], position: :right, vposition: :top
