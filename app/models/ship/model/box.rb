@@ -31,7 +31,7 @@ module Ship
     end
 
     def to_pdf
-      pdf = BasePdf.new(width: 80.mm, height: 50.mm)
+      pdf = BasePdf.new(width: 70.mm, height: 40.mm)
       pdf.text code
       pdf.text 'dddd'
       pdf.text 'rrrr'
