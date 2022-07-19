@@ -2,6 +2,7 @@ module Ship
   class Admin::BoxesController < Admin::BaseController
     before_action :set_box_specification
     before_action :set_new_box, only: [:index, :new, :create]
+    before_action :set_box, only: [:pdf]
 
     def index
       @boxes = @box_specification.boxes.includes(:held_organ, :owned_organ).order(id: :desc).page(params[:page])
@@ -14,9 +15,17 @@ module Ship
       @box_specification.save
     end
 
+    def pdf
+      send_data @box.to_pdf.render, type: 'application/pdf', disposition: 'inline'
+    end
+
     private
     def set_box_specification
       @box_specification = BoxSpecification.find params[:box_specification_id]
+    end
+
+    def set_box
+      @box = @box_specification.boxes.find params[:id]
     end
 
     def set_new_box

@@ -84,6 +84,9 @@ Rails.application.routes.draw do
           collection do
             post :batch
           end
+          member do
+            get :pdf
+          end
         end
       end
       root 'home#index'
