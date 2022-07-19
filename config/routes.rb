@@ -56,6 +56,7 @@ Rails.application.routes.draw do
           get :address
         end
         member do
+          get :pdf
           get :shipment_items
         end
       end

@@ -62,6 +62,20 @@ module Ship
       self.from_station_id ||= from_address.station_id
     end
 
+    def to_pdf
+      pdf = BasePdf.new(width: 78.mm, height: 40.mm)
+      pdf.text id.to_s, size: 12
+      pdf.text organ&.name
+      pdf.bounding_box([pdf.bounds.right - 60, pdf.bounds.top], width: 60, height: 60) do
+        pdf.image StringIO.new(qrcode_enter_png.to_blob), fit: [60, 60], position: :right, vposition: :top
+      end
+      pdf
+    end
+
+    def qrcode_enter_png
+      QrcodeHelper.code_png(enter_url, border_modules: 0, fill: 'pink')
+    end
+
     def enter_url
       Rails.application.routes.url_for(controller: 'ship/packages', action: 'qrcode', id: self.id)
     end
