@@ -1,5 +1,6 @@
 module Ship
   class Admin::StationsController < Admin::BaseController
+    before_action :set_new_station, only: [:new, :create]
 
     def index
       q_params = {}
@@ -9,11 +10,18 @@ module Ship
     end
 
     def new
-      @station = Station.new
-      @station.area = Profiled::Area.new
+      if defined?(current_organ) && current_organ
+        @station.area = current_organ.area
+      else
+        @station.area = Profiled::Area.new
+      end
     end
 
     private
+    def set_new_station
+      @station = Station.new(station_params)
+    end
+
     def station_params
       p = params.fetch(:station, {}).permit(
         :name,
