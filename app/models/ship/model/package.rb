@@ -64,8 +64,15 @@ module Ship
 
     def to_cpcl
       cpcl = BaseCpcl.new
-      cpcl.text address.detail
-      cpcl.text address.area.full_name
+      cpcl.text "#{from_station&.name || from_address&.area&.full_name} -> #{station&.name || address&.area&.full_name}"
+      cpcl.bold_text "#{address.contact}", font: 7, size: 1, line_add: false
+      cpcl.text "#{address.tel}", x: 24 * (address.contact.size + 1)
+      cpcl.text "#{address.area.full_name} #{address.detail}"
+      cpcl.line
+      cpcl.text '货物：'
+      trade_items.each do |trade_item|
+        cpcl.text "#{trade_item.good_name} #{trade_item.number}"
+      end
       cpcl.right_qrcode(enter_url)
       cpcl.render
     end
