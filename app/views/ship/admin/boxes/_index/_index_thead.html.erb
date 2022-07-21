@@ -1,3 +1,12 @@
+<th>
+  <div data-controller="print" data-print-name-value="xx" data-print-url-value="<%= url_for(action: 'batch_pdf', only_path: false) %>" class="is-flex is-align-items-center">
+    <%= check_box_tag 'xxd', 'xx', false, id: nil, data: { action: 'print#toggleAll' } %>
+    <button data-action="print#batchPrint" class="button is-small is-dark">
+      <i class="fa-light fa-hand-holding-usd"></i>
+      <span class="pl-1"><%= t('ship.admin.boxes.batch_pdf.title') %></span>
+    </button>
+  </div>
+</th>
 <th><%= Ship::Box.human_attribute_name(:code) %></th>
 <th><%= Ship::Box.human_attribute_name(:box_specification_id) %></th>
 <th><%= Ship::Box.human_attribute_name(:status) %></th>

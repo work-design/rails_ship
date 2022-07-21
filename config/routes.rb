@@ -85,6 +85,7 @@ Rails.application.routes.draw do
         resources :boxes do
           collection do
             post :batch
+            match :batch_pdf, via: [:get, :post]
           end
           member do
             get :pdf

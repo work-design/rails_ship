@@ -15,6 +15,17 @@ module Ship
       @box_specification.save
     end
 
+    def batch_pdf
+      boxes = @box_specification.boxes.find params[:ids].split(',')
+      pdf = BasePdf.new(width: 78.mm, height: 40.mm)
+      boxes.each do |box|
+        box.pdf_content(pdf)
+        pdf.start_new_page
+      end
+
+      send_data pdf.render, type: 'application/pdf', disposition: 'inline'
+    end
+
     def pdf
       send_data @box.to_pdf.render, type: 'application/pdf', disposition: 'inline'
     end
