@@ -6,6 +6,7 @@ module Ship
       :show, :edit, :update, :destroy,
       :stations, :unloaded, :unloaded_create, :transfer, :loaded, :loaded_create
     ]
+    before_action :set_new_shipment, only: [:new, :create]
     before_action :set_station, only: [:unloaded, :transfer]
     before_action :set_from_line_station, only: [:loaded]
 
@@ -14,6 +15,10 @@ module Ship
       q_params.merge! default_params
 
       @shipments = @line.shipments.includes(:car, :driver).default_where(q_params).page(params[:page])
+    end
+
+    def new
+      @shipment.load_on = Date.today
     end
 
     def xx
@@ -95,12 +100,28 @@ module Ship
       @shipment = Shipment.find params[:id]
     end
 
+    def set_new_shipment
+      @shipment = @line.shipments.build(shipment_params)
+    end
+
     def set_from_line_station
       @line_station = @shipment.line.line_stations.find_by station_id: params[:from_station_id]
     end
 
     def set_station
       @station = Station.find params[:station_id]
+    end
+
+    def shipment_params
+      p = params.fetch(:shipment, {}).permit(
+        :driver_id,
+        :car_id,
+        :name,
+        :load_on,
+        :left_at,
+        :arrive_at
+      )
+      p.merge! default_form_params
     end
 
   end
