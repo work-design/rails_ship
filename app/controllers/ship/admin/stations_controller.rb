@@ -11,7 +11,7 @@ module Ship
 
     def new
       if defined?(current_organ) && current_organ
-        @station.area = current_organ.area
+        @station.area = current_organ.area || Profiled::Area.new
       else
         @station.area = Profiled::Area.new
       end
