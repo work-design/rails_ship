@@ -1,9 +1,8 @@
-<td><%= model.line.name %></td>
+<td><%= model.load_on %></td>
 <td>
   <p><%= model.car.number %></p>
   <p><%= model.driver.name %></p>
 </td>
-<td><%= model.load_on %></td>
 <td><%= model.state_i18n %></td>
 <td>
   <p><time data-controller="time"><%= model.left_at&.to_fs(:iso8601) %></time></p>

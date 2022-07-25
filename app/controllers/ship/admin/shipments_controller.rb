@@ -13,7 +13,7 @@ module Ship
     def index
       q_params = {}
 
-      @shipments = @line.shipments.includes(:car, :driver).default_where(q_params).page(params[:page])
+      @shipments = @line.shipments.includes(:car, :driver).default_where(q_params).order(load_on: :desc).page(params[:page])
     end
 
     def new
