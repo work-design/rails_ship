@@ -31,6 +31,7 @@ Rails.application.routes.draw do
             end
           end
         end
+        resources :stations
         resources :box_specifications do
           resources :boxes
         end
