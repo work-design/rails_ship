@@ -6,10 +6,10 @@
     <%= link_to({ action: 'loaded', from_station_id: model.station_id }, class: 'button is-small is-rounded is-light') do %>
       <i class="fa-solid fa-person-dolly has-text-success"></i>
       <span class="pl-1"><%= t('ship.admin.shipments.loaded.title') %></span>
-    <% end unless model.last? %>
+    <% end if current_organ.station_ids.include?(model.station_id) && !model.last? %>
     <%= link_to({ action: 'unloaded', station_id: model.station_id }, class: 'button is-small is-rounded is-light') do %>
       <i class="fa-solid fa-person-dolly-empty has-text-danger"></i>
       <span class="pl-1"><%= t('ship.admin.shipments.unloaded.title') %></span>
-    <% end unless model.first? %>
+    <% end if current_organ.station_ids.include?(model.station_id) && !model.first? %>
   </div>
 </div>
