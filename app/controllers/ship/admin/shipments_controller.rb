@@ -6,7 +6,7 @@ module Ship
       :stations, :unloaded, :unloaded_create, :transfer, :loaded, :loaded_create
     ]
     before_action :set_station, only: [:unloaded, :transfer]
-    before_action :set_from_station, only: [:loaded]
+    before_action :set_from_line_station, only: [:loaded]
 
     def index
       q_params = {}
@@ -90,8 +90,8 @@ module Ship
       @shipment = Shipment.find params[:id]
     end
 
-    def set_from_station
-      @station = Station.find params[:from_station_id]
+    def set_from_line_station
+      @line_station = @shipment.line.line_stations.find_by station_id: params[:from_station_id]
     end
 
     def set_station
