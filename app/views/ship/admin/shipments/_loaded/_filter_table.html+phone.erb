@@ -1,5 +1,5 @@
 <div class="box is-radiusless mb-1">
-  <% @shipment.line.line_stations.each_with_index do |line_station, index| %>
+  <% @shipment.line.line_stations.default_where('position-gt': @line_station.position).each_with_index do |line_station, index| %>
     <% if index > 0 %>
       <i class="fa-solid fa-right-long has-text-grey px-1" style="line-height: 37.5px"></i>
     <% end %>
