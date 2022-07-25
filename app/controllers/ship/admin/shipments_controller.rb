@@ -1,5 +1,6 @@
 module Ship
   class Admin::ShipmentsController < Admin::BaseController
+    before_action :set_line
     before_action :set_cars, :set_lines, :set_drivers, only: [:new, :create, :edit, :update]
     before_action :set_shipment, only: [
       :show, :edit, :update, :destroy,
@@ -12,7 +13,7 @@ module Ship
       q_params = {}
       q_params.merge! default_params
 
-      @shipments = Shipment.includes(:line, :car, :driver).default_where(q_params).page(params[:page])
+      @shipments = @line.shipments.includes(:car, :driver).default_where(q_params).page(params[:page])
     end
 
     def xx
@@ -76,6 +77,10 @@ module Ship
     private
     def set_cars
       @cars = Car.default_where(default_params)
+    end
+
+    def set_line
+      @line = Line.find params[:line_id]
     end
 
     def set_lines

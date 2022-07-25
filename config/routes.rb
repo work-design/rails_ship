@@ -72,16 +72,16 @@ Rails.application.routes.draw do
               patch :reorder
             end
           end
-        end
-        resources :shipments do
-          resources :shipment_items
-          member do
-            get :stations
-            get 'loaded/:from_station_id' => :loaded
-            post 'loaded' => :loaded_create
-            get 'unloaded/:station_id' => :unloaded
-            post 'unloaded' => :unloaded_create
-            get 'transfer/:station_id' => :transfer
+          resources :shipments do
+            resources :shipment_items
+            member do
+              get :stations
+              get 'loaded/:from_station_id' => :loaded
+              post 'loaded' => :loaded_create
+              get 'unloaded/:station_id' => :unloaded
+              post 'unloaded' => :unloaded_create
+              get 'transfer/:station_id' => :transfer
+            end
           end
         end
         resources :box_specifications, only: [:index, :show] do
