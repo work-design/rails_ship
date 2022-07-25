@@ -42,6 +42,7 @@ Rails.application.routes.draw do
           collection do
             get :from
             get :packaged
+            post :search
           end
           resources :trade_items, only: [] do
             collection do

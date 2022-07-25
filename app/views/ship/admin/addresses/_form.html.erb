@@ -1,4 +1,4 @@
-<%= f.collection_select :station_id, @stations, :id, :name %>
+<%= render partial: 'station_search', locals: { f: f } %>
 <%= f.text_field :contact %>
 <%= f.text_field :tel %>
 <%= f.text_area :detail %>

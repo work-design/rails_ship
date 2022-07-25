@@ -1,7 +1,6 @@
 module Ship
   class Admin::AddressesController < Admin::BaseController
     before_action :set_address, only: [:show, :edit, :update, :destroy, :actions]
-    before_action :set_stations, only: [:edit, :update]
 
     def index
       q_params = {}
@@ -10,6 +9,13 @@ module Ship
 
       r = Trade::TradeItem.packable.default_where(q_params).select(:address_id).page(params[:page]).group(:address_id).count
       @addresses = Profiled::Address.find(r.keys).zip r.values
+    end
+
+    def search
+      q_params = {}
+      q_params.merge! params.permit('name-like')
+
+      @stations = Station.default_where(q_params)
     end
 
     def from
@@ -31,10 +37,6 @@ module Ship
     private
     def set_address
       @address = Profiled::Address.find(params[:id])
-    end
-
-    def set_stations
-      @stations = Station.default_where(default_params)
     end
 
     def address_params
