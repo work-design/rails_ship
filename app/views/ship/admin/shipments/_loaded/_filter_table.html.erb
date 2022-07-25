@@ -2,11 +2,15 @@
   <tr>
     <th>途径</th>
     <td>
-      <% @shipment.line.line_stations.default_where('position-gt': @line_station.position).each_with_index do |line_station, index| %>
+      <% @shipment.line.line_stations.each_with_index do |line_station, index| %>
         <% if index > 0 %>
           <i class="fa-solid fa-right-long has-text-grey px-1" style="line-height: 37.5px"></i>
         <% end %>
-        <%= link_to line_station.station.name, filter_params(station_id: line_station.station_id, except: [:id]), class: active_params(station_id: line_station.station_id, active: 'button is-info', item: 'button is-light') %>
+        <% if line_station.position > @line_station.position %>
+          <%= link_to line_station.station.name, filter_params(station_id: line_station.station_id, except: [:id]), class: active_params(station_id: line_station.station_id, active: 'button is-info', item: 'button is-light') %>
+        <% else %>
+          <button class="button" disabled><%= line_station.station.name %></button>
+        <% end %>
       <% end %>
     </td>
   </tr>
