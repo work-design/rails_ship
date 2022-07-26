@@ -5,10 +5,6 @@
   </div>
   <div class="weui-panel__bd">
     <div class="weui-cells" data-empty-target="content">
-      <%= link_to({ controller: 'ship/admin/shipments' }, class: 'weui-cell weui-cell_active weui-cell_access') do %>
-        <div class="weui-cell__bd"><%= t('ship.admin.shipments.index.title') %></div>
-        <div class="weui-cell__ft"></div>
-      <% end %>
       <%= link_to({ controller: 'ship/admin/lines' }, class: 'weui-cell weui-cell_active weui-cell_access') do %>
         <div class="weui-cell__bd"><%= t('ship.admin.lines.index.title') %></div>
         <div class="weui-cell__ft"></div>
