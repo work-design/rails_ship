@@ -2,8 +2,9 @@
   <i class="fa-regular fa-square-info"></i>
   <span><%= t('.show') %></span>
 <% end %>
-<%= link_to({ controller: 'line_stations', line_id: model.id }, aria: { label: t('ship.admin.line_stations.index.title') }, class: 'weui-actionsheet__cell') do %>
+<%= link_to({ controller: 'line_stations', line_id: model.id }, class: 'weui-actionsheet__cell') do %>
   <i class="fa-regular fa-location-dot"></i>
+  <span class="pl-1"><%= t('ship.admin.line_stations.index.title') %></span>
   <span class="pl-1"><%= model.line_stations_count %></span>
 <% end %>
 <%= link_to({ controller: 'shipments', line_id: model.id }, class: 'weui-actionsheet__cell') do %>
