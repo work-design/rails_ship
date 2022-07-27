@@ -1,4 +1,8 @@
-<p><%= model.load_on %></p>
+<p>
+<%= link_to({ action: 'stations', id: model.id }) do %>
+  <span><%= model.load_on %></span>
+<% end %>
+</p>
 <p>
   <span><%= model.car.number %></span>
   <span class="tag is-light"><%= model.driver.name %></span>
