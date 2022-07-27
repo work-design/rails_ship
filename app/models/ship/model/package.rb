@@ -28,7 +28,8 @@ module Ship
 
       enum confirm_mode: {
         button: 'button',
-        scan: 'scan'
+        scan: 'scan',
+        batch: 'batch'
       }, _prefix: true
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true

@@ -23,6 +23,7 @@ zh:
         confirm_mode:
           scan: 扫码确认
           button: 按钮确认
+          batch: 批量操作
       ship/item:
         settle_kind:
           spot_payment: 现付
@@ -48,6 +49,7 @@ zh:
         confirm_mode:
           scan: 扫码确认
           button: 按钮确认
+          batch: 批量操作
       ship/box:
         status:
           born: 生产出

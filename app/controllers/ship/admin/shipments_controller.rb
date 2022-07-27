@@ -42,6 +42,7 @@ module Ship
       ss = packages.map do |package|
         si = @shipment.shipment_items.find_or_initialize_by(package_id: package.id)
         si.state = 'loaded'
+        si.confirm_mode = 'batch'
         si.loaded_at ||= Time.current
         si
       end
@@ -63,6 +64,7 @@ module Ship
       ss = packages.map do |package|
         si = @shipment.shipment_items.find_or_initialize_by(package_id: package.id)
         si.state = 'unloaded'
+        si.confirm_mode = 'batch'
         si.unloaded_at ||= Time.current
         si
       end

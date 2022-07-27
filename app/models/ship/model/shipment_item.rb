@@ -8,7 +8,8 @@ module Ship
 
       enum confirm_mode: {
         button: 'button',
-        scan: 'scan'
+        scan: 'scan',
+        batch: 'batch'
       }, _prefix: true
 
       enum state: {
