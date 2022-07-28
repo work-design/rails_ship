@@ -208,10 +208,10 @@ Rails.application.routes.draw do
           member do
             get :plans
           end
-          resources :packages do
-            member do
-              put :wait
-            end
+        end
+        resources :packages do
+          member do
+            put :wait
           end
         end
       end

@@ -1,13 +1,12 @@
 module Ship
   class My::PackagesController < My::BaseController
-    before_action :set_address
     before_action :set_package, only: [:show, :wait, :edit, :update, :destroy]
 
     def index
       q_params = {}
       q_params.merge! params.permit(:produce_plan_id)
 
-      @packages = @address.packages.default_where(q_params).page(params[:page])
+      @packages = current_user.packages.default_where(q_params).page(params[:page])
     end
 
     def wait
