@@ -6,8 +6,6 @@ module Ship
     def index
       q_params = {}
       q_params.merge! params.permit(:produce_plan_id)
-      @produce_plan = ProducePlan.find params[:produce_plan_id]
-      @produce_plan.wait_lists.find_or_create_by(address_id: @address.id)
 
       @packages = @address.packages.default_where(q_params).page(params[:page])
     end
@@ -24,7 +22,12 @@ module Ship
 
     private
     def set_address
-      @address = current_user.principal_addresses.find params[:principal_address_id]
+      @address = current_user.addresses.find params[:address_id]
+    end
+
+    def set_produce_plan
+      @produce_plan = ProducePlan.find params[:produce_plan_id]
+      @produce_plan.wait_lists.find_or_create_by(address_id: @address.id)
     end
 
     def set_package
