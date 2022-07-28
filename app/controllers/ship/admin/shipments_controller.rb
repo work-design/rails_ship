@@ -3,7 +3,7 @@ module Ship
     before_action :set_line
     before_action :set_cars, :set_lines, :set_drivers, only: [:new, :create, :edit, :update]
     before_action :set_shipment, only: [
-      :show, :edit, :update, :destroy,
+      :show, :edit, :update, :destroy, :actions, :leave, :arrive,
       :stations, :unloaded, :unloaded_create, :transfer, :loaded, :loaded_create
     ]
     before_action :set_new_shipment, only: [:new, :create]
@@ -20,9 +20,12 @@ module Ship
       @shipment.load_on = Date.today
     end
 
-    def xx
-      @shipment.state = 'arrived'
-      @shipment.save
+    def leave
+      @shipment.left_at = Time.current
+    end
+
+    def arrive
+      @shipment.arrived_at = Time.current
     end
 
     def stations
@@ -119,8 +122,10 @@ module Ship
         :car_id,
         :name,
         :load_on,
+        :expected_leave_at,
         :left_at,
-        :arrive_at
+        :expected_arrive_at,
+        :arrived_at
       )
       p.merge! default_form_params
     end

@@ -87,6 +87,10 @@ zh:
           title: 班次管理
         stations:
           title: 途经点
+        leave:
+          title: 发车
+        arrive:
+          title: 到达
         unloaded:
           title: 一键卸车
         transfer:

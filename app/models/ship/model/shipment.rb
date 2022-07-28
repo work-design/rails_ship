@@ -4,6 +4,8 @@ module Ship
 
     included do
       attribute :type, :string
+      attribute :expected_leave_at, :datetime
+      attribute :expected_arrive_at, :datetime
       attribute :left_at, :datetime
       attribute :arrived_at, :datetime
       attribute :load_on, :date
@@ -32,7 +34,17 @@ module Ship
         arrived: 'arrived'
       }, _prefix: true, _default: 'preparing'
 
+      before_save :change_state_to_left, if: -> { left_at && left_at_changed? }
+      before_save :change_state_to_arrived, if: -> { arrived_at && arrived_at_changed? }
       after_save_commit :sync_state_to_item, if: -> { saved_change_to_state? }
+    end
+
+    def change_state_to_left
+      self.state = 'left'
+    end
+
+    def change_state_to_arrived
+      self.state = 'arrived'
     end
 
     def sync_state_to_item

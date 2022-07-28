@@ -1,5 +1,5 @@
 <%= f.collection_select :car_id, @cars, :id, :number %>
 <%= f.collection_select :driver_id, @drivers, :id, :name %>
 <%= f.date_field :load_on %>
-<%= f.datetime_field :left_at %>
-<%= f.datetime_field :arrived_at %>
+<%= f.datetime_field :expected_leave_at %>
+<%= f.datetime_field :expected_arrive_at %>
