@@ -211,6 +211,7 @@ Rails.application.routes.draw do
         end
         resources :packages do
           member do
+            get :qrcode
             put :wait
           end
         end

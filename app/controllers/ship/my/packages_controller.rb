@@ -1,12 +1,15 @@
 module Ship
   class My::PackagesController < My::BaseController
-    before_action :set_package, only: [:show, :wait, :edit, :update, :destroy]
+    before_action :set_package, only: [:show, :qrcode, :wait, :edit, :update, :destroy, :actions]
 
     def index
       q_params = {}
       q_params.merge! params.permit(:produce_plan_id)
 
       @packages = current_user.packages.default_where(q_params).page(params[:page])
+    end
+
+    def qrcode
     end
 
     def wait
@@ -30,7 +33,7 @@ module Ship
     end
 
     def set_package
-      @package = @address.packages.find(params[:id])
+      @package = current_user.packages.find(params[:id])
     end
 
   end
