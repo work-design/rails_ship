@@ -2,29 +2,6 @@
   <div class="weui-panel__hd">
   </div>
   <div class="weui-panel__bd">
-    <% @packages.each do |package| %>
-      <div class="weui-media-box weui-media-box_appmsg">
-        <div class="weui-media-box__hd"><%= image_tag package.user.avatar_url, style: 'width: 20px;' %></div>
-        <div class="weui-media-box__bd">
-          <h4 class="weui-media-box__title"><%= package.user.account_identities.join(',') %></h4>
-          <div class="weui-media-box__desc">
-            <%= package.trade_items.map(&->(o){ o.good.name }).join(',') %>
-          </div>
-        </div>
-        <div class="weui-media-box__ft">
-          <% if package.wait_item %>
-            <div class="weui-btn weui-btn_mini weui-btn_primary">
-              <p><%= package.wait_item.position %></p>
-              <p><%= package.state_i18n %></p>
-            </div>
-          <% else %>
-            <%= link_to wait_my_principal_address_package_path(@address, package), method: :put, class: 'weui-btn weui-btn_mini weui-btn_primary' do %>
-              <%= t('.wait') %>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
+    <%= render partial: 'package', collection: @packages, as: :package %>
   </div>
 </div>
-
