@@ -1,18 +1,14 @@
 module Ship
   class My::AddressesController < My::BaseController
-    before_action :set_address, only: [:show, :edit, :update, :destroy]
+    before_action :set_address, only: [:show, :edit, :update, :destroy, :actions]
     before_action :set_new_address, only: [:new, :create, :order_new, :order_create]
     before_action :set_cart, only: [:index, :new, :create]
 
     def index
-      if params[:station_id]
-        @station = Station.find params[:station_id]
-        @addresses = current_user.addresses.where(station_id: params[:station_id]).includes(:area)
-      elsif params[:cart_id]
-        @addresses = current_user.addresses.includes(:area)
-      end
+      q_params = {}
+      q_params.merge! params.permit(:station_id)
 
-      @stations = Station.default_where(default_params).where.not(id: @station&.id)
+      @addresses = current_user.addresses.includes(:area).default_where(q_params).page(params[:page])
     end
 
     def order
@@ -20,12 +16,8 @@ module Ship
     end
 
     def new
-      if params[:station_id]
-        @address = current_user.addresses.build(station_id: params[:station_id])
-      else
-        @address = current_user.addresses.build
-        @address.area = Profiled::Area.new
-      end
+      @address = current_user.addresses.build(station_id: params[:station_id])
+      @address.area = Profiled::Area.new
       @address.contact = current_user.name
       @address.tel = current_account.identity if current_account.is_a?(Auth::MobileAccount)
     end
@@ -45,6 +37,14 @@ module Ship
     private
     def set_stations
       @stations = Station.default_where(default_params)
+    end
+
+    def set_station
+      @station = Station.find params[:station_id]
+    end
+
+    def set_not_stations
+      @stations = Station.default_where(default_params).where.not(id: @station&.id)
     end
 
     def set_cart
