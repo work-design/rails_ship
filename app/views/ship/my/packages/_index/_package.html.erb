@@ -6,11 +6,9 @@
     <h4 class="weui-media-box__title"><%= package.user.account_identities.join(',') %></h4>
     <div class="weui-media-box__desc">
       <%= package.trade_items.map(&->(o){ o.good.name }).join(',') %>
+      <p><%= package.state_i18n %></p>
     </div>
   </div>
   <div class="weui-media-box__ft">
-    <div class="weui-btn weui-btn_mini weui-btn_primary">
-      <p><%= package.state_i18n %></p>
-    </div>
   </div>
 </div>
