@@ -34,9 +34,5 @@
       <label class="weui-form-preview__label"><%= Ship::Package.human_attribute_name(:box_id) %></label>
       <span class="weui-form-preview__value"><%= @package.box&.code %></span>
     </div>
-    <div class="weui-form-preview__item">
-      <label class="weui-form-preview__label"><%= Ship::Package.human_attribute_name(:confirm_mode) %></label>
-      <span class="weui-form-preview__value"><%= @package.confirm_mode_i18n %></span>
-    </div>
   </div>
 </div>
