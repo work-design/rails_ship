@@ -7,7 +7,11 @@
   <p><%= model.driver.name %></p>
 </td>
 <td>
-  <p><%= model.current_line_station.station.name if model.current_line_station %></p>
+  <% if model.current_line_station&.station_id == @station.id %>
+    <p class="has-text-success"><%= model.current_line_station.station.name if model.current_line_station %></p>
+  <% else %>
+    <p><%= model.current_line_station.station.name if model.current_line_station %></p>
+  <% end %>
   <p><span class="tag"><%= model.state_i18n %></span></p>
 </td>
 <td>
