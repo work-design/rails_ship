@@ -39,6 +39,7 @@ Rails.application.routes.draw do
       namespace :admin, defaults: { namespace: 'admin' } do
         resources :stations do
           member do
+            get :lines
             get :shipments
           end
         end
@@ -71,11 +72,7 @@ Rails.application.routes.draw do
         resources :cars
         resources :drivers
         resources :lines do
-          resources :line_stations do
-            member do
-              patch :reorder
-            end
-          end
+          resources :line_stations
           resources :shipments do
             resources :shipment_items
             member do
