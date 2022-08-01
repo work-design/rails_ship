@@ -4,5 +4,9 @@
   <i class="fa-solid fa-right-long has-text-grey px-1"></i>
   <span><%= Ship::Line.human_attribute_name(:finish_name) %></span>
 </th>
-<th><%= Ship::Line.human_attribute_name(:line_stations_count) %></th>
+<th>
+  <span><%= Ship::LineStation.human_attribute_name(:position) %></span>
+  <span>/</span>
+  <span><%= Ship::Line.human_attribute_name(:line_stations_count) %></span>
+</th>
 <th></th>

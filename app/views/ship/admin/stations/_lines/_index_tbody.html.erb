@@ -12,7 +12,7 @@
   <% end %>
 </td>
 <td>
-  <%= link_to({ controller: 'shipments', line_id: model.line_id }, class: 'button is-small is-rounded is-light') do %>
+  <%= link_to({ action: 'shipments', line_id: model.line_id }, class: 'button is-small is-rounded is-light') do %>
     <i class="fa-light fa-list"></i>
     <span class="pl-1"><%= t('ship.admin.shipments.index.title') %></span>
   <% end %>
