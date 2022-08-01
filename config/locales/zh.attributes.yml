@@ -32,6 +32,8 @@ zh:
         car_id: 车牌号
         driver_id: 司机
         load_on: 装货日期
+        expected_leave_at: 预计出发
+        expected_arrive_at: 预计到达
         left_at: 发车时间
         arrived_at: 到达时间
         state: 状态

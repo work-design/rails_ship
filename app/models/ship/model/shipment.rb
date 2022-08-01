@@ -37,7 +37,12 @@ module Ship
 
       before_save :change_state_to_left, if: -> { left_at && left_at_changed? }
       before_save :change_state_to_arrived, if: -> { arrived_at && arrived_at_changed? }
+      before_create :init_current_station
       after_save_commit :sync_state_to_item, if: -> { saved_change_to_state? }
+    end
+
+    def init_current_station
+      self.current_station_id ||= line.line_stations[0].station_id
     end
 
     def change_state_to_left
