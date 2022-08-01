@@ -13,7 +13,7 @@ module Ship
       acts_as_list scope: [:line_id]
 
       before_validation :sync_organ, if: -> { station_id_changed? }
-      after_create_commit :sync_names_to_line
+      after_save_commit :sync_names_to_line, if: -> { saved_change_to_position? }
     end
 
     def sync_organ
