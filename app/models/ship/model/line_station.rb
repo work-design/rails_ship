@@ -4,6 +4,7 @@ module Ship
 
     included do
       attribute :position, :integer
+      attribute :expected_minutes, :integer, comment: '预计到下站分钟数'
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 
