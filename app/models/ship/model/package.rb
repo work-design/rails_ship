@@ -48,6 +48,7 @@ module Ship
       has_many :shipments, through: :shipment_items
       has_many :packageds, dependent: :destroy
       has_many :trade_items, class_name: 'Trade::TradeItem', through: :packageds
+      has_many :orders, class_name: 'Trade::Order', through: :trade_items
 
       before_validation :sync_station, if: -> { address_id.present? && address_id_changed? }
       before_validation :sync_from_station, if: -> { from_address_id.present? && from_address_id_changed? }

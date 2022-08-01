@@ -14,9 +14,9 @@
       <span class="has-text-grey"><%= Ship::Package.human_attribute_name(:loaded_at) %></span>
       <time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.loaded_at&.to_fs(:iso8601) %></time>
     </p>
-    <p>
+    <p data-controller="empty">
       <span class="has-text-grey"><%= Ship::Package.human_attribute_name(:unloaded_at) %></span>
-      <time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.unloaded_at&.to_fs(:iso8601) %></time>
+      <time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss" data-empty-target="text"><%= model.unloaded_at&.to_fs(:iso8601) %></time>
     </p>
   </div>
   <div class="weui-media-box__ft pr-2">

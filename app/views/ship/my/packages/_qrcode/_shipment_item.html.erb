@@ -10,12 +10,12 @@
       </div>
     </div>
     <p>
-      <span class="has-text-grey"><%= Ship::ShipmentItem.human_attribute_name(:loaded_at) %></span>
+      <span class="has-text-grey"><%= Ship::ShipmentItem.human_attribute_name(:loaded_at) %>：</span>
       <time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.loaded_at&.to_fs(:iso8601) %></time>
     </p>
-    <p>
-      <span class="has-text-grey"><%= Ship::ShipmentItem.human_attribute_name(:unloaded_at) %>:</span>
-      <time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.unloaded_at&.to_fs(:iso8601) %></time>
+    <p data-controller="empty">
+      <span class="has-text-grey"><%= Ship::ShipmentItem.human_attribute_name(:unloaded_at) %>：</span>
+      <time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss" data-empty-target="text"><%= model.unloaded_at&.to_fs(:iso8601) %></time>
     </p>
   </div>
 </div>
