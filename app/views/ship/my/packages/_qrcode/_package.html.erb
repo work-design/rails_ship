@@ -1,13 +1,13 @@
 <div class="weui-form-preview">
   <div class="weui-form-preview__bd">
-    <div class="weui-form-preview__item">
-      <label class="weui-form-preview__label"><%= Ship::Package.human_attribute_name(:id) %></label>
-      <span class="weui-form-preview__value"><%= @package.id %></span>
+    <div class="weui-form-preview__item" data-controller="empty">
+      <label class="weui-form-preview__label"><%= Ship::Package.human_attribute_name(:from_station_id) %></label>
+      <span class="weui-form-preview__value" data-empty-target="text"><%= @package.from_station&.name %></span>
     </div>
     <div class="weui-form-preview__item">
-      <label class="weui-form-preview__label"><%= Ship::Package.human_attribute_name(:address_id) %></label>
+      <label class="weui-form-preview__label"><%= Ship::Package.human_attribute_name(:station_id) %></label>
       <span class="weui-form-preview__value">
-        <%= @package.address.area.full_name %>
+        <%= @package.station&.name %>
       </span>
     </div>
     <div class="weui-form-preview__item">
