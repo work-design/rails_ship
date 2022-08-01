@@ -17,7 +17,7 @@ module Ship
       belongs_to :line
       belongs_to :car
       belongs_to :driver
-      belongs_to :current_station, class_name: 'Station', optional: true
+      belongs_to :current_line_station, class_name: 'LineStation', optional: true
       belongs_to :shipping, polymorphic: true, optional: true
 
       has_many :shipment_items, dependent: :destroy_async
@@ -42,10 +42,11 @@ module Ship
     end
 
     def init_current_station
-      self.current_station_id ||= line.line_stations[0].station_id
+      self.current_line_station ||= line.line_stations[0]
     end
 
     def change_state_to_left
+      self.current_line_station_id ||= current_line_station.next_line_station
       self.state = 'left'
     end
 

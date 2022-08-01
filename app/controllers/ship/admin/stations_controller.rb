@@ -27,7 +27,8 @@ module Ship
 
     def shipments
       q_params = {
-        state: 'left'
+        #state: ['left', 'arrived'],
+        current_station_id: @station.id
       }
       q_params.merge! params.permit(:state)
 
