@@ -26,7 +26,12 @@ module Ship
     end
 
     def shipments
-      @shipments = @station.shipments.order(load_on: :desc)
+      q_params = {
+        state: 'left'
+      }
+      q_params.merge! params.permit(:state)
+
+      @shipments = @station.shipments.includes(:car, :driver).default_where(q_params).order(load_on: :desc)
     end
 
     private
