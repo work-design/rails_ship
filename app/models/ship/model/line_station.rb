@@ -24,5 +24,13 @@ module Ship
       line.sync_names_to_line
     end
 
+    def next_item
+      line.line_stations.find(&->(i){ i.position > position }) || line.line_stations.find(&->(i){ i.position == position })
+    end
+
+    def prev_item
+      line.line_stations.find(&->(i){ i.position < position }) || line.line_stations.find(&->(i){ i.position == position })
+    end
+
   end
 end
