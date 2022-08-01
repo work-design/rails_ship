@@ -1,19 +1,21 @@
 <div class="weui-media-box weui-media-box_appmsg">
   <div class="weui-media-box__bd">
+    <div class="level is-flex mb-0">
+      <div class="level-left">
+        <span><%= model.shipment.line.name %></span>
+        <span><%# model.shipment %></span>
+      </div>
+      <div class="level-right mt-0">
+        <span class="<%= ['loaded'].include?(model.state) ? 'has-text-success' : 'has-text-danger' %>"><%= model.state_i18n %></span>
+      </div>
+    </div>
     <p>
-      <span><%= model.shipment.line.name %></span>
-      <span><%# model.shipment %></span>
+      <span class="has-text-grey"><%= Ship::ShipmentItem.human_attribute_name(:loaded_at) %></span>
+      <time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.loaded_at&.to_fs(:iso8601) %></time>
     </p>
     <p>
-      <span class="<%= ['loaded'].include?(model.state) ? 'has-text-success' : 'has-text-danger' %>"><%= model.state_i18n %></span>
-      <span class="tag"><%= model.confirm_mode_i18n %></span>
+      <span class="has-text-grey"><%= Ship::ShipmentItem.human_attribute_name(:unloaded_at) %>:</span>
+      <time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.unloaded_at&.to_fs(:iso8601) %></time>
     </p>
-    <p><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.loaded_at&.to_fs(:iso8601) %></time></p>
-    <p><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.unloaded_at&.to_fs(:iso8601) %></time></p>
-  </div>
-  <div class="weui-media-box__ft pr-2">
-    <%= button_to({ controller: 'ship/me/packages', action: 'unloaded', id: @package.id, shipment_item_id: model.id }, class: 'button is-large is-warning') do %>
-      <span>卸货</span>
-    <% end if ['loaded'].include?(model.state) %>
   </div>
 </div>
