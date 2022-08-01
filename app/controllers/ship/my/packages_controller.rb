@@ -1,6 +1,9 @@
 module Ship
   class My::PackagesController < My::BaseController
-    before_action :set_package, only: [:show, :qrcode, :wait, :edit, :update, :destroy, :actions]
+    before_action :set_package, only: [
+      :show, :edit, :update, :destroy, :actions,
+      :qrcode, :wait, :receive
+    ]
 
     def index
       q_params = {}
@@ -20,6 +23,12 @@ module Ship
       if @package.save
 
       end
+    end
+
+    # 确认收货
+    def receive
+      @package.state = 'received'
+      @package.save
     end
 
     private

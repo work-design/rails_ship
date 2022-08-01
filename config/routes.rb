@@ -215,6 +215,7 @@ Rails.application.routes.draw do
           member do
             get :qrcode
             put :wait
+            post :receive
           end
         end
       end
