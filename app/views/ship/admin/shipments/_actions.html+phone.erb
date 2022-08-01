@@ -19,10 +19,10 @@
   <span><%= t('ship.admin.shipments.stations.title') %></span>
 <% end %>
 <%= link_to({ action: 'leave', id: model.id }, class: 'weui-actionsheet__cell') do %>
-  <i class="fa-regular fa-location-dot"></i>
+  <i class="fa-regular fa-play"></i>
   <span><%= t('ship.admin.shipments.leave.title') %></span>
 <% end %>
 <%= link_to({ action: 'arrive', id: model.id }, class: 'weui-actionsheet__cell') do %>
-  <i class="fa-regular fa-location-dot"></i>
+  <i class="fa-regular fa-stop"></i>
   <span><%= t('ship.admin.shipments.arrive.title') %></span>
 <% end if model.state == 'left' %>
