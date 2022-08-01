@@ -18,6 +18,7 @@ module Ship
 
       has_many :line_stations, dependent: :destroy_async
       has_many :lines, through: :line_stations
+      has_many :shipments, through: :lines
       has_many :addresses, class_name: 'Profiled::Address'
 
       after_save_commit :geo_later, if: -> { saved_change_to_lat? || saved_change_to_lng? }

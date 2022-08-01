@@ -74,6 +74,8 @@ zh:
       stations:
         index:
           title: 站点
+        shipments:
+          title: 到货车次
       box_specifications:
         index:
           title: 物流箱生产

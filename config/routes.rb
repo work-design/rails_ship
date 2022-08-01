@@ -37,7 +37,11 @@ Rails.application.routes.draw do
         end
       end
       namespace :admin, defaults: { namespace: 'admin' } do
-        resources :stations
+        resources :stations do
+          member do
+            get :shipments
+          end
+        end
         resources :addresses do
           collection do
             get :from

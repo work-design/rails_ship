@@ -17,6 +17,7 @@ module Ship
       belongs_to :line
       belongs_to :car
       belongs_to :driver
+      belongs_to :current_station, class_name: 'Station', optional: true
       belongs_to :shipping, polymorphic: true, optional: true
 
       has_many :shipment_items, dependent: :destroy_async

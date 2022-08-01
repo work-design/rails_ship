@@ -35,6 +35,7 @@ zh:
         left_at: 发车时间
         arrived_at: 到达时间
         state: 状态
+        current_station_id: 所处站点
       ship/shipment_item:
         shipment_id: 所在运次
         box_id: 物流箱

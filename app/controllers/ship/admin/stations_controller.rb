@@ -1,6 +1,7 @@
 module Ship
   class Admin::StationsController < Admin::BaseController
     before_action :set_new_station, only: [:new, :create]
+    before_action :set_station, only: [:show, :edit, :update, :destroy, :actions, :shipments]
 
     def index
       q_params = {}
@@ -17,7 +18,15 @@ module Ship
       end
     end
 
+    def shipments
+
+    end
+
     private
+    def set_station
+      @station = Station.find params[:id]
+    end
+
     def set_new_station
       @station = Station.new(station_params)
     end
