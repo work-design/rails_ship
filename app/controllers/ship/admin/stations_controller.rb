@@ -22,7 +22,7 @@ module Ship
     end
 
     def lines
-      @lines = @station.lines
+      @line_stations = @station.line_stations.includes(:line)
     end
 
     def shipments
