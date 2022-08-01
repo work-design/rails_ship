@@ -46,7 +46,7 @@ module Ship
     end
 
     def change_state_to_left
-      self.current_line_station ||= current_line_station.next_item
+      self.current_line_station = current_line_station.next_item
       self.state = 'left'
     end
 
