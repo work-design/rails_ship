@@ -19,7 +19,11 @@ module Ship
     end
 
     def set_name
-      self.name ||= [start_name.to_s, finish_name.to_s].join('-')
+      self.name ||= origin_name
+    end
+
+    def origin_name
+      [start_name.to_s, finish_name.to_s].join('-')
     end
 
     def sync_names_to_line
