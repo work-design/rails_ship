@@ -1,0 +1,13 @@
+<td><%= model.load_on %></td>
+<td>
+  <p><%= model.car.number %></p>
+  <p><%= model.driver.name %></p>
+</td>
+<td>
+  <p><%= model.current_station&.name %></p>
+  <p><span class="tag"><%= model.state_i18n %></span></p>
+</td>
+<td>
+  <p><time data-controller="time"><%= model.left_at&.to_fs(:iso8601) %></time></p>
+  <p><time data-controller="time"><%= model.arrived_at&.to_fs(:iso8601) %></time></p>
+</td>

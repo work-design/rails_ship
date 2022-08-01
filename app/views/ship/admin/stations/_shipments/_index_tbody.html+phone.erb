@@ -1,0 +1,17 @@
+<p>
+<%= link_to({ action: 'stations', id: model.id }) do %>
+  <span><%= model.load_on %></span>
+<% end %>
+</p>
+<p>
+  <span><%= model.car.number %></span>
+  <span class="tag is-light"><%= model.driver.name %></span>
+</p>
+<p><span class="tag"><%= model.state_i18n %></span></p>
+<p>
+  <time data-controller="time"><%= model.left_at&.to_fs(:iso8601) %></time>
+  <% if model.left_at && model.arrived_at %>
+    <i class="fa-solid fa-right-long has-text-grey"></i>
+  <% end %>
+  <time data-controller="time"><%= model.arrived_at&.to_fs(:iso8601) %></time>
+</p>

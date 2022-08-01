@@ -26,6 +26,7 @@ module Ship
     end
 
     def shipments
+      @shipments = @station.shipments.order(load_on: :desc)
     end
 
     private
