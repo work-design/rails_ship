@@ -25,13 +25,20 @@ module Ship
       belongs_to :unloaded_station, class_name: 'Station', optional: true
       belongs_to :shipment, counter_cache: true
       belongs_to :package, counter_cache: true
+      belongs_to :station, optional: true
       belongs_to :box, counter_cache: true, optional: true
 
       has_many :trade_items, through: :package
       has_many :orders, class_name: 'Trade::Order', through: :trade_items
       has_many :payment_orders, class_name: 'Trade::PaymentOrder', through: :trade_items
 
+      before_save :sync_station_from_package, if: -> { package_id.present? && package_id_changed? }
       after_save_commit :sync_state_to_item, if: -> { saved_change_to_state? }
+    end
+
+    def sync_station_from_package
+      return unless package
+      self.station_id = package.station_id
     end
 
     def sync_state_to_item
