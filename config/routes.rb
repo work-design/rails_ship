@@ -86,6 +86,11 @@ Rails.application.routes.draw do
             end
             resources :shipment_items
             resources :shipment_logs
+            resources :payment_orders do
+              collection do
+                get 'station/:station_id' => :station
+              end
+            end
           end
         end
         resources :box_specifications, only: [:index, :show] do

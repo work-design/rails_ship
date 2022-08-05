@@ -1,0 +1,16 @@
+<tr>
+  <td class="has-text-right"><%= Trade::PaymentOrder.human_attribute_name(:user_id) %></td>
+  <td><%= @payment_order.user_id %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Trade::PaymentOrder.human_attribute_name(:order_id) %></td>
+  <td><%= @payment_order.order_id %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Trade::PaymentOrder.human_attribute_name(:state) %></td>
+  <td><%= @payment_order.state %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Trade::PaymentOrder.human_attribute_name(:check_amount) %></td>
+  <td><%= @payment_order.check_amount %></td>
+</tr>

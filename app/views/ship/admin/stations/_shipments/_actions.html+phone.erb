@@ -2,6 +2,10 @@
   <i class="fa-regular fa-list-check"></i>
   <span><%= t('ship.admin.shipment_items.index.title') %></span>
 <% end %>
+<%= link_to({ controller: 'ship/admin/payment_orders', action: 'station', line_id: model.line_id, shipment_id: model.id, station_id: params[:station_id] }, class: 'weui-actionsheet__cell') do %>
+  <i class="fa-regular fa-credit-card"></i>
+  <span><%= t('ship.admin.payment_orders.index.title') %></span>
+<% end %>
 <%= button_to({ controller: 'ship/admin/shipments', action: 'leave', line_id: model.line_id, station_id: params[:station_id], id: model.id }, form: { data: { turbo_confirm: t('.confirm') }, class: 'weui-actionsheet__cell' }) do %>
   <i class="fa-solid fa-play has-text-danger"></i>
   <span class="has-text-danger"><%= t('ship.admin.shipments.leave.title') %></span>

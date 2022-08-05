@@ -107,6 +107,11 @@ zh:
       shipment_logs:
         index:
           title: 轨迹
+      payment_orders:
+        index:
+          title: 订单列表
+        station:
+          title: 本站订单列表
     in:
       title: 订购/租用
       box_specifications:
