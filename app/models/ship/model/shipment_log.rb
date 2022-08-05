@@ -13,9 +13,15 @@ module Ship
 
       has_many :shipment_items, primary_key: :shipment_id, foreign_key: :shipment_id
       has_many :current_shipment_items, ->(o){ where(station_id: o.station_id) }, class_name: 'ShipmentItem', primary_key: :shipment_id, foreign_key: :shipment_id
+      has_many :payment_orders, through: :current_shipment_items
 
       after_save :change_state_to_left, if: -> { left_at && saved_change_to_left_at? }
       after_save :change_state_to_arrived, if: -> { arrived_at && saved_change_to_arrived_at? }
+    end
+
+
+    def collect_payment_orders
+      payment_orders.where(kind: 'item_amount').update_all(agent_organ_id: shipment.organ_id)
     end
 
     def change_state_to_left
