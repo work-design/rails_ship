@@ -11,12 +11,12 @@
       <%= link_to({ controller: 'shipment_logs', shipment_id: model.id }, aria: { label: t('ship.admin.shipment_logs.index.title') }, class: 'button is-small is-rounded is-light') do %>
         <i class="fa-regular fa-clock-rotate-left"></i>
       <% end %>
-      <%= link_to({ action: 'leave', id: model.id }, data: { turbo_frame: 'modal' }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-regular fa-play"></i>
+      <%= button_to({ action: 'leave', id: model.id }, data: { turbo_frame: 'modal' }, class: 'button is-small is-rounded is-light') do %>
+        <i class="fa-solid fa-play"></i>
         <span class="pl-1"><%= t('ship.admin.shipments.leave.title') %></span>
-      <% end if ['preparing', 'prepared', 'arrived'].include?(model.state) %>
-      <%= link_to({ action: 'arrive', id: model.id }, data: { turbo_frame: 'modal' }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-regular fa-stop"></i>
+      <% end if ['preparing', 'prepared', 'arrived'].exclude?(model.state) %>
+      <%= button_to({ action: 'arrive', id: model.id }, data: { turbo_frame: 'modal' }, class: 'button is-small is-rounded is-light') do %>
+        <i class="fa-solid fa-stop"></i>
         <span class="pl-1"><%= t('ship.admin.shipments.arrive.title') %></span>
       <% end if model.state == 'left' %>
       <%= link_to({ action: 'show', id: model.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.show') }, class: 'button is-small is-rounded is-light') do %>
