@@ -75,7 +75,7 @@ zh:
         index:
           title: 站点
         shipments:
-          title: 到货车次
+          title: 作业班次
         lines:
           title: 线路
       box_specifications:
