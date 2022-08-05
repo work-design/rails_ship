@@ -4,7 +4,7 @@ module Ship
     before_action :set_new_line, only: [:new, :create]
 
     def index
-      @lines = Line.page(params[:page])
+      @lines = Line.order(id: :desc).page(params[:page])
     end
 
     private
