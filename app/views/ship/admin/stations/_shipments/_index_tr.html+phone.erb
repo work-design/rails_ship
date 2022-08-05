@@ -3,7 +3,7 @@
     <%= yield %>
   </div>
   <div class="weui-media-box__ft">
-    <%= button_to({ controller: '/com/common', action: 'actions' }, params: params.to_meta.merge!(station_id: params[:id], line_id: model.line_id, id: model.id, model: { xx: 1 }), class: 'button is-borderless') do %>
+    <%= button_to({ controller: '/com/common', action: 'actions' }, params: params.to_meta.merge!(station_id: params[:id], line_id: model.line_id, id: model.id, model: model.class_name), class: 'button is-borderless') do %>
       <i class="fa-light fa-ellipsis-h fa-lg"></i>
     <% end %>
   </div>
