@@ -82,8 +82,8 @@ Rails.application.routes.draw do
               get 'unloaded/:station_id' => :unloaded
               post 'unloaded' => :unloaded_create
               get 'transfer/:station_id' => :transfer
-              get :leave
-              get :arrive
+              post :leave
+              post :arrive
             end
           end
         end
