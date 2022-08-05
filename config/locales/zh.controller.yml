@@ -109,9 +109,9 @@ zh:
           title: 轨迹
       payment_orders:
         index:
-          title: 订单列表
+          title: 代收货款
         station:
-          title: 本站订单列表
+          title: 代收货款
     in:
       title: 订购/租用
       box_specifications:
