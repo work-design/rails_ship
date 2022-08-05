@@ -3,11 +3,14 @@
   <span class="tag"><%= model.load_on %></span>
   <span class="tag"><%= model.state_i18n %></span>
 </p>
-<p>
-  <span><%= model.car.number %></span>
-  <span class="tag is-light">
-    <i class="fa-regular fa-user"></i>
-    <span><%= model.driver.name %></span>
+<p class="is-flex is-align-items-center">
+  <span>
+    <i class="fa-solid fa-car"></i>
+    <span class="pl-1"><%= model.car.number %></span>
+  </span>
+  <span class="tag is-light ml-4">
+    <i class="fa-solid fa-user"></i>
+    <span class="pl-1"><%= model.driver.name %></span>
   </span>
 </p>
 <p>
