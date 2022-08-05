@@ -3,7 +3,14 @@
   <span class="tag"><%= model.load_on %></span>
 </p>
 <p class="mt-1">
-  <span class="tag"><%= model.state_i18n %></span>
+  <span class="">
+    <span class="pr-1"><%= model.state_i18n %></span>
+    <% if model.state == 'arrived' %>
+      <time data-controller="time"><%= model.arrived_at&.to_fs(:iso8601) %></time>
+    <% elsif model.state == 'left' %>
+      <time data-controller="time"><%= model.left_at&.to_fs(:iso8601) %></time>
+    <% end %>
+  </span>
   <span class="tag ml-4">
     <i class="fa-solid fa-list"></i>
     <span class="pl-1"><%= model.shipment_items_count %></span>
@@ -18,11 +25,4 @@
     <i class="fa-solid fa-user"></i>
     <span class="pl-1"><%= model.driver.name %></span>
   </span>
-</p>
-<p class="mt-1">
-  <time data-controller="time"><%= model.left_at&.to_fs(:iso8601) %></time>
-  <% if model.left_at && model.arrived_at %>
-    <i class="fa-solid fa-right-long has-text-grey px-2"></i>
-  <% end %>
-  <time data-controller="time"><%= model.arrived_at&.to_fs(:iso8601) %></time>
 </p>

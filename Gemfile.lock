@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 06a72f92a2fee813c778d227c87187a72d7bbca7
+  revision: 25bc9ca0a4d6f493a00596850a0b76157a4b0f9a
   specs:
     rails_com (1.3.0)
       acme-client
@@ -26,7 +26,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_extend.git
-  revision: d4a668e09b5bf00ce3f5e27870dc18b36d7719eb
+  revision: 3968d51ec1c68eaf846fd4e4238163a3d32f0c4f
   specs:
     rails_extend (1.0.1)
       rails (>= 5.0)
@@ -54,7 +54,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_trade.git
-  revision: 551f3715cd28e031f5cfb7c9bf89a0315300a061
+  revision: 5c782dffc57690fa8f8a6f1444e6e354a9485841
   specs:
     rails_trade (0.0.3)
       money-rails (~> 1.14)
@@ -152,16 +152,16 @@ GEM
       activerecord (>= 4.0.0)
     digest (3.1.0)
     erubi (1.10.0)
-    faraday (2.3.0)
+    faraday (2.4.0)
       faraday-net_http (~> 2.0)
       ruby2_keywords (>= 0.0.4)
-    faraday-net_http (2.0.3)
+    faraday-net_http (2.1.0)
     faraday-retry (1.0.3)
     globalid (1.0.0)
       activesupport (>= 5.0)
     http-2-next (0.5.0)
     http-form_data (2.3.0)
-    httpx (0.20.3)
+    httpx (0.20.4)
       http-2-next (>= 0.4.1)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
