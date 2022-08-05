@@ -120,8 +120,7 @@ module Ship
     end
 
     def set_shipment_log
-      line_station = @line.line_stations.find_by station_id: params[:station_id]
-      @shipment_log = @shipment.shipment_logs.find_or_initialize_by(line_station_id: line_station.id)
+      @shipment_log = @shipment.shipment_logs.find_or_initialize_by(station_id: params[:station_id])
     end
 
     def shipment_params

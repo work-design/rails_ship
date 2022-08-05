@@ -9,8 +9,6 @@ module Ship
       attribute :prepared_at, :datetime
 
       belongs_to :shipment
-      belongs_to :line_station
-      belongs_to :line
       belongs_to :station
 
       has_many :shipment_items, primary_key: :shipment_id, foreign_key: :shipment_id
