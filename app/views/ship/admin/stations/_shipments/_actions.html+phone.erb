@@ -1,4 +1,4 @@
-<%= link_to({ controller: 'ship/admin/shipment_items', line_id: model.line_id, shipment_id: model.id }, class: 'weui-actionsheet__cell') do %>
+<%= link_to({ controller: 'ship/admin/shipment_items', line_id: model.line_id, shipment_id: model.id, station_id: params[:station_id] }, class: 'weui-actionsheet__cell') do %>
   <i class="fa-regular fa-list-check"></i>
   <span><%= t('ship.admin.shipment_items.index.title') %></span>
 <% end %>
