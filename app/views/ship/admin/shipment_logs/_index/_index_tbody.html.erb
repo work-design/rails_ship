@@ -1,7 +1,19 @@
 <td><%= model.line_station.station.name %></td>
 <td>
-  <p><time data-controller="time"><%= model.left_at&.to_fs(:iso8601) %></time></p>
-  <p><time data-controller="time"><%= model.arrived_at&.to_fs(:iso8601) %></time></p>
+  <p><time data-controller="time"><%= model.prepared_at&.to_fs(:iso8601) %></time></p>
+  <p><time data-controller="time"><%= model.expected_leave_at&.to_fs(:iso8601) %></time></p>
 </td>
-<td><time data-controller="time"><%= model.prepared_at&.to_fs(:iso8601) %></time></td>
-<td><time data-controller="time"><%= model.expected_leave_at&.to_fs(:iso8601) %></time></td>
+<td>
+<% if model.arrived_at %>
+  <div class="tags has-addons is-justify-content-end mb-0">
+    <span class="tag"><%= Ship::ShipmentLog.human_attribute_name(:arrived_at) %></span>
+    <time data-controller="time" class="tag is-success"><%= model.arrived_at&.to_fs(:iso8601) %></time>
+  </div>
+<% end %>
+<% if model.left_at > model.arrived_at %>
+  <div class="tags has-addons is-justify-content-end mb-0">
+    <span class="tag"><%= Ship::ShipmentLog.human_attribute_name(:left_at) %></span>
+    <time data-controller="time" class="tag is-info"><%= model.left_at&.to_fs(:iso8601) %></time>
+  </div>
+<% end %>
+</td>
