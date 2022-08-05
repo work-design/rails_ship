@@ -5,7 +5,10 @@
 </p>
 <p>
   <span><%= model.car.number %></span>
-  <span class="tag is-light"><%= model.driver.name %></span>
+  <span class="tag is-light">
+    <i class="fa-regular fa-user"></i>
+    <span><%= model.driver.name %></span>
+  </span>
 </p>
 <p>
   <time data-controller="time"><%= model.left_at&.to_fs(:iso8601) %></time>
