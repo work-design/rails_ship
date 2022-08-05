@@ -104,6 +104,9 @@ zh:
       shipment_items:
         index:
           title: 装车详情
+      shipment_logs:
+        index:
+          title: 轨迹
     in:
       title: 订购/租用
       box_specifications:

@@ -8,6 +8,9 @@
       <%= link_to({ controller: 'shipment_items', shipment_id: model.id }, aria: { label: t('ship.admin.shipment_items.index.title') }, class: 'button is-small is-rounded is-light') do %>
         <i class="fa-regular fa-list-check"></i>
       <% end %>
+      <%= link_to({ controller: 'shipment_logs', shipment_id: model.id }, aria: { label: t('ship.admin.shipment_logs.index.title') }, class: 'button is-small is-rounded is-light') do %>
+        <i class="fa-regular fa-clock-rotate-left"></i>
+      <% end %>
       <%= link_to({ action: 'leave', id: model.id }, data: { turbo_frame: 'modal' }, class: 'button is-small is-rounded is-light') do %>
         <i class="fa-regular fa-play"></i>
         <span class="pl-1"><%= t('ship.admin.shipments.leave.title') %></span>

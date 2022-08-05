@@ -74,7 +74,6 @@ Rails.application.routes.draw do
         resources :lines do
           resources :line_stations
           resources :shipments do
-            resources :shipment_items
             member do
               get :stations
               get 'loaded/:from_station_id' => :loaded
@@ -86,6 +85,8 @@ Rails.application.routes.draw do
               post :arrive
             end
           end
+          resources :shipment_items
+          resources :shipment_logs
         end
         resources :box_specifications, only: [:index, :show] do
           resources :boxes do
