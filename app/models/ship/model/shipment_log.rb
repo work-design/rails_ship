@@ -10,6 +10,11 @@ module Ship
 
       belongs_to :shipment
       belongs_to :line_station
+      belongs_to :line
+      belongs_to :station
+
+      has_many :shipment_items, primary_key: :shipment_id, foreign_key: :shipment_id
+      has_many :current_shipment_items, ->(o){ where(station_id: o.station_id) }, class_name: 'ShipmentItem', primary_key: :shipment_id, foreign_key: :shipment_id
 
       after_save :change_state_to_left, if: -> { left_at && saved_change_to_left_at? }
       after_save :change_state_to_arrived, if: -> { arrived_at && saved_change_to_arrived_at? }
