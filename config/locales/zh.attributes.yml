@@ -5,6 +5,8 @@ zh:
         start_name: 起点
         finish_name: 终点
         line_stations_count: 车站数
+      ship/line_station:
+        station_id: 站点
       ship/driver:
         name: 姓名
         number: 驾驶证号码
@@ -45,6 +47,12 @@ zh:
         unloaded_at: 卸车时间
         state: 状态
         confirm_mode: 确认模式
+      ship/shipment_log:
+        prepared_at: 准备完成
+        expected_leave_at: 预计出发
+        expected_arrive_at: 预计到达
+        left_at: 发车时间
+        arrived_at: 到达时间
       ship/package:
         from_station_id: 发货网点
         from_address_id: 发货地址
