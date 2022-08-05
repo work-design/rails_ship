@@ -36,8 +36,6 @@ module Ship
         arrived: 'arrived'
       }, _prefix: true, _default: 'preparing'
 
-      before_save :change_state_to_left, if: -> { left_at && left_at_changed? }
-      before_save :change_state_to_arrived, if: -> { arrived_at && arrived_at_changed? }
       before_create :init_current_station
       after_save_commit :sync_state_to_item, if: -> { saved_change_to_state? }
     end
@@ -46,13 +44,15 @@ module Ship
       self.current_line_station ||= line.line_stations[0]
     end
 
-    def change_state_to_left
+    def change_state_to_left!
       self.current_line_station = current_line_station.next_item
       self.state = 'left'
+      self.save
     end
 
-    def change_state_to_arrived
+    def change_state_to_arrived!
       self.state = 'arrived'
+      self.save
     end
 
     def sync_state_to_item

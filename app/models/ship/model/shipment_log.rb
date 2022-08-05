@@ -10,6 +10,19 @@ module Ship
 
       belongs_to :shipment
       belongs_to :line_station
+
+      after_save :change_state_to_left, if: -> { left_at && saved_change_to_left_at? }
+      after_save :change_state_to_arrived, if: -> { arrived_at && saved_change_to_arrived_at? }
+    end
+
+    def change_state_to_left
+      shipment.left_at = left_at
+      shipment.change_state_to_left!
+    end
+
+    def change_state_to_arrived
+      shipment.arrived_at = arrived_at
+      shipment.change_state_to_arrived!
     end
 
     def expected_arrive_at
