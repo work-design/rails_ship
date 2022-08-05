@@ -10,7 +10,7 @@
     <time data-controller="time" class="tag is-success"><%= model.arrived_at&.to_fs(:iso8601) %></time>
   </div>
 <% end %>
-<% if model.left_at && model.arrived_at && model.left_at > model.arrived_at %>
+<% if model.left_at %>
   <div class="tags has-addons is-justify-content-end mb-0">
     <span class="tag"><%= Ship::ShipmentLog.human_attribute_name(:left_at) %></span>
     <time data-controller="time" class="tag is-info"><%= model.left_at&.to_fs(:iso8601) %></time>
