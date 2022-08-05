@@ -1,7 +1,7 @@
 <td><%= model.line_station.station.name %></td>
 <td>
-  <p><time data-controller="time"><%= model.left_at.to_fs(:iso8601) %></time></p>
-  <p><time data-controller="time"><%= model.arrived_at.to_fs(:iso8601) %></time></p>
+  <p><time data-controller="time"><%= model.left_at&.to_fs(:iso8601) %></time></p>
+  <p><time data-controller="time"><%= model.arrived_at&.to_fs(:iso8601) %></time></p>
 </td>
-<td><%= model.prepared_at %></td>
-<td><%= model.expected_leave_at %></td>
+<td><time data-controller="time"><%= model.prepared_at&.to_fs(:iso8601) %></time></td>
+<td><time data-controller="time"><%= model.expected_leave_at&.to_fs(:iso8601) %></time></td>

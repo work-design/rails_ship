@@ -20,6 +20,7 @@ module Ship
       belongs_to :current_line_station, class_name: 'LineStation', optional: true
       belongs_to :shipping, polymorphic: true, optional: true
 
+      has_many :line_stations, -> { order(position: :asc) }, primary_key: :line_id, foreign_key: :line_id
       has_many :shipment_items, dependent: :destroy_async
       has_many :shipment_logs, dependent: :destroy_async
       has_many :packages, through: :shipment_items
