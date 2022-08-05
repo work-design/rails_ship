@@ -32,7 +32,7 @@ module Ship
       }
       q_params.merge! params.permit(:state)
 
-      @shipments = @station.shipments.includes(:car, :driver).default_where(q_params).order(load_on: :desc)
+      @shipments = @station.shipments.includes(:car, :driver, :line).default_where(q_params).order(load_on: :desc)
     end
 
     private

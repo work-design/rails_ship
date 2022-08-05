@@ -27,6 +27,10 @@ module Ship
       belongs_to :package, counter_cache: true
       belongs_to :box, counter_cache: true, optional: true
 
+      has_many :trade_items, through: :package
+      has_many :orders, class_name: 'Trade::Order', through: :trade_items
+      has_many :payment_orders, class_name: 'Trade::PaymentOrder', through: :trade_items
+
       after_save_commit :sync_state_to_item, if: -> { saved_change_to_state? }
     end
 
