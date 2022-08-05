@@ -29,6 +29,7 @@ module Ship
       has_many :unloaded_shipment_items, -> { state_unloaded }, class_name: 'ShipmentItem'
       has_many :unloaded_packages, through: :unloaded_shipment_items, source: :package
       has_many :boxes, through: :shipment_items
+      has_many :payment_orders, through: :shipment_items
 
       enum state: {
         preparing: 'preparing',
