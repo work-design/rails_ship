@@ -2,14 +2,14 @@
   <strong><%= model.line.origin_name %></strong>
   <span class="tag"><%= model.load_on %></span>
 </p>
-<p>
+<p class="mt-1">
   <span class="tag"><%= model.state_i18n %></span>
   <span class="tag ml-4">
     <i class="fa-solid fa-list"></i>
     <span class="pl-1"><%= model.shipment_items_count %></span>
   </span>
 </p>
-<p class="is-flex is-align-items-center">
+<p class="is-flex is-align-items-center mt-1">
   <span>
     <i class="fa-solid fa-car"></i>
     <span class="pl-1"><%= model.car.number %></span>
@@ -19,10 +19,10 @@
     <span class="pl-1"><%= model.driver.name %></span>
   </span>
 </p>
-<p>
+<p class="mt-1">
   <time data-controller="time"><%= model.left_at&.to_fs(:iso8601) %></time>
   <% if model.left_at && model.arrived_at %>
-    <i class="fa-solid fa-right-long has-text-grey"></i>
+    <i class="fa-solid fa-right-long has-text-grey px-2"></i>
   <% end %>
   <time data-controller="time"><%= model.arrived_at&.to_fs(:iso8601) %></time>
 </p>
