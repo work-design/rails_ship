@@ -1,7 +1,13 @@
 <p>
   <strong><%= model.line.origin_name %></strong>
   <span class="tag"><%= model.load_on %></span>
+</p>
+<p>
   <span class="tag"><%= model.state_i18n %></span>
+  <span class="tag ml-4">
+    <i class="fa-solid fa-list"></i>
+    <span class="pl-1"><%= model.shipment_items_count %></span>
+  </span>
 </p>
 <p class="is-flex is-align-items-center">
   <span>
