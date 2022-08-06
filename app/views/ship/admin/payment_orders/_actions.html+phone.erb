@@ -2,3 +2,7 @@
   <i class="fa-solid fa-square-info"></i>
   <span><%= t('.show') %></span>
 <% end %>
+<%= link_to({ action: 'payment_new', id: model.id, station_id: params[:station_id] }, class: 'weui-actionsheet__cell') do %>
+  <i class="fa-solid fa-credit-card"></i>
+  <span><%= t('ship.admin.payment_orders.payment_new.title') %></span>
+<% end %>

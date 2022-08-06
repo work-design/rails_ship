@@ -112,6 +112,8 @@ zh:
           title: 代收货款
         station:
           title: 代收货款
+        payment_new:
+          title: 支付
     in:
       title: 订购/租用
       box_specifications:
