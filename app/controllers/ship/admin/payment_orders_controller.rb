@@ -2,6 +2,7 @@ module Ship
   class Admin::PaymentOrdersController < Admin::BaseController
     before_action :set_shipment
     before_action :set_station, only: [:station]
+    before_action :set_payment_order, only: [:show, :edit, :update, :destroy, :actions]
 
     def index
       @payment_orders = @shipment.payment_orders.page(params[:page])
@@ -26,6 +27,10 @@ module Ship
 
     def set_station
       @station = Station.find params[:station_id]
+    end
+
+    def set_payment_order
+      @payment_order = @shipment.payment_orders.find params[:id]
     end
 
   end

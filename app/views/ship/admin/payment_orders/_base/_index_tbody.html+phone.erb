@@ -1,0 +1,8 @@
+<p>
+  <%= model.user.name %>
+</p>
+<p>
+  <span><%= model.order.uuid %></span>
+  <span class="tag"><%= model.state_i18n %></span>
+</p>
+<p><%= model.check_amount.to_money.format(html_wrap: true).html_safe %></p>
