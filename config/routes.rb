@@ -90,6 +90,10 @@ Rails.application.routes.draw do
               collection do
                 get 'station/:station_id' => :station
               end
+              member do
+                get 'payment' => :payment_new
+                post 'payment' => :payment_create
+              end
             end
           end
         end
