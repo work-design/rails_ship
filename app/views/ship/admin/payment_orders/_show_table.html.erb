@@ -1,16 +1,19 @@
 <tr>
   <td class="has-text-right"><%= Trade::PaymentOrder.human_attribute_name(:user_id) %></td>
-  <td><%= @payment_order.user_id %></td>
+  <td>
+    <%= image_tag @payment_order.user.avatar, class: 'image is-24x24' if @payment_order.user.avatar.attached? %>
+    <span><%= @payment_order.user.name %></span>
+  </td>
 </tr>
 <tr>
   <td class="has-text-right"><%= Trade::PaymentOrder.human_attribute_name(:order_id) %></td>
-  <td><%= @payment_order.order_id %></td>
+  <td><%= @payment_order.order.uuid %></td>
 </tr>
 <tr>
   <td class="has-text-right"><%= Trade::PaymentOrder.human_attribute_name(:state) %></td>
-  <td><%= @payment_order.state %></td>
+  <td><%= @payment_order.state_i18n %></td>
 </tr>
 <tr>
   <td class="has-text-right"><%= Trade::PaymentOrder.human_attribute_name(:check_amount) %></td>
-  <td><%= @payment_order.check_amount %></td>
+  <td><%= @payment_order.check_amount.to_money.format(html_wrap: true).html_safe %></td>
 </tr>
