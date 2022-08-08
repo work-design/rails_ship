@@ -47,14 +47,14 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_profile.git
-  revision: 657092dea2edd1799b2e6ee6090c47b5e282c17d
+  revision: 9496e0b190ee9f9db97255eb5377157bef8dad2a
   specs:
     rails_profile (0.0.1)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_trade.git
-  revision: 5c782dffc57690fa8f8a6f1444e6e354a9485841
+  revision: 6e0936e48ad325d8d3fb2096fad659c8139ee7fa
   specs:
     rails_trade (0.0.3)
       money-rails (~> 1.14)
