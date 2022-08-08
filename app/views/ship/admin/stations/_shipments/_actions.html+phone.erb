@@ -14,11 +14,11 @@
   <i class="fa-solid fa-stop has-text-success"></i>
   <span class="has-text-success"><%= t('ship.admin.shipments.arrive.title') %></span>
 <% end if model.state == 'left' %>
-<%= link_to({ controller: 'ship/admin/shipments', action: 'loaded', line_id: model.line_id, id: model.id, from_station_id: params[:station_id] }, class: 'weui-actionsheet__cell') do %>
+<%= link_to({ controller: 'ship/admin/shipments', action: 'loaded', line_id: model.line_id, id: model.id, from_station_id: params[:station_id], from: 'station' }, class: 'weui-actionsheet__cell') do %>
   <i class="fa-solid fa-person-dolly has-text-success"></i>
   <span><%= t('ship.admin.shipments.loaded.title') %></span>
 <% end if model.line_stations.pluck(:station_id).last.to_s != params[:station_id] %>
-<%= link_to({ controller: 'ship/admin/shipments', action: 'unloaded', line_id: model.line_id, id: model.id, station_id: params[:station_id] }, class: 'weui-actionsheet__cell') do %>
+<%= link_to({ controller: 'ship/admin/shipments', action: 'unloaded', line_id: model.line_id, id: model.id, station_id: params[:station_id], from: 'station' }, class: 'weui-actionsheet__cell') do %>
   <i class="fa-solid fa-person-dolly-empty has-text-danger"></i>
   <span><%= t('ship.admin.shipments.unloaded.title') %></span>
 <% end if model.line_stations.pluck(:station_id).first.to_s != params[:station_id] %>
