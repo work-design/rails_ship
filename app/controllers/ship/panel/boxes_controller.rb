@@ -1,5 +1,5 @@
 module Ship
-  class Panel::BoxesController < Panel::BaseController
+  class Panel::BoxesController < Admin::BoxesController
     before_action :set_box_specification
 
     def index

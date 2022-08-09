@@ -8,13 +8,11 @@
     <%= f.check_box :rentable, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
     <label data-action="click->input#check"></label>
   <% end %>
-</td>
-<td>
-<% if model.rented %>
-  <i class="fa-solid fa-check has-text-success"></i>
-<% else %>
-  <i class="fa-solid fa-times has-text-danger"></i>
-<% end %>
+  <% if model.rented %>
+    <i class="fa-solid fa-check has-text-success"></i>
+  <% else %>
+    <i class="fa-solid fa-times has-text-danger"></i>
+  <% end %>
 </td>
 <td>
   <p><%= model.owned_organ&.name %></p>
@@ -24,4 +22,5 @@
   <p><%= model.held_organ&.name %></p>
   <p class="has-text-info"><%= model.held_organ&.name %></p>
 </td>
+<td><%= model.trade_item_id %></td>
 <td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>
