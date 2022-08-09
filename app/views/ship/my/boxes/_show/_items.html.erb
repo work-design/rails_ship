@@ -10,5 +10,5 @@
       </th>
     </tr>
   </thead>
-  <%= render partial: 'package', collection: @box.box_logs, as: :model %>
+  <%= render partial: 'package', collection: @box.box_logs.order(id: :desc), as: :model %>
 </table>
