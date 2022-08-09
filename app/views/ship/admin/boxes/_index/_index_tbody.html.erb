@@ -4,10 +4,6 @@
   <span class="tag"><%= model.status_i18n %></span>
 </td>
 <td>
-  <p><%= model.held_organ&.name %></p>
-  <p class="has-text-info"><%= model.owned_organ&.name %></p>
-</td>
-<td>
   <%= form_with theme: nil, model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
     <%= f.check_box :rentable, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
     <label data-action="click->input#check"></label>
@@ -19,5 +15,13 @@
 <% else %>
   <i class="fa-solid fa-times has-text-danger"></i>
 <% end %>
+</td>
+<td>
+  <p><%= model.owned_organ&.name %></p>
+  <p class="has-text-info"><%= model.owned_user&.name %></p>
+</td>
+<td>
+  <p><%= model.held_organ&.name %></p>
+  <p class="has-text-info"><%= model.held_organ&.name %></p>
 </td>
 <td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>
