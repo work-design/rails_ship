@@ -23,7 +23,7 @@ module Ship
     # 取出包裹
     def out
       if @package
-        bl = @box.box_logs.find_or_initialize_by(package_id: @package.id)
+        bl = @box.box_logs.find_by(package_id: @package.id)
         bl.boxed_out_at = Time.current
         bl.save
       end

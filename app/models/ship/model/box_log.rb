@@ -16,6 +16,8 @@ module Ship
       belongs_to :box, counter_cache: true
       belongs_to :package
 
+      scope :current, -> { where(boxed_out_at: nil).order(boxed_in_at: :desc) }
+
       before_validation :compute_duration, if: -> { boxed_out_at.present? && boxed_out_at_changed? }
     end
 

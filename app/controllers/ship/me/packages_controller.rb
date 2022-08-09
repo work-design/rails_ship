@@ -25,16 +25,15 @@ module Ship
     def out
       if @box
         @package.box == @box # todo 测试是否一致
-        @package.confirm_mode = 'scan'
+        bl = @box.box_logs.find_by(package_id: @package.id)
+        bl.confirm_mode = 'scan'
       else
-        @package.confirm_mode = 'button'
+        bl = @package.box_logs.current.first
+        bl.confirm_mode = 'button'
       end
 
-      @package.boxed_out_at = Time.current
-      @package.last_box_id = @package.box_id
-      @package.box_id = nil
-      @package.state = 'box_out'
-      @package.save
+      bl.boxed_out_at = Time.current
+      bl.save
     end
 
     # 直接装车
