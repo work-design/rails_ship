@@ -1,8 +1,8 @@
 <td><%= check_box_tag 'xx', model.id, false, id: nil %></td>
 <td>
-  <p><%= model.code %></p>
+  <span><%= model.code %></span>
+  <span class="tag"><%= model.status_i18n %></span>
 </td>
-<td><%= model.status_i18n %></td>
 <td>
   <p><%= model.held_organ&.name %></p>
   <p class="has-text-info"><%= model.owned_organ&.name %></p>
