@@ -1,5 +1,6 @@
 module Ship
   class In::RentsController < In::BaseController
+    before_action :set_box
     before_action :set_rent, only: [:show, :promote, :edit, :update, :job, :compute]
 
     def index
@@ -9,7 +10,7 @@ module Ship
       }
       q_params.merge! params.permit(:id, :payment_type, :payment_status, :state)
 
-      @rents = Trade::Rent.includes(:trade_item).default_where(q_params).order(id: :desc).page(params[:page])
+      @rents = @box.rents.includes(:trade_item).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def promote
@@ -24,8 +25,12 @@ module Ship
     end
 
     private
+    def set_box
+      @box = Box.find params[:box_id]
+    end
+
     def set_rent
-      @rent = Trade::Rent.find params[:id]
+      @rent = @box.rents.find params[:id]
     end
 
     def rent_params

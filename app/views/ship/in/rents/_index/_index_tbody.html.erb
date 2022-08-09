@@ -1,8 +1,4 @@
 <td>
-  <p><%= model.rentable_type_i18n %></p>
-  <p><%= model.rentable&.code %></p>
-</td>
-<td>
   <p><time data-controller="time"><%= model.rent_start_at&.to_fs(:iso8601) %></time></p>
   <p><time data-controller="time"><%= model.rent_estimate_finish_at&.to_fs(:iso8601) %></time></p>
 </td>

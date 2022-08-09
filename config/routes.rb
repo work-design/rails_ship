@@ -133,6 +133,13 @@ Rails.application.routes.draw do
             get :rent
           end
           resources :box_logs
+          resources :rents do
+            member do
+              get :promote
+              get :job
+              put :compute
+            end
+          end
         end
         resources :orders do
           member do
@@ -142,13 +149,6 @@ Rails.application.routes.draw do
           resources :trade_items
         end
         resources :trade_items
-        resources :rents do
-          member do
-            get :promote
-            get :job
-            put :compute
-          end
-        end
       end
       namespace :out, defaults: { namespace: 'out' } do
         resources :boxes do
