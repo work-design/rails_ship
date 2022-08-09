@@ -1,6 +1,7 @@
 <td><%= check_box_tag 'xx', model.id, false, id: nil %></td>
-<td><%= model.code %></td>
-<td><%= model.box_specification_id %></td>
+<td>
+  <p><%= model.code %></p>
+</td>
 <td><%= model.status_i18n %></td>
 <td>
   <p><%= model.held_organ&.name %></p>
