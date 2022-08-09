@@ -2,7 +2,7 @@
   <p class="has-text-success"><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.boxed_in_at.to_fs(:iso8601) %></time></p>
   <p class="has-text-danger"><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.boxed_out_at&.to_fs(:iso8601) %></time></p>
 </td>
-<td><%= model.duration_obj %></td>
+<td><%= model.duration_obj.inspect %></td>
 <td>
   <%= link_to({ controller: 'admin/packages', action: 'show', id: model.package_id }, data: { turbo_frame: 'modal' }) do %>
     <i class="fa-solid fa-box"></i>

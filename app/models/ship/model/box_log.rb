@@ -39,7 +39,11 @@ module Ship
     end
 
     def duration_obj
-      ActiveSupport::Duration.build(duration)
+      if duration
+        ActiveSupport::Duration.build(duration)
+      else
+        ActiveSupport::Duration.build(0)
+      end
     end
 
   end
