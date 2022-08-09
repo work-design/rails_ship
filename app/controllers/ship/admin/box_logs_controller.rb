@@ -3,7 +3,7 @@ module Ship
     before_action :set_box
 
     def index
-      @box_logs = @box.box_logs.includes(:package).page(params[:page])
+      @box_logs = @box.box_logs.includes(:package).order(id: :desc).page(params[:page])
     end
 
     private

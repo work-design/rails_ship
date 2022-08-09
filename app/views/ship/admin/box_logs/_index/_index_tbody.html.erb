@@ -9,3 +9,4 @@
     <span class="pl-1"><%= model.package_id %></span>
   <% end %>
 </td>
+<td><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss" class="has-text-grey"><%= model.created_at.to_fs(:iso8601) %></time></td>
