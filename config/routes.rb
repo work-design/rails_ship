@@ -41,6 +41,7 @@ Rails.application.routes.draw do
             member do
               get :pdf
             end
+            resources :box_logs
           end
         end
       end
@@ -114,6 +115,7 @@ Rails.application.routes.draw do
             member do
               get :pdf
             end
+            resources :box_logs
           end
         end
         root 'home#index'

@@ -47,6 +47,7 @@ module Ship
       has_many :shipment_items, inverse_of: :package
       has_many :shipments, through: :shipment_items
       has_many :packageds, dependent: :destroy
+      has_many :box_logs
       has_many :trade_items, class_name: 'Trade::TradeItem', through: :packageds
       has_many :orders, class_name: 'Trade::Order', through: :trade_items
 
