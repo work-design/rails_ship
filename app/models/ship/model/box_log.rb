@@ -7,7 +7,7 @@ module Ship
       attribute :boxed_out_at, :datetime
       attribute :duration, :integer
 
-      belongs_to :box
+      belongs_to :box, counter_cache: true
       belongs_to :package
 
       before_validation :compute_duration, if: -> { boxed_out_at.present? && boxed_out_at_changed? }
