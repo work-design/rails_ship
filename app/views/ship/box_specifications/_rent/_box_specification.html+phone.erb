@@ -14,7 +14,7 @@
       <p class="has-text-danger">
         <span><%= promote.promote_charges[0].parameter.to_money.format(html_wrap: true).html_safe %></span>
         <span>/</span>
-        <span><%= promote.unit_code_i18n %></span>
+        <span><%= promote.unit&.name %></span>
       </p>
     <% end %>
     </div>
