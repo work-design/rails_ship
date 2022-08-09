@@ -130,6 +130,9 @@ zh:
           title: 买入
         rent:
           title: 租入
+      box_logs:
+        index:
+          title: 使用记录
       orders:
         index:
           title: 物流箱订单

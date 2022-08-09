@@ -27,7 +27,11 @@ module Ship
     end
 
     def sync_to_package
-      package.box_id = box_id
+      if boxed_out_at.present?
+        package.box_id = nil
+      else
+        package.box_id = box_id
+      end
       package.boxed_in_at = boxed_in_at
       package.boxed_out_at = boxed_out_at
       package.confirm_mode = confirm_mode
