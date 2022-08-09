@@ -14,20 +14,18 @@ module Ship
     # 装入包裹
     def in
       if @package
-        @package.box = @box
-        @package.state = 'box_in'
-        @package.boxed_in_at = Time.current
-        @package.save
+        bl = @box.box_logs.find_or_initialize_by(package_id: @package.id)
+        bl.boxed_in_at ||= Time.current
+        bl.save
       end
     end
 
     # 取出包裹
     def out
       if @package
-        @package.box = @box
-        @package.state = 'box_out'
-        @package.boxed_out_at = Time.current
-        @package.save
+        bl = @box.box_logs.find_or_initialize_by(package_id: @package.id)
+        bl.boxed_out_at = Time.current
+        bl.save
       end
     end
 

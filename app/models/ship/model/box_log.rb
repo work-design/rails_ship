@@ -7,6 +7,12 @@ module Ship
       attribute :boxed_out_at, :datetime
       attribute :duration, :integer
 
+      enum confirm_mode: {
+        button: 'button',
+        scan: 'scan',
+        batch: 'batch'
+      }, _prefix: true
+
       belongs_to :box, counter_cache: true
       belongs_to :package
 

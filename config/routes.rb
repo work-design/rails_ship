@@ -132,6 +132,7 @@ Rails.application.routes.draw do
             get :invest
             get :rent
           end
+          resources :box_logs
         end
         resources :orders do
           member do

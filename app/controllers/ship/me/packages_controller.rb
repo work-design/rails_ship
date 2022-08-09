@@ -14,11 +14,10 @@ module Ship
     # 入物流箱
     def in
       if @box
-        @package.box = @box
-        @package.state = 'box_in'
-        @package.confirm_mode = 'scan'
-        @package.boxed_in_at = Time.current
-        @package.save
+        bl = @box.box_logs.find_or_initialize_by(package_id: @package.id)
+        bl.confirm_mode = 'scan'
+        bl.boxed_in_at = Time.current
+        bl.save
       end
     end
 
