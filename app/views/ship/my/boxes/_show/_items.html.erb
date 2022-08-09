@@ -1,15 +1,14 @@
 <table class="table is-striped is-borderless is-fullwidth">
   <thead>
     <tr class="has-text-weight-normal is-size-7">
-      <th><%= Ship::Package.human_attribute_name(:state) %></th>
-      <th class="has-text-centered">
+      <th>
         <p><%= Ship::Package.human_attribute_name(:id) %></p>
       </th>
-      <th class="has-text-centered">
+      <th>
         <p><%= Ship::Package.human_attribute_name(:boxed_in_at) %></p>
         <p><%= Ship::Package.human_attribute_name(:boxed_out_at) %></p>
       </th>
     </tr>
   </thead>
-  <%= render partial: 'package', collection: @box.packages, as: :model %>
+  <%= render partial: 'package', collection: @box.box_logs, as: :model %>
 </table>
