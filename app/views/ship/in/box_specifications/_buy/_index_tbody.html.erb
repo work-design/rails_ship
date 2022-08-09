@@ -1,6 +1,5 @@
 <td>
   <p><%= model.name %></p>
-  <p class="has-text-grey"><%= model.organ&.name %></p>
 </td>
 <td><%= model.measure %></td>
 <td class="has-text-danger"><%= model.price.to_money.format(html_wrap: true).html_safe %></td>
