@@ -38,6 +38,10 @@ module Ship
       package.save
     end
 
+    def duration_obj
+      ActiveSupport::Duration.build(duration)
+    end
+
   end
 
 end
