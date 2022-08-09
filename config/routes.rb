@@ -33,7 +33,15 @@ Rails.application.routes.draw do
         end
         resources :stations
         resources :box_specifications do
-          resources :boxes
+          resources :boxes do
+            collection do
+              post :batch
+              match :batch_pdf, via: [:get, :post]
+            end
+            member do
+              get :pdf
+            end
+          end
         end
       end
       namespace :admin, defaults: { namespace: 'admin' } do
