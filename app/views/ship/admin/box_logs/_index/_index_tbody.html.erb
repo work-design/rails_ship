@@ -3,4 +3,9 @@
   <p class="has-text-danger"><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.boxed_out_at&.to_fs(:iso8601) %></time></p>
 </td>
 <td><%= model.duration %></td>
-<td><%= model.package_id %></td>
+<td>
+  <%= link_to({ controller: 'admin/packages', action: 'show', id: model.package_id }, data: { turbo_frame: 'modal' }) do %>
+    <i class="fa-solid fa-box"></i>
+    <span class="pl-1"><%= model.package_id %></span>
+  <% end %>
+</td>
