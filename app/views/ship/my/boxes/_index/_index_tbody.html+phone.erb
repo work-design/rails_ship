@@ -3,6 +3,16 @@
   <span class="tag"><%= model.status_i18n %></span>
 </p>
 <p><%= model.box_specification.measure %></p>
-<div class="weui-media-box__desc">
-  <p><%= model.rented_i18n %></p>
+<div>
+<% if model.held_user_id == model.owned_user_id %>
+  <div class="tags has-addons">
+    <span class="tag is-primary"><i class="fa-solid fa-check"></i></span>
+    <span class="tag">自购</span>
+  </div>
+<% elsif model.rented %>
+  <div class="tags has-addons">
+    <span class="tag is-info"><i class="fa-solid fa-hand-holding-box"></i></span>
+    <span class="tag">租用</span>
+  </div>
+<% end %>
 </div>
