@@ -58,6 +58,6 @@ zh:
         state:
           loaded: 已装车
           unloaded: 已卸车
-        rented:
-          true: 租用中
-          false: 持有中
+        rentable:
+          true: 可租
+          false: 不可租
