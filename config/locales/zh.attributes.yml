@@ -29,6 +29,7 @@ zh:
         owned_organ_id: 所有权
         held_organ_id: 持有者
         status: 状态
+        rentable: 是否可租
       ship/shipment:
         line_id: 路线
         car_id: 车牌号
