@@ -226,6 +226,9 @@ Rails.application.routes.draw do
           collection do
             get :owned
           end
+          member do
+            get :owned_show
+          end
         end
         resources :addresses do
           collection do
