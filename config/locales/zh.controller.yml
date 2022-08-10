@@ -118,14 +118,14 @@ zh:
       title: 订购/租用
       box_specifications:
         index:
-          title: 物流箱规格
+          title: 买/租物流箱
         rent:
           title: 租物流箱
         buy:
           title: 购买物流箱
       boxes:
         index:
-          title: 所有物流箱
+          title: 持有物流箱
         invest:
           title: 买入
         rent:
