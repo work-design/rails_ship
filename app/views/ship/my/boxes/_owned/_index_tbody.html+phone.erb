@@ -5,18 +5,14 @@
 <p><%= model.box_specification.measure %></p>
 <div class="is-flex is-align-content-center py-2">
   <% if model.held_user_id == model.owned_user_id %>
-    <div class="tags has-addons mb-0">
-      <span class="tag is-primary"><i class="fa-solid fa-check"></i></span>
-      <span class="tag">自用</span>
+    <div class="tags has-addons ml-2">
+      <span class="tag <%= model.rentable ? 'is-info' : 'is-danger' %>"><i class="fa-solid fa-hand-holding-box"></i></span>
+      <span class="tag"><%= model.rentable_i18n %></span>
     </div>
-  <% elsif model.rented %>
+  <% else %>
     <div class="tags has-addons mb-0">
       <span class="tag is-info"><i class="fa-solid fa-hand-holding-box"></i></span>
       <span class="tag">租出</span>
     </div>
   <% end %>
-  <div class="tags has-addons ml-2">
-    <span class="tag <%= model.rentable ? 'is-info' : 'is-danger' %>"><i class="fa-solid fa-hand-holding-box"></i></span>
-    <span class="tag"><%= model.rentable_i18n %></span>
-  </div>
 </div>

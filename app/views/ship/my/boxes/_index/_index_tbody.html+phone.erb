@@ -13,6 +13,7 @@
   <div class="tags has-addons">
     <span class="tag is-info"><i class="fa-solid fa-hand-holding-box"></i></span>
     <span class="tag">租用</span>
+    <span class="tag"><%= model.owned_user&.name || model.owned_organ&.name %></span>
   </div>
 <% end %>
 </div>
