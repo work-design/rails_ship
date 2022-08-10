@@ -2,11 +2,17 @@ module Ship
   class My::AddressesController < My::BaseController
     before_action :set_address, only: [:show, :edit, :update, :destroy, :actions]
     before_action :set_new_address, only: [:new, :create, :order_new, :order_create]
-    before_action :set_cart, only: [:index, :new, :create]
+    before_action :set_cart, only: [:cart, :new, :create]
 
     def index
       q_params = {}
       q_params.merge! params.permit(:station_id)
+
+      @addresses = current_user.addresses.includes(:area).default_where(q_params).page(params[:page])
+    end
+
+    def cart
+      q_params = {}
 
       @addresses = current_user.addresses.includes(:area).default_where(q_params).page(params[:page])
     end

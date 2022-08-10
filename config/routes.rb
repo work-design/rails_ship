@@ -232,6 +232,7 @@ Rails.application.routes.draw do
         end
         resources :addresses do
           collection do
+            get :cart
             post :order
             post :order_new
             post :order_create
