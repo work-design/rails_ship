@@ -1,10 +1,10 @@
 <td>
   <p><time data-controller="time"><%= model.rent_start_at&.to_fs(:iso8601) %></time></p>
-  <p><time data-controller="time"><%= model.rent_estimate_finish_at&.to_fs(:iso8601) %></time></p>
+  <p><time data-controller="time"><%= model.rent_finish_at&.to_fs(:iso8601) %></time></p>
 </td>
-<td><time data-controller="time"><%= model.rent_finish_at&.to_fs(:iso8601) %></time></td>
+<td><time data-controller="time"><%= model.trade_item.rent_estimate_finish_at&.to_fs(:iso8601) %></time></td>
 <td>
-<% if model.renting? && model.rent_start_at %>
+<% if model.rent_finish_at.blank? %>
   <time data-controller="count-up" data-count-up-time-value="<%= model.rent_start_at&.to_fs(:iso8601) %>" class="has-text-mono"><%= exact_distance_time(model.rent_start_at, Time.current) %></time>
 <% else %>
   <%= model.duration.inspect %>
