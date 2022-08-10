@@ -222,7 +222,11 @@ Rails.application.routes.draw do
           resources :locations
         end
         resources :stations
-        resources :boxes
+        resources :boxes do
+          collection do
+            get :owned
+          end
+        end
         resources :addresses do
           collection do
             post :order

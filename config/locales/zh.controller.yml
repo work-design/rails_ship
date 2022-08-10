@@ -152,6 +152,8 @@ zh:
       boxes:
         index:
           title: 持有物流箱
+        owned:
+          title: 所有物流箱
       packages:
         index:
           title: 包裹列表
