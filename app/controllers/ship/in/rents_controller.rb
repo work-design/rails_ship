@@ -21,7 +21,7 @@ module Ship
     end
 
     def compute
-      @rent.compute_amount
+      @rent.compute_duration
       @rent.save
     end
 
