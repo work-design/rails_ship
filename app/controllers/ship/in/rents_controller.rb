@@ -21,7 +21,8 @@ module Ship
     end
 
     def compute
-      @rent.compute_later
+      @rent.compute_amount
+      @rent.save
     end
 
     private
