@@ -10,7 +10,7 @@ module Ship
       }
       q_params.merge! params.permit(:id, :payment_type, :payment_status, :state)
 
-      @rents = @box.rents.includes(:trade_item).default_where(q_params).order(id: :desc).page(params[:page])
+      @rents = @box.rents.includes(:item).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def promote
