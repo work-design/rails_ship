@@ -58,7 +58,7 @@ Rails.application.routes.draw do
             get :packaged
             post :search
           end
-          resources :trade_items, only: [] do
+          resources :items, only: [] do
             collection do
               get :packable
               get :packaged
@@ -66,7 +66,7 @@ Rails.application.routes.draw do
             end
           end
         end
-        resources :trade_items, except: [:destroy]
+        resources :items, except: [:destroy]
         resources :packages, except: [:new, :create] do
           resources :packageds
           collection do
@@ -146,9 +146,9 @@ Rails.application.routes.draw do
             get :payment_types
             get 'payment_type' => :edit_payment_type
           end
-          resources :trade_items
+          resources :items
         end
-        resources :trade_items
+        resources :items
       end
       namespace :out, defaults: { namespace: 'out' } do
         resources :boxes do
@@ -161,7 +161,7 @@ Rails.application.routes.draw do
             get :payment_types
             get 'payment_type' => :edit_payment_type
           end
-          resources :trade_items
+          resources :items
         end
         resources :rents do
           member do

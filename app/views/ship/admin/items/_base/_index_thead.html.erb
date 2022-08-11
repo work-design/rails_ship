@@ -1,0 +1,14 @@
+<th>
+  <span><%= Trade::Item.human_attribute_name(:good_id) %></span>
+  <span class="has-text-grey">(<%= Trade::Item.human_attribute_name(:number) %>)</span>
+</th>
+<th>
+  <p class="has-text-success"><%= Trade::Item.human_attribute_name(:from_station_id) %></p>
+  <p class="has-text-danger"><%= Trade::Item.human_attribute_name(:station_id) %></p>
+</th>
+<th>
+  <p class="has-text-success"><%= Trade::Item.human_attribute_name(:from_address_id) %></p>
+  <p class="has-text-danger"><%= Trade::Item.human_attribute_name(:address_id) %></p>
+</th>
+<th><%= Trade::Item.human_attribute_name(:produce_plan_id) %></th>
+<th><%= Trade::Item.human_attribute_name(:status) %></th>
