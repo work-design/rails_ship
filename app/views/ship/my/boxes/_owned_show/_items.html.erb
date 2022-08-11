@@ -2,13 +2,11 @@
   <thead>
     <tr class="has-text-weight-normal is-size-7">
       <th>
-        <p><%= Ship::Package.human_attribute_name(:id) %></p>
+        <p><%= Trade::Rent.human_attribute_name(:rent_start_at) %></p>
+        <p><%= Trade::Rent.human_attribute_name(:rent_finish_at) %></p>
       </th>
-      <th>
-        <p><%= Ship::Package.human_attribute_name(:boxed_in_at) %></p>
-        <p><%= Ship::Package.human_attribute_name(:boxed_out_at) %></p>
-      </th>
+      <th><%= Trade::Rent.human_attribute_name(:duration) %></th>
     </tr>
   </thead>
-  <%= render partial: 'package', collection: @box.box_logs.order(id: :desc), as: :model %>
+  <%= render partial: 'package', collection: @box.rents.order(id: :desc), as: :model %>
 </table>
