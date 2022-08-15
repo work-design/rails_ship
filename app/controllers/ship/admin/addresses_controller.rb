@@ -7,7 +7,7 @@ module Ship
       q_params.merge! default_params
       q_params.merge! params.permit(:user_id)
 
-      r = Trade::TradeItem.packable.default_where(q_params).select(:address_id).page(params[:page]).group(:address_id).count
+      r = Trade::Item.packable.default_where(q_params).select(:address_id).page(params[:page]).group(:address_id).count
       @addresses = Profiled::Address.find(r.keys).zip r.values
     end
 
@@ -22,7 +22,7 @@ module Ship
       q_params = {}
       q_params.merge! default_params
 
-      r = Trade::TradeItem.packable.default_where(q_params).select(:from_address_id).page(params[:page]).group(:from_address_id).count
+      r = Trade::Item.packable.default_where(q_params).select(:from_address_id).page(params[:page]).group(:from_address_id).count
       @addresses = Profiled::Address.find(r.keys).zip r.values
     end
 
@@ -30,7 +30,7 @@ module Ship
       trade_q_params = {}
       trade_q_params.merge! default_params
 
-      r = Trade::TradeItem.packaged.default_where(trade_q_params).select(:address_id).page(params[:page]).group(:address_id).count
+      r = Trade::Item.packaged.default_where(trade_q_params).select(:address_id).page(params[:page]).group(:address_id).count
       @addresses = Profiled::Address.find(r.keys).zip r.values
     end
 
