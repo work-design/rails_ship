@@ -21,7 +21,7 @@ module Ship
     end
 
     def compute
-      @rent.compute_duration
+      @rent.estimate_finish_at = Time.current
       @rent.save
     end
 
