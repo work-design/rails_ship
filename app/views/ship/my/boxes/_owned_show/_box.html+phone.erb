@@ -9,16 +9,10 @@
       <span class="weui-form-preview__value"><%= @box.code %></span>
     </div>
     <div class="weui-form-preview__item">
-      <label class="weui-form-preview__label"><%= Ship::Box.human_attribute_name(:status) %></label>
-      <span class="weui-form-preview__value"><%= @box.status_i18n %></span>
-    </div>
-    <% if @box.item %>
-    <div class="weui-form-preview__item">
-      <label class="weui-form-preview__label"><%= Ship::Box.human_attribute_name(:trade_item_id) %></label>
+      <label class="weui-form-preview__label"><%= Ship::Box.human_attribute_name(:created_at) %></label>
       <span class="weui-form-preview__value">
         <time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= @box.item.created_at.to_fs(:iso8601) %></time>
       </span>
     </div>
-    <% end %>
   </div>
 </div>
