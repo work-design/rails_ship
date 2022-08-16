@@ -17,9 +17,9 @@
   </p>
 </td>
 <td>
-  <span><%= model.parameter %></span>
+  <span><%= model.parameter.to_money.format(html_wrap: true).html_safe %></span>
   <span>/</span>
   <span><%= model.promote.unit&.name %></span>
 </td>
-<td><%= model.base_price %></td>
+<td><%= model.base_price.to_money.format(html_wrap: true).html_safe %></td>
 <td><%= simple_format(model.extra) %></td>
