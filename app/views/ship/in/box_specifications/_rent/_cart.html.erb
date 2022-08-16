@@ -1,34 +1,34 @@
-<% trade_item = @cart.organ_trade_item(good_id: model.id, aim: 'rent') %>
+<% item = @cart.organ_item(good_id: model.id, aim: 'rent') %>
 
-<% if trade_item %>
-<%= form_with theme: nil, scope: 'trade_item', url: { controller: 'trade/in/trade_items', action: 'update', id: trade_item.id }, method: :patch, class: 'button_to', data: { turbo_scroll: true } do |f| %>
+<% if item %>
+<%= form_with theme: nil, scope: 'item', url: { controller: 'trade/in/items', action: 'update', id: item.id }, method: :patch, class: 'button_to', data: { turbo_scroll: true } do |f| %>
   <%= f.hidden_field :current_cart_id, value: @cart.id %>
-  <%= f.hidden_field :number, value: trade_item.number - 1 %>
+  <%= f.hidden_field :number, value: item.number - 1 %>
   <%= button_tag class: 'mr-1' do %>
     <i class="fa-solid fa-circle-minus fa-xl has-text-dark-grey"></i>
   <% end %>
-<% end if trade_item.number > 1 %>
-<%= button_to({ controller: 'trade/in/trade_items', action: 'destroy', id: trade_item.id }, method: :delete, class: 'mr-1', form: { data: { turbo_scroll: true } }) do %>
+<% end if item.number > 1 %>
+<%= button_to({ controller: 'trade/in/items', action: 'destroy', id: item.id }, method: :delete, class: 'mr-1', form: { data: { turbo_scroll: true } }) do %>
   <i class="fa-solid fa-circle-minus fa-xl has-text-dark-grey"></i>
-<% end if trade_item.number <= 1 %>
-<%= form_with(theme: nil, scope: 'trade_item', url: { controller: 'trade/in/trade_items', action: 'update', id: trade_item.id }, method: :patch, data: { controller: 'input', turbo_scroll: true }) do |f| %>
+<% end if item.number <= 1 %>
+<%= form_with(theme: nil, scope: 'item', url: { controller: 'trade/in/items', action: 'update', id: item.id }, method: :patch, data: { controller: 'input', turbo_scroll: true }) do |f| %>
   <%= f.hidden_field :current_cart_id, value: @cart.id %>
-  <%= f.number_field :number, value: trade_item.number, data: { action: 'change->input#form' }, class: 'has-background-light has-text-centered', style: 'width: 3rem' %>
+  <%= f.number_field :number, value: item.number, data: { action: 'change->input#form' }, class: 'has-background-light has-text-centered', style: 'width: 3rem' %>
 <% end %>
-<%= form_with theme: nil, scope: 'trade_item', url: { controller: 'trade/in/trade_items', action: 'update', id: trade_item.id }, method: :patch, class: 'button_to', data: { turbo_scroll: true } do |f| %>
+<%= form_with theme: nil, scope: 'item', url: { controller: 'trade/in/items', action: 'update', id: item.id }, method: :patch, class: 'button_to', data: { turbo_scroll: true } do |f| %>
   <%= f.hidden_field :current_cart_id, value: @cart.id %>
-  <%= f.hidden_field :number, value: trade_item.number + 1 %>
+  <%= f.hidden_field :number, value: item.number + 1 %>
   <%= button_tag class: 'ml-1' do %>
     <i class="fa-solid fa-circle-plus fa-xl has-text-dark-grey"></i>
   <% end %>
 <% end %>
 <% end %>
 
-<%= form_with theme: nil, url: { controller: 'trade/in/trade_items', action: 'create' }, data: { turbo_scroll: true }, class: 'button_to' do |f| %>
+<%= form_with theme: nil, url: { controller: 'trade/in/items', action: 'create' }, data: { turbo_scroll: true }, class: 'button_to' do |f| %>
   <%= f.hidden_field :current_cart_id, value: @cart.id %>
   <%= f.hidden_field :good_type, value: model.class_name %>
   <%= f.hidden_field :good_id, value: model.id %>
   <%= button_tag do %>
     <i class="fa-solid fa-circle-plus fa-xl has-text-dark-grey"></i>
   <% end %>
-<% end unless trade_item %>
+<% end unless item %>
