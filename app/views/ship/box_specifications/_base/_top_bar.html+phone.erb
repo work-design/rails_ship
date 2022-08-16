@@ -7,4 +7,8 @@
     <i class="fa-solid fa-hand-holding-box"></i>
     <span><%= t('ship.box_specifications.rent.title') %></span>
   <% end %>
+  <%= link_to({ action: 'invest' }, class: active_helper(action: 'invest', item: 'weui-navbar__item', active: 'weui-navbar__item weui-bar__item_on')) do %>
+    <i class="fa-solid fa-hand-holding-box"></i>
+    <span><%= t('ship.box_specifications.invest.title') %></span>
+  <% end %>
 </div>
