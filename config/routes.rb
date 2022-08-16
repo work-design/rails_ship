@@ -226,6 +226,7 @@ Rails.application.routes.draw do
         resources :boxes do
           collection do
             get :owned
+            get :invest
           end
           member do
             get :owned_show

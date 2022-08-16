@@ -7,7 +7,11 @@ module Ship
     end
 
     def owned
-      @boxes = current_user.owned_boxes.includes(:box_specification).order(id: :desc).page(params[:page])
+      @boxes = current_user.owned_boxes.where(rentable: false).includes(:box_specification).order(id: :desc).page(params[:page])
+    end
+
+    def invest
+      @boxes = current_user.owned_boxes.rentable.includes(:box_specification).order(id: :desc).page(params[:page])
     end
 
     def owned_show

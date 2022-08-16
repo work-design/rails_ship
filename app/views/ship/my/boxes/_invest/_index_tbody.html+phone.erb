@@ -1,0 +1,11 @@
+<p>
+  <strong><%= link_to model.code, { action: 'owned_show', id: model.id }, text: true %></strong>
+  <span class="tag"><%= model.status_i18n %></span>
+</p>
+<p><%= model.box_specification.measure %></p>
+<div class="is-flex is-align-content-center py-2">
+  <div class="tags has-addons ml-2">
+    <span class="tag <%= model.rented ? 'is-info' : 'is-danger' %>"><i class="fa-solid fa-hand-holding-box"></i></span>
+    <span class="tag"><%= model.rented_i18n %></span>
+  </div>
+</div>

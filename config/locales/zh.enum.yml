@@ -61,3 +61,6 @@ zh:
         rentable:
           true: 可租
           false: 不可租
+        rented:
+          true: 已租出
+          false: 待租
