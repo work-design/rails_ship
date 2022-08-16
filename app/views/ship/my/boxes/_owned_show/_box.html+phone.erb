@@ -14,7 +14,7 @@
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label">出租收益</label>
-      <span class="weui-form-preview__value has-text-danger"><%= @box.rents.sum(:amount).to_money.format(html_wrap: true) %></span>
+      <span class="weui-form-preview__value has-text-danger"><%= @box.rents.sum(:amount).to_money.format(html_wrap: true).html_safe %></span>
     </div>
   </div>
 </div>
