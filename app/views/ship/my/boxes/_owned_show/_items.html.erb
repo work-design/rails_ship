@@ -9,6 +9,7 @@
         <p><%= Trade::Rent.human_attribute_name(:duration) %></p>
         <p><%= Trade::Rent.human_attribute_name(:amount) %></p>
       </th>
+      <th><%= Trade::Rent.human_attribute_name(:invest_amount) %></th>
     </tr>
   </thead>
   <%= render partial: 'package', collection: @box.rents.order(id: :desc), as: :model %>

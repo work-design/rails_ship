@@ -21,6 +21,8 @@ zh:
         height: 高
         boxes_count: 箱子数
         organ_id: 生产厂家
+        price: 售价
+        invest_ratio: 出租分成
       ship/box:
         box_specification_id: 规格
         trade_item_id: 对应订单

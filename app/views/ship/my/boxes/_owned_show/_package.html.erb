@@ -7,4 +7,5 @@
     <p class="p-1"><%= model.duration %></p>
     <p><%= model.amount.to_money.format(html_wrap: true).html_safe %></p>
   </td>
+  <td class="has-text-danger"><%= model.invest_amount.to_money.format(html_wrap: true).html_safe %></td>
 </tr>

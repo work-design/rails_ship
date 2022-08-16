@@ -14,7 +14,15 @@
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label">出租收益</label>
-      <span class="weui-form-preview__value has-text-danger"><%= @box.rents.sum(:amount).to_money.format(html_wrap: true).html_safe %></span>
+      <span class="weui-form-preview__value"><%= @box.rents.sum(:amount).to_money.format(html_wrap: true).html_safe %></span>
+    </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label">当前收益率</label>
+      <span class="weui-form-preview__value"><%= (@box.box_specification.invest_ratio * 100).to_fs(:percentage, precision: 0) %></span>
+    </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label">分成金额</label>
+      <span class="weui-form-preview__value has-text-danger"><%= @box.rents.sum(:invest_amount).to_money.format(html_wrap: true).html_safe %></span>
     </div>
   </div>
 </div>
