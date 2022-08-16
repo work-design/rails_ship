@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :box_specifications do
         collection do
           get :rent
+          get :invest
         end
       end
       resources :boxes, only: [] do

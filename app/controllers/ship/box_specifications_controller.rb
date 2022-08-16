@@ -3,6 +3,7 @@ module Ship
     before_action :set_box_specification, only: [:show, :update]
     before_action :set_use_cart, only: [:index]
     before_action :set_rent_cart, only: [:rent]
+    before_action :set_invest_cart, only: [:invest]
     before_action :set_cart, only: [:show]
 
     def index
@@ -19,14 +20,21 @@ module Ship
       @box_specifications = BoxSpecification.page(params[:page])
     end
 
+    def invest
+      q_params = {}
+      q_params.merge! default_params
+
+      @box_specifications = BoxSpecification.page(params[:page])
+    end
+
     def show
       @order = current_user.orders.build(order_params)
-      @trade_item = @order.trade_items.build
+      @trade_item = @order.items.build
     end
 
     def update
       @order = current_user.orders.build(order_params)
-      @trade_item = @order.trade_items[0]
+      @trade_item = @order.items[0]
       @trade_item.valid?
       @trade_item.compute
     end
@@ -46,6 +54,10 @@ module Ship
 
     def set_rent_cart
       @cart = current_carts.find_or_create_by(good_type: 'Ship::BoxSpecification', aim: 'rent')
+    end
+
+    def set_invest_cart
+      @cart = current_carts.find_or_create_by(good_type: 'Ship::BoxSpecification', aim: 'invest')
     end
 
     def order_params
