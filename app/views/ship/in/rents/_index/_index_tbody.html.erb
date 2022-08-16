@@ -2,13 +2,15 @@
   <p><time data-controller="time"><%= model.start_at&.to_fs(:iso8601) %></time></p>
   <p><time data-controller="time"><%= model.finish_at&.to_fs(:iso8601) %></time></p>
 </td>
-<td><time data-controller="time"><%= model.estimate_finish_at&.to_fs(:iso8601) %></time></td>
 <td>
-<% if model.finish_at.blank? %>
-  <time data-controller="count-up" data-count-up-time-value="<%= model.start_at&.to_fs(:iso8601) %>" class="has-text-mono"><%= exact_distance_time(model.rent_start_at, Time.current) %></time>
-<% else %>
-  <%= model.duration.inspect %>
-<% end %>
+  <p class="has-text-grey is-size-7"><time data-controller="time"><%= model.estimate_finish_at&.to_fs(:iso8601) %></time></p>
+  <p>
+  <% if model.finish_at.blank? %>
+    <time data-controller="count-up" data-count-up-time-value="<%= model.start_at&.to_fs(:iso8601) %>" class="has-text-mono"><%= exact_distance_time(model.start_at, Time.current) %></time>
+  <% else %>
+    <%= model.duration.inspect %>
+  <% end %>
+  </p>
 </td>
 <td>
   <%= link_to({ action: 'promote', id: model.id }, data: { turbo_frame: 'modal' }) do %>

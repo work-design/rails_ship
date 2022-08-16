@@ -2,6 +2,8 @@
   <p><%= Trade::Rent.human_attribute_name(:start_at) %></p>
   <p><%= Trade::Rent.human_attribute_name(:finish_at) %></p>
 </th>
-<th><%= Trade::Item.human_attribute_name(:estimate_finish_at) %></th>
-<th><%= Trade::Rent.human_attribute_name(:duration) %></th>
+<th>
+  <p class="has-text-grey"><%= Trade::Item.human_attribute_name(:estimate_finish_at) %></p>
+  <p><%= Trade::Rent.human_attribute_name(:duration) %></p>
+</th>
 <th><%= Trade::Rent.human_attribute_name(:amount) %></th>
