@@ -9,10 +9,12 @@
       <span class="weui-form-preview__value"><%= @box.code %></span>
     </div>
     <div class="weui-form-preview__item">
-      <label class="weui-form-preview__label"><%= Ship::Box.human_attribute_name(:created_at) %></label>
-      <span class="weui-form-preview__value">
-        <time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= @box.item.created_at.to_fs(:iso8601) %></time>
-      </span>
+      <label class="weui-form-preview__label"><%= Ship::Box.human_attribute_name(:rents_count) %></label>
+      <span class="weui-form-preview__value"><%= @box.rents_count %></span>
+    </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label">出租收益</label>
+      <span class="weui-form-preview__value has-text-danger"><%= @box.rents.sum(:amount).to_money.format(html_wrap: true) %></span>
     </div>
   </div>
 </div>

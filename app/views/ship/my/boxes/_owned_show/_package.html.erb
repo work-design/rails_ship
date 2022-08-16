@@ -4,6 +4,7 @@
     <p><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.finish_at&.to_fs(:iso8601) %></time></p>
   </td>
   <td>
-    <span class="p-1"><%= model.duration %></span>
+    <p class="p-1"><%= model.duration %></p>
+    <p><%= model.amount.to_money.format(html_wrap: true).html_safe %></p>
   </td>
 </tr>
