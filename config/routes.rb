@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       resources :boxes, only: [] do
         member do
           get :qrcode
+          get 'in' => :in_edit
+          post 'in' => :in_update
         end
       end
       resources :shipments, only: [] do
