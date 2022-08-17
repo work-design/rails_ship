@@ -8,6 +8,9 @@ Rails.application.routes.draw do
         end
       end
       resources :boxes, only: [] do
+        collection do
+          post :in_create
+        end
         member do
           get :qrcode
           get 'in' => :in_edit
