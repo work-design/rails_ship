@@ -1,0 +1,10 @@
+<table class="table is-striped is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <%= render 'index_thead' %>
+    </tr>
+  </thead>
+  <tbody id="tbody">
+    <%= render partial: 'index_tbody', layout: 'index_tr', collection: @promote.promote_charges, as: :model %>
+  </tbody>
+</table>

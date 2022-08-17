@@ -1,0 +1,27 @@
+<table class="table is-fullwidth is-hoverable as-show">
+  <tbody>
+    <% if @rent.job %>
+    <tr>
+      <td class="has-text-right"><%= GoodJob::ActiveJobJob.human_attribute_name(:active_job_id) %></td>
+      <td><%= @rent.job.active_job_id %></td>
+    </tr>
+    <tr>
+      <td class="has-text-right"><%= GoodJob::ActiveJobJob.human_attribute_name(:scheduled_at) %></td>
+      <td><time data-controller="time"><%= @rent.job.scheduled_at.to_fs(:iso8601) %></time></td>
+    </tr>
+    <tr>
+      <td class="has-text-right"><%= GoodJob::ActiveJobJob.human_attribute_name(:status) %></td>
+      <td><%= @rent.job.status %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="2" class="has-text-centered">
+        <%= button_to({ action: 'compute' }, method: :put, class: 'button is-small is-warning') do %>
+          <span>重新计算</span>
+        <% end %>
+      </td>
+    </tr>
+  </tfoot>
+</table>

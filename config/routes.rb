@@ -43,6 +43,13 @@ Rails.application.routes.draw do
               get :pdf
             end
             resources :box_logs
+            resources :rents do
+              member do
+                get :promote
+                get :job
+                put :compute
+              end
+            end
           end
         end
       end

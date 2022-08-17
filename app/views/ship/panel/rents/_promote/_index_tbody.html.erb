@@ -1,0 +1,25 @@
+<td>
+  <p>
+    <span class="pr-1"><%= model.min %></span>
+    <% if model.contain_min %>
+      <i class="fa-light fa-check has-text-success"></i>
+    <% else %>
+      <i class="fa-light fa-times has-text-danger"></i>
+    <% end %>
+  </p>
+  <p>
+    <span class="pr-1"><%= model.max %></span>
+    <% if model.contain_max %>
+      <i class="fa-light fa-check has-text-success"></i>
+    <% else %>
+      <i class="fa-light fa-times has-text-danger"></i>
+    <% end %>
+  </p>
+</td>
+<td>
+  <span><%= model.parameter.to_money.format(html_wrap: true).html_safe %></span>
+  <span>/</span>
+  <span><%= model.promote.unit&.name %></span>
+</td>
+<td><%= model.base_price.to_money.format(html_wrap: true).html_safe %></td>
+<td><%= simple_format(model.extra) %></td>

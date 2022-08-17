@@ -31,6 +31,9 @@ zh:
       boxes:
         index:
           title: 物流箱明细
+      box_logs:
+        index:
+          title: 使用记录
     admin:
       title: 发货管理
       home:
