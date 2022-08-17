@@ -2,7 +2,10 @@
   <div class="weui-form-preview__bd">
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::Box.human_attribute_name(:box_specification_id) %></label>
-      <span class="weui-form-preview__value"><%= @box.box_specification.measure %></span>
+      <span class="weui-form-preview__value">
+        <span><%= @box.box_specification.measure %></span>
+        <span class="tag"><%= @box.box_specification.name %></span>
+      </span>
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::Box.human_attribute_name(:code) %></label>
