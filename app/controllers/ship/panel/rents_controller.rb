@@ -35,7 +35,7 @@ module Ship
 
     def rent_params
       params.fetch(:rent, {}).permit(
-        :estimate_finish_at
+        :finish_at
       )
     end
 
