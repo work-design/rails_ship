@@ -17,7 +17,7 @@
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::Box.human_attribute_name(:organ_id) %></label>
-      <span class="weui-form-preview__value"><%= @box.organ.name %></span>
+      <span class="weui-form-preview__value has-text-danger"><%= @box.organ&.name %></span>
     </div>
   </div>
 </div>
