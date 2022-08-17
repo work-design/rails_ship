@@ -5,7 +5,6 @@ module Ship
 
     def index
       q_params = {
-        member_organ_id: current_organ.id,
         status: ['ordered', 'paid']
       }
       q_params.merge! params.permit(:id, :payment_type, :payment_status, :state)
