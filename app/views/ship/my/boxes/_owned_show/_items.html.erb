@@ -12,5 +12,5 @@
       <th><%= Trade::Rent.human_attribute_name(:invest_amount) %></th>
     </tr>
   </thead>
-  <%= render partial: 'package', collection: @box.rents.order(id: :desc), as: :model %>
+  <%= render partial: 'rent', collection: @box.rents.order(id: :desc), as: :model %>
 </table>

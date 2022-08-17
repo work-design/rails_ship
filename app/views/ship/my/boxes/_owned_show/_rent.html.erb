@@ -4,7 +4,10 @@
     <p><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.finish_at&.to_fs(:iso8601) %></time></p>
   </td>
   <td>
-    <p class="p-1"><%= model.duration %></p>
+    <p class="p-1">
+      <span><%= model.duration %></span>
+      <span><%= model.promote.unit %></span>
+    </p>
     <p><%= model.amount.to_money.format(html_wrap: true).html_safe %></p>
   </td>
   <td class="has-text-danger"><%= model.invest_amount.to_money.format(html_wrap: true).html_safe %></td>
