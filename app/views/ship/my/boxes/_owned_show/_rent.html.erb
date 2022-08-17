@@ -6,7 +6,7 @@
   <td>
     <p class="p-1">
       <span><%= model.duration %></span>
-      <span><%= model.promote.unit %></span>
+      <span><%= model.promote.unit.name %></span>
     </p>
     <p><%= model.amount.to_money.format(html_wrap: true).html_safe %></p>
   </td>
