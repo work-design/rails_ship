@@ -1,7 +1,7 @@
 <tr>
-  <td class="has-text-mono">
-    <p><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.start_at&.to_fs(:iso8601) %></time></p>
-    <p><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.finish_at&.to_fs(:iso8601) %></time></p>
+  <td class="has-text-mono is-size-7">
+    <p class="has-text-success"><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.start_at&.to_fs(:iso8601) %></time></p>
+    <p class="has-text-danger"><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.finish_at&.to_fs(:iso8601) %></time></p>
   </td>
   <td>
     <p class="p-1">
