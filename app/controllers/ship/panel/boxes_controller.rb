@@ -4,7 +4,7 @@ module Ship
     before_action :set_box, only: [:show, :edit, :update, :destroy, :actions]
 
     def index
-      @boxes = @box_specification.boxes.page(params[:page])
+      @boxes = @box_specification.boxes.order(id: :desc).page(params[:page])
     end
 
     private
