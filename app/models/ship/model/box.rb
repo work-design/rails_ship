@@ -37,10 +37,12 @@ module Ship
       after_save :decrement_boxes_count, if: -> { saved_change_to_organ_id? && organ_id.blank? }
       after_save :increment_rented_count, if: -> { saved_change_to_rented? && rented? }
       after_save :decrement_rented_count, if: -> { saved_change_to_rented? && !rented? }
+      after_save :increment_rentable_count, if: -> { saved_change_to_rentable? && rentable? }
+      after_save :decrement_rentable_count, if: -> { saved_change_to_rentable? && !rentable? }
 
       after_destroy :decrement_rented_count, if: -> { rented? }
+      after_destroy :decrement_rentable_count, if: -> { rentable? }
       after_destroy :decrement_boxes_count
-
     end
 
     def init_code
@@ -65,6 +67,14 @@ module Ship
 
     def decrement_rented_count
       box_host&.decrement! :rented_count
+    end
+
+    def increment_rentable_count
+      box_host&.increment! :rentable_count
+    end
+
+    def decrement_rentable_count
+      box_host&.decrement! :rentable_count
     end
 
     def to_pdf

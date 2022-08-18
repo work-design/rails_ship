@@ -7,6 +7,11 @@ Rails.application.routes.draw do
           get :invest
         end
       end
+      resources :box_hosts, only: [:index] do
+        member do
+          get :rented
+        end
+      end
       resources :boxes, only: [] do
         collection do
           post :in_create
