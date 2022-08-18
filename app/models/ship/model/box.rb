@@ -22,6 +22,7 @@ module Ship
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 
       belongs_to :box_specification, counter_cache: true
+      belongs_to :box_host, ->(o){ where(organ_id: o.organ_id) }, foreign_key: :box_specification_id, primary_key: :box_specification_id, counter_cache: true, optional: true
 
       has_many :packages, dependent: :nullify
       has_one :shipment_item, -> { order(id: :desc) }
@@ -31,6 +32,15 @@ module Ship
       has_many :using_box_logs, -> { where(boxed_out_at: nil) }, class_name: 'BoxLog'
 
       before_validation :init_code, if: -> { code.blank? }
+      before_validation :init_box_host, if: -> { organ_id.present? && organ_id_changed? }
+    end
+
+    def init_code
+      self.code = UidHelper.usec_uuid('BOX')
+    end
+
+    def init_box_host
+      box_host || build_box_host
     end
 
     def to_pdf
@@ -58,10 +68,6 @@ module Ship
 
     def qrcode_enter_url
       QrcodeHelper.data_url(enter_url)
-    end
-
-    def init_code
-      self.code = UidHelper.usec_uuid('BOX')
     end
 
   end
