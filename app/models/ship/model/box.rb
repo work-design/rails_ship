@@ -33,9 +33,14 @@ module Ship
 
       before_validation :init_code, if: -> { code.blank? }
       before_validation :init_box_host, if: -> { organ_id.present? && organ_id_changed? }
-      after_save :increment_boxes_count, if: -> { organ_id.present? && saved_change_to_organ_id? }
-      after_save :decrement_boxes_count, if: -> { organ_id.blank? && saved_change_to_organ_id? }
+      after_save :increment_boxes_count, if: -> { saved_change_to_organ_id? && organ_id.present? }
+      after_save :decrement_boxes_count, if: -> { saved_change_to_organ_id? && organ_id.blank? }
+      after_save :increment_rented_count, if: -> { saved_change_to_rented? && rented? }
+      after_save :decrement_rented_count, if: -> { saved_change_to_rented? && !rented? }
+
+      after_destroy :decrement_rented_count, if: -> { rented? }
       after_destroy :decrement_boxes_count
+
     end
 
     def init_code
@@ -52,6 +57,14 @@ module Ship
 
     def decrement_boxes_count
       box_host&.decrement! :boxes_count
+    end
+
+    def increment_rented_count
+      box_host&.increment! :rented_count
+    end
+
+    def decrement_rented_count
+      box_host&.decrement! :rented_count
     end
 
     def to_pdf

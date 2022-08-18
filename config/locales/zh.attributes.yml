@@ -15,6 +15,9 @@ zh:
         registration: 行驶证
         number: 车牌号
         detail: 详情
+      ship/box_host:
+        boxes_count: 管理数
+        rented_count: 已租
       ship/box_specification:
         width: 宽
         length: 长
