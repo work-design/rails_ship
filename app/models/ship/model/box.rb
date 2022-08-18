@@ -22,7 +22,7 @@ module Ship
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 
       belongs_to :box_specification, counter_cache: true
-      belongs_to :box_host, ->(o){ where(organ_id: o.organ_id) }, foreign_key: :box_specification_id, primary_key: :box_specification_id, counter_cache: true, optional: true
+      belongs_to :box_host, ->(o){ where(organ_id: o.organ_id) }, foreign_key: :box_specification_id, primary_key: :box_specification_id, optional: true
 
       has_many :packages, dependent: :nullify
       has_one :shipment_item, -> { order(id: :desc) }
@@ -33,6 +33,9 @@ module Ship
 
       before_validation :init_code, if: -> { code.blank? }
       before_validation :init_box_host, if: -> { organ_id.present? && organ_id_changed? }
+      after_save :increment_boxes_count, if: -> { organ_id.present? && saved_change_to_organ_id? }
+      after_save :decrement_boxes_count, if: -> { organ_id.blank? && saved_change_to_organ_id? }
+      after_destroy :decrement_boxes_count
     end
 
     def init_code
@@ -41,6 +44,14 @@ module Ship
 
     def init_box_host
       box_host || build_box_host
+    end
+
+    def increment_boxes_count
+      box_host&.increment! :boxes_count
+    end
+
+    def decrement_boxes_count
+      box_host&.decrement! :boxes_count
     end
 
     def to_pdf

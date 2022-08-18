@@ -3,7 +3,7 @@ module Ship
     extend ActiveSupport::Concern
 
     included do
-      attribute :boxes_count, :integer, default: 1, comment: '以box 触发更新时已存在1'
+      attribute :boxes_count, :integer, default: 0
 
       belongs_to :organ, class_name: 'Org::Organ'
       belongs_to :box_specification
