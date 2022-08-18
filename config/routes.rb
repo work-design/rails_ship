@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       end
       resources :box_hosts, only: [:index] do
         member do
+          get :boxes
+          get :rentable
           get :rented
         end
       end

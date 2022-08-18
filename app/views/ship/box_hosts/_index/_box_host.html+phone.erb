@@ -2,17 +2,39 @@
   <%= link_to({ action: 'show', id: model.id }, text: true, class: 'weui-media-box__hd') do %>
     <%= image_tag model.box_specification.logo, class: 'weui-media-box__thumb' if model.box_specification.logo.attached? %>
   <% end %>
-  <div class="weui-media-box__bd is-flex is-flex-direction-column">
+  <div class="weui-media-box__bd">
     <%= link_to({ action: 'show', id: model.id }, text: true, class: 'weui-media-box__title') do %>
-      <%= model.box_specification.name %>
+      <span><%= model.box_specification.measure %></span>
+      <span class="tag"><%= model.box_specification.name %></span>
     <% end %>
-    <p class="weui-media-box__desc pt-0">
-      <%= model.box_specification.measure %>
-    </p>
-    <div class="is-flex is-align-items-center">
-
-    </div>
-    <div class="is-flex is-justify-content-flex-end pt-2">
+    <div class="columns is-flex is-align-items-center">
+      <%= link_to({ action: 'boxes', id: model }, class: 'column has-block-centered') do %>
+        <div class="has-text-grey-dark">
+          <i class="fa-light fa-tags has-text-primary"></i>
+          <span class="has-text-grey-dark is-size-7 pl-0"><%= Ship::BoxHost.human_attribute_name(:boxes_count) %></span>
+        </div>
+        <div class="has-text-weight-medium has-text-danger-dark is-family-zhushi is-size-5">
+          <%= model.boxes_count %>
+        </div>
+      <% end %>
+      <%= link_to({ action: 'rentable', id: model }, class: 'column has-block-centered') do %>
+        <div class="has-text-grey-dark">
+          <i class="fa-light fa-tags has-text-primary"></i>
+          <span class="has-text-grey-dark is-size-7 pl-0"><%= Ship::BoxHost.human_attribute_name(:rentable_count) %></span>
+        </div>
+        <div class="has-text-weight-medium has-text-danger-dark is-family-zhushi is-size-5">
+          <%= model.rentable_count %>
+        </div>
+      <% end %>
+      <%= link_to({ action: 'rented', id: model }, class: 'column has-block-centered') do %>
+        <div class="has-text-grey-dark">
+          <i class="fa-light fa-tags has-text-primary"></i>
+          <span class="has-text-grey-dark is-size-7 pl-0"><%= Ship::BoxHost.human_attribute_name(:rented_count) %></span>
+        </div>
+        <div class="has-text-weight-medium has-text-danger-dark is-family-zhushi is-size-5">
+          <%= model.rented_count %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

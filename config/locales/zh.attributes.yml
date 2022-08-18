@@ -18,6 +18,7 @@ zh:
       ship/box_host:
         boxes_count: 管理数
         rented_count: 已租
+        rentable_count: 可租
       ship/box_specification:
         width: 宽
         length: 长
