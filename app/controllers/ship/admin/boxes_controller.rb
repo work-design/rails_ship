@@ -5,7 +5,10 @@ module Ship
     before_action :set_box, only: [:pdf]
 
     def index
-      @boxes = @box_specification.boxes.includes(:held_organ, :owned_organ).order(id: :desc).page(params[:page])
+      q_params = {}
+      q_params.merge! default_params
+
+      @boxes = @box_specification.boxes.includes(:held_organ, :owned_organ).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def batch
