@@ -1,6 +1,6 @@
 module Ship
   class BoxHostsController < BaseController
-    before_action :set_box_host, only: [:show, :update]
+    before_action :set_box_host, only: [:show, :boxes, :rentable, :rented]
 
     def index
       q_params = {}
@@ -9,8 +9,16 @@ module Ship
       @box_hosts = BoxHost.page(params[:page])
     end
 
+    def boxes
+      @boxes = @box_host.boxes.page(params[:page])
+    end
+
+    def rentable
+      @boxes = @box_host.boxes.rentable.page(params[:page])
+    end
+
     def rented
-      @box_host.boxes.rented
+      @boxes = @box_host.boxes.rented.page(params[:page])
     end
 
     private

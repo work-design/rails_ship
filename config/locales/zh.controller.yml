@@ -8,6 +8,15 @@ zh:
         title: 租用物流箱
       invest:
         title: 投资物流箱
+    box_hosts:
+      index:
+        title: 运营明细
+      boxes:
+        title: 管理明细
+      rentable:
+        title: 可租明细
+      rented:
+        title: 已租明细
     panel:
       title: 运输管理
       home:
