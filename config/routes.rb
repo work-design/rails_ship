@@ -119,7 +119,7 @@ Rails.application.routes.draw do
             end
           end
         end
-        resources :box_specifications, only: [:index, :show] do
+        resources :box_hosts, only: [:index, :show] do
           resources :boxes do
             collection do
               post :batch
