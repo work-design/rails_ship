@@ -4,13 +4,13 @@
   <div class="weui-panel__bd">
     <%= render partial: 'box_specification', collection: @box_specifications, as: :model %>
     <% if @box_specifications.total_pages == @box_specifications.current_page %>
-      <%= render 'no_more' %>
+      <%= render 'page_no_more' %>
     <% elsif @box_specifications.blank? %>
-      <%= render 'blank' %>
+      <%= render 'page_blank' %>
     <% elsif @box_specifications.total_pages > @box_specifications.current_page %>
-      <%= render 'loading' %>
+      <%= render 'page_loading' %>
     <% else %>
-      <%= render 'tip' %>
+      <%= render 'page_tip' %>
     <% end %>
   </div>
   <%= render 'paginator' %>
