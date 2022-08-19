@@ -257,6 +257,7 @@ Rails.application.routes.draw do
             get :qrcode
             get :owned_show
           end
+          resources :rents
         end
         resources :addresses do
           collection do
