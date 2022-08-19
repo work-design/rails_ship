@@ -12,5 +12,32 @@
       <label class="weui-form-preview__label"><%= Ship::Box.human_attribute_name(:status) %></label>
       <span class="weui-form-preview__value"><%= @box.status_i18n %></span>
     </div>
+    <% if @box.current_rent %>
+      <div class="weui-form-preview__item">
+        <label class="weui-form-preview__label"><%= Trade::Rent.human_attribute_name(:start_at) %></label>
+        <span class="weui-form-preview__value has-text-success">
+          <time data-controller="time"><%= @box.current_rent.start_at.to_fs(:iso8601) %></time>
+        </span>
+      </div>
+    <% elsif @box.last_rent %>
+      <div class="weui-form-preview__item">
+        <label class="weui-form-preview__label"><%= Trade::Rent.human_attribute_name(:start_at) %></label>
+        <span class="weui-form-preview__value has-text-success">
+          <time data-controller="time"><%= @box.last_rent.start_at.to_fs(:iso8601) %></time>
+        </span>
+      </div>
+      <div class="weui-form-preview__item">
+        <label class="weui-form-preview__label"><%= Trade::Rent.human_attribute_name(:finish_at) %></label>
+        <span class="weui-form-preview__value has-text-danger">
+          <time data-controller="time"><%= @box.last_rent.finish_at.to_fs(:iso8601) %></time>
+        </span>
+      </div>
+      <div class="weui-form-preview__item">
+        <label class="weui-form-preview__label"><%= Trade::Rent.human_attribute_name(:duration) %></label>
+        <span class="weui-form-preview__value">
+          <span><%= @box.last_rent.duration %></span>
+        </span>
+      </div>
+    <% end %>
   </div>
 </div>

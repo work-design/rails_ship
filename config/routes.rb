@@ -158,6 +158,7 @@ Rails.application.routes.draw do
               get :promote
               get :job
               put :compute
+              patch :finish
             end
           end
         end
@@ -210,6 +211,11 @@ Rails.application.routes.draw do
             post :in
             post :out
             get :qrcode
+          end
+          resources :rents do
+            member do
+              patch :finish
+            end
           end
         end
         resources :cars do

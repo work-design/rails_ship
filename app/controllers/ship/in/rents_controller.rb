@@ -1,7 +1,7 @@
 module Ship
   class In::RentsController < In::BaseController
     before_action :set_box
-    before_action :set_rent, only: [:show, :promote, :edit, :update, :job, :compute]
+    before_action :set_rent, only: [:show, :promote, :edit, :update, :job, :compute, :finish]
 
     def index
       q_params = {
@@ -22,6 +22,11 @@ module Ship
 
     def compute
       @rent.estimate_finish_at = Time.current
+      @rent.save
+    end
+
+    def finish
+      @rent.finish_at = Time.current
       @rent.save
     end
 

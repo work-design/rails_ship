@@ -20,7 +20,6 @@ module Ship
       @boxes = Box.includes(:box_specification, :item).ordered.default_where(q_params).page(params[:page])
     end
 
-
     def rent
       q_params = {
         held_organ_id: current_organ.id,

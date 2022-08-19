@@ -8,4 +8,15 @@
     <button class="button is-success" data-action="scan#report" data-report-url="<%= url_for(controller: 'ship/me/boxes', action: 'in', id: @box.id) %>">包裹入仓</button>
     <button class="button is-info" data-action="scan#report" data-report-url="<%= url_for(controller: 'ship/me/boxes', action: 'out', id: @box.id) %>">包裹出仓</button>
   </div>
+  <div class="buttons are-large is-centered">
+  <% if @box.current_rent %>
+    <%= button_to({ controller: 'rents', action: 'finish', box_id: @box.id, id: @box.current_rent.id }, method: :patch, class: 'button is-warning') do %>
+      <span>结束租用</span>
+    <% end %>
+  <% else %>
+    <%= button_to({ controller: 'rents', action: 'create', box_id: @box.id }, class: 'button is-primary') do %>
+      <span>开始租用</span>
+    <% end %>
+  <% end %>
+  </div>
 </div>
