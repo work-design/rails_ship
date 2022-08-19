@@ -7,6 +7,9 @@
 >
   <div class="buttons are-large is-centered">
   <% if current_user.organ_ids.include?(@box.organ_id) %>
+    <%= button_to({ action: 'in_update' }, params: { organ_id: nil }, class: 'button is-warning') do %>
+      <span>取消入库</span>
+    <% end %>
     <button
       class="button is-info"
       data-action="scan#report"
