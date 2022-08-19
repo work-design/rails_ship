@@ -254,6 +254,7 @@ Rails.application.routes.draw do
             get :invest
           end
           member do
+            get :qrcode
             get :owned_show
           end
         end

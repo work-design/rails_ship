@@ -1,0 +1,20 @@
+<div
+  data-controller="scan"
+  data-scan-debug-value="false"
+  data-scan-apis-value="<%= ['scanQRCode'].to_json %>"
+  data-scan-options-value="<%= current_js_app&.js_config(request.original_url).to_json %>"
+  data-scan-params-value="<%= { organ_id: @box.organ_id }.to_json %>"
+>
+  <div class="buttons are-large is-centered">
+    <%= form_with model: @order, url: { controller: 'trade/my/orders', action: 'add' }, class: 'button_to' do |f| %>
+      <%= f.fields :items do |ef| %>
+        <%= ef.hidden_field :good_type, value: @box.class_name %>
+        <%= ef.hidden_field :good_id, value: @box.id %>
+        <%= ef.hidden_field :aim, value: 'rent' %>
+      <% end %>
+      <%= button_tag class: 'button is-primary' do %>
+        <span>开始租用</span>
+      <% end %>
+    <% end if false %>
+  </div>
+</div>
