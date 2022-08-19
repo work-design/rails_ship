@@ -1,12 +1,12 @@
 <tr>
-  <td class="has-text-right"><%= Trade::TradeItem.human_attribute_name(:good_id) %></td>
-  <td><%= @trade_item.good_name %></td>
+  <td class="has-text-right"><%= Trade::Item.human_attribute_name(:good_id) %></td>
+  <td><%= @item.good_name %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Trade::TradeItem.human_attribute_name(:number) %></td>
-  <td><%= @trade_item.number %></td>
+  <td class="has-text-right"><%= Trade::Item.human_attribute_name(:number) %></td>
+  <td><%= @item.number %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Trade::TradeItem.human_attribute_name(:status) %></td>
-  <td><%= @trade_item.status_i18n %></td>
+  <td class="has-text-right"><%= Trade::Item.human_attribute_name(:status) %></td>
+  <td><%= @item.status_i18n %></td>
 </tr>
