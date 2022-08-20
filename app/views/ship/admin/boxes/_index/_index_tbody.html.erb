@@ -22,5 +22,4 @@
   <p><%= model.held_organ&.name %></p>
   <p class="has-text-info"><%= model.held_user&.name %></p>
 </td>
-<td><%= model.item_id %></td>
 <td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>
