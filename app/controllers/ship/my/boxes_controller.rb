@@ -1,6 +1,6 @@
 module Ship
   class My::BoxesController < My::BaseController
-    before_action :set_box, only: [:show, :edit, :update, :destroy, :actions, :owned_show, :qrcode]
+    before_action :set_box, only: [:show, :edit, :update, :destroy, :actions, :owned_show, :qrcode, :start]
 
     def index
       @boxes = current_user.boxes.includes(:box_specification).order(id: :desc).page(params[:page])
@@ -18,7 +18,10 @@ module Ship
     end
 
     def qrcode
+    end
 
+    def start
+      @box.do_rent(params[:item_id])
     end
 
     private

@@ -40,7 +40,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_org.git
-  revision: aa7a59af6f3bad28eb85b59a72a3b9a20f75a52b
+  revision: ed2320b378ff902c7bd85bd71a46ffbc6d9ee5c7
   specs:
     rails_org (0.0.1)
       rails_com (~> 1.2)
@@ -54,7 +54,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_trade.git
-  revision: df662eeaf56d1c62a24d1e9d19d60681281e82d2
+  revision: 0b0b26c79ce195c52a1e5a6b48147292f65a251e
   specs:
     rails_trade (0.0.3)
       money-rails (~> 1.14)
