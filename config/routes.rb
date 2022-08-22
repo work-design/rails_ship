@@ -256,6 +256,8 @@ Rails.application.routes.draw do
           member do
             get :qrcode
             get :owned_show
+            get :start
+            post 'start' => :start_create
           end
           resources :rents
         end

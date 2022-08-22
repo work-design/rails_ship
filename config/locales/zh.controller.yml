@@ -170,6 +170,8 @@ zh:
           title: 自购物流箱
         invest:
           title: 投资物流箱
+        start:
+          title: 开始租用
       packages:
         index:
           title: 包裹列表

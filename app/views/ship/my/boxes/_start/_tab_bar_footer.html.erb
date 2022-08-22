@@ -1,0 +1,10 @@
+<div class="py-2">
+  <div class="buttons are-large is-centered">
+    <%= form_with url: { action: 'start_create' }, class: 'button_to' do |f| %>
+      <%= f.hidden_field :item_id, value: @items[0].id %>
+      <%= button_tag class: 'button is-primary' do %>
+        <span>开始租用</span>
+      <% end %>
+    <% end %>
+  </div>
+</div>
