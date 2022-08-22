@@ -18,6 +18,6 @@
     <% end if false %>
     <%= link_to({ action: 'start' }, class: 'button is-warning') do %>
       <span><%= t('ship.my.boxes.start.title') %></span>
-    <% end %>
+    <% end unless @box.current_rent %>
   </div>
 </div>
