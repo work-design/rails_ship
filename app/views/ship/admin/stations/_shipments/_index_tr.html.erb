@@ -3,10 +3,10 @@
   <td>
     <div data-show-target="item" style="visibility: hidden">
       <%= link_to({ action: 'stations', id: model.id }, aria: { label: t('ship.admin.shipments.stations.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-light fa-location-dot"></i>
+        <i class="fa-regular fa-location-dot"></i>
       <% end %>
       <%= link_to({ controller: 'shipment_items', shipment_id: model.id }, aria: { label: t('ship.admin.shipment_items.index.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-light fa-list-check"></i>
+        <i class="fa-regular fa-list-check"></i>
       <% end %>
       <%= button_to({ controller: 'ship/admin/shipments', action: 'leave', line_id: model.line_id, station_id: @station.id, id: model.id }, form: { data: { turbo_confirm: t('.confirm') }, class: 'weui-actionsheet__cell' }) do %>
         <i class="fa-solid fa-play has-text-danger"></i>
@@ -17,13 +17,13 @@
         <span class="has-text-success"><%= t('ship.admin.shipments.arrive.title') %></span>
       <% end if model.state == 'left' %>
       <%= link_to({ action: 'show', id: model.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.show') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-light fa-circle-info"></i>
+        <i class="fa-regular fa-circle-info"></i>
       <% end %>
       <%= link_to({ action: 'edit', id: model.id }, data: { turbo_frame: 'modal', turbo_scroll: true }, aria: { label: t('.edit') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-light fa-pencil"></i>
+        <i class="fa-regular fa-pencil"></i>
       <% end if model.organ_id == current_organ.id %>
       <%= button_to({ action: 'destroy', id: model.id }, method: :delete, aria: { label: t('.destroy') }, class: 'button is-small is-rounded is-light', form: { data: { turbo_confirm: t('.confirm'), turbo_scroll: true } }) do %>
-        <i class="fa-light fa-trash"></i>
+        <i class="fa-regular fa-trash"></i>
       <% end if model.organ_id == current_organ.id %>
     </div>
   </td>
