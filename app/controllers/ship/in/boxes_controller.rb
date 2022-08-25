@@ -8,7 +8,7 @@ module Ship
       }
       q_params.merge! params.permit(:box_specification_id)
 
-      @boxes = Box.includes(:item, :using_box_logs).ordered.order(item_id: :desc).default_where(q_params).page(params[:page])
+      @boxes = Box.includes(:using_box_logs).default_where(q_params).page(params[:page])
     end
 
     def invest
