@@ -67,7 +67,7 @@ zh:
       line_stations:
         index:
           title: 途经点
-      trade_items:
+      items:
         index:
           title: 订单
         packable:
