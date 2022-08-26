@@ -3,14 +3,14 @@
   <td>
     <div data-show-target="item" style="visibility: hidden">
       <%= link_to({ controller: 'box_logs', box_id: model.id }, aria: { label: t('ship.in.box_logs.index.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-clock-rotate-left"></i>
+        <i class="fa-regular fa-clock-rotate-left"></i>
         <span class="pl-1"><%= model.box_logs_count %></span>
       <% end %>
       <%= link_to({ controller: 'rents', box_id: model.id }, aria: { label: t('ship.in.rents.index.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-face-meh"></i>
+        <i class="fa-regular fa-face-meh"></i>
       <% end %>
       <%= link_to({ action: 'show', id: model.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.show') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-circle-info"></i>
+        <i class="fa-regular fa-circle-info"></i>
       <% end %>
     </div>
   </td>

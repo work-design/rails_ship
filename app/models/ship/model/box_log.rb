@@ -14,12 +14,12 @@ module Ship
       }, _prefix: true
 
       belongs_to :box, counter_cache: true
-      belongs_to :package
+      belongs_to :boxed, polymorphic: true
 
       scope :current, -> { where(boxed_out_at: nil).order(boxed_in_at: :desc) }
 
       before_validation :compute_duration, if: -> { boxed_out_at.present? && boxed_out_at_changed? }
-      after_save :sync_to_package, if: -> { (saved_changes.keys & ['boxed_in_at', 'boxed_out_at']).present? }
+      after_save :sync_to_package, if: -> { (saved_changes.keys & ['boxed_in_at', 'boxed_out_at']).present? && boxed_type == 'Ship::Package' }
     end
 
     def compute_duration
@@ -28,14 +28,14 @@ module Ship
 
     def sync_to_package
       if boxed_out_at.present?
-        package.box_id = nil
+        boxed.box_id = nil
       else
-        package.box_id = box_id
+        boxed.box_id = box_id
       end
-      package.boxed_in_at = boxed_in_at
-      package.boxed_out_at = boxed_out_at
-      package.confirm_mode = confirm_mode
-      package.save
+      boxed.boxed_in_at = boxed_in_at
+      boxed.boxed_out_at = boxed_out_at
+      boxed.confirm_mode = confirm_mode
+      boxed.save
     end
 
     def duration_obj
