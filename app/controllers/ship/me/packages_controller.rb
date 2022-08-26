@@ -1,8 +1,9 @@
 module Ship
   class Me::PackagesController < Me::BaseController
-    before_action :set_package, only: [:qrcode, :in, :out, :loaded, :unloaded]
+    before_action :set_package, only: [:qrcode, :package, :in, :out, :loaded, :unloaded]
     before_action :set_box_from_scan, only: [:in, :out]
     before_action :set_shipment_from_scan, only: [:loaded, :unloaded]
+    before_action :set_item_from_scan, only: [:package]
 
     def index
       q_params = {}
@@ -64,6 +65,14 @@ module Ship
       end
     end
 
+    # 打包商品
+    def package
+      if @production_item
+        packaged = @package.packageds.find_or_initialize_by(production_item_id: @production_item.id)
+        packaged.save
+      end
+    end
+
     def qrcode
     end
 
@@ -85,6 +94,14 @@ module Ship
       r = params[:result].scan(RegexpUtil.more_between('shipments/', '/qrcode'))
       if r.present?
         @shipment = Shipment.find r[0]
+      end
+    end
+
+    def set_item_from_scan
+      return unless params[:result].present?
+      r = params[:result].scan(RegexpUtil.more_between('production_items/', '/qrcode'))
+      if r.present?
+        @production_item = Factory::ProductionItem.find r[0]
       end
     end
 

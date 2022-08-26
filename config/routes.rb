@@ -203,6 +203,7 @@ Rails.application.routes.draw do
             post :out
             post :loaded
             post :unloaded
+            post :package
             get :qrcode
           end
         end
