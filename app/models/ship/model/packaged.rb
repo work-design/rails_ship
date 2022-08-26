@@ -6,6 +6,7 @@ module Ship
       attribute :trade_item_status, :string
 
       belongs_to :trade_item, class_name: 'Trade::Item'
+      belongs_to :production_item, class_name: 'Factory::ProductionItem', optional: true
       belongs_to :package, inverse_of: :packageds, counter_cache: true
 
       after_create :update_status
