@@ -5,5 +5,5 @@
       <th><%= Ship::Package.human_attribute_name(:boxed_in_at) %></th>
     </tr>
   </thead>
-  <%= render partial: 'package', collection: @box.packages, as: :model %>
+  <%= render partial: 'box_log', collection: @box.box_logs.order(id: :desc), as: :model %>
 </table>
