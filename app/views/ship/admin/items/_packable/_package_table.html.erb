@@ -1,0 +1,11 @@
+<table class="table is-striped is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <%= render 'package_thead' %>
+      <%= render 'index_thead_actions' %>
+    </tr>
+  </thead>
+  <tbody id="package_tbody">
+    <%= yield %>
+  </tbody>
+</table>

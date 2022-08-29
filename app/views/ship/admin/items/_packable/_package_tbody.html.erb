@@ -1,0 +1,32 @@
+<td>
+  <p>
+    <span><%= model.from_address&.content %></span>
+    <span class="tag is-success"><%= model.from_station&.name %></span>
+  </p>
+  <p>
+    <span><%= model.address.content %></span>
+    <span class="tag is-danger"><%= model.station&.name %></span>
+  </p>
+</td>
+<td>
+  <%= link_to({ action: 'shipment_items', id: model.id }, data: { turbo_frame: 'modal' }, class: 'tag') do %>
+    <i class="fa-solid fa-person-dolly has-text-success"></i>
+    <span class="pl-1"><%= model.state_i18n %></span>
+    <span class="pl-1"><%= model.shipment_items_count %></span>
+  <% end %>
+</td>
+<td>
+  <p><%= model.box&.code %></p>
+  <p class="has-text-info-dark"><time data-controller="time"><%= model.boxed_in_at&.to_fs(:iso8601) %></time></p>
+  <p class="has-text-warning-dark"><time data-controller="time"><%= model.boxed_out_at&.to_fs(:iso8601) %></time></p>
+</td>
+<td>
+  <%= link_to({ controller: 'packageds', package_id: model.id }, class: 'tag') do %>
+    <i class="fa-solid fa-list"></i>
+    <span class="pl-1"><%= model.packageds_count %></span>
+  <% end %>
+</td>
+<td>
+  <p><%= model.expected_on %></p>
+  <p class="has-text-grey"><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></p>
+</td>

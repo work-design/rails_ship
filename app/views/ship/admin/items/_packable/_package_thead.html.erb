@@ -1,0 +1,21 @@
+<th>
+  <p>
+    <span><%= Ship::Package.human_attribute_name(:from_address_id) %></span>
+    <span class="tag is-success"><%= Ship::Package.human_attribute_name(:from_station_id) %></span>
+  </p>
+  <p>
+    <span><%= Ship::Package.human_attribute_name(:address_id) %></span>
+    <span class="tag is-danger"><%= Ship::Package.human_attribute_name(:station_id) %></span>
+  </p>
+</th>
+<th><%= Ship::Package.human_attribute_name(:state) %></th>
+<th>
+  <p><%= Ship::Package.human_attribute_name(:box_id) %></p>
+  <p class="has-text-info-dark"><%= Ship::Package.human_attribute_name(:boxed_in_at) %></p>
+  <p class="has-text-warning-dark"><%= Ship::Package.human_attribute_name(:boxed_out_at) %></p>
+</th>
+<th><%= Ship::Package.human_attribute_name(:packageds_count) %></th>
+<th>
+  <p><%= Ship::Package.human_attribute_name(:expected_on) %></p>
+  <p class="has-text-grey"><%= Ship::Package.human_attribute_name(:created_at) %></p>
+</th>
