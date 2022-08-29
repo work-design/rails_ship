@@ -126,7 +126,7 @@ Rails.application.routes.draw do
             end
           end
         end
-        resources :box_hosts, only: [:index, :show]
+        resources :box_hosts
         resources :box_specifications, only: [] do
           resources :boxes do
             collection do
