@@ -13,5 +13,11 @@ module Ship
       has_many :boxes, ->(o){ where(organ_id: o.organ_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
     end
 
+    def reset_boxes_count
+      self.boxes_count = boxes.count
+      self.rented_count = boxes.rented.count
+      self.rentable_count = boxes.rentable.count
+    end
+
   end
 end
