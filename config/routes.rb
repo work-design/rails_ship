@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
   scope RailsCom.default_routes_scope do
     namespace :ship, defaults: { business: 'ship' } do
-      resources :box_specifications do
+      resources :box_hosts, only: [:index] do
         collection do
           get :rent
           get :invest
         end
-      end
-      resources :box_hosts, only: [:index] do
         member do
           get :boxes
           get :rentable

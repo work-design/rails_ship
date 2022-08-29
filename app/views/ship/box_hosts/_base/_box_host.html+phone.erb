@@ -1,13 +1,13 @@
 <div class="weui-media-box weui-media-box_appmsg" id="production_<%= model.id %>">
   <%= link_to({ action: 'show', id: model.id }, text: true, class: 'weui-media-box__hd') do %>
-    <%= image_tag model.logo, class: 'weui-media-box__thumb' if model.logo.attached? %>
+    <%= image_tag model.box_specification.logo, class: 'weui-media-box__thumb' if model.box_specification.logo.attached? %>
   <% end %>
   <div class="weui-media-box__bd is-flex is-flex-direction-column">
     <%= link_to({ action: 'show', id: model.id }, text: true, class: 'weui-media-box__title') do %>
-      <%= model.name %>
+      <%= model.box_specification.name %>
     <% end %>
     <p class="weui-media-box__desc pt-0">
-      <%= model.measure %>
+      <%= model.box_specification.measure %>
     </p>
     <div class="is-flex is-align-items-center">
       <span class="has-text-danger"><%= model.price.to_money.format(html_wrap: true).html_safe %></span>
