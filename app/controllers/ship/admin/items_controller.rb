@@ -15,7 +15,8 @@ module Ship
     end
 
     def packable
-      @items = @address.items.packable.page(params[:page])
+      @items = @address.items.includes(:produce_plan).packable.page(params[:page])
+      @produce_plans = @items.map(&:produce_plan).compact.uniq
     end
 
     def packaged

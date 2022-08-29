@@ -1,5 +1,6 @@
 <%= render 'filter_table' %>
 <%= render 'tabs' %>
+<%= render 'filter_table' %>
 
 <%= render layout: 'index_table' do %>
   <%= render partial: 'index_tbody', layout: 'index_tr', collection: @items, as: :model %>
