@@ -3,7 +3,6 @@
 <%= f.number_field :width, required: true %>
 <%= f.number_field :length, required: true %>
 <%= f.number_field :height, required: true %>
-<%= f.number_field :price %>
 <%= f.number_field :invest_ratio, min: 0, max: 1 %>
 <%= f.file_field :logo %>
 <%= render 'com/attachments/list_field', target: f.object.covers, f: f %>
