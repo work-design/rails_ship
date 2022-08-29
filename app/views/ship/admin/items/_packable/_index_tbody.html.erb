@@ -16,4 +16,7 @@
   <%= link_to({ controller: 'factory/admin/production_items', production_id: model.good_id }, target: '_blank') do %>
     <span><%= t('factory.admin.production_items.index.title') %></span>
   <% end if model.good_type == 'Factory::Production' %>
+  <%= link_to({ controller: 'factory/admin/boxs', box_specification_id: model.good_id }, target: '_blank') do %>
+    <span><%= t('factory.admin.production_items.index.title') %></span>
+  <% end if model.good_type == 'Factory::Production' %>
 </td>

@@ -1,13 +1,14 @@
 module Ship
   class Admin::BoxesController < Admin::BaseController
-    before_action :set_box_host
+    before_action :set_box_specification
     before_action :set_new_box, only: [:index, :new, :create]
     before_action :set_box, only: [:pdf]
 
     def index
       q_params = {}
+      q_params.merge! default_params
 
-      @boxes = @box_host.boxes.includes(:held_organ, :owned_organ).default_where(q_params).order(id: :desc).page(params[:page])
+      @boxes = @box_specification.boxes.includes(:held_organ, :owned_organ).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def batch
@@ -33,16 +34,16 @@ module Ship
     end
 
     private
-    def set_box_host
-      @box_host = BoxHost.find params[:box_host_id]
+    def set_box_specification
+      @box_specification = BoxSpecification.find params[:box_specification_id]
     end
 
     def set_box
-      @box = @box_host.boxes.find params[:id]
+      @box = @box_specification.boxes.where(default_params).find params[:id]
     end
 
     def set_new_box
-      @box = @box_host.boxes.build(box_params)
+      @box = @box_specification.boxes.build(box_params)
     end
 
     def box_params
@@ -50,7 +51,8 @@ module Ship
         :code,
         :rentable
       )
-      p.merge! owned_organ_id: current_organ.id, held_organ_id: current_organ.id if current_organ
+      p.merge! owned_organ_id: current_organ.id, held_organ_id: current_organ.id
+      p.merge! default_form_params
       p
     end
 

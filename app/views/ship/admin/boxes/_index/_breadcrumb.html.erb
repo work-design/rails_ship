@@ -3,8 +3,8 @@
     <li><%= link_to t('ship.admin.box_hosts.index.title'), { controller: 'box_hosts' } %></li>
     <li>
       <span class="px-3">
-        <span><%= @box_host.box_specification.name %></span>
-        <span class="pl-1 is-size-7"><%= @box_host.box_specification.measure %></span>
+        <span><%= @box_specification.name %></span>
+        <span class="pl-1 is-size-7"><%= @box_specification.measure %></span>
       </span>
     </li>
     <li class="is-active"><%= t('.title') %></li>
