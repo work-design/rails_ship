@@ -1,14 +1,4 @@
 <td>
-  <p>
-    <span><%= model.from_address&.content %></span>
-    <span class="tag is-success"><%= model.from_station&.name %></span>
-  </p>
-  <p>
-    <span><%= model.address.content %></span>
-    <span class="tag is-danger"><%= model.station&.name %></span>
-  </p>
-</td>
-<td>
   <%= link_to({ action: 'shipment_items', id: model.id }, data: { turbo_frame: 'modal' }, class: 'tag') do %>
     <i class="fa-solid fa-person-dolly has-text-success"></i>
     <span class="pl-1"><%= model.state_i18n %></span>
