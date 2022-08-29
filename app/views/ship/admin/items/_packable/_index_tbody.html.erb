@@ -6,4 +6,7 @@
   <span class="has-text-grey">（<%= model.user_id %>）</span>
 </td>
 <td><%= model.produce_plan&.title %></td>
-<td><%= model.status_i18n %></td>
+<td>
+  <p><%= model.status_i18n %></p>
+  <p class="has-text-grey is-size-7"><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></p>
+</td>
