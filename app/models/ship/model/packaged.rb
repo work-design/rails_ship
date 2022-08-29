@@ -16,7 +16,7 @@ module Ship
     end
 
     def compute_trade_item
-      self.trade_item = package.items.packable.find_by(good_type: 'Factory::Production', good_id: production_item.production_id)
+      self.trade_item = package.address.items.packable.find_by(good_type: 'Factory::Production', good_id: production_item.production_id)
     end
 
     def update_status
