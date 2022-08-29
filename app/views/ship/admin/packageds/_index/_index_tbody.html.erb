@@ -3,11 +3,5 @@
   <span class="tag"><%= model.trade_item_id %></span>
 </td>
 <td><%= model.trade_item.number %></td>
-<td>
-  <p>
-    <span><%= model.trade_item.address.area.full_name %></span>
-    <span><%= model.trade_item.address.detail %></span>
-    <span class="has-text-grey">（<%= model.trade_item.address_id %>）</span>
-  </p>
-</td>
 <td><%= model.trade_item.produce_plan&.title %></td>
+<td><%= model.production_item_id %></td>
