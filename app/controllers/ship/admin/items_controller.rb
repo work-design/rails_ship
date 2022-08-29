@@ -25,20 +25,9 @@ module Ship
 
     def package
       pack = @address.packages.build(default_form_params)
-      items = @address.items.deliverable.find params[:ids].split(',')
-
-      produce_plan_ids = items.pluck(:produce_plan_id).uniq
-      if produce_plan_ids.size > 1
-        render 'edit', locals: { message: 'produce plan 不一致，不能打包' } and return
-      end
-
       pack.user_id = @address.user_id
-      pack.produce_plan_id = produce_plan_ids[0]
-      items.each do |item|
-        p = item.packageds.build
-        p.package = pack
-        p.save
-      end
+      pack.produce_plan_id = params[:produce_plan_id]
+      pack.save
     end
 
     private
