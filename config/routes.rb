@@ -82,6 +82,7 @@ Rails.application.routes.draw do
           collection do
             get 'address/:address_id' => :packable
             get 'packaged/:address_id' => :packaged
+            get 'user/:user_id' => :user
           end
         end
         resources :packages do

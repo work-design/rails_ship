@@ -3,6 +3,7 @@ module Ship
     before_action :set_address, only: [:packable, :package, :packaged]
     before_action :set_item, only: [:show, :edit, :update, :destroy]
     before_action :set_stations, only: [:edit, :update]
+    before_action :set_user, only: [:user]
 
     def index
       q_params = {
@@ -27,13 +28,22 @@ module Ship
       @items = @address.items.packaged.order(id: :desc).page(params[:page])
     end
 
+    def user
+      @items = @user.items.includes(:produce_plan).packable.order(id: :asc).page(params[:page])
+      @produce_plans = @items.map(&:produce_plan).compact.uniq
+    end
+
     private
+    def set_item
+      @item = Trade::Item.find(params[:id])
+    end
+
     def set_address
       @address = Profiled::Address.find params[:address_id]
     end
 
-    def set_item
-      @item = Trade::Item.find(params[:id])
+    def set_user
+      @user = Auth::User.find params[:user_id]
     end
 
     def set_stations

@@ -1,0 +1,13 @@
+<%= render 'filter_table' %>
+<%= render 'filter_table' %>
+
+<%= render layout: 'package_table' do %>
+  <%= render partial: 'package_tbody', layout: 'package_tr', collection: @user.packages.state_init, as: :model %>
+<% end %>
+<%= render 'button' %>
+
+<%= render layout: 'index_table' do %>
+  <%= render partial: 'index_tbody', layout: 'index_tr', collection: @items, as: :model %>
+<% end %>
+
+<%= paginate @items %>
