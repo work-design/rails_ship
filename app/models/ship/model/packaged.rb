@@ -9,7 +9,7 @@ module Ship
       belongs_to :good_item, optional: true, polymorphic: true
       belongs_to :package, inverse_of: :packageds, counter_cache: true
 
-      before_validation :compute_trade_item, if: -> { good_id.present? }
+      before_validation :compute_trade_item, if: -> { good_item_id.present? }
       after_create :update_status
       after_save :sync_trade_item_status, if: -> { saved_change_to_trade_item_id? }
       after_destroy :revert_status
@@ -17,7 +17,9 @@ module Ship
 
     def compute_trade_item
       if good_item_type == 'Factory::ProductionItem'
-        self.trade_item = package.address.items.packable.find_by(good_type: 'Factory::Production', good_id: good_item.production_id)
+        self.trade_item = (package.address || package.user).items.packable.find_by(good_type: 'Factory::Production', good_id: good_item.production_id)
+      elsif good_item_type == 'Ship::Box'
+        self.trade_item = (package.address || package.user).items.packable.find_by(good_type: 'Factory::BoxHost', good_id: good_item.box_host.id)
       end
     end
 
