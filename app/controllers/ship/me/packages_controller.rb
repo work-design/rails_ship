@@ -3,7 +3,7 @@ module Ship
     before_action :set_package, only: [:qrcode, :package, :in, :out, :loaded, :unloaded]
     before_action :set_box_from_scan, only: [:in, :out]
     before_action :set_shipment_from_scan, only: [:loaded, :unloaded]
-    before_action :set_item_from_scan, only: [:package]
+    before_action :set_good_item_from_scan, only: [:package]
 
     def index
       q_params = {}
@@ -68,7 +68,7 @@ module Ship
     # 打包商品
     def package
       if @production_item
-        packaged = @package.packageds.find_or_initialize_by(production_item_id: @production_item.id)
+        packaged = @package.packageds.find_or_initialize_by(good_item_type: @production_item.class_name, good_item_id: @production_item.id)
         packaged.save
       end
     end
@@ -97,7 +97,7 @@ module Ship
       end
     end
 
-    def set_item_from_scan
+    def set_good_item_from_scan
       return unless params[:result].present?
       r = params[:result].scan(RegexpUtil.more_between('production_items/', '/qrcode'))
       if r.present?
