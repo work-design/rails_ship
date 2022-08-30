@@ -4,7 +4,9 @@ module Ship
     before_action :set_use_cart, only: [:buy]
 
     def index
-      @box_specifications = BoxSpecification.page(params[:page])
+      q_params = {}
+
+      @box_hosts = BoxHost.page(params[:page])
     end
 
     def rent
@@ -12,16 +14,16 @@ module Ship
     end
 
     def buy
-      @box_specifications = BoxSpecification.page(params[:page])
+      @box_hosts = BoxHost.page(params[:page])
     end
 
     private
     def set_rent_cart
-      @cart = current_organ.organ_carts.find_or_create_by(good_type: 'Ship::BoxSpecification', aim: 'rent')
+      @cart = current_organ.organ_carts.find_or_create_by(good_type: 'Ship::BoxHost', aim: 'rent')
     end
 
     def set_use_cart
-      @cart = current_organ.organ_carts.find_or_create_by(good_type: 'Ship::BoxSpecification', aim: 'use')
+      @cart = current_organ.organ_carts.find_or_create_by(good_type: 'Ship::BoxHost', aim: 'use')
     end
 
   end

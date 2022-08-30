@@ -1,8 +1,9 @@
 <td>
-  <p><%= model.name %></p>
+  <p><%= model.box_specification.name %></p>
+  <p><%= model.organ.name %></p>
 </td>
-<td><%= model.measure %></td>
-<td class="has-text-danger"><%# model.price.to_money.format(html_wrap: true).html_safe %></td>
+<td><%= model.box_specification.measure %></td>
+<td class="has-text-danger"><%= model.price.to_money.format(html_wrap: true).html_safe %></td>
 <td class="has-text-centered">
-  <%# render partial: 'cart', locals: { model: model } %>
+  <%= render partial: 'cart', locals: { model: model } %>
 </td>

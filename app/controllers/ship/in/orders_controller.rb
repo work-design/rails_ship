@@ -15,11 +15,12 @@ module Ship
     end
 
     def order_params
-      params.fetch(:order, {}).permit(
+      p = params.fetch(:order, {}).permit(
         :pay_later,
         :current_cart_id,
         :note
       )
+      p.merge! current_cart_id: params[:current_cart_id]
     end
 
   end
