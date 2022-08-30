@@ -77,15 +77,13 @@ Rails.application.routes.draw do
             get :packaged
             post :search
           end
-          resources :items, only: [] do
-            collection do
-              get :packable
-              get :packaged
-              post :package
-            end
+        end
+        resources :items, except: [:destroy] do
+          collection do
+            get 'address/:address_id' => :packable
+            get 'packaged/:address_id' => :packaged
           end
         end
-        resources :items, except: [:destroy]
         resources :packages do
           resources :packageds
           collection do
