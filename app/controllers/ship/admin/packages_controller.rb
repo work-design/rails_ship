@@ -1,6 +1,7 @@
 module Ship
   class Admin::PackagesController < Admin::BaseController
     before_action :set_package, only: [:show, :pdf, :print_data, :shipment_items, :edit, :update, :destroy]
+    before_action :set_new_package, only: [:new, :create]
     before_action :set_address, only: [:address]
     before_action :set_stations, only: [:edit, :update]
     skip_before_action :require_login, only: [:print_data] if whether_filter :require_login
@@ -39,6 +40,10 @@ module Ship
       @package = Package.find(params[:id])
     end
 
+    def set_new_package
+      @package = Package.new package_params
+    end
+
     def set_address
       @address = Profiled::Address.find params[:address_id]
     end
@@ -51,6 +56,8 @@ module Ship
       p = params.fetch(:package, {}).permit(
         :state,
         :expected_on,
+        :address_id,
+        :produce_plan_id,
         :from_address_id,
         :from_station_id
       )

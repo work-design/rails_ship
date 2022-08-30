@@ -85,7 +85,7 @@ Rails.application.routes.draw do
           end
         end
         resources :items, except: [:destroy]
-        resources :packages, except: [:new, :create] do
+        resources :packages do
           resources :packageds
           collection do
             get :address

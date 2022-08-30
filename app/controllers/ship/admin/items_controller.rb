@@ -14,6 +14,10 @@ module Ship
       @items = Trade::Item.includes(:produce_plan, :order, :user, :station, :from_station, address: :area, from_address: :area).where.not(address_id: nil).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
+    def box
+
+    end
+
     def packable
       @items = @address.items.includes(:produce_plan).packable.order(id: :asc).page(params[:page])
       @produce_plans = @items.map(&:produce_plan).compact.uniq
@@ -21,13 +25,6 @@ module Ship
 
     def packaged
       @items = @address.items.packaged.order(id: :desc).page(params[:page])
-    end
-
-    def package
-      pack = @address.packages.build(default_form_params)
-      pack.user_id = @address.user_id
-      pack.produce_plan_id = params[:produce_plan_id]
-      pack.save
     end
 
     private

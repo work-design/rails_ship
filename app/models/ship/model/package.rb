@@ -56,6 +56,7 @@ module Ship
 
     def sync_station
       return unless address
+      self.user_id = address.user_id
       self.station_id ||= address.station_id
     end
 
