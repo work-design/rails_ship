@@ -67,8 +67,8 @@ module Ship
 
     # 打包商品
     def package
-      if @production_item
-        packaged = @package.packageds.find_or_initialize_by(good_item_type: @production_item.class_name, good_item_id: @production_item.id)
+      if @good_item
+        packaged = @package.packageds.find_or_initialize_by(good_item_type: @good_item.class_name, good_item_id: @good_item.id)
         packaged.save
       end
     end
@@ -101,7 +101,13 @@ module Ship
       return unless params[:result].present?
       r = params[:result].scan(RegexpUtil.more_between('production_items/', '/qrcode'))
       if r.present?
-        @production_item = Factory::ProductionItem.find r[0]
+        @good_item = Factory::ProductionItem.find r[0]
+        return
+      end
+
+      r = params[:result].scan(RegexpUtil.more_between('boxes/', '/qrcode'))
+      if r.present?
+        @good_item = Box.find r[0]
       end
     end
 
