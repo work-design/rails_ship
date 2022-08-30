@@ -70,6 +70,7 @@ Rails.application.routes.draw do
             get :shipments
           end
         end
+        resources :users, only: [:index]
         resources :addresses do
           collection do
             get :from
