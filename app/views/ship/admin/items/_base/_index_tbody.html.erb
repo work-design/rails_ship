@@ -1,6 +1,11 @@
 <td>
-  <span><%= model.good_name %></span>
-  <span class="has-text-grey">（<%= model.number %>）</span>
+  <p>
+    <span><%= model.good_name %></span>
+    <span class="has-text-grey">（<%= model.number %>）</span>
+  </p>
+  <p>
+    <span><%= model.good_type_i18n %></span>
+  </p>
 </td>
 <td>
   <p class="has-text-success"><%= model.from_station&.name %></p>
@@ -13,10 +18,12 @@
     <span><%= model.from_address.detail %></span>
   <% end %>
   </p>
+  <% if model.address %>
   <p class="has-text-danger">
     <span><%= model.address.area.full_name %></span>
     <span><%= model.address.detail %></span>
   </p>
+  <% end %>
 </td>
 <td><%= model.produce_plan&.title %></td>
 <td><%= model.status_i18n %></td>
