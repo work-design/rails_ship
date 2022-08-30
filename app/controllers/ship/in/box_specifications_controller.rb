@@ -6,7 +6,7 @@ module Ship
     def index
       q_params = {}
 
-      @box_hosts = BoxHost.page(params[:page])
+      @box_specifications = BoxSpecification.page(params[:page])
     end
 
     def rent

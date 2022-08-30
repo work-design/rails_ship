@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   scope RailsCom.default_routes_scope do
     namespace :ship, defaults: { business: 'ship' } do
-      resources :box_hosts, only: [:index] do
+      resources :box_hosts, only: [:index, :show] do
         collection do
           get :rent
           get :invest
@@ -282,7 +282,7 @@ Rails.application.routes.draw do
       end
     end
   end
-  resolve 'Ship::BoxSpecification' do |box_specification, options|
-    [:ship, box_specification, options]
+  resolve 'Ship::BoxHost' do |box_host, options|
+    [:ship, box_host, options]
   end
 end
