@@ -27,7 +27,7 @@ module Ship
       @box_hosts = BoxHost.page(params[:page])
     end
 
-    def boxes
+    def all
       @boxes = @box_host.boxes.page(params[:page])
     end
 

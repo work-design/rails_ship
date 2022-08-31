@@ -1,9 +1,14 @@
 module Ship
   class BoxesController < BaseController
-    before_action :require_login
+    before_action :require_login, only: [:qrcode, :in_edit, :in_update, :in_create]
+    before_action :set_box_host, only: [:index]
     before_action :set_box, only: [:qrcode, :in_edit, :in_update]
     before_action :set_box_from_scan, only: [:in_create]
     before_action :set_new_order, only: [:in_edit]
+
+    def index
+      @boxes = @box_host.boxes.page(params[:page])
+    end
 
     def qrcode
       if current_user.organ_ids.include?(@box.organ_id)
@@ -31,6 +36,10 @@ module Ship
     end
 
     private
+    def set_box_host
+      @box_host = BoxHost.find params[:box_host_id]
+    end
+
     def set_box
       @box = Box.find params[:id]
     end

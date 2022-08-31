@@ -7,10 +7,11 @@ Rails.application.routes.draw do
           get :invest
         end
         member do
-          get :boxes
+          get :all
           get :rentable
           get :rented
         end
+        resources :boxes, only: [:index]
       end
       resources :boxes, only: [] do
         collection do
