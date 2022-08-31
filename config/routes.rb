@@ -249,6 +249,7 @@ Rails.application.routes.draw do
           resources :locations
         end
         resources :stations
+        resources :box_holds
         resources :boxes do
           collection do
             get :owned
