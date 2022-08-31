@@ -19,7 +19,7 @@ module Ship
       if good_item_type == 'Factory::ProductionItem'
         self.trade_item = (package.address || package.user).items.packable.find_by(good_type: 'Factory::Production', good_id: good_item.production_id)
       elsif good_item_type == 'Ship::Box'
-        self.trade_item = (package.address || package.user).items.packable.find_by(good_type: 'Factory::BoxHost', good_id: good_item.box_host.id)
+        self.trade_item = (package.address || package.user).items.packable.find_by(good_type: 'Ship::BoxHost', good_id: good_item.box_host.id)
       end
     end
 
