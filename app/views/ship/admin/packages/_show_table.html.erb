@@ -5,8 +5,10 @@
 <tr>
   <td class="has-text-right"><%= Ship::Package.human_attribute_name(:address) %></td>
   <td>
+  <% if @package.address %>
     <p><%= @package.address.area.full_name %></p>
     <p><%= @package.address.detail %></p>
+  <% end %>
   </td>
 </tr>
 <tr>

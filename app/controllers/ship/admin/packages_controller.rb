@@ -57,6 +57,7 @@ module Ship
         :state,
         :expected_on,
         :address_id,
+        :user_id,
         :produce_plan_id,
         :from_address_id,
         :from_station_id
