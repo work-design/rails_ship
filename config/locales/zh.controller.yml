@@ -172,6 +172,9 @@ zh:
           title: 投资物流箱
         start:
           title: 开始租用
+      box_holds:
+        index:
+          title: 持有物流箱
       packages:
         index:
           title: 包裹列表
