@@ -3,3 +3,4 @@
   <span class="tag"><%= model.box_specification.name %></span>
 </p>
 <p><%= model.boxes_count %></p>
+<p class="has-text-danger"><%= model.price.to_money.format(html_wrap: true).html_safe %></p>
