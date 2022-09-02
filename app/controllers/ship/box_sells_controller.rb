@@ -1,9 +1,9 @@
 module Ship
-  class BoxHoldsController < BaseController
+  class BoxSellsController < BaseController
     before_action :set_box_host
 
     def index
-      @box_holds = @box_host.box_holds
+      @box_sells = @box_host.box_sells
     end
 
     private

@@ -13,7 +13,7 @@
       <span class="has-text-danger"><%= model.price.to_money.format(html_wrap: true).html_safe %></span>
     </div>
     <div class="is-flex is-justify-content-space-between pt-2">
-      <%= link_to({ controller: 'box_holds', box_host_id: model.id }, text: true) do %>
+      <%= link_to({ controller: 'box_sells', box_host_id: model.id }, text: true) do %>
         <span>去交易大厅</span>
       <% end %>
       <%= render partial: 'cart', locals: { model: model, cart: @cart } %>
