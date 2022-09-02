@@ -1,6 +1,7 @@
 <p>
   <strong><%= link_to model.box_specification.measure, { action: 'show', id: model.id }, text: true %></strong>
   <span class="tag"><%= model.box_specification.name %></span>
+  <span class="has-text-danger"><%= model.price.to_money.format(html_wrap: true).html_safe %></span>
 </p>
 <div class="tags has-addons">
   <span class="tag is-primary"><i class="fa-solid fa-check"></i></span>

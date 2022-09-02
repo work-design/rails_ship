@@ -5,7 +5,7 @@ module Ship
     included do
       attribute :name, :string
       attribute :number, :string
-      attribute :detail, :jsonb, default: {}
+      attribute :detail, :json, default: {}
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
       belongs_to :user, class_name: 'Auth::User', optional: true
