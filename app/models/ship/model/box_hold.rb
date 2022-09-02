@@ -12,6 +12,7 @@ module Ship
 
       belongs_to :user, class_name: 'Auth::User'
       belongs_to :member, class_name: 'Org::Member', optional: true
+      belongs_to :member_organ, class_name: 'Org::Organ', optional: true
 
       has_many :boxes, ->(o){ where(held_user_id: o.user_id, held_organ_id: o.organ_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
     end
