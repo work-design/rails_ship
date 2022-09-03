@@ -20,8 +20,10 @@ zh:
         rented_count: 已租
         rentable_count: 可租
       ship/box_hold:
-        saleable: 卖出数量
-        price: 卖出价格
+        sellable: 卖出数量
+        sell_price: 卖出价格
+        buyable: 买入数量
+        buy_price: 买入限价
       ship/box_specification:
         width: 宽
         length: 长

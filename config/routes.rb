@@ -12,7 +12,11 @@ Rails.application.routes.draw do
           get :rented
         end
         resources :boxes, only: [:index]
-        resources :box_sells
+        resources :box_sells do
+          collection do
+            get :sell
+          end
+        end
       end
       resources :boxes, only: [] do
         collection do

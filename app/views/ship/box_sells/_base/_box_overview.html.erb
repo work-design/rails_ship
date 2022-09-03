@@ -1,0 +1,10 @@
+<div class="weui-panel">
+  <div class="weui-panel__bd">
+    <%= render layout: 'index_tr' do %>
+      <%= render partial: 'index_tbody', collection: @box_sells, as: :model %>
+    <% end %>
+    <%= render layout: 'buy_tr' do %>
+      <%= render partial: 'buy_tbody', collection: @box_buys, as: :model %>
+    <% end %>
+  </div>
+</div>
