@@ -7,14 +7,14 @@ module Ship
       q_options = { box_specification_id: @box_host.box_specification_id }
       q_options.merge! default_params
 
-      @box_hold = current_user.box_holds.find_by(q_options)
+      @box_hold = current_user.box_holds.find_or_initialize_by(q_options)
     end
 
     def sell
       q_options = { box_specification_id: @box_host.box_specification_id }
       q_options.merge! default_params
 
-      @box_hold = current_user.box_holds.find_by(q_options)
+      @box_hold = current_user.box_holds.find_or_initialize_by(q_options)
     end
 
     private
