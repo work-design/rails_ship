@@ -3,8 +3,8 @@ module Ship
     before_action :set_box_host
 
     def index
-      @box_sells = @box_host.box_sells.order(price: :asc).limit(5)
-      @box_buys = @box_host.box_buys.order(price: :desc).limit(5)
+      @box_sells = @box_host.box_sells.order(price: :asc).limit(3)
+      @box_buys = @box_host.box_buys.order(price: :desc).limit(3)
     end
 
     private
