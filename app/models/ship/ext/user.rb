@@ -13,6 +13,7 @@ module Ship
       has_many :boxes, class_name: 'Ship::Box', foreign_key: :held_user_id
       has_many :owned_boxes, class_name: 'Ship::Box', foreign_key: :owned_user_id
       has_many :packages, class_name: 'Ship::Package'
+      has_many :box_holds, class_name: 'Ship::BoxHold'
     end
 
   end

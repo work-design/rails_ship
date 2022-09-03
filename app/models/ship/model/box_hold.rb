@@ -20,8 +20,8 @@ module Ship
 
       has_many :boxes, ->(o){ where(organ_id: o.organ_id, held_user_id: o.user_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
 
-      before_validation :init_box_sell, if: -> { sell_price.present? && (['sell_price', 'sellable'].keys & changes.keys).present? }
-      before_validation :init_box_buy, if: -> { buy_price.present? && (['buy_price', 'buyable'].keys & changes.keys).present? }
+      before_validation :init_box_sell, if: -> { sell_price.present? && (['sell_price', 'sellable'] & changes.keys).present? }
+      before_validation :init_box_buy, if: -> { buy_price.present? && (['buy_price', 'buyable'] & changes.keys).present? }
     end
 
     def init_box_sell

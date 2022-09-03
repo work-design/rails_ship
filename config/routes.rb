@@ -250,7 +250,11 @@ Rails.application.routes.draw do
           resources :locations
         end
         resources :stations
-        resources :box_holds
+        resources :box_holds do
+          member do
+            get :buy
+          end
+        end
         resources :boxes do
           collection do
             get :owned

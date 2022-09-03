@@ -1,6 +1,10 @@
 <%= link_to({ action: 'edit' }, class: 'weui-actionsheet__cell') do %>
   <i class="fa-regular fa-pencil"></i>
-  <span><%= t('.edit') %></span>
+  <span><%= t('ship.my.box_holds.edit.title') %></span>
+<% end %>
+<%= link_to({ action: 'buy' }, class: 'weui-actionsheet__cell') do %>
+  <i class="fa-regular fa-pencil"></i>
+  <span><%= t('ship.my.box_holds.buy.title') %></span>
 <% end %>
 <%= link_to({ action: 'show' }, class: 'weui-actionsheet__cell') do %>
   <i class="fa-regular fa-square-info"></i>

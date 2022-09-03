@@ -175,6 +175,10 @@ zh:
       box_holds:
         index:
           title: 持有物流箱
+        edit:
+          title: 卖出
+        buy:
+          title: 买入
       packages:
         index:
           title: 包裹列表
