@@ -3,7 +3,10 @@
     <%= link_to({ controller: 'box_hosts', action: 'index' }, class: 'px-4') do %>
       <i class="fa-regular fa-angle-left"></i>
     <% end %>
-    <div class="weui-title"><%= t('.title') %></div>
+    <div class="weui-title">
+      <span><%= @box_host.box_specification.measure %></span>
+      <span><%= @box_host.box_specification.name %></span>
+    </div>
     <i class="px-4" style="width: 37.5px"></i>
   </div>
 </div>

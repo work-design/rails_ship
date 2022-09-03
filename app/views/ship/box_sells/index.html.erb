@@ -3,3 +3,7 @@
 <%= render layout: 'index_table' do %>
   <%= render partial: 'index_tbody', layout: 'index_tr', collection: @box_sells, as: :model %>
 <% end %>
+
+<%= render layout: 'buy_table' do %>
+  <%= render partial: 'buy_tbody', layout: 'index_tr', collection: @box_buys, as: :model %>
+<% end %>
