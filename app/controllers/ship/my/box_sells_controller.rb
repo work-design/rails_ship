@@ -23,8 +23,8 @@ module Ship
     end
 
     def set_overview
-      @box_sells = @box_host.box_sells.order(price: :asc).limit(3)
-      @box_buys = @box_host.box_buys.order(price: :desc).limit(3)
+      @box_proxy_sells = @box_host.box_proxy_sells.order(price: :asc).limit(3)
+      @box_proxy_buys = @box_host.box_proxy_buys.order(price: :desc).limit(3)
     end
 
   end
