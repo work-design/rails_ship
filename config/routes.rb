@@ -13,6 +13,8 @@ Rails.application.routes.draw do
           get :rented
         end
         resources :boxes, only: [:index]
+        resources :box_proxy_buys
+        resources :box_proxy_sells
       end
       resources :boxes, only: [] do
         collection do
