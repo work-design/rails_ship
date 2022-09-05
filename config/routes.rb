@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :ship, defaults: { business: 'ship' } do
       resources :box_hosts, only: [:index, :show] do
         collection do
+          get :overview
           get :rent
           get :invest
         end
