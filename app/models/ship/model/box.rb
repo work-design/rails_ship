@@ -34,7 +34,6 @@ module Ship
 
       before_validation :init_code, if: -> { code.blank? }
       before_validation :init_box_host, if: -> { organ_id.present? && organ_id_changed? }
-      before_validation :init_box_hold, if: -> { held_user_id.present? && held_user_id_changed? }
       after_save :increment_boxes_count, if: -> { saved_change_to_organ_id? && organ_id.present? }
       after_save :decrement_boxes_count, if: -> { saved_change_to_organ_id? && organ_id.blank? }
       after_save :increment_rented_count, if: -> { saved_change_to_rented? && rented? }
@@ -53,10 +52,6 @@ module Ship
 
     def init_box_host
       box_host || build_box_host
-    end
-
-    def init_box_hold
-      box_hold || build_box_hold
     end
 
     def increment_boxes_count
