@@ -1,5 +1,9 @@
 <div class="weui-media-box weui-media-box_appmsg">
-  <div class="weui-media-box__hd">买入</div>
+  <div class="weui-media-box__hd">
+    <%= link_to({ controller: '/ship/box_proxy_buys' }) do %>
+      <span>买入</span>
+    <% end %>
+  </div>
   <div class="weui-media-box__bd counter-section">
     <%= yield %>
   </div>
