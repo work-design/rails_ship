@@ -11,10 +11,10 @@ module Ship
       belongs_to :organ, class_name: 'Org::Organ'
       belongs_to :box_specification
 
-      has_many :boxes, ->(o){ where(organ_id: o.organ_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
+      has_many :boxes, ->(o) { where(organ_id: o.organ_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
       has_many :box_holds, ->(o) { where(organ_id: o.organ_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
-      has_many :box_sells, ->(o) { where(organ_id: o.organ_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
-      has_many :box_buys, ->(o) { where(organ_id: o.organ_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
+      has_many :box_proxies, ->(o) { where(organ_id: o.organ_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
+      has_many :box_enquiries, ->(o) { where(organ_id: o.organ_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
     end
 
     def reset_boxes_count
