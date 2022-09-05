@@ -1,23 +1,23 @@
-<%= form_with theme: 'weui', model: @box_hold, url: { controller: 'ship/my/box_holds'}.merge!(@box_hold.new_record? ? { action: 'create' } : { action: 'update', id: @box_hold.id }), class: 'pt-0' do |f| %>
+<%= form_with theme: 'weui', model: @box_sell, url: { action: 'create' }, class: 'pt-0' do |f| %>
   <div class="weui-cells mt-0">
     <div class="weui-cell">
       <div class="weui-cell__hd">
-        <label class="weui-label"><%= Ship::BoxHold.human_attribute_name(:sell_price) %></label>
+        <label class="weui-label"><%= Ship::BoxSell.human_attribute_name(:price) %></label>
       </div>
       <div data-controller="modify" class="weui-cell__bd is-flex is-align-items-center">
         <i class="fa-solid fa-xl fa-circle-minus has-text-grey-dark is-flex-none" data-action="click->modify#minus"></i>
-        <%= f.number_field :sell_price, all: { normal: nil }, wrap: { input: nil }, label: nil, data: { modify_target: 'input' }, class: 'weui-input is-flex-grow-1' %>
+        <%= f.number_field :price, all: { normal: nil }, wrap: { input: nil }, label: nil, data: { modify_target: 'input' }, class: 'weui-input is-flex-grow-1' %>
         <i class="fa-solid fa-xl fa-circle-plus has-text-grey-dark is-flex-none pr-1" data-action="click->modify#plus"></i>
         <span class="is-flex-none" style="width: 3em"></span>
       </div>
     </div>
     <div class="weui-cell">
       <div class="weui-cell__hd">
-        <label class="weui-label"><%= Ship::BoxHold.human_attribute_name(:sellable) %></label>
+        <label class="weui-label"><%= Ship::BoxSell.human_attribute_name(:amount) %></label>
       </div>
       <div data-controller="modify" class="weui-cell__bd is-flex is-align-items-center">
         <i class="fa-solid fa-xl fa-circle-minus has-text-grey-dark is-flex-none" data-action="click->modify#minus"></i>
-        <%= f.number_field :sellable, all: { normal: nil }, wrap: { input: nil }, label: nil, data: { modify_target: 'input' }, class: 'weui-input is-flex-grow-1' %>
+        <%= f.number_field :amount, all: { normal: nil }, wrap: { input: nil }, label: nil, data: { modify_target: 'input' }, class: 'weui-input is-flex-grow-1' %>
         <i class="fa-solid fa-xl fa-circle-plus has-text-grey-dark is-flex-none pr-1" data-action="click->modify#plus"></i>
         <span class="is-flex-none" style="width: 3em"></span>
       </div>
