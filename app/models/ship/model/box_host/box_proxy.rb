@@ -1,5 +1,5 @@
 module Ship
-  module Model::BoxHost::BoxSell
+  module Model::BoxHost::BoxProxy
     extend ActiveSupport::Concern
 
     included do
