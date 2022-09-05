@@ -35,5 +35,9 @@ module Ship
       box_buy || build_box_buy
     end
 
+    def average_price
+      (host_items.average(:single_price) + sell_items.average(:single_price)) /  2
+    end
+
   end
 end
