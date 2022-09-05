@@ -1,5 +1,5 @@
 module Ship
-  class My::BoxSellsController < My::BaseController
+  class My::BoxEntrustsController < My::BaseController
     before_action :set_box_host
     before_action :set_overview, only: [:index, :sell]
 

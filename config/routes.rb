@@ -256,7 +256,7 @@ Rails.application.routes.draw do
           end
         end
         resources :box_hosts, only: [] do
-          resources :box_sells do
+          resources :box_entrusts do
             collection do
               get :sell
             end
