@@ -1,7 +1,7 @@
 <div class="is-flex is-justify-content-space-between">
   <div class="tags has-addons">
-    <span class="tag is-primary"><i class="fa-solid fa-check"></i></span>
-    <span class="tag counter-section-item"></span>
+    <span class="tag"><i class="fa-solid fa-check"></i></span>
+    <span class="tag is-danger counter-section-item"></span>
   </div>
   <span class="has-text-danger pl-3"><%= model.price.to_money.format(html_wrap: true).html_safe %></span>
   <span><%= model.sellable_count %></span>
