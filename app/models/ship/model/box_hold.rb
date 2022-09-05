@@ -35,7 +35,7 @@ module Ship
     end
 
     def average_price
-      (host_items.average(:single_price).to_d + sell_items.average(:single_price).to_d) /  2
+      items.average(:single_price)
     end
 
   end
