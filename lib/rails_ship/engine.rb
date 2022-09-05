@@ -4,11 +4,11 @@ module RailsShip
   class Engine < ::Rails::Engine
 
     config.autoload_paths += Dir[
-      "#{config.root}/app/models/box_host",
+      "#{config.root}/app/models/box_sale",
       "#{config.root}/app/models/box_entrust"
     ]
     config.eager_load_paths += Dir[
-      "#{config.root}/app/models/box_host",
+      "#{config.root}/app/models/box_sale",
       "#{config.root}/app/models/box_entrust"
     ]
 

@@ -1,5 +1,5 @@
 module Ship
-  module Model::BoxEnquiry
+  module Model::BoxProxyBuy
     extend ActiveSupport::Concern
 
     included do

@@ -17,8 +17,6 @@ module Ship
       belongs_to :member_organ, class_name: 'Org::Organ', optional: true
       belongs_to :box_host, ->(o) { where(organ_id: o.organ_id) }, foreign_key: :box_specification_id, primary_key: :box_specification_id, optional: true
 
-      belongs_to :box_sell, ->(o){ where(organ_id: o.organ_id, price: o.sell_price) }, foreign_key: :box_specification_id, primary_key: :box_specification_id, optional: true
-      belongs_to :box_buy, ->(o){ where(organ_id: o.organ_id, price: o.buy_price) }, foreign_key: :box_specification_id, primary_key: :box_specification_id, optional: true
       has_many :boxes, ->(o){ where(organ_id: o.organ_id, held_user_id: o.user_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
       has_many :items, ->(o){ where(organ_id: o.organ_id, good_type: 'Ship::BoxHost', good_id: o.box_host&.id, member_id: o.member_id) }, class_name: 'Trade::Item', primary_key: :user_id, foreign_key: :user_id
     end
