@@ -1,7 +1,0 @@
-<%= form_with theme: 'weui', model: @box_hold, url: { controller: 'ship/my/box_holds' }.merge!(@box_hold.new_record? ? { action: 'create' } : { action: 'update', id: @box_hold.id }), class: 'weui-form pt-0' do |f| %>
-  <div class="weui-cells mt-0">
-    <%= f.number_field :buy_price %>
-    <%= f.number_field :buyable %>
-    <%= f.submit nil, all: { submit: 'weui-cell' } %>
-  </div>
-<% end %>

@@ -1,4 +1,4 @@
-<%= form_with theme: 'weui', model: @box_hold, url: { controller: 'ship/my/box_holds'}.merge!(@box_hold.new_record? ? { action: 'create' } : { action: 'update', id: @box_hold.id }), class: 'weui-form pt-0' do |f| %>
+<%= form_with theme: 'weui', model: @box_hold, url: { controller: 'ship/my/box_holds'}.merge!(@box_hold.new_record? ? { action: 'create' } : { action: 'update', id: @box_hold.id }), class: 'pt-0' do |f| %>
   <div class="weui-cells mt-0">
     <div class="weui-cell">
       <div class="weui-cell__hd">

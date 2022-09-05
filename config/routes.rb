@@ -13,11 +13,6 @@ Rails.application.routes.draw do
           get :rented
         end
         resources :boxes, only: [:index]
-        resources :box_sells do
-          collection do
-            get :sell
-          end
-        end
       end
       resources :boxes, only: [] do
         collection do
@@ -258,6 +253,13 @@ Rails.application.routes.draw do
         resources :box_holds do
           member do
             get :buy
+          end
+        end
+        resources :box_hosts, only: [] do
+          resources :box_sells do
+            collection do
+              get :sell
+            end
           end
         end
         resources :boxes do
