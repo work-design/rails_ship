@@ -14,7 +14,7 @@ module Ship
       belongs_to :member, class_name: 'Org::Member', optional: true
       belongs_to :member_organ, class_name: 'Org::Organ', optional: true
 
-      belongs :box_hold, ->(o){ where(organ_id: o.organ_id, box_specification_id: o.box_specification_id) }, primary_key: :user_id, foreign_key: :user_id
+      belongs_to :box_hold, ->(o){ where(organ_id: o.organ_id, box_specification_id: o.box_specification_id) }, primary_key: :user_id, foreign_key: :user_id
     end
 
     def init_box_hold
