@@ -11,7 +11,7 @@ module Ship
     end
 
     def init_box_proxy_buy
-      box_proxy_buy || build_box_proxy_by
+      box_proxy_buy || build_box_proxy_buy
     end
 
   end
