@@ -16,7 +16,9 @@
       <%= link_to({ controller: 'box_sells', box_host_id: model.id }, text: true) do %>
         <span>去交易大厅</span>
       <% end %>
-      <%= render partial: 'cart', locals: { model: model, cart: @cart } %>
+      <div class="is-flex">
+        <%= render partial: 'cart', locals: { model: model, cart: @cart } %>
+      </div>
     </div>
   </div>
 </div>
