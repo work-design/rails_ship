@@ -16,12 +16,14 @@ module Ship
       r = b_sells[0..-2].map do |box_sell|
         box_sell.item = item
         box_sell.done_amount = box_sell.amount
+        box_sell.state = 'pending'
         item.done_number += box_sell.done_amount
         box_sell
       end
 
       last_sell = b_sells[-1]
       last_sell.item = item
+      last_sell.state = 'pending'
       if item.done_number + last_sell.amount > item.number
         last_sell.done_amount = item.number - item.done_number
       else
