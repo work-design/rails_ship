@@ -11,10 +11,15 @@ module Ship
     def order_paid(item)
       r = box_sells.pluck(:id, :rest_amount)
       last = r.find_until(number)[-1]
-      box_sells.default_where('id-lte': last[0]).each do |box_sell|
+      r = box_sells.default_where('id-lte': last[0]).map do |box_sell|
         box_sell.done_amount = box_sell.amount
         box_sell.item = item
-        box_sell.save
+        item.done_number += done_amount
+      end
+
+      self.class.transaction do
+        r.map(&:save)
+        item.save
       end
     end
 
