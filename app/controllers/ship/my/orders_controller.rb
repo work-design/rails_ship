@@ -11,10 +11,9 @@ module Ship
     def set_new_order
       @order = current_user.orders.build(order_params)
       @order.items.each do |item|
-        @box_proxy_sell = @box_hold.box_host.box_proxy_sells.find_or_create_by(price: item.single_price)
+        @box_proxy_sell = @box_hold.box_sale.box_proxy_sells.find_or_create_by(price: item.single_price)
         item.good = @box_proxy_sell
       end
-      binding.b
     end
 
     def order_params

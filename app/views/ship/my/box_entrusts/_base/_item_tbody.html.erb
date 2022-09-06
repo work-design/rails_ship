@@ -3,6 +3,6 @@
     <span class="tag"><i class="fa-solid fa-check"></i></span>
     <span class="tag is-danger counter-section-item"></span>
   </div>
-  <span class="has-text-danger pl-3"><%= model.price.to_money.format(html_wrap: true).html_safe %></span>
-  <span><%= model.amount %></span>
+  <span class="has-text-danger pl-3"><%= model.single_price.to_money.format(html_wrap: true).html_safe %></span>
+  <span><%= model.number %></span>
 </div>
