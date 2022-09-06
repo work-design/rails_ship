@@ -1,15 +1,16 @@
-<div class="weui-media-box weui-media-box_appmsg">
-  <div class="weui-media-box__hd">持仓</div>
-  <div class="weui-media-box__bd counter-section">
-    <%= @box_hold.boxes_count %>
-    <%= @box_hold.average_price %>
+<div class="weui-panel">
+  <div class="weui-panel__hd">委托交易</div>
+  <div class="weui-panel__bd">
+    <div class="weui-media-box weui-media-box_appmsg">
+      <div class="weui-media-box__hd">持仓</div>
+      <div class="weui-media-box__bd counter-section">
+        <%= @box_hold.boxes_count %>
+        <%= @box_hold.average_price %>
+      </div>
+      <div class="weui-media-box__ft px-3"></div>
+    </div>
+    <%= render layout: 'held_tr' do %>
+      <%= render partial: 'held_tbody', collection: @box_entrusts, as: :model %>
+    <% end %>
   </div>
-  <div class="weui-media-box__ft px-3"></div>
-</div>
-<div class="weui-media-box weui-media-box_appmsg">
-  <div class="weui-media-box__hd">委托交易</div>
-  <div class="weui-media-box__bd counter-section">
-
-  </div>
-  <div class="weui-media-box__ft px-3"></div>
 </div>
