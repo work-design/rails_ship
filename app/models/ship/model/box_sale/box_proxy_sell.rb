@@ -16,7 +16,7 @@ module Ship
       r = b_sells[0..-2].map do |box_sell|
         box_sell.item = item
         box_sell.done_amount = box_sell.amount
-        item.done_number += done_amount
+        item.done_number += box_sell.done_amount
         box_sell
       end
 
@@ -25,8 +25,9 @@ module Ship
       if item.done_number + last_sell.amount > item.number
         last_sell.done_amount = item.number - item.done_number
       else
-        last_sell
+        last_sell.done_amount = last_sell.amount
       end
+      item.done_number += last_sell.done_amount
       r << last_sell
 
       self.class.transaction do
