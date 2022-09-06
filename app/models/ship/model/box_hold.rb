@@ -5,9 +5,7 @@ module Ship
     included do
       attribute :boxes_count, :integer, default: 0
       attribute :sellable, :integer
-      attribute :sell_price, :decimal
       attribute :buyable, :integer
-      attribute :buy_price, :decimal
 
       belongs_to :box_specification
       belongs_to :organ, class_name: 'Org::Organ', optional: true
