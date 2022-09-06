@@ -256,7 +256,7 @@ Rails.application.routes.draw do
           member do
             get :buy
           end
-          resources :box_buys, only: [:create]
+          resources :orders, only: [:create]
           resources :box_sells, only: [:create]
         end
         resources :box_hosts, only: [] do

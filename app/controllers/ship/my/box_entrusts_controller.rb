@@ -30,7 +30,8 @@ module Ship
     end
 
     def set_new_box_buy
-      @box_buy = @box_hold.box_buys.build
+      @order = current_user.orders.build
+      @order.items.build
     end
 
     def set_overview

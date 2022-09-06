@@ -18,9 +18,7 @@ module Ship
     end
 
     def trigger_buy
-      o = user.orders.build
-      o.items.build(good_type: box_proxy_sell.class_name, good_id: box_proxy_sell.id, number: amount)
-      o.save
+
     end
 
   end
