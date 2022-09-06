@@ -10,7 +10,7 @@
       <div class="weui-media-box__ft px-3"></div>
     </div>
     <%= render layout: 'held_tr' do %>
-      <%= render partial: 'held_tbody', collection: @box_hold.items, as: :model %>
+      <%= render partial: 'item_tbody', collection: @box_hold.items, as: :model %>
       <%= render partial: 'held_tbody', collection: @box_hold.box_sells, as: :model %>
     <% end %>
   </div>

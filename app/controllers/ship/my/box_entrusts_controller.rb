@@ -37,7 +37,7 @@ module Ship
     def set_overview
       @box_proxy_sells = @box_host.box_proxy_sells.order(price: :asc).limit(3)
       @box_proxy_buys = @box_host.box_proxy_buys.order(price: :desc).limit(3)
-      @box_entrusts = @box_hold.box_entrusts.order(id: :desc).limit(5)
+      @box_entrusts = @box_hold.box_sells.order(id: :desc).limit(5)
     end
 
   end
