@@ -51,8 +51,13 @@ module Ship
       usable = r.find_until(rest_amount)
       items = box_proxy_sell.items.find usable.keys
 
-      items.each do |item|
-        self.order_paid(item)
+      r = items.each do |item|
+        self.delivery(item, amount)
+      end
+
+      self.class.transaction do |x|
+        r.each(&:save!)
+        self.save!
       end
     end
 
