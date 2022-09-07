@@ -5,7 +5,7 @@ module Ship
     included do
       attribute :sellable_count, :integer, default: 0
 
-      has_many :box_sells, ->(o) { default_where(organ_id: o.organ_id, 'rest-amount-gt': 0).order(id: :asc) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
+      has_many :box_sells, ->(o) { default_where(organ_id: o.organ_id, 'rest-amount-gt': 0, 'price-lte': o.price).order(price: :desc, id: :asc) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
     end
 
     # todo 针对交易量过大时候的优化
