@@ -11,30 +11,23 @@ module Ship
     # todo 针对交易量过大时候的优化
     def order_paid(item)
       r = box_sells.pluck(:id, :rest_amount)
-      usable = r.find_until(item.number)
-      b_sells = box_sells.default_where('id-lte': usable[-1][0])
+      usable = r.find_until(item.rest_number)
+      b_sells = box_sells.find(id: usable.keys)
       r = b_sells[0..-2].map do |box_sell|
-        box_sell.item = item
-        box_sell.pending_amount = box_sell.amount
-        box_sell.state = 'pending'
-        item.done_number += box_sell.pending_amount
-        box_sell
+        box_sell.deliver(item, box_sell.rest_amount)
       end
 
       last_sell = b_sells[-1]
-      last_sell.item = item
-      last_sell.state = 'pending'
-      if item.done_number + last_sell.amount > item.number
-        last_sell.pending_amount = item.number - item.done_number
+      if item.done_number + last_sell.rest_amount > item.number
+        box_sell.deliver(item, item.number - item.done_number)
       else
-        last_sell.pending_amount = last_sell.amount
+        box_sell.deliver(item, last_sell.rest_amount)
       end
-      item.done_number += last_sell.pending_amount
       r << last_sell
 
       self.class.transaction do
-        r.map(&:save)
-        item.save
+        r.map(&:save!)
+        item.save!
       end
     end
 
