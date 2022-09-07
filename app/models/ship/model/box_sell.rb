@@ -52,13 +52,22 @@ module Ship
       items = box_proxy_sell.items.find usable.keys
 
       r = items.each do |item|
-        self.delivery(item, amount)
+        self.delivery_item(item)
       end
 
       self.class.transaction do |x|
         r.each(&:save!)
         self.save!
       end
+    end
+
+    def delivery_item(item)
+      item.done_number = self.rest_amount
+      self.done_amount += item.number
+      ws = self.wallet_sells.build(wallet_id: user.lawful_wallet.id, item_id: item.id)
+      ws.amount = self.price * self.pending_amount
+
+      item
     end
 
     def delivery(item, amount)
