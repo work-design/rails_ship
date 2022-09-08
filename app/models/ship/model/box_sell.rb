@@ -21,7 +21,7 @@ module Ship
       belongs_to :member, class_name: 'Org::Member', optional: true
       belongs_to :member_organ, class_name: 'Org::Organ', optional: true
 
-      has_many :wallet_sells, as: :selled
+      has_many :wallet_sells, as: :selled, class_name: 'Trade::WalletSell'
 
       belongs_to :box_proxy_sell, ->(o) { where(organ_id: o.organ_id, price: o.price) }, foreign_key: :box_specification_id, primary_key: :box_specification_id, optional: true
       belongs_to :box_hold, ->(o) { where(organ_id: o.organ_id, user_id: o.user_id, member_id: o.member_id) }, foreign_key: :box_specification_id, primary_key: :box_specification_id
@@ -29,7 +29,7 @@ module Ship
 
       before_validation :init_box_proxy_sell, if: -> { price.present? && (['price', 'amount'] & changes.keys).present? }
       before_validation :compute_rest_amount, if: -> { (['amount', 'done_amount'] & changes.keys).present? }
-      after_save :deal_rest_item, if: -> { (saved_changes.keys & ['amount']).present? }
+      after_save_commit :deal_rest_item, if: -> { (saved_changes.keys & ['amount']).present? }
     end
 
     def init_box_hold
@@ -59,9 +59,9 @@ module Ship
       end
       last_item = items[-1]
       if self.done_amount + last_item.rest_number > self.rest_amount
-        self.delivery_item(item, self.rest_amount - self.done_amount)
+        self.delivery_item(last_item, self.rest_amount - self.done_amount)
       else
-        self.delivery_item(item, item.rest_number)
+        self.delivery_item(last_item, last_item.rest_number)
       end
       r << last_item
 

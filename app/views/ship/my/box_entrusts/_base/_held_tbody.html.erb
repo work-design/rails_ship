@@ -3,6 +3,10 @@
     <span class="tag"><i class="fa-solid fa-check"></i></span>
   </div>
   <span class="has-text-success pl-3"><%= model.price.to_money.format(html_wrap: true).html_safe %></span>
-  <span><%= model.amount %></span>
+  <span>
+    <span><%= model.amount %></span>
+    <span>/</span>
+    <span><%= model.done_amount %></span>
+  </span>
   <time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time>
 </div>

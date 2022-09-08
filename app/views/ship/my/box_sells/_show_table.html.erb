@@ -11,12 +11,8 @@
   <td><%= @box_sell.amount %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Ship::BoxSell.human_attribute_name(:pending_amount) %></td>
-  <td><%= @box_sell.pending_amount %></td>
-</tr>
-<tr>
-  <td class="has-text-right"><%= Ship::BoxSell.human_attribute_name(:transacted_amount) %></td>
-  <td><%= @box_sell.transacted_amount %></td>
+  <td class="has-text-right"><%= Ship::BoxSell.human_attribute_name(:done_amount) %></td>
+  <td><%= @box_sell.done_amount %></td>
 </tr>
 <tr>
   <td class="has-text-right"><%= Ship::BoxSell.human_attribute_name(:rest_amount) %></td>
