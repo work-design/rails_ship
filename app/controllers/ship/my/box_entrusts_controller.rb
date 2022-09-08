@@ -38,6 +38,7 @@ module Ship
       @box_proxy_sells = @box_host.box_proxy_sells.order(price: :asc).limit(3)
       @box_proxy_buys = @box_host.box_proxy_buys.order(price: :desc).limit(3)
       @box_entrusts = @box_hold.box_sells.order(id: :desc).limit(5)
+      @items = @box_host.items.where(user_id: @box_hold.user_id)
     end
 
   end
