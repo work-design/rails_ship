@@ -1,9 +1,8 @@
 module Ship
-  module Model::BoxSale
+  module Model::BoxHost
     extend ActiveSupport::Concern
 
     included do
-      attribute :type, :string
       attribute :boxes_count, :integer, default: 0
       attribute :rented_count, :integer, default: 0
       attribute :rentable_count, :integer, default: 0
