@@ -54,7 +54,7 @@ module Ship
 
     def deal_rest_item
       # 买入价更高的优先，同等价格下先发布的优先
-      r = box_host.items.default_where('rest_number-gt': 0, 'single_price-gte': price).order(single_price: :desc, id: :asc).pluck(:id, :rest_number)
+      r = box_host.items.status_paid.default_where('rest_number-gt': 0, 'single_price-gte': price).order(single_price: :desc, id: :asc).pluck(:id, :rest_number)
       usable = r.find_until(rest_amount)
       items = box_host.items.find usable.map(&:first)
 
