@@ -13,3 +13,13 @@
   </ul>
 </div>
 
+<div class="is-flex is-justify-content-space-between px-4">
+  <div>
+    <span>最大可买：</span>
+    <span><%=  %></span>
+  </div>
+  <div>
+    <span>可用金额：</span>
+    <span class="has-text-danger"><%= current_user.lawful_wallet.amount.to_money.format(html_wrap: true).html_safe %></span>
+  </div>
+</div>
