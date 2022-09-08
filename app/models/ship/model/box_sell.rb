@@ -72,9 +72,9 @@ module Ship
 
     def delivery_item(item, amount)
       item.done_number = amount
-      self.done_amount += item.done_number
       ws = self.wallet_sells.build(wallet_id: user.lawful_wallet.id, item_id: item.id)
       ws.amount = self.price * item.done_number
+      self.done_amount += item.done_number
 
       item
     end
