@@ -48,6 +48,10 @@ module Ship
       self.state = 'pending'
     end
 
+    def lawful_wallet
+      user.lawful_wallets.find_by(organ_id: organ_id) || user.lawful_wallets.create(organ_id: organ_id)
+    end
+
     def deal_rest_item
       # 买入价更高的优先，同等价格下先发布的优先
       r = box_host.items.default_where('rest_number-gt': 0, 'single_price-gte': price).order(single_price: :desc, id: :asc).pluck(:id, :rest_number)
@@ -73,7 +77,7 @@ module Ship
 
     def delivery_item(item, amount)
       item.done_number = amount
-      ws = self.wallet_sells.build(wallet_id: user.lawful_wallet.id, item_id: item.id)
+      ws = self.wallet_sells.build(wallet_id: lawful_wallet.id, item_id: item.id)
       ws.amount = self.price * item.done_number
       self.done_amount += item.done_number
 
@@ -82,7 +86,7 @@ module Ship
 
     def delivery(item, amount)
       self.done_amount = amount
-      ws = self.wallet_sells.build(wallet_id: user.lawful_wallet.id, item_id: item.id)
+      ws = self.wallet_sells.build(wallet_id: lawful_wallet.id, item_id: item.id)
       ws.amount = self.price * self.done_amount
 
       item.done_number += done_amount

@@ -4,6 +4,7 @@ module Ship
     before_action :set_overview, only: [:index, :sell]
     before_action :set_new_box_buy, only: [:index]
     before_action :set_new_box_sell, only: [:sell]
+    before_action :set_lawful_wallet, only: [:index]
 
     def index
       q_options = { box_specification_id: @box_host.box_specification_id }

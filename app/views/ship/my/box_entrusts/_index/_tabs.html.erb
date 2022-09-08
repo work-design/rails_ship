@@ -18,8 +18,8 @@
     <span>最大可买：</span>
     <span><%=  %></span>
   </div>
-  <div>
+  <%= link_to({ controller: 'trade/my/lawful_wallets', action: 'show' }) do %>
     <span>可用金额：</span>
-    <span class="has-text-danger"><%= current_user.lawful_wallet.amount.to_money.format(html_wrap: true).html_safe %></span>
-  </div>
+    <span class="has-text-danger"><%= @lawful_wallet.amount.to_money.format(html_wrap: true).html_safe %></span>
+  <% end %>
 </div>
