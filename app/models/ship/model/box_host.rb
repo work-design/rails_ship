@@ -28,6 +28,7 @@ module Ship
       # 排序：出价低的优先，先发布的优先；
       r = box_sells.default_where('rest-amount-gt': 0, 'price-lte': price).order(price: :asc, id: :asc).pluck(:id, :rest_amount)
       usable = r.find_until(item.rest_number)
+      return if usable.blank?
 
       b_sells = box_sells.find usable.map(&:first)
       r = b_sells[0..-2].map do |box_sell|
