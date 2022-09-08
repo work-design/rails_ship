@@ -28,6 +28,7 @@ module Ship
 
       before_validation :init_box_proxy_sell, if: -> { price.present? && (['price', 'amount'] & changes.keys).present? }
       before_validation :compute_rest_amount, if: -> { (['amount', 'done_amount'] & changes.keys).present? }
+      after_save :deal_rest_item, if: -> { (saved_changes.keys & ['amount']).present? }
     end
 
     def init_box_hold
