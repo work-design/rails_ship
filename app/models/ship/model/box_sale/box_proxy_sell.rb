@@ -14,7 +14,7 @@ module Ship
       r = box_sells.default_where('rest-amount-gt': 0, 'price-lte': o.price).order(price: :asc, id: :asc).pluck(:id, :rest_amount)
       usable = r.find_until(item.rest_number)
 
-      b_sells = box_sells.find(usable)
+      b_sells = box_sells.find usable.map(&:first)
       r = b_sells[0..-2].map do |box_sell|
         box_sell.deliver(item, box_sell.rest_amount)
       end

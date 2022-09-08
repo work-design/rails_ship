@@ -50,7 +50,7 @@ module Ship
       # 买入价更高的优先，同等价格下先发布的优先
       r = box_proxy_sell.items.default_where('rest_number-gt': 0, 'single_price-gte': price).order(single_price: :desc, id: :asc).pluck(:id, :rest_number)
       usable = r.find_until(rest_amount)
-      items = box_proxy_sell.items.find usable.keys
+      items = box_proxy_sell.items.find usable.map(&:first)
 
       r = items.each do |item|
         self.delivery_item(item)
