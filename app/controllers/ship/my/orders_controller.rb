@@ -16,9 +16,10 @@ module Ship
     end
 
     def order_params
-      params.fetch(:order, {}).permit(
+      p = params.fetch(:order, {}).permit(
         items_attributes: {}
       )
+      p.merge! default_form_params
     end
   end
 end
