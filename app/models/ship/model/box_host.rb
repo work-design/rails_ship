@@ -35,7 +35,7 @@ module Ship
       end
 
       last_sell = b_sells[-1]
-      if item.done_number + last_sell.rest_amount > item.number
+      if item.done_number + last_sell.rest_amount > item.rest_number
         last_sell.delivery(item, item.number - item.done_number)
       else
         last_sell.delivery(item, last_sell.rest_amount)
