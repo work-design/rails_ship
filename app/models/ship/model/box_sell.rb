@@ -52,9 +52,16 @@ module Ship
       usable = r.find_until(rest_amount)
       items = box_proxy_sell.items.find usable.map(&:first)
 
-      r = items.each do |item|
-        self.delivery_item(item)
+      r = items[0..-2].each do |item|
+        self.delivery_item(item, item.rest_number)
       end
+      last_item = items[-1]
+      if self.done_amount + last_item.rest_number > self.rest_amount
+        self.delivery_item(item, self.rest_amount - self.done_amount)
+      else
+        self.delivery_item(item, item.rest_number)
+      end
+      r << last_item
 
       self.class.transaction do
         r.each(&:save!)
@@ -62,8 +69,8 @@ module Ship
       end
     end
 
-    def delivery_item(item)
-      item.done_number = item.rest_number
+    def delivery_item(item, amount)
+      item.done_number = amount
       self.done_amount += item.done_number
       ws = self.wallet_sells.build(wallet_id: user.lawful_wallet.id, item_id: item.id)
       ws.amount = self.price * item.done_number
