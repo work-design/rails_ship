@@ -5,7 +5,7 @@ module Ship
     included do
       attribute :price, :decimal
       attribute :amount, :integer
-      attribute :pending_amount, :integer, default: 0
+      attribute :done_amount, :integer, default: 0
       attribute :rest_amount, :integer
 
       enum state: {
@@ -27,7 +27,7 @@ module Ship
       belongs_to :box_hold, ->(o) { where(organ_id: o.organ_id, box_specification_id: o.box_specification_id) }, primary_key: :user_id, foreign_key: :user_id
 
       before_validation :init_box_proxy_sell, if: -> { price.present? && (['price', 'amount'] & changes.keys).present? }
-      before_validation :compute_rest_amount, if: -> { (['amount', 'pending_amount'] & changes.keys).present? }
+      before_validation :compute_rest_amount, if: -> { (['amount', 'done_amount'] & changes.keys).present? }
     end
 
     def init_box_hold
@@ -39,7 +39,7 @@ module Ship
     end
 
     def compute_rest_amount
-      self.rest_amount = self.amount - self.pending_amount
+      self.rest_amount = self.amount - self.done_amount
     end
 
     def check_state
@@ -56,27 +56,27 @@ module Ship
         self.delivery_item(item)
       end
 
-      self.class.transaction do |x|
+      self.class.transaction do
         r.each(&:save!)
         self.save!
       end
     end
 
     def delivery_item(item)
-      item.done_number = self.rest_amount
-      self.done_amount += item.number
+      item.done_number = item.rest_number
+      self.done_amount += item.done_number
       ws = self.wallet_sells.build(wallet_id: user.lawful_wallet.id, item_id: item.id)
-      ws.amount = self.price * self.pending_amount
+      ws.amount = self.price * item.done_number
 
       item
     end
 
     def delivery(item, amount)
-      self.pending_amount = amount
+      self.done_amount = amount
       ws = self.wallet_sells.build(wallet_id: user.lawful_wallet.id, item_id: item.id)
-      ws.amount = self.price * self.pending_amount
+      ws.amount = self.price * self.done_amount
 
-      item.done_number += pending_amount
+      item.done_number += done_amount
       self
     end
 
