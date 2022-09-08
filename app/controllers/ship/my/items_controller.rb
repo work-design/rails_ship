@@ -9,7 +9,7 @@ module Ship
     end
 
     def set_item
-      @item = @box_hold.items.find params[:id]
+      @item = @box_hold.box_host.items.find params[:id]
     end
 
   end
