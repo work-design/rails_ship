@@ -26,19 +26,19 @@ module Ship
     # todo 针对交易量过大时候的优化
     def order_paid(item)
       # 排序：出价低的优先，先发布的优先；
-      r = box_sells.default_where('rest-amount-gt': 0, 'price-lte': o.price).order(price: :asc, id: :asc).pluck(:id, :rest_amount)
+      r = box_sells.default_where('rest-amount-gt': 0, 'price-lte': price).order(price: :asc, id: :asc).pluck(:id, :rest_amount)
       usable = r.find_until(item.rest_number)
 
       b_sells = box_sells.find usable.map(&:first)
       r = b_sells[0..-2].map do |box_sell|
-        box_sell.deliver(item, box_sell.rest_amount)
+        box_sell.delivery(item, box_sell.rest_amount)
       end
 
       last_sell = b_sells[-1]
       if item.done_number + last_sell.rest_amount > item.number
-        box_sell.deliver(item, item.number - item.done_number)
+        last_sell.delivery(item, item.number - item.done_number)
       else
-        box_sell.deliver(item, last_sell.rest_amount)
+        last_sell.delivery(item, last_sell.rest_amount)
       end
       r << last_sell
 
