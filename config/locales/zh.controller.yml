@@ -95,6 +95,9 @@ zh:
       box_hosts:
         index:
           title: 管理物流箱
+      box_proxy_sells:
+        index:
+          title: 委托交易概览
       boxes:
         index:
           title: 物流箱

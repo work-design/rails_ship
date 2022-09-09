@@ -128,7 +128,11 @@ Rails.application.routes.draw do
             end
           end
         end
-        resources :box_hosts
+        resources :box_hosts do
+          resources :box_proxy_sells do
+            resources :box_sells
+          end
+        end
         resources :box_specifications, only: [] do
           resources :boxes do
             collection do
