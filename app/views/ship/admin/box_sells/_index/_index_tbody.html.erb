@@ -1,0 +1,12 @@
+<td><%= model.user_id %></td>
+<td><%= model.member_id %></td>
+<td><%= model.member_organ_id %></td>
+<td><%= model.price %></td>
+<td><%= model.amount %></td>
+<td><%= model.done_amount %></td>
+<td>
+  <span><%= model.rest_amount %></span>
+  <% if model.amount - model.done_amount != model.rest_amount %>
+    <span class="tag is-danger"><%= model.amount - model.done_amount %></span>
+  <% end %>
+</td>
