@@ -17,6 +17,7 @@ module Ship
 
     def order_params
       p = params.fetch(:order, {}).permit(
+        :pay_auto,
         items_attributes: {}
       )
       p.merge! default_form_params
