@@ -4,13 +4,5 @@
 </tr>
 <tr>
   <td class="has-text-right"><%= Ship::BoxSpecification.human_attribute_name(:width) %></td>
-  <td><%= @box_specification.width %></td>
-</tr>
-<tr>
-  <td class="has-text-right"><%= Ship::BoxSpecification.human_attribute_name(:length) %></td>
-  <td><%= @box_specification.length %></td>
-</tr>
-<tr>
-  <td class="has-text-right"><%= Ship::BoxSpecification.human_attribute_name(:height) %></td>
-  <td><%= @box_specification.height %></td>
+  <td><%= @box_specification.measure %></td>
 </tr>
