@@ -11,6 +11,8 @@ zh:
     box_hosts:
       index:
         title: 运营明细
+      overview:
+        title: 运营概况
       all:
         title: 管理明细
       rentable:

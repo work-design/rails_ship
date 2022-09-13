@@ -7,34 +7,21 @@
       <span><%= model.box_specification.measure %></span>
       <span class="tag"><%= model.box_specification.name %></span>
     <% end %>
-    <div class="columns is-flex is-align-items-center">
-      <%= link_to({ action: 'all', id: model }, class: 'column has-block-centered') do %>
-        <div class="has-text-grey-dark">
-          <i class="fa-regular fa-tags has-text-primary"></i>
-          <span class="has-text-grey-dark is-size-7 pl-0"><%= Ship::BoxHost.human_attribute_name(:boxes_count) %></span>
-          <%= model.boxes_count %>
-        </div>
-        <div class="has-text-weight-medium has-text-danger-dark is-family-zhushi is-size-5">
-
-        </div>
+    <div class="is-flex is-justify-content-space-between py-3">
+      <%= link_to({ action: 'all', id: model }, class: '') do %>
+        <i class="fa-regular fa-tags has-text-primary"></i>
+        <span class="has-text-grey-dark is-size-7 pl-0"><%= Ship::BoxHost.human_attribute_name(:boxes_count) %></span>
+        <span class="has-text-weight-medium has-text-danger-dark is-family-zhushi"><%= model.boxes_count %></span>
       <% end %>
-      <%= link_to({ action: 'rentable', id: model }, class: 'column has-block-centered') do %>
-        <div class="has-text-grey-dark">
-          <i class="fa-regular fa-tags has-text-primary"></i>
-          <span class="has-text-grey-dark is-size-7 pl-0"><%= Ship::BoxHost.human_attribute_name(:rentable_count) %></span>
-        </div>
-        <div class="has-text-weight-medium has-text-danger-dark is-family-zhushi is-size-5">
-          <%= model.rentable_count %>
-        </div>
+      <%= link_to({ action: 'rentable', id: model }, class: '') do %>
+        <i class="fa-regular fa-tags has-text-primary"></i>
+        <span class="has-text-grey-dark is-size-7 pl-0"><%= Ship::BoxHost.human_attribute_name(:rentable_count) %></span>
+        <span class="has-text-weight-medium has-text-danger-dark is-family-zhushi"><%= model.rentable_count %></span>
       <% end %>
-      <%= link_to({ action: 'rented', id: model }, class: 'column has-block-centered') do %>
-        <div class="has-text-grey-dark">
-          <i class="fa-regular fa-tags has-text-primary"></i>
-          <span class="has-text-grey-dark is-size-7 pl-0"><%= Ship::BoxHost.human_attribute_name(:rented_count) %></span>
-        </div>
-        <div class="has-text-weight-medium has-text-danger-dark is-family-zhushi is-size-5">
-          <%= model.rented_count %>
-        </div>
+      <%= link_to({ action: 'rented', id: model }, class: '') do %>
+        <i class="fa-regular fa-tags has-text-primary"></i>
+        <span class="has-text-grey-dark is-size-7 pl-0"><%= Ship::BoxHost.human_attribute_name(:rented_count) %></span>
+        <span class="has-text-weight-medium has-text-danger-dark is-family-zhushi"><%= model.rented_count %></span>
       <% end %>
     </div>
   </div>
