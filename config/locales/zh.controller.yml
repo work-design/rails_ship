@@ -19,6 +19,12 @@ zh:
         title: 可租明细
       rented:
         title: 已租明细
+    box_proxy_sells:
+      index:
+        title: 卖出
+    box_proxy_buys:
+      index:
+        title: 买入
     panel:
       title: 运输管理
       home:
