@@ -1,6 +1,6 @@
 module Ship
   class BoxHostsController < BaseController
-    before_action :set_box_host, only: [:show, :boxes, :rentable, :rented]
+    before_action :set_box_host, only: [:show, :all, :rentable, :rented]
     before_action :set_use_cart, only: [:index]
     before_action :set_rent_cart, only: [:rent]
     before_action :set_invest_cart, only: [:invest]

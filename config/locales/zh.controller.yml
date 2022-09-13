@@ -11,7 +11,7 @@ zh:
     box_hosts:
       index:
         title: 运营明细
-      boxes:
+      all:
         title: 管理明细
       rentable:
         title: 可租明细
