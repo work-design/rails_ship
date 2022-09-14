@@ -11,6 +11,10 @@
     </p>
     <div class="is-flex is-align-items-center">
       <span class="has-text-danger"><%= model.price.to_money.format(html_wrap: true).html_safe %></span>
+      <span class="pl-2">
+        <span class="has-text-grey">可售</span>
+        <span><%= model.saleable_count %></span>
+      </span>
     </div>
     <div class="is-flex is-justify-content-space-between pt-2">
       <%= link_to({ controller: 'ship/my/box_entrusts', box_host_id: model.id }, text: true) do %>

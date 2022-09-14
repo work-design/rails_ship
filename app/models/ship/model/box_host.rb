@@ -6,6 +6,7 @@ module Ship
       attribute :boxes_count, :integer, default: 0
       attribute :rented_count, :integer, default: 0
       attribute :rentable_count, :integer, default: 0
+      attribute :saleable_count, :integer, default: 0
 
       belongs_to :organ, class_name: 'Org::Organ'
       belongs_to :box_specification
@@ -21,6 +22,7 @@ module Ship
       self.boxes_count = boxes.count
       self.rented_count = boxes.rented.count
       self.rentable_count = boxes.rentable.count
+      self.saleable_count = boxes.saleable.count
     end
 
     # todo 针对交易量过大时候的优化
@@ -53,7 +55,7 @@ module Ship
     end
 
     def own_item(item)
-      boxes = self.boxes.orderable.limit(item.rest_number)
+      boxes = self.boxes.saleable.limit(item.rest_number)
       if item.number > boxes.size
         item.done_number = boxes.size
       else
