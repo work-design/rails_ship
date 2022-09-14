@@ -24,6 +24,9 @@ zh:
         sell_price: 卖出价格
         buyable: 买入数量
         buy_price: 买入限价
+      ship/box_sell:
+        price: 价格
+        amount: 数量
       ship/box_specification:
         width: 宽
         length: 长
