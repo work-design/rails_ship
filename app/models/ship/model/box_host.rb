@@ -53,7 +53,7 @@ module Ship
     end
 
     def own_item(item)
-      boxes = self.boxes.orderable.limit(item.number)
+      boxes = self.boxes.orderable.limit(item.rest_number)
       if item.number > boxes.size
         item.done_number = boxes.size
       else
