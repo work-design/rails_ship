@@ -67,8 +67,6 @@ module Ship
         box
       end
 
-      item.status = 'done'
-
       item.class.transaction do
         boxes.each(&:save!)
         item.save!
