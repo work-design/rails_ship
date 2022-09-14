@@ -13,7 +13,9 @@ module Ship
     private
     def box_host_params
       p = params.fetch(:box_host, {}).permit(
-        :box_specification_id
+        :box_specification_id,
+        :price,
+        :invest_ratio
       )
       p.merge! default_form_params
     end
