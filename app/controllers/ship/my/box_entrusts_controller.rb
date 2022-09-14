@@ -24,6 +24,8 @@ module Ship
 
     def set_new_box_sell
       @box_sell = @box_hold.box_sells.build
+      @box_sell.price = @box_proxy_buys.maximum(:price) || @box_host.price
+      @box_sell.amount = [10, @box_hold.boxes_count].min
     end
 
     def set_new_box_buy
