@@ -5,7 +5,7 @@ module Ship
       q_params = {}
       q_params.merge! default_params
 
-      @box_hosts = BoxHost.includes(:box_specification).default_where(q_params).page(params[:page])
+      @box_hosts = BoxHost.includes(:box_specification).default_where(q_params).order(id: :asc).page(params[:page])
 
       @box_specifications = BoxSpecification.where.not(id: @box_hosts.pluck(:box_specification_id).uniq)
     end
