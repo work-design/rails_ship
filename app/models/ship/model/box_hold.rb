@@ -22,7 +22,7 @@ module Ship
     end
 
     def average_price
-      box_host.items.where(user_id: user_id, member_id: member_id).average(:single_price).to_fs(:rounded, precision: 3)
+      box_host.items.where(user_id: user_id, member_id: member_id).average(:single_price)&.to_fs(:rounded, precision: 3)
     end
 
   end
