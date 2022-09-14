@@ -28,7 +28,9 @@ module Ship
       # 排序：出价低的优先，先发布的优先；
       r = box_sells.default_where('rest_amount-gt': 0, 'price-lte': item.single_price).order(price: :asc, id: :asc).pluck(:id, :rest_amount)
       usable = r.find_until(item.rest_number)
-      return if usable.blank?
+      if usable.blank?
+        own_item(item)
+      end
 
       b_sells = box_sells.find usable.map(&:first)
       r = b_sells[0..-2].map do |box_sell|
@@ -45,6 +47,30 @@ module Ship
 
       self.class.transaction do
         r.map(&:save!)
+        item.save!
+      end
+    end
+
+    def own_item(item)
+      boxes = self.boxes.orderable.limit(item.number)
+      if item.number > boxes.size
+        item.done_number = boxes.size
+      else
+        item.done_number = item.number
+      end
+
+      boxes.map do |box|
+        box.organ_id = item.member_organ_id
+        box.owned_user_id = item.user_id
+        box.owned_organ_id = item.member_organ_id
+        box.status = 'free'
+        box
+      end
+
+      item.status = 'done'
+
+      item.class.transaction do
+        boxes.each(&:save!)
         item.save!
       end
     end

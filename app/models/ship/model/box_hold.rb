@@ -18,7 +18,7 @@ module Ship
 
       has_many :box_sells, ->(o) { where(organ_id: o.organ_id, user_id: o.user_id, member_id: o.member_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
       has_many :box_buys, ->(o) { where(organ_id: o.organ_id, user_id: o.user_id, member_id: o.member_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
-      has_many :boxes, ->(o) { where(organ_id: o.organ_id, held_user_id: o.user_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
+      has_many :boxes, ->(o) { where(organ_id: o.organ_id, owned_user_id: o.user_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
     end
 
     def average_price
