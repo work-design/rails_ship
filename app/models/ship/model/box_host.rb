@@ -30,6 +30,7 @@ module Ship
       usable = r.find_until(item.rest_number)
       if usable.blank?
         own_item(item)
+        return
       end
 
       b_sells = box_sells.find usable.map(&:first)
@@ -60,7 +61,6 @@ module Ship
       end
 
       boxes.map do |box|
-        box.organ_id = item.member_organ_id
         box.owned_user_id = item.user_id
         box.owned_organ_id = item.member_organ_id
         box.status = 'free'
