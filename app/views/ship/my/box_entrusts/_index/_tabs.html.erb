@@ -15,8 +15,10 @@
 
 <div class="is-flex is-justify-content-space-between px-4">
   <div>
+  <% if @order.items[0].single_price > 0 %>
     <span>最大可买：</span>
-    <span><%=  %></span>
+    <span><%= (@lawful_wallet.amount / @order.items[0].single_price).floor %></span>
+  <% end %>
   </div>
   <%= link_to({ controller: 'trade/my/lawful_wallets', action: 'show' }) do %>
     <span>可用金额：</span>

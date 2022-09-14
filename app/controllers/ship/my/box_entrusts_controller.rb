@@ -28,7 +28,8 @@ module Ship
 
     def set_new_box_buy
       @order = current_user.orders.build
-      @order.items.build
+      price = @box_proxy_sells.minimum(:price) || @box_host.price
+      @order.items.build(single_price: price)
     end
 
     def set_overview
