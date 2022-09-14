@@ -1,3 +1,6 @@
-<th><%= BoxBuy.human_attribute_name(:price) %></th>
-<th><%= BoxBuy.human_attribute_name(:amount) %></th>
-<th><%= BoxBuy.human_attribute_name(:box_specification_id) %></th>
+<th><%= Trade::Item.human_attribute_name(:single_price) %></th>
+<th>
+  <span><%= Trade::Item.human_attribute_name(:number) %></span>
+  <span>/</span>
+  <span><%= Trade::Item.human_attribute_name(:done_number) %></span>
+</th>
