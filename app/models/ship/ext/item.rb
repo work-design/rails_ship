@@ -18,7 +18,7 @@ module Ship
       box_hold.save
     end
 
-    def init_box_proxy_sell
+    def init_box_proxy_buy
       box_proxy_buy || build_box_proxy_buy
       box_proxy_buy.save
     end
