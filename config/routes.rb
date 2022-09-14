@@ -132,8 +132,6 @@ Rails.application.routes.draw do
           resources :box_proxy_sells do
             resources :box_sells
           end
-        end
-        resources :box_specifications, only: [] do
           resources :boxes do
             collection do
               post :batch
