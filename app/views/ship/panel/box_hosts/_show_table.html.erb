@@ -1,0 +1,14 @@
+<tr>
+  <td class="has-text-right"><%= Ship::BoxSpecification.human_attribute_name(:price) %></td>
+  <td><%= @box_host.price.to_money.format(html_wrap: true).html_safe %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Ship::BoxSpecification.human_attribute_name(:covers) %></td>
+  <td>
+    <div class="is-flex">
+    <% @box_host.box_specification.covers.each do |image| %>
+      <%= image_tag image, class: 'image is-128x128 mr-4' %>
+    <% end %>
+    </div>
+  </td>
+</tr>

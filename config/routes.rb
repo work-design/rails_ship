@@ -65,6 +65,7 @@ Rails.application.routes.draw do
               end
             end
           end
+          resources :box_hosts
         end
       end
       namespace :admin, defaults: { namespace: 'admin' } do

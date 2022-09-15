@@ -1,0 +1,8 @@
+<th><%= Ship::BoxSpecification.human_attribute_name(:organ_id) %></th>
+<th><%= Ship::BoxHost.human_attribute_name(:boxes_count) %></th>
+<th>
+  <p><%= Ship::BoxHost.human_attribute_name(:rentable_count) %></p>
+  <p><%= Ship::BoxHost.human_attribute_name(:rented_count) %></p>
+</th>
+<th><%= Ship::BoxSpecification.human_attribute_name(:price) %></th>
+<th><%= Ship::BoxSpecification.human_attribute_name(:invest_ratio) %></th>

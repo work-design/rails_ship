@@ -1,0 +1,13 @@
+<td><%= model.organ.name %></td>
+<td>
+  <%= link_to({ controller: 'boxes', box_specification_id: model.box_specification_id, organ_id: model.organ_id }, aria: { label: t('ship.panel.boxes.index.title') }, class: 'button is-small is-rounded is-light') do %>
+    <i class="fa-regular fa-boxes-stacked"></i>
+    <span class="pl-1"><%= model.boxes_count %></span>
+  <% end %>
+</td>
+<td>
+  <p><%= model.rentable_count %></p>
+  <p><%= model.rented_count %></p>
+</td>
+<td><%= model.price.to_money.format(html_wrap: true).html_safe %></td>
+<td><%= (model.invest_ratio * 100).to_fs(:percentage, precision: 0) %></td>

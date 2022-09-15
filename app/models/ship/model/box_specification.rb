@@ -15,6 +15,7 @@ module Ship
       has_many_attached :covers
 
       has_many :boxes, dependent: :nullify
+      has_many :box_hosts
     end
 
     def measure

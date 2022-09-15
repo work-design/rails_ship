@@ -6,6 +6,9 @@
         <i class="fa-regular fa-boxes-stacked"></i>
         <span class="pl-1"><%= model.boxes_count %></span>
       <% end %>
+      <%= link_to({ controller: 'box_hosts', box_specification_id: model.id }, aria: { label: t('ship.panel.box_hosts.index.title') }, class: 'button is-small is-rounded is-light') do %>
+        <i class="fa-regular fa-building"></i>
+      <% end %>
       <%= link_to({ action: 'show', id: model.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.show') }, class: 'button is-small is-rounded is-light') do %>
         <i class="fa-regular fa-circle-info"></i>
       <% end %>
