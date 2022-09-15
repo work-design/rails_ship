@@ -1,5 +1,7 @@
-<td><%= model.start_at %></td>
-<td><%= model.finish_at %></td>
+<td>
+  <p><time data-controller="time"><%= model.start_at.to_fs(:iso8601) %></time></p>
+  <p><time data-controller="time"><%= model.finish_at&.to_fs(:iso8601) %></time></p>
+</td>
 <td><%= model.estimate_finish_at %></td>
 <td><%= model.duration %></td>
 <td><%= model.user_id %></td>

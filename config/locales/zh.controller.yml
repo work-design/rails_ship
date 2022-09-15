@@ -117,6 +117,9 @@ zh:
       box_logs:
         index:
           title: 物流箱日志
+      rents:
+        index:
+          title: 领用详情
       shipments:
         index:
           title: 班次管理
