@@ -1,4 +1,7 @@
-<td><%= model.organ.name %></td>
+<td>
+  <span><%= model.organ.name %></span>
+  <span class="tag"><%= model.organ_id %></span>
+</td>
 <td>
   <%= link_to({ controller: 'boxes', box_specification_id: model.box_specification_id, organ_id: model.organ_id }, aria: { label: t('ship.panel.boxes.index.title') }, class: 'button is-small is-rounded is-light') do %>
     <i class="fa-regular fa-boxes-stacked"></i>
