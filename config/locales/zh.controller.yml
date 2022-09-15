@@ -106,6 +106,9 @@ zh:
       box_proxy_sells:
         index:
           title: 委托交易概览
+      box_holds:
+        index:
+          title: 持有
       boxes:
         index:
           title: 物流箱

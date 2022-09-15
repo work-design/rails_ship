@@ -132,6 +132,7 @@ Rails.application.routes.draw do
           resources :box_proxy_sells do
             resources :box_sells
           end
+          resources :box_holds
           resources :boxes do
             collection do
               post :batch
@@ -141,6 +142,7 @@ Rails.application.routes.draw do
               get :pdf
             end
             resources :box_logs
+            resources :rents
           end
         end
         root 'home#index'

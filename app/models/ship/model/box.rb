@@ -29,7 +29,6 @@ module Ship
       has_one :shipment_item, -> { order(id: :desc) }
       has_many :shipment_items
       has_many :shipments, through: :shipment_items
-      has_many :box_claims
       has_many :box_logs
       has_many :using_box_logs, -> { where(boxed_out_at: nil) }, class_name: 'BoxLog'
 
