@@ -34,15 +34,21 @@ module Ship
       @box = Box.find params[:id]
     end
 
+    def box_hold
+      @box_hold
+    end
+
     def set_items
       q_params = {
-        good_id: @box.box_specification_id,
-        good_type: 'Ship::BoxSpecification',
-        delivery: ['init', 'partially']
+        box_specification_id: @box.box_specification_id,
+        user_id: current_user.id
       }
       q_params.merge! default_params
 
-      @items = current_user.items.default_where(q_params)
+      @box_hold = BoxHold.find_or_create_by(q_params)
+
+      # delivery: ['init', 'partially']
+      @items = @box_hold.items
     end
 
     def rental_params

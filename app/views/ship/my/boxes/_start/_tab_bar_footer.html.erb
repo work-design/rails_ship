@@ -5,6 +5,6 @@
       <%= button_tag class: 'button is-primary' do %>
         <span>开始租用</span>
       <% end %>
-    <% end %>
+    <% end if @items.present? %>
   </div>
 </div>
