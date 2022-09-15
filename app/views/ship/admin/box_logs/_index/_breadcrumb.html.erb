@@ -7,7 +7,7 @@
         <span class="pl-1 is-size-7"><%= @box.box_specification.measure %></span>
       </span>
     </li>
-    <li><%= link_to t('ship.in.boxes.index.title'), { controller: 'boxes' } %></li>
+    <li><%= link_to t('ship.in.boxes.index.title'), { controller: 'boxes', anchor: "tr_#{@box.id}" } %></li>
     <li><span class="px-3"><%= @box.code %></span></li>
     <li class="is-active"><%= t('.title') %></li>
   </ul>
