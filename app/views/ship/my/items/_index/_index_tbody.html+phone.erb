@@ -1,0 +1,13 @@
+<span><%= model.single_price.to_money.format(html_wrap: true).html_safe %></span>
+<span class="pl-3">
+  <span class="has-text-grey">成交：</span>
+  <span><%= model.done_number %></span>
+  <span>/</span>
+  <span><%= model.number %></span>
+</span>
+<span class="pl-3">
+  <span class="has-text-grey">交割：</span>
+  <span><%= model.rents_count %></span>
+  <span>/</span>
+  <span><%= model.number %></span>
+</span>
