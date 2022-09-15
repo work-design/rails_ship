@@ -1,7 +1,7 @@
 module Ship
   class My::ItemsController < My::BaseController
     before_action :set_box_hold
-    before_action :set_item, only: [:show]
+    before_action :set_item, only: [:show, :actions]
 
     def index
       @items = @box_hold.items.page(params[:page])

@@ -201,10 +201,10 @@ zh:
           title: 买入
       items:
         index:
-          title: 委托买入
+          title: 买入
       box_sells:
         index:
-          title: 委托卖出
+          title: 卖出
       packages:
         index:
           title: 包裹列表
