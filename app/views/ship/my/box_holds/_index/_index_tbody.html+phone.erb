@@ -2,5 +2,10 @@
   <strong><%= model.box_specification.name %></strong>
   <span class="has-text-grey"><%= model.box_specification.measure %></span>
 </p>
-<p><%= model.boxes_count %></p>
+<div class="is-flex is-justify-content-space-between mt-2">
+  <%= link_to({ controller: 'items', box_hold_id: model.id }) do %>
+    <i class="fa-solid fa-tags"></i>
+    <span class="pl-1"><%= model.boxes_count %></span>
+  <% end %>
+</div>
 <p class="has-text-danger"><%= model.sellable %></p>

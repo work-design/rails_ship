@@ -4,7 +4,7 @@ module Ship
     before_action :set_item, only: [:show]
 
     def index
-      @items = @box_hold.box_host.items.where(user_id: @box_hold.user_id).page(params[:page])
+      @items = @box_hold.items.page(params[:page])
     end
 
     private
@@ -13,7 +13,7 @@ module Ship
     end
 
     def set_item
-      @item = @box_hold.box_host.items.find params[:id]
+      @item = @box_hold.items.find params[:id]
     end
 
   end
