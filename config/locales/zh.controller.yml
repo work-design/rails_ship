@@ -111,6 +111,9 @@ zh:
           title: 物流箱
         batch_pdf:
           title: 批量打印
+      box_logs:
+        index:
+          title: 物流箱日志
       shipments:
         index:
           title: 班次管理

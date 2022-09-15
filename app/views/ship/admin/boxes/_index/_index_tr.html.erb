@@ -5,6 +5,9 @@
       <button class="button is-small is-rounded is-light" data-controller="print" data-print-url-value="<%= url_for(action: 'pdf', id: model.id) %>" data-action="print#doPrint">
         <i class="fa-regular fa-print"></i>
       </button>
+      <%= link_to({ controller: 'box_logs', box_id: model.id }, aria: { label: t('ship.admin.box_logs.index.title') }, class: 'button is-small is-rounded is-light') do %>
+        <i class="fa-regular fa-circle-info"></i>
+      <% end %>
       <%= link_to({ action: 'show', id: model.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.show') }, class: 'button is-small is-rounded is-light') do %>
         <i class="fa-regular fa-circle-info"></i>
       <% end %>
