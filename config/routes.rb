@@ -258,6 +258,9 @@ Rails.application.routes.draw do
         end
         resources :stations
         resources :box_holds do
+          collection do
+            get :sell
+          end
           member do
             get :buy
           end

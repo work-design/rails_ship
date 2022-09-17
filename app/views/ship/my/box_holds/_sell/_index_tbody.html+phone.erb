@@ -1,0 +1,16 @@
+<p>
+  <strong><%= model.box_specification.name %></strong>
+  <span class="has-text-grey"><%= model.box_specification.measure %></span>
+</p>
+<div class="is-flex is-justify-content-space-between mt-2">
+  <%= link_to({ controller: 'items', box_hold_id: model.id }) do %>
+    <i class="fa-solid fa-tags"></i>
+    <span class="pl-1">交割</span>
+    <span class="pl-1"><%= model.owned_amount %></span>
+  <% end %>
+  <%= link_to({ controller: 'items', action: 'rent', box_hold_id: model.id }) do %>
+    <i class="fa-solid fa-tags"></i>
+    <span class="pl-1">租用</span>
+    <span class="pl-1"><%= model.rented_amount %></span>
+  <% end %>
+</div>

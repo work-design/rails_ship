@@ -1,5 +1,6 @@
 module Ship
   class My::BoxesController < My::BaseController
+    before_action :set_box_hold, only: [:index, :owned]
     before_action :set_box, only: [:show, :edit, :update, :destroy, :actions, :owned_show, :qrcode, :start, :start_create]
     before_action :set_items, only: [:start]
 
@@ -30,12 +31,12 @@ module Ship
     end
 
     private
-    def set_box
-      @box = Box.find params[:id]
+    def set_box_hold
+      @box_hold = BoxHold.find params[:box_hold_id]
     end
 
-    def box_hold
-      @box_hold
+    def set_box
+      @box = Box.find params[:id]
     end
 
     def set_items

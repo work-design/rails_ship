@@ -194,7 +194,9 @@ zh:
           title: 开始租用
       box_holds:
         index:
-          title: 持有物流箱
+          title: 我的物流箱
+        sell:
+          title: 我的收益
         edit:
           title: 卖出
         buy:

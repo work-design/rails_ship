@@ -3,10 +3,17 @@ module Ship
     before_action :set_box_hold, only: [:show, :edit, :buy, :update, :actions]
 
     def index
-      q_params = { user_id: current_user.id }
+      q_params = {}
       q_params.merge! default_params
 
-      @box_holds = BoxHold.where(q_params)
+      @box_holds = current_user.box_holds.where(q_params)
+    end
+
+    def sell
+      q_params = {}
+      q_params.merge! default_params
+
+      @box_holds = current_user.box_holds.where(q_params)
     end
 
     def buy
