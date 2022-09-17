@@ -71,10 +71,6 @@ module Ship
       end
     end
 
-    def order_pay_later(item)
-      own_item(item) if item.aim == 'rent'
-    end
-
     def get_hold(item)
       box_holds.find_by(user_id: item.user_id, member_id: item.member_id)
     end
