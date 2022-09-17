@@ -32,6 +32,14 @@ module Ship
       box_host || build_box_host
     end
 
+    def sum_owned_amount
+      self.owned_amount = box_sells.sum(:amount) + items.aim_use.sum(:number)
+    end
+
+    def sum_rent_amount
+      self.rent_amount = items.aim_rent.sum(:number)
+    end
+
     def average_price
       items.average(:single_price)&.to_fs(:rounded, precision: 3)
     end

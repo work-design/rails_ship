@@ -4,7 +4,11 @@ module Ship
     before_action :set_item, only: [:show, :actions]
 
     def index
-      @items = @box_hold.items.page(params[:page])
+      @items = @box_hold.items.aim_use.page(params[:page])
+    end
+
+    def rent
+      @items = @box_hold.items.aim_rent.page(params[:page])
     end
 
     private

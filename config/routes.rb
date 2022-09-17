@@ -262,7 +262,11 @@ Rails.application.routes.draw do
             get :buy
           end
           resources :orders, only: [:create]
-          resources :items, only: [:index, :show]
+          resources :items, only: [:index, :show] do
+            collection do
+              get :rent
+            end
+          end
           resources :box_sells, only: [:index, :show, :create]
         end
         resources :box_hosts, only: [] do
