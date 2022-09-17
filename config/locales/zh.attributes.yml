@@ -17,8 +17,8 @@ zh:
         detail: 详情
       ship/box_host:
         boxes_count: 管理数
-        rented_count: 已租
-        rentable_count: 可租
+        traded_count: 已交易
+        tradable_count: 可交易
       ship/box_hold:
         sellable: 卖出数量
         sell_price: 卖出价格

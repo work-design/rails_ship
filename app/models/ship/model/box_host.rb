@@ -20,6 +20,7 @@ module Ship
     def reset_boxes_count
       self.boxes_count = boxes.count
       self.tradable_count = boxes.tradable.count
+      self.changes
     end
 
     # todo 针对交易量过大时候的优化

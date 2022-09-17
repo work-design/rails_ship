@@ -36,13 +36,10 @@ module Ship
       before_validation :init_box_host, if: -> { organ_id.present? && organ_id_changed? }
       after_save :increment_boxes_count, if: -> { saved_change_to_organ_id? && organ_id.present? }
       after_save :decrement_boxes_count, if: -> { saved_change_to_organ_id? && organ_id.blank? }
-      after_save :increment_rented_count, if: -> { saved_change_to_rented? && rented? }
-      after_save :decrement_rented_count, if: -> { saved_change_to_rented? && !rented? }
-      after_save :increment_rentable_count, if: -> { saved_change_to_rentable? && rentable? }
-      after_save :decrement_rentable_count, if: -> { saved_change_to_rentable? && !rentable? }
+      after_save :increment_tradable_count, if: -> { (saved_changes.keys && ['held_user_id', 'held_organ_id']).present? && (held_user_id.blank? && held_organ_id.blank?) }
+      after_save :decrement_tradable_count, if: -> { (saved_changes.keys && ['held_user_id', 'held_organ_id']).present? && (held_user_id.present? || held_organ_id.present?) }
 
-      after_destroy :decrement_rented_count, if: -> { rented? }
-      after_destroy :decrement_rentable_count, if: -> { rentable? }
+      after_destroy :decrement_tradable_count, if: -> { held_user_id.blank? && held_organ_id.blank? }
       after_destroy :decrement_boxes_count
     end
 
@@ -62,20 +59,12 @@ module Ship
       box_host&.decrement! :boxes_count
     end
 
-    def increment_rented_count
-      box_host&.increment! :rented_count
+    def increment_tradable_count
+      box_host&.increment! :tradable_count
     end
 
-    def decrement_rented_count
-      box_host&.decrement! :rented_count
-    end
-
-    def increment_rentable_count
-      box_host&.increment! :rentable_count
-    end
-
-    def decrement_rentable_count
-      box_host&.decrement! :rentable_count
+    def decrement_tradable_count
+      box_host&.decrement! :tradable_count
     end
 
     def to_pdf
