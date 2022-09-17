@@ -70,7 +70,8 @@ module Ship
     end
 
     def get_hold(item)
-      box_holds.find_by(user_id: item.user_id, member_id: item.member_id)
+      opts = { user_id: item.user_id, member_id: item.member_id }
+      box_holds.find_by(opts) || box_holds.create(opts)
     end
 
   end
