@@ -55,24 +55,28 @@ module Ship
     end
 
     def own_item(item)
-      boxes = self.boxes.saleable.limit(item.rest_number)
-      if item.number > boxes.size
-        item.done_number = boxes.size
+      box_hold = get_hold(item)
+
+      if item.aim == 'rent'
+        box_hold.rented_amount += item.rest_number
       else
-        item.done_number = item.number
+        box_hold.owned_amount += item.rest_number
       end
 
-      boxes.map do |box|
-        box.owned_user_id = item.user_id
-        box.owned_organ_id = item.member_organ_id
-        box.status = 'free'
-        box
-      end
+      item.done_number = item.rest_number
 
       item.class.transaction do
-        boxes.each(&:save!)
+        box_hold.save!
         item.save!
       end
+    end
+
+    def order_pay_later(item)
+      own_item(item) if item.aim == 'rent'
+    end
+
+    def get_hold(item)
+      box_holds.find_by(user_id: item.user_id, member_id: item.member_id)
     end
 
   end
