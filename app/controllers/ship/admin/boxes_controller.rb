@@ -48,8 +48,7 @@ module Ship
 
     def box_params
       p = params.fetch(:box, {}).permit(
-        :code,
-        :rentable
+        :code
       )
       p.merge! default_form_params
     end

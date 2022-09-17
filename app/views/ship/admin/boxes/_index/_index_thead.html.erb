@@ -7,15 +7,10 @@
     </button>
   </div>
 </th>
-<th>
-  <p><%= Ship::Box.human_attribute_name(:code) %></p>
-</th>
-<th>
-  <p><%= Ship::Box.human_attribute_name(:rentable) %></p>
-  <p><%= Ship::Box.human_attribute_name(:rented) %></p>
-</th>
+<th><%= Ship::Box.human_attribute_name(:code) %></th>
+<th><%= Ship::Box.human_attribute_name(:rented) %></th>
 <td>
   <p><%= Ship::Box.human_attribute_name(:held_organ_id) %></p>
-  <p class="has-text-info"><%= Ship::Box.human_attribute_name(:held_user_id) %></p>
 </td>
+<td><p class="has-text-info"><%= Ship::Box.human_attribute_name(:held_user_id) %></p></td>
 <th><%= Ship::Box.human_attribute_name(:created_at) %></th>

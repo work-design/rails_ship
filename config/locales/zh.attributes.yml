@@ -37,13 +37,11 @@ zh:
         invest_ratio: 出租分成
       ship/box:
         box_specification_id: 规格
-        trade_item_id: 对应订单
         rents_count: 出租记录
-        rented: 是否已租出
-        owned_organ_id: 所有权
-        held_organ_id: 持有者
+        rented: 是否出租
+        held_user_id: 持有用户
+        held_organ_id: 持有机构
         status: 状态
-        rentable: 是否可租
         organ_id: 所在网点
       ship/shipment:
         line_id: 路线
