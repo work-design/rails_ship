@@ -1,0 +1,13 @@
+<div class="weui-panel">
+  <div class="weui-panel__hd">
+    <span><%= t('.title') %></span>
+    <span>可交割</span>
+    <span><%= @box_hold.owned_amount %></span>
+  </div>
+  <div class="weui-panel__bd">
+    <%= yield %>
+  </div>
+  <div class="weui-panel__ft">
+    <%= render 'button' %>
+  </div>
+</div>

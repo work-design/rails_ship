@@ -201,7 +201,9 @@ zh:
           title: 买入
       items:
         index:
-          title: 买入
+          title: 买入交割
+        rent:
+          title: 租用交割
       box_sells:
         index:
           title: 卖出

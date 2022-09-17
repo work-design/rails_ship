@@ -4,10 +4,8 @@ module Ship
 
     included do
       attribute :boxes_count, :integer, default: 0
-      attribute :rented_amount, :integer
-      attribute :owned_amount, :integer
-      #attribute :sellable, :integer
-      #attribute :buyable, :integer
+      attribute :rented_amount, :integer, default: 0
+      attribute :owned_amount, :integer, default: 0
 
       belongs_to :box_specification
       belongs_to :organ, class_name: 'Org::Organ', optional: true
