@@ -7,7 +7,7 @@
   <i class="fa-solid fa-circle-minus fa-xl has-text-dark-grey"></i>
 <% end if item && item.number <= 1 %>
 <%= form_with(theme: nil, scope: 'item', url: { controller: 'trade/my/items', action: 'update', id: item.id }, method: :patch, data: { controller: 'input', turbo_scroll: true, turbo_scroll_container: 'production_body' }) do |f| %>
-  <%= f.number_field :number, value: item.number, data: { action: 'change->input#form' }, class: 'has-background-light has-text-centered', style: 'width: 30px' %>
+  <%= f.number_field :number, value: item.number, max: model.tradable_count, data: { action: 'change->input#form' }, class: 'has-background-light has-text-centered', style: 'width: 30px' %>
 <% end if item %>
 <%= button_to({ controller: 'trade/my/items', action: 'update', id: item.id }, method: :patch, params: { '[item]number': item.number + 1 }, class: 'ml-1', form: { data: { turbo_scroll: true, turbo_scroll_container: 'production_body' } }) do %>
   <i class="fa-solid fa-circle-plus fa-xl has-text-dark-grey"></i>
