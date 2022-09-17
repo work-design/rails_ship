@@ -8,7 +8,7 @@ module Ship
     end
 
     def rent
-      @items = @box_hold.items.aim_rent.page(params[:page])
+      @items = @box_hold.items.aim_rent.deliverable.page(params[:page])
     end
 
     private
