@@ -1,0 +1,13 @@
+<div class="weui-panel">
+  <div class="weui-panel__hd">
+    <span><%= @box_hold.box_specification.name %></span>
+    <span><%= @box_hold.box_specification.measure %></span>
+    <span class="tag"><%= @boxes.total_count %></span>
+  </div>
+  <div class="weui-panel__bd">
+    <%= yield %>
+  </div>
+  <div class="weui-panel__ft">
+    <%= render 'button' %>
+  </div>
+</div>

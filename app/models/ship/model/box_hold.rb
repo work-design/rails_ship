@@ -31,6 +31,11 @@ module Ship
       box_host || build_box_host
     end
 
+    def reset_boxes_count
+      self.boxes_count = boxes.count
+      self.changes
+    end
+
     def sum_owned_amount
       self.owned_amount = box_sells.sum(:amount) + items.aim_use.sum(:number)
     end

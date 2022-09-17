@@ -5,7 +5,7 @@ module Ship
     before_action :set_items, only: [:start]
 
     def index
-      @boxes = current_user.boxes.includes(:box_specification).where(rented: true).order(id: :desc).page(params[:page])
+      @boxes = @box_hold.boxes.where(rented: true).order(id: :desc).page(params[:page])
     end
 
     def owned

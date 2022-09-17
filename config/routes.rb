@@ -270,6 +270,7 @@ Rails.application.routes.draw do
               get :rent
             end
           end
+          resources :boxes
           resources :box_sells, only: [:index, :show, :create]
         end
         resources :box_hosts, only: [] do
@@ -279,7 +280,7 @@ Rails.application.routes.draw do
             end
           end
         end
-        resources :boxes do
+        resources :boxes, only: [] do
           collection do
             get :owned
             get :invest
