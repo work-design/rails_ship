@@ -24,14 +24,14 @@ module Ship
       q_params = {}
       q_params.merge! default_params
 
-      @box_hosts = BoxHost.includes(:box_specification).page(params[:page])
+      @box_hosts = BoxHost.includes(:box_specification).default_where(q_params).page(params[:page])
     end
 
     def invest
       q_params = {}
       q_params.merge! default_params
 
-      @box_hosts = BoxHost.includes(:box_specification).page(params[:page])
+      @box_hosts = BoxHost.includes(:box_specification).default_where(q_params).page(params[:page])
     end
 
     def all
