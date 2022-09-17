@@ -8,7 +8,7 @@ module Ship
       q_params = {}
       q_params.merge! default_params
 
-      @boxes = @box_host.boxes.includes(:held_organ, :owned_organ).default_where(q_params).order(id: :desc).page(params[:page])
+      @boxes = @box_host.boxes.includes(:held_user, :held_organ).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def batch
