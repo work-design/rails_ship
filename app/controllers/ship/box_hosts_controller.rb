@@ -46,6 +46,11 @@ module Ship
       @boxes = @box_host.boxes.rented.page(params[:page])
     end
 
+    def show
+      @order = current_user.orders.build(order_params)
+      @trade_item = @order.items.build
+    end
+
     private
     def set_box_host
       @box_host = BoxHost.find params[:id]

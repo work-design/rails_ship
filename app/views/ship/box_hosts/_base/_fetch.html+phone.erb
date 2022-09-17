@@ -21,10 +21,10 @@
       </div>
     </div>
     <div class="weui-half-screen-dialog__bd">
-      <%= form_with(model: @order, url: { action: 'update', id: @box_specification }, method: :patch) do |f| %>
-        <%= f.fields :trade_items, model: @trade_item do |ef| %>
-          <%= ef.hidden_field :good_type, value: @box_specification.class_name %>
-          <%= ef.hidden_field :good_id, value: @box_specification.id %>
+      <%= form_with(model: @order, url: { action: 'update', id: @box_host.id }, method: :patch) do |f| %>
+        <%= f.fields :items, model: @trade_item do |ef| %>
+          <%= ef.hidden_field :good_type, value: @box_host.class_name %>
+          <%= ef.hidden_field :good_id, value: @box_host.id %>
           <%= ef.hidden_field :aim, value: 'rent' %>
           <%= ef.datetime_field :rent_estimate_finish_at %>
         <% end %>

@@ -10,12 +10,6 @@ module Ship
       @box_specifications = BoxSpecification.page(params[:page])
     end
 
-
-    def show
-      @order = current_user.orders.build(order_params)
-      @trade_item = @order.items.build
-    end
-
     def update
       @order = current_user.orders.build(order_params)
       @trade_item = @order.items[0]

@@ -1,15 +1,15 @@
-<%= render partial: 'covers', locals: { model: @box_specification } if @box_specification.covers.length > 0 %>
+<%= render partial: 'covers', locals: { model: @box_host.box_specification } if @box_host.box_specification.covers.length > 0 %>
 
 <div class="box is-radiusless is-sticky" style="z-index: 3">
   <div class="has-text-bold">
-    <span><%= @box_specification.name %></span>
-    <span><%= @box_specification.measure %></span>
+    <span><%= @box_host.box_specification.name %></span>
+    <span><%= @box_host.box_specification.measure %></span>
   </div>
   <p>
-    <span class="has-text-grey"><%= Ship::BoxSpecification.human_attribute_name(:price) %></span>
-    <span class="has-text-danger"><%= @box_specification.price.to_money.format(html_wrap: true).html_safe %></span>
+    <span class="has-text-grey"><%= Ship::BoxHost.human_attribute_name(:price) %></span>
+    <span class="has-text-danger"><%= @box_host.price.to_money.format(html_wrap: true).html_safe %></span>
   </p>
-  <% @box_specification.rent_promotes.each do |promote| %>
+  <% @box_host.rent_promotes.each do |promote| %>
     <p class="has-text-danger">
       <span class="has-text-grey">租金：</span>
       <span><%= promote.promote_charges[0].parameter.to_money.format(html_wrap: true).html_safe %></span>
