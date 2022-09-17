@@ -4,15 +4,15 @@ module Ship
     before_action :set_items, only: [:start]
 
     def index
-      @boxes = current_user.boxes.includes(:box_specification).order(id: :desc).page(params[:page])
+      @boxes = current_user.boxes.includes(:box_specification).where(rented: true).order(id: :desc).page(params[:page])
     end
 
     def owned
-      @boxes = current_user.owned_boxes.where(rentable: false).includes(:box_specification).order(id: :desc).page(params[:page])
+      @boxes = current_user.boxes.includes(:box_specification).where(rented: false).order(id: :desc).page(params[:page])
     end
 
     def invest
-      @boxes = current_user.owned_boxes.rentable.includes(:box_specification).order(id: :desc).page(params[:page])
+      @boxes = current_user.boxes.rentable.includes(:box_specification).order(id: :desc).page(params[:page])
     end
 
     def owned_show
