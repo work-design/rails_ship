@@ -39,11 +39,11 @@ module Ship
     end
 
     def rentable
-      @boxes = @box_host.boxes.rentable.page(params[:page])
+      @boxes = @box_host.boxes.tradable.page(params[:page])
     end
 
     def rented
-      @boxes = @box_host.boxes.rented.page(params[:page])
+      @boxes = @box_host.boxes.traded.page(params[:page])
     end
 
     def show

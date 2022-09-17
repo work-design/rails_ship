@@ -15,13 +15,13 @@
       <% end %>
       <%= link_to({ action: 'rentable', id: model }, class: '') do %>
         <i class="fa-regular fa-tags has-text-primary"></i>
-        <span class="has-text-grey-dark is-size-7 pl-0"><%= Ship::BoxHost.human_attribute_name(:rentable_count) %></span>
-        <span class="has-text-weight-medium has-text-danger-dark is-family-zhushi"><%= model.rentable_count %></span>
+        <span class="has-text-grey-dark is-size-7 pl-0"><%= Ship::BoxHost.human_attribute_name(:tradable_count) %></span>
+        <span class="has-text-weight-medium has-text-danger-dark is-family-zhushi"><%= model.tradable_count %></span>
       <% end %>
       <%= link_to({ action: 'rented', id: model }, class: '') do %>
         <i class="fa-regular fa-tags has-text-primary"></i>
-        <span class="has-text-grey-dark is-size-7 pl-0"><%= Ship::BoxHost.human_attribute_name(:rented_count) %></span>
-        <span class="has-text-weight-medium has-text-danger-dark is-family-zhushi"><%= model.rented_count %></span>
+        <span class="has-text-grey-dark is-size-7 pl-0"><%= Ship::BoxHost.human_attribute_name(:traded_count) %></span>
+        <span class="has-text-weight-medium has-text-danger-dark is-family-zhushi"><%= model.traded_count %></span>
       <% end %>
     </div>
   </div>
