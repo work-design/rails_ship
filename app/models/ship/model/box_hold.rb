@@ -50,6 +50,7 @@ module Ship
       box.held_user_id = user_id
       box.held_member_id = member_id
       box.held_organ_id = member_organ_id
+      box.held = true
       box.rented = false if owned_amount > 0  # 优先扣除购买的额度
       #self.status = 'free' todo 考虑初始化状态
       box.rents.build

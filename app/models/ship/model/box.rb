@@ -36,10 +36,6 @@ module Ship
       before_validation :init_box_host, if: -> { organ_id.present? && organ_id_changed? }
       after_save :increment_boxes_count, if: -> { saved_change_to_organ_id? && organ_id.present? }
       after_save :decrement_boxes_count, if: -> { saved_change_to_organ_id? && organ_id.blank? }
-      after_save :increment_tradable_count, if: -> { (saved_changes.keys && ['held_user_id', 'held_organ_id']).present? && (held_user_id.blank? && held_organ_id.blank?) }
-      after_save :decrement_tradable_count, if: -> { (saved_changes.keys && ['held_user_id', 'held_organ_id']).present? && (held_user_id.present? || held_organ_id.present?) }
-
-      after_destroy :decrement_tradable_count, if: -> { held_user_id.blank? && held_organ_id.blank? }
       after_destroy :decrement_boxes_count
     end
 
@@ -57,16 +53,6 @@ module Ship
 
     def decrement_boxes_count
       box_host&.decrement! :boxes_count
-    end
-
-    def increment_tradable_count
-      box_host&.increment! :tradable_count
-      box_hold&.decrement! :boxes_count
-    end
-
-    def decrement_tradable_count
-      box_host&.decrement! :tradable_count
-      box_hold&.increment! :boxes_count
     end
 
     def to_pdf
