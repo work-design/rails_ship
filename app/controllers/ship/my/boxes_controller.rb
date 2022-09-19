@@ -5,7 +5,7 @@ module Ship
     before_action :ensure_box_hold, only: [:qrcode, :start]
 
     def index
-      @boxes = @box_hold.boxes.where(rented: true).order(id: :desc).page(params[:page])
+      @boxes = @box_hold.boxes.order(id: :desc).page(params[:page])
     end
 
     def owned

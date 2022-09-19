@@ -23,7 +23,7 @@ module Ship
 
       belongs_to :box_specification, counter_cache: true
       belongs_to :box_host, ->(o) { where(organ_id: o.organ_id) }, foreign_key: :box_specification_id, primary_key: :box_specification_id, optional: true
-      belongs_to :box_hold, ->(o) { where(organ_id: o.organ_id, user_id: o.owned_user_id) }, foreign_key: :box_specification_id, primary_key: :box_specification_id, optional: true
+      belongs_to :box_hold, ->(o) { where(organ_id: o.organ_id, user_id: o.held_user_id) }, foreign_key: :box_specification_id, primary_key: :box_specification_id, optional: true
 
       has_many :packages, dependent: :nullify
       has_one :shipment_item, -> { order(id: :desc) }
@@ -61,10 +61,12 @@ module Ship
 
     def increment_tradable_count
       box_host&.increment! :tradable_count
+      box_hold&.decrement! :boxes_count
     end
 
     def decrement_tradable_count
       box_host&.decrement! :tradable_count
+      box_hold&.increment! :boxes_count
     end
 
     def to_pdf
