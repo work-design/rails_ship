@@ -39,11 +39,11 @@ module Ship
     end
 
     def sum_owned_amount
-      self.owned_amount = box_sells.sum(:amount) + items.aim_use.sum(:number)
+      self.owned_amount = box_sells.sum(:rest_amount) + items.aim_use.deliverable.sum(:number)
     end
 
     def sum_rent_amount
-      self.rent_amount = items.aim_rent.sum(:number)
+      self.rent_amount = items.aim_rent.deliverable.sum(:number)
     end
 
     def average_price
