@@ -14,7 +14,7 @@ module Ship
       if current_user.organ_ids.include?(@box.organ_id)
         redirect_to({ controller: 'ship/me/boxes', action: 'qrcode', id: @box.id, host: @box.organ.host }, allow_other_host: true)
       elsif current_user.organ_ids.present?
-        redirect_to({ controller: 'ship/boxes', action: 'in_edit', id: @box.id }, allow_other_host: true)
+        redirect_to({ controller: 'ship/boxes', action: 'in_edit', id: @box.code }, allow_other_host: true)
       else
         redirect_to({ controller: 'ship/my/boxes', action: 'qrcode', id: @box.id }, allow_other_host: true)
       end
