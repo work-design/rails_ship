@@ -16,7 +16,7 @@
         <span>开始租用</span>
       <% end %>
     <% end if false %>
-    <%= link_to({ action: 'start' }, class: 'button is-warning') do %>
+    <%= button_to({ action: 'start' }, class: 'button is-warning') do %>
       <span><%= t('ship.my.boxes.start.title') %></span>
     <% end unless @box.current_rent %>
   </div>

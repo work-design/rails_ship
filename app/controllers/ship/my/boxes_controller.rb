@@ -2,7 +2,7 @@ module Ship
   class My::BoxesController < My::BaseController
     before_action :set_box_hold, only: [:index, :owned]
     before_action :set_box, only: [:show, :edit, :update, :destroy, :actions, :owned_show, :qrcode, :start, :start_create]
-    before_action :set_items, only: [:start]
+    before_action :ensure_box_hold, only: [:qrcode, :start]
 
     def index
       @boxes = @box_hold.boxes.where(rented: true).order(id: :desc).page(params[:page])
@@ -23,11 +23,7 @@ module Ship
     end
 
     def start
-    end
-
-    def start_create
-      item = current_user.items.find params[:item_id]
-      @box.do_rent(item)
+      @box_hold.do_rent(@box)
     end
 
     private
@@ -39,7 +35,7 @@ module Ship
       @box = Box.find params[:id]
     end
 
-    def set_items
+    def ensure_box_hold
       q_params = {
         box_specification_id: @box.box_specification_id,
         user_id: current_user.id
@@ -47,9 +43,6 @@ module Ship
       q_params.merge! default_params
 
       @box_hold = BoxHold.find_or_create_by(q_params)
-
-      # delivery: ['init', 'partially']
-      @items = @box_hold.items
     end
 
     def rental_params
