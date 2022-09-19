@@ -33,6 +33,8 @@ module Ship
 
     def reset_boxes_count
       self.boxes_count = boxes.count
+      self.sum_owned_amount
+      self.sum_rent_amount
       self.changes
     end
 
