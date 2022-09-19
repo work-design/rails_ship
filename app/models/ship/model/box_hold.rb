@@ -34,7 +34,7 @@ module Ship
     def reset_boxes_count
       self.boxes_count = boxes.count
       self.sum_owned_amount
-      self.sum_rent_amount
+      self.sum_rented_amount
       self.changes
     end
 
@@ -42,8 +42,8 @@ module Ship
       self.owned_amount = box_sells.sum(:rest_amount) + items.aim_use.deliverable.sum(:number)
     end
 
-    def sum_rent_amount
-      self.rent_amount = items.aim_rent.deliverable.sum(:number)
+    def sum_rented_amount
+      self.rented_amount = items.aim_rent.deliverable.sum(:number)
     end
 
     def average_price
