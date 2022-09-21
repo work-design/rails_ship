@@ -1,13 +1,13 @@
 <td>
   <div class="is-several">
-    <%= image_tag model.box_specification.logo, class: 'image is-24x24' if model.box_specification.logo.attached? %>
+    <%= image_tag model.logo, class: 'image is-24x24' if model.logo.attached? %>
     <span><%= model.box_specification.name %></span>
   </div>
 </td>
 <td><%= model.box_specification.measure %></td>
 <td>
   <%= link_to({ controller: 'boxes', box_host_id: model.id }, aria: { label: t('ship.panel.boxes.index.title') }, class: 'button is-small is-rounded is-light') do %>
-    <i class="fa-regular fa-boxes-stacked"></i>
+    <i class="fa-solid fa-boxes-stacked"></i>
     <span class="pl-1"><%= model.boxes_count %></span>
   <% end %>
 </td>

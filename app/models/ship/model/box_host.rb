@@ -15,6 +15,8 @@ module Ship
       has_many :box_proxy_sells, ->(o) { where(organ_id: o.organ_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
       has_many :box_proxy_buys, ->(o) { where(organ_id: o.organ_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
       has_many :box_sells, ->(o) { where(organ_id: o.organ_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
+
+      after_create_commit :copy_logo
     end
 
     def reset_boxes_count
@@ -72,6 +74,10 @@ module Ship
     def get_hold(item)
       opts = { user_id: item.user_id, member_id: item.member_id }
       box_holds.find_by(opts) || box_holds.create(opts)
+    end
+
+    def copy_logo
+      logo.copy(box_specification, 'logo')
     end
 
   end
