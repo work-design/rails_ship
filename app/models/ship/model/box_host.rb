@@ -55,20 +55,20 @@ module Ship
     end
 
     def own_item(item)
-      box_hold = get_hold(item)
-
-      if item.aim == 'rent'
-        box_hold.rented_amount += item.rest_number
-      else
-        box_hold.owned_amount += item.rest_number
-      end
-
+      box_hold.owned_amount += item.rest_number
       item.done_number = item.rest_number
 
       item.class.transaction do
         box_hold.save!
         item.save!
       end
+    end
+
+    def rent_item(item)
+      box_hold = get_hold(item)
+      box_hold.rented_amount += item.rest_number
+
+      box_hold.save!
     end
 
     def get_hold(item)
