@@ -73,7 +73,7 @@ module Ship
 
     def order_rented(item)
       box_hold = get_hold(item)
-      box_hold.rented_amount -= item.rest_number
+      box_hold.rented_amount -= item.done_number
 
       box_hold.save!
     end
