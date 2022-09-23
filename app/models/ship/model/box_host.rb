@@ -26,7 +26,7 @@ module Ship
     end
 
     # todo 针对交易量过大时候的优化
-    def order_paid(item)
+    def order_deliverable(item)
       # 排序：出价低的优先，先发布的优先；
       r = box_sells.default_where('rest_amount-gt': 0, 'price-lte': item.single_price).order(price: :asc, id: :asc).pluck(:id, :rest_amount)
       usable = r.find_until(item.rest_number)
@@ -64,9 +64,16 @@ module Ship
       end
     end
 
-    def rent_item(item)
+    def order_rentable(item)
       box_hold = get_hold(item)
       box_hold.rented_amount += item.rest_number
+
+      box_hold.save!
+    end
+
+    def order_rented(item)
+      box_hold = get_hold(item)
+      box_hold.rented_amount -= item.rest_number
 
       box_hold.save!
     end
