@@ -19,7 +19,7 @@ module Ship
     end
 
     def sync_from_box_host
-      self.organ = box_host.ogran
+      self.organ = box_host.organ
       self.box_specification = box_host.box_specification
     end
 
