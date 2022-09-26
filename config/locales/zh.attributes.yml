@@ -27,6 +27,7 @@ zh:
       ship/box_sell:
         price: 价格
         amount: 数量
+        done_amount: 已交易
       ship/box_specification:
         width: 宽
         length: 长
