@@ -133,6 +133,7 @@ Rails.application.routes.draw do
           resources :box_proxy_sells do
             resources :box_sells
           end
+          resources :box_proxy_buys
           resources :box_holds
           resources :boxes do
             collection do

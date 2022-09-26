@@ -105,7 +105,10 @@ zh:
           title: 管理物流箱
       box_proxy_sells:
         index:
-          title: 委托交易概览
+          title: 卖出概览
+      box_proxy_buys:
+        index:
+          title: 买入概览
       box_holds:
         index:
           title: 持有

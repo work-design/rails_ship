@@ -3,10 +3,13 @@
   <td>
     <div data-show-target="item" style="visibility: hidden">
       <%= link_to({ controller: 'box_proxy_sells', box_host_id: model.id }, aria: { label: t('ship.admin.box_proxy_sells.index.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-regular fa-tags"></i>
+        <i class="fa-solid fa-gavel"></i>
+      <% end %>
+      <%= link_to({ controller: 'box_proxy_buys', box_host_id: model.id }, aria: { label: t('ship.admin.box_proxy_buys.index.title') }, class: 'button is-small is-rounded is-light') do %>
+        <i class="fa-solid fa-handshake-simple"></i>
       <% end %>
       <%= link_to({ controller: 'box_holds', box_host_id: model.id }, aria: { label: t('ship.admin.box_holds.index.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-regular fa-hand-holding"></i>
+        <i class="fa-solid fa-hand-holding"></i>
       <% end %>
       <%= link_to({ action: 'edit', id: model.id }, data: { turbo_frame: 'modal', turbo_scroll: true }, aria: { label: t('.edit') }, class: 'button is-small is-rounded is-light') do %>
         <i class="fa-solid fa-pencil"></i>
