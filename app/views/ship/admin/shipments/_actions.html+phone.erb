@@ -7,7 +7,7 @@
   <span><%= t('.edit') %></span>
 <% end if model.organ_id == current_organ.id %>
 <%= link_to({ action: 'show', id: model.id }, class: 'weui-actionsheet__cell') do %>
-  <i class="fa-regular fa-square-info"></i>
+  <i class="fa-solid fa-circle-info"></i>
   <span><%= t('.show') %></span>
 <% end %>
 <%= link_to({ controller: 'shipment_items', shipment_id: model.id }, class: 'weui-actionsheet__cell') do %>
