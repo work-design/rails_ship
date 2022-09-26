@@ -4,7 +4,16 @@
     <span class="pl-1"><%= t('.title') %></span>
   </div>
   <div class="weui-panel__bd counter-section">
-    <%= yield %>
+    <table class="table is-striped is-borderless is-fullwidth">
+      <thead class="is-low">
+        <tr>
+          <%= render 'index_thead' %>
+        </tr>
+      </thead>
+      <tbody>
+        <%= yield %>
+      </tbody>
+    </table>
   </div>
   <div class="weui-panel__ft">
   </div>

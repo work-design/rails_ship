@@ -44,6 +44,12 @@ zh:
         held_organ_id: 持有机构
         status: 状态
         organ_id: 所在网点
+      ship/box_proxy_sell:
+        price: 价格
+        sellable_count: 数量
+      ship/box_proxy_buy:
+        price: 价格
+        buyable_count: 数量
       ship/shipment:
         line_id: 路线
         car_id: 车牌号
