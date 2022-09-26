@@ -3,7 +3,7 @@ module Ship
     before_action :set_box_host
 
     def index
-      @box_proxy_buys = @box_host.box_proxy_buys.page(params[:page])
+      @box_proxy_buys = @box_host.box_proxy_buys.order(price: :desc).page(params[:page])
     end
 
     private
