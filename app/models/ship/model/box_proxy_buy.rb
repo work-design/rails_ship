@@ -23,7 +23,7 @@ module Ship
     end
 
     def reset_buyable_count
-      self.buyable_count = items.default_where('rest_number-gt': 0).count
+      self.buyable_count = items.default_where('rest_number-gt': 0).sum(:rest_number)
     end
 
   end

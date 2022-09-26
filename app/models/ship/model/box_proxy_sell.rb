@@ -13,7 +13,7 @@ module Ship
     end
 
     def reset_sellable_count
-      self.sellable_count = box_sells.default_where('rest_amount-gt': 0).count
+      self.sellable_count = box_sells.default_where('rest_amount-gt': 0).sum(:rest_amount)
     end
 
   end
