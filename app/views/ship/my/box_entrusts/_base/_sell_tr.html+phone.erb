@@ -1,0 +1,8 @@
+<tr>
+  <%= yield %>
+  <td>
+    <%= link_to({ controller: 'box_sells', action: 'show', id: model.id, box_hold_id: @box_hold.id }) do %>
+      <span> > </span>
+    <% end %>
+  </td>
+</tr>

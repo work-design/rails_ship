@@ -1,7 +1,8 @@
-<div class="weui-media-box weui-media-box_appmsg pb-0">
-  <div class="weui-media-box__bd">
+<tr>
+  <%= yield %>
+  <td>
     <%= link_to({ controller: 'items', action: 'show', id: model.id, box_hold_id: @box_hold.id }) do %>
-      <%= yield %>
+      <span>x</span>
     <% end %>
-  </div>
-</div>
+  </td>
+</tr>

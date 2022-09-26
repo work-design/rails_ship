@@ -1,12 +1,7 @@
-<div class="is-flex is-justify-content-space-between">
-  <div class="tags has-addons">
-    <span class="tag"><i class="fa-solid fa-check"></i></span>
-  </div>
-  <span class="has-text-danger pl-3"><%= model.single_price.to_money.format(html_wrap: true).html_safe %></span>
-  <span>
-    <span><%= model.number %></span>
-    <span>/</span>
-    <span><%= model.done_number %></span>
-  </span>
-  <time data-controller="time" class="has-text-grey"><%= model.created_at.to_fs(:iso8601) %></time>
-</div>
+<td class="has-text-danger"><%= model.single_price.to_money.format(html_wrap: true).html_safe %></td>
+<td>
+  <span><%= model.number %></span>
+  <span>/</span>
+  <span><%= model.done_number %></span>
+</td>
+<td><time data-controller="time" class="has-text-grey"><%= model.created_at.to_fs(:iso8601) %></time></td>

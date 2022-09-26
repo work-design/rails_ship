@@ -1,0 +1,9 @@
+<td class="has-text-success pl-3"><%= model.price.to_money.format(html_wrap: true).html_safe %></td>
+<td>
+  <span><%= model.amount %></span>
+  <span>/</span>
+  <span><%= model.done_amount %></span>
+</td>
+<td>
+  <time data-controller="time" class="has-text-grey"><%= model.created_at.to_fs(:iso8601) %></time>
+</td>
