@@ -35,8 +35,14 @@ module Ship
     end
 
     def set_overview
-      @box_proxy_sells = @box_host.box_proxy_sells.default_where('sellable_count-gt': 0).order(price: :asc).limit(3)
-      @box_proxy_buys = @box_host.box_proxy_buys.default_where('buyable_count-gt': 0).order(price: :desc).limit(3)
+      x1 = @box_host.box_proxy_sells.default_where('sellable_count-gt': 0).order(price: :asc).limit(3)
+      x2 = @box_host.box_proxy_sells.where.not(id: x1.pluck(:id)).order(price: :asc).limit(3 - x1.size)
+      @box_proxy_sells = x1 + x2
+
+      y1 = @box_host.box_proxy_buys.default_where('buyable_count-gt': 0).order(price: :desc).limit(3)
+      y2 = @box_host.box_proxy_buys.where.not(id: y1.pluck(:id)).order(price: :desc).limit(3 - y1.size)
+      @box_proxy_buys = y1 + y2
+
       @box_entrusts = @box_hold.box_sells.order(id: :desc).limit(5)
       @items = @box_host.items.where(user_id: @box_hold.user_id).order(id: :desc)
     end

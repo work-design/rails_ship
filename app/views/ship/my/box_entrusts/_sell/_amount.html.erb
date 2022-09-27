@@ -1,0 +1,10 @@
+<div class="is-flex is-justify-content-space-between has-background-white p-4">
+  <div>
+    <span class="has-text-grey">持仓：</span>
+    <span><%= @box_hold.boxes_count %></span>
+  </div>
+  <div>
+    <span class="has-text-grey">持仓均价：</span>
+    <span><%= @box_hold.average_price.to_money.format(html_wrap: true).html_safe %></span>
+  </div>
+</div>
