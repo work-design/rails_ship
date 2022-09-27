@@ -55,6 +55,7 @@ module Ship
     end
 
     def own_item(item)
+      box_hold = get_hold(item)
       box_hold.owned_amount += item.rest_number
       item.done_number = item.rest_number
 
