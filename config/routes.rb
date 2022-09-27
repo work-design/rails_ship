@@ -272,7 +272,7 @@ Rails.application.routes.draw do
             end
           end
           resources :boxes
-          resources :box_sells, only: [:index, :show, :create]
+          resources :box_sells, only: [:index, :show, :create, :destroy]
         end
         resources :box_hosts, only: [] do
           resources :box_entrusts do

@@ -3,6 +3,10 @@ module Ship
     before_action :set_box_hold
     before_action :set_new_box_sell, only: [:create]
 
+    def index
+      @box_sells = @box_hold.box_sells.order(id: :desc).page(params[:page])
+    end
+
     private
     def set_box_hold
       @box_hold = BoxHold.find params[:box_hold_id]
