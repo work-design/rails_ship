@@ -1,10 +1,21 @@
-<table class="table is-striped is-borderless is-fullwidth">
-  <thead class="is-low">
-    <tr>
-      <%= render 'item_thead' %>
-    </tr>
-  </thead>
-  <tbody>
-    <%= yield %>
-  </tbody>
-</table>
+<div class="weui-panel">
+  <div class="weui-panel__hd is-flex is-justify-content-space-between">
+    <span>委托买入</span>
+    <%= link_to({ controller: 'items', box_hold_id: @box_hold.id }) do %>
+      <span>更多</span>
+      <i class="fa-solid fa-chevron-right has-text-grey-lighter"></i>
+    <% end %>
+  </div>
+  <div class="weui-panel__bd">
+    <table class="table is-striped is-borderless is-fullwidth">
+      <thead class="is-low">
+        <tr>
+          <%= render 'item_thead' %>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: 'item_tbody', layout: 'item_tr', collection: @items, as: :model %>
+      </tbody>
+    </table>
+  </div>
+</div>

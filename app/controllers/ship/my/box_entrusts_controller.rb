@@ -43,8 +43,8 @@ module Ship
       y2 = @box_host.box_proxy_buys.where.not(id: y1.pluck(:id)).order(price: :desc).limit(3 - y1.size)
       @box_proxy_buys = y1 + y2
 
-      @box_entrusts = @box_hold.box_sells.order(id: :desc).limit(5)
-      @items = @box_host.items.where(user_id: @box_hold.user_id).order(id: :desc)
+      @items = @box_host.items.where(user_id: @box_hold.user_id).order(id: :desc).limit(7)
+      @box_sells = @box_hold.box_sells.order(id: :desc).limit(7)
     end
 
   end
