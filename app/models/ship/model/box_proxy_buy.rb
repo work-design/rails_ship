@@ -15,7 +15,7 @@ module Ship
 
       has_many :items, ->(o) { where(good_type: 'Ship::BoxHost', single_price: o.price) }, class_name: 'Trade::Item', primary_key: :box_host_id, foreign_key: :good_id
 
-      before_save :sync_from_box_host, if: -> { box_host_id_changed? }
+      before_validation :sync_from_box_host, if: -> { box_host_id_changed? }
     end
 
     def sync_from_box_host
