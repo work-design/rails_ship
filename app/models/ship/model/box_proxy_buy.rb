@@ -23,8 +23,16 @@ module Ship
       self.box_specification = box_host.box_specification
     end
 
+    def sum_count
+      items.default_where('rest_number-gt': 0).sum(:rest_number)
+    end
+
     def reset_buyable_count
-      self.buyable_count = items.default_where('rest_number-gt': 0).sum(:rest_number)
+      self.buyable_count = sum_count
+    end
+
+    def reset_buyable_count!
+      update_columns buyable_count: sum_count
     end
 
   end
