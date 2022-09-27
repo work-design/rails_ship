@@ -11,6 +11,10 @@
   <td><%= @item.done_number %></td>
 </tr>
 <tr>
+  <td class="has-text-right"><%= Trade::Item.human_attribute_name(:rest_number) %></td>
+  <td><%= @item.rest_number %></td>
+</tr>
+<tr>
   <td class="has-text-right"><%= Trade::Item.human_attribute_name(:status) %></td>
   <td><%= @item.status_i18n %></td>
 </tr>
