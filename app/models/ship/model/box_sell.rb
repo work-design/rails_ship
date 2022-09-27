@@ -29,6 +29,7 @@ module Ship
 
       before_validation :init_box_proxy_sell, if: -> { price.present? && (['price', 'amount'] & changes.keys).present? }
       before_validation :compute_rest_amount, if: -> { (['amount', 'done_amount'] & changes.keys).present? }
+      after_save :reset_proxy_count, if: -> { saved_change_to_rest_amount? }
       after_save_commit :deal_rest_item, if: -> { (saved_changes.keys & ['amount']).present? }
     end
 
@@ -38,6 +39,10 @@ module Ship
 
     def init_box_proxy_sell
       box_proxy_sell || build_box_proxy_sell
+    end
+
+    def reset_proxy_count
+      box_proxy_sell&.reset_sellable_count!
     end
 
     def compute_rest_amount
