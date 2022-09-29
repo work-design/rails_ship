@@ -43,7 +43,7 @@ zh:
         held_user_id: 持有用户
         held_organ_id: 持有机构
         status: 状态
-        organ_id: 所在网点
+        organ_id: 当前网点
       ship/box_proxy_sell:
         price: 价格
         sellable_count: 数量

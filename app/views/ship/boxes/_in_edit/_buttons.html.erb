@@ -1,3 +1,10 @@
+<div class="buttons are-large is-centered">
+<% current_user.organs.where.not(id: @box.organ_id).each do |organ| %>
+  <%= button_to({ action: 'in_update' }, params: { organ_id: organ.id }, class: 'button is-warning') do %>
+    <span>入（移）库至<%= organ.name %></span>
+  <% end %>
+<% end %>
+</div>
 <div
   data-controller="scan"
   data-scan-debug-value="false"
@@ -7,9 +14,6 @@
 >
   <div class="buttons are-large is-centered">
   <% if current_user.organ_ids.include?(@box.organ_id) %>
-    <%= button_to({ action: 'in_update' }, params: { organ_id: nil }, class: 'button is-warning') do %>
-      <span>取消入库</span>
-    <% end %>
     <button
       class="button is-info"
       data-action="scan#report"
@@ -17,12 +21,6 @@
     >
       <span>继续入库至<%= @box.organ.name %></span>
     </button>
-  <% else %>
-    <% current_user.organs.each do |organ| %>
-      <%= button_to({ action: 'in_update' }, params: { organ_id: organ.id }, class: 'button is-warning') do %>
-        <span>入库至<%= organ.name %></span>
-      <% end %>
-    <% end %>
   <% end %>
   </div>
 </div>
