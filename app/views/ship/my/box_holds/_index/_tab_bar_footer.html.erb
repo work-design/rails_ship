@@ -1,10 +1,10 @@
-<div class="py-2 is-flex is-justify-content-center buttons">
+<div class="buttons is-space-around">
   <%= link_to({ controller: '/ship/box_hosts' }, class: 'button is-small is-primary') do %>
     <i class="fa-solid fa-plus"></i>
-    <span><%= t('ship.box_specifications.index.title') %></span>
+    <span class="pl-1"><%= t('ship.box_specifications.index.title') %></span>
   <% end %>
-  <%= link_to({ controller: '/ship/box_hosts', action: 'rent' }, class: 'weui-btn weui-btn_mini weui-btn_danger') do %>
+  <%= link_to({ controller: '/ship/box_hosts', action: 'rent' }, class: 'button is-small is-danger') do %>
     <i class="fa-solid fa-plus"></i>
-    <span><%= t('ship.box_specifications.rent.title') %></span>
+    <span class="pl-1"><%= t('ship.box_specifications.rent.title') %></span>
   <% end %>
 </div>
