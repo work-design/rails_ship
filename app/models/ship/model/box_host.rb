@@ -16,7 +16,7 @@ module Ship
       has_many :box_proxy_buys, ->(o) { where(organ_id: o.organ_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
       has_many :box_sells, ->(o) { where(organ_id: o.organ_id) }, primary_key: :box_specification_id, foreign_key: :box_specification_id
 
-      after_create_commit :copy_logo
+      before_save :copy_logo, if: -> { box_specification_id.present? && saved_change_to_box_specification_id? }
     end
 
     def reset_boxes_count
@@ -85,6 +85,7 @@ module Ship
     end
 
     def copy_logo
+      self.name = box_specification.name
       logo.copy(box_specification, 'logo')
     end
 
