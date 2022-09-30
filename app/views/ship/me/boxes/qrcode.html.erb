@@ -5,3 +5,7 @@
     <%= render 'packages' %>
   </div>
 </div>
+
+<% content_for :reload do %>
+  <meta name="turbo-visit-control" content="reload">
+<% end %>
