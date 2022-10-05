@@ -3,10 +3,10 @@
   <td>
     <div data-show-target="item" style="visibility: hidden">
       <%= link_to({ action: 'shipments', id: model.id }, aria: { label: t('ship.admin.stations.shipments.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-regular fa-list"></i>
+        <i class="fa-solid fa-list"></i>
       <% end %>
       <%= link_to({ action: 'lines', id: model.id }, aria: { label: t('ship.admin.stations.lines.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-regular fa-signs-post"></i>
+        <i class="fa-solid fa-signs-post"></i>
       <% end %>
       <%= link_to({ action: 'show', id: model.id }, data: { turbo_frame: 'modal' }, aria: { label: t('.show') }, class: 'button is-small is-rounded is-light') do %>
         <i class="fa-solid fa-circle-info"></i>
