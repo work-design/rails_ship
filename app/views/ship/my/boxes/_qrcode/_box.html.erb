@@ -38,12 +38,12 @@
       <span class="weui-form-preview__value <%= @box_hold.rented_amount > 0 ? 'has-text-success' : 'has-text-danger' %>"><%= @box_hold.rented_amount %></span>
     </div>
     <div class="weui-form-preview__item">
-      <label class="weui-form-preview__label"><%= Ship::BoxHold.human_attribute_name(:total_amount) %></label>
-      <span class="weui-form-preview__value <%= @box_hold.total_amount > 0 ? 'has-text-success' : 'has-text-danger' %>"><%= @box_hold.total_amount %></span>
-    </div>
-    <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::BoxHold.human_attribute_name(:boxes_count) %></label>
       <span class="weui-form-preview__value"><%= @box_hold.boxes_count %></span>
+    </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= Ship::BoxHold.human_attribute_name(:total_amount) %></label>
+      <span class="weui-form-preview__value <%= @box_hold.total_amount > 0 ? 'has-text-success' : 'has-text-danger' %>"><%= @box_hold.total_amount %></span>
     </div>
     <% if @box.current_rent && @box.held_user_id == current_user.id %>
       <div class="weui-form-preview__item">
