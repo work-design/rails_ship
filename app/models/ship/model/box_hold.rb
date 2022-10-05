@@ -39,7 +39,7 @@ module Ship
     end
 
     def total_amount
-      owned_amount + rented_amount
+      owned_amount + rented_amount - boxes_count
     end
 
     def sum_owned_amount
