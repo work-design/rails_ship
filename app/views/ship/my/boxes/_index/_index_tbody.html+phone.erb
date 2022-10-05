@@ -1,16 +1,7 @@
 <div class="is-flex">
   <%= link_to model.code, { action: 'show', id: model.id }, text: true %>
-  <div class="ml-2">
-  <% if model.rented %>
-    <div class="tags has-addons">
-      <span class="tag is-info"><i class="fa-solid fa-hand-holding-box"></i></span>
-      <span class="tag">租用</span>
-    </div>
-  <% elsif model.held_user_id %>
-    <div class="tags has-addons">
-      <span class="tag is-primary"><i class="fa-solid fa-check"></i></span>
-      <span class="tag">自购</span>
-    </div>
-  <% end %>
-  </div>
 </div>
+<p>
+  <span class="has-text-grey">交割时间：</span>
+  <time data-controller="time"><%= model.current_rent&.start_at&.to_fs(:iso8601) %></time>
+</p>
