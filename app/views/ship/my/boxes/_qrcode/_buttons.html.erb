@@ -18,6 +18,6 @@
     <% end if false %>
     <%= button_to({ action: 'start' }, class: 'button is-warning') do %>
       <span><%= t('ship.my.boxes.start.title') %></span>
-    <% end unless @box.current_rent %>
+    <% end if @box_hold.total_amount > 0 && !@box.current_rent %>
   </div>
 </div>
