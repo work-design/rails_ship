@@ -1,9 +1,9 @@
 <%= link_to({ controller: 'ship/me/boxes', action: 'qrcode', id: @box.id, host: @box.organ.host, disposable_token: current_account.once_token }, class: 'button is-primary') do %>
-  <span>箱子管理</span>
+  <span>物流箱管理</span>
 <% end if current_user.organ_ids.include?(@box.organ_id) %>
 <%= link_to({controller: 'ship/boxes', action: 'in_edit', id: @box.code }, class: 'button is-info') do %>
   <span>出入库管理</span>
 <% end if current_user.organ_ids.size > 1 || current_user.organ_ids.exclude?(@box.organ_id) %>
 <%= link_to({ controller: 'ship/my/boxes', action: 'qrcode', id: @box.id }, class: 'button is-success') do %>
-  <span>个人用户</span>
+  <span>用户身份</span>
 <% end %>
