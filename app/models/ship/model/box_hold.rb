@@ -38,6 +38,10 @@ module Ship
       self.changes
     end
 
+    def total_amount
+      owned_amount + rented_amount
+    end
+
     def sum_owned_amount
       self.owned_amount = box_sells.sum(:rest_amount) + items.aim_use.deliverable.sum(:done_number)
     end

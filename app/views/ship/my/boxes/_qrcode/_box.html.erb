@@ -31,22 +31,31 @@
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::BoxHold.human_attribute_name(:owned_amount) %></label>
-      <span class="weui-form-preview__value has-text-danger"><%= @box_hold.owned_amount %></span>
+      <span class="weui-form-preview__value <%= @box_hold.owned_amount > 0 ? 'has-text-success' : 'has-text-danger' %>"><%= @box_hold.owned_amount %></span>
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::BoxHold.human_attribute_name(:rented_amount) %></label>
-      <span class="weui-form-preview__value has-text-danger"><%= @box_hold.rented_amount %></span>
+      <span class="weui-form-preview__value <%= @box_hold.rented_amount > 0 ? 'has-text-success' : 'has-text-danger' %>"><%= @box_hold.rented_amount %></span>
+    </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= Ship::BoxHold.human_attribute_name(:total_amount) %></label>
+      <span class="weui-form-preview__value <%= @box_hold.total_amount > 0 ? 'has-text-success' : 'has-text-danger' %>"><%= @box_hold.total_amount %></span>
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::BoxHold.human_attribute_name(:boxes_count) %></label>
-      <span class="weui-form-preview__value has-text-danger"><%= @box_hold.boxes_count %></span>
+      <span class="weui-form-preview__value"><%= @box_hold.boxes_count %></span>
     </div>
-    <% if @box.current_rent %>
+    <% if @box.current_rent && @box.held_user_id == current_user.id %>
       <div class="weui-form-preview__item">
         <label class="weui-form-preview__label"><%= Trade::Rent.human_attribute_name(:start_at) %></label>
         <span class="weui-form-preview__value has-text-success">
           <time data-controller="time"><%= @box.current_rent.start_at.to_fs(:iso8601) %></time>
         </span>
+      </div>
+    <% elsif @box.current_rent %>
+      <div class="weui-form-preview__item">
+        <label class="weui-form-preview__label"></label>
+        <span class="weui-form-preview__value">该物流箱已租出</span>
       </div>
     <% end %>
   </div>

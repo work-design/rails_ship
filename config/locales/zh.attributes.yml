@@ -26,6 +26,7 @@ zh:
         buy_price: 买入限价
         owned_amount: 买入数量
         rented_amount: 租赁数量
+        total_amount: 可交割
         boxes_count: 已交割
       ship/box_sell:
         price: 价格
