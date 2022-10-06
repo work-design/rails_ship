@@ -1,7 +1,7 @@
 <div class="weui-panel">
   <div class="weui-panel__hd is-flex is-justify-content-space-between">
     <span>委托买入</span>
-    <%= link_to({ controller: 'items', box_hold_id: @box_hold.id }) do %>
+    <%= link_to({ controller: 'items', box_hold_id: @box_hold.id, state: urlsafe_encode64 }) do %>
       <span>更多</span>
       <i class="fa-solid fa-chevron-right has-text-grey-lighter"></i>
     <% end %>
