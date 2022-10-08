@@ -244,6 +244,8 @@ zh:
           title: 地址
         order:
           title: 选择地址
+        cart:
+          title: 选择地址
         new:
           title: 新增地址
     our:
