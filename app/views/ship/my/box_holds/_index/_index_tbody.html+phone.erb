@@ -3,19 +3,25 @@
   <span class="has-text-grey"><%= model.box_specification.measure %></span>
 </p>
 <div class="is-flex is-justify-content-space-between mt-2">
-  <%= link_to({ controller: 'items', box_hold_id: model.id }) do %>
-    <i class="fa-regular fa-credit-card"></i>
-    <span class="pl-1">买入</span>
-    <span class="pl-1"><%= model.owned_amount %></span>
+  <%= link_to({ controller: 'items', box_hold_id: model.id }, class: 'tags has-addons') do %>
+    <span class="tag is-link">
+      <i class="fa-regular fa-credit-card"></i>
+      <span class="pl-1">买入</span>
+    </span>
+    <span class="tag"><%= model.owned_amount %></span>
   <% end %>
-  <%= link_to({ controller: 'items', action: 'rent', box_hold_id: model.id }) do %>
-    <i class="fa-regular fa-hand"></i>
-    <span class="pl-1">租用</span>
-    <span class="pl-1"><%= model.rented_amount %></span>
+  <%= link_to({ controller: 'items', action: 'rent', box_hold_id: model.id }, class: 'tags has-addons') do %>
+    <span class="tag is-link">
+      <i class="fa-regular fa-hand"></i>
+      <span class="pl-1">租用</span>
+    </span>
+    <span class="tag"><%= model.rented_amount %></span>
   <% end %>
-  <%= link_to({ controller: 'boxes', box_hold_id: model.id }) do %>
-    <i class="fa-regular fa-handshake"></i>
-    <span class="pl-1">已交割</span>
-    <span class="pl-1"><%= model.boxes_count %></span>
+  <%= link_to({ controller: 'boxes', box_hold_id: model.id }, class: 'tags has-addons') do %>
+    <span class="tag is-link">
+      <i class="fa-regular fa-handshake"></i>
+      <span class="pl-1">已交割</span>
+    </span>
+    <span class="tag"><%= model.boxes_count %></span>
   <% end %>
 </div>
