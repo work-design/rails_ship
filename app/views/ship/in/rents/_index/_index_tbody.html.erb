@@ -3,7 +3,9 @@
   <p><time data-controller="time"><%= model.finish_at&.to_fs(:iso8601) %></time></p>
 </td>
 <td>
-  <p class="has-text-grey is-size-7"><time data-controller="time"><%= model.estimate_finish_at&.to_fs(:iso8601) %></time></p>
+  <p class="has-text-grey is-size-7">
+    <time data-controller="time" data-time-datetime-value="<%= model.estimate_finish_at&.to_fs(:iso8601) %>"><%= model.estimate_finish_at&.to_fs(:short) %></time>
+  </p>
   <p>
   <% if model.finish_at.blank? %>
     <time data-controller="count-up" data-count-up-time-value="<%= model.start_at&.to_fs(:iso8601) %>" class="has-text-mono"><%= exact_distance_time(model.start_at, Time.current) %></time>

@@ -10,7 +10,7 @@ module Ship
     end
 
     def rent
-      @box_specifications = BoxSpecification.includes(:available_promotes).page(params[:page])
+      @box_hosts = BoxHost.includes(:available_promotes).page(params[:page])
     end
 
     def buy
