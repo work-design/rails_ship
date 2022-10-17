@@ -1,6 +1,6 @@
 <table class="table is-fullwidth is-hoverable as-show" id="line-table" style="table-layout: fixed">
   <tbody>
-    <%= render partial: 'item_location', collection: @line.locations.sort_by(&:position), as: :location %>
+    <%= render partial: 'item_location', collection: @line.line_stations.sort_by(&:position), as: :location %>
   </tbody>
   <tfoot>
     <tr>

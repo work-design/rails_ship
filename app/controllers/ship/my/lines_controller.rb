@@ -12,15 +12,16 @@ module Ship
 
     def new
       @line = current_user.lines.build
-      @line.locations.build(position: 1)
+      r = @line.line_stations.build
+      r.build_station
     end
 
     def add
       @line = current_user.lines.build(line_params)
-      @line.locations.select(&->(i){ i.position > params[:position].to_i }).each do |i|
+      @line.stations.select(&->(i){ i.position > params[:position].to_i }).each do |i|
         i.position += 1
       end
-      @line.locations.build(position: params[:position].to_i + 1)
+      @line.stations.build(position: params[:position].to_i + 1)
     end
 
     def select

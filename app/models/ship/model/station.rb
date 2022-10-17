@@ -29,22 +29,6 @@ module Ship
       lines.each(&:sync_names_to_line)
     end
 
-    def position_text
-      if line.new_record?
-        count = line.locations.size
-      else
-        count = line.locations_count
-      end
-
-      if position == 1
-        '起点'
-      elsif position >= count
-        '终点'
-      else
-        "途经点#{position}"
-      end
-    end
-
     def geo_later
       LocationGeoJob.perform_later(self)
     end

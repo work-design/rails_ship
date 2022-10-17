@@ -17,6 +17,22 @@ module Ship
       after_save_commit :sync_names_to_line, if: -> { saved_change_to_position? }
     end
 
+    def position_text
+      if line.new_record?
+        count = line.line_stations.size
+      else
+        count = line.line_stations_count
+      end
+
+      if position.to_i == 1
+        '起点'
+      elsif position.to_i >= count
+        '终点'
+      else
+        "途经点#{position}"
+      end
+    end
+
     def sync_organ
       self.organ_id = station.organ_id
     end

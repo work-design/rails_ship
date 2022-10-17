@@ -1,4 +1,4 @@
-<%= f.fields :locations, model: @line.locations.sort_by(&:position) do |ef| %>
+<%= f.fields :locations, model: @line.line_stations.sort_by(&:position) do |ef| %>
   <%= ef.hidden_field :poiname %>
   <%= ef.hidden_field :poiaddress %>
   <%= ef.hidden_field :cityname %>

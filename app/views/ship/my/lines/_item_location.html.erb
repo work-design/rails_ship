@@ -1,8 +1,8 @@
 <tr id="tr_<%= location.position %>">
   <td class="has-text-right"><%= location.position_text %></td>
   <td>
-    <%= button_to({ action: 'select', index: location.position - 1 }, form_class: 'button_box') do %>
-      <span id="<%= location.position - 1 %>_name"><%= location.poiname %></span>
+    <%= button_to({ action: 'select', index: location.position.to_i - 1 }, form_class: 'button_box') do %>
+      <span id="<%= location.position.to_i - 1 %>_name"><%= location.station.poiname %></span>
     <% end %>
   </td>
   <td style="width: 5em">
