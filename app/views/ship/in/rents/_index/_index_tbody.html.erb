@@ -4,7 +4,7 @@
 </td>
 <td>
   <p class="has-text-grey is-size-7">
-    <time data-controller="time" data-time-datetime-value="<%= model.estimate_finish_at&.to_fs(:iso8601) %>"><%= model.estimate_finish_at&.to_fs(:short) %></time>
+    <time data-controller="time" data-value="<%= model.estimate_finish_at&.to_fs(:iso8601) %>"><%= model.estimate_finish_at&.to_fs(:short) %></time>
   </p>
   <p>
   <% if model.finish_at.blank? %>

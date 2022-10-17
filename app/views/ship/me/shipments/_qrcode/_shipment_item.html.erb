@@ -5,7 +5,7 @@
     <p><%= model.box_id %></p>
   </td>
   <td class="has-text-right">
-    <p><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.loaded_at&.to_fs(:iso8601) %></time></p>
-    <p><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.unloaded_at&.to_fs(:iso8601) %></time></p>
+    <p><time data-controller="time" data-format="human"><%= model.loaded_at&.to_fs(:iso8601) %></time></p>
+    <p><time data-controller="time" data-format="human"><%= model.unloaded_at&.to_fs(:iso8601) %></time></p>
   </td>
 </tr>

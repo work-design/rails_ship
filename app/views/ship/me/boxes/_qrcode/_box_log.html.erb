@@ -7,7 +7,7 @@
     <p><%= model.boxed_type_i18n %></p>
   </td>
   <td>
-    <p><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.boxed_in_at.to_fs(:iso8601) %></time></p>
-    <p><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.boxed_out_at&.to_fs(:iso8601) %></time></p>
+    <p><time data-controller="time" data-format="human"><%= model.boxed_in_at.to_fs(:iso8601) %></time></p>
+    <p><time data-controller="time" data-format="human"><%= model.boxed_out_at&.to_fs(:iso8601) %></time></p>
   </td>
 </tr>

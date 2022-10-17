@@ -1,6 +1,6 @@
 <td>
-  <p class="has-text-success"><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.boxed_in_at.to_fs(:iso8601) %></time></p>
-  <p class="has-text-danger"><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss"><%= model.boxed_out_at&.to_fs(:iso8601) %></time></p>
+  <p class="has-text-success"><time data-controller="time" data-format="human"><%= model.boxed_in_at.to_fs(:iso8601) %></time></p>
+  <p class="has-text-danger"><time data-controller="time" data-format="human"><%= model.boxed_out_at&.to_fs(:iso8601) %></time></p>
 </td>
 <td><%= model.duration_obj.inspect %></td>
 <td>
@@ -9,4 +9,4 @@
     <span class="pl-1"><%= model.package_id %></span>
   <% end %>
 </td>
-<td><time data-controller="time" data-format="yyyy-MM-dd HH:mm:ss" class="has-text-grey"><%= model.created_at.to_fs(:iso8601) %></time></td>
+<td><time data-controller="time" data-format="human" class="has-text-grey"><%= model.created_at.to_fs(:iso8601) %></time></td>
