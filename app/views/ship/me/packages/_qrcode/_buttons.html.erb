@@ -1,9 +1,4 @@
-<div
-  data-controller="scan"
-  data-scan-debug-value="false"
-  data-scan-apis-value="<%= ['scanQRCode'].to_json %>"
-  data-scan-options-value="<%= current_js_app&.js_config(request.original_url).to_json %>"
->
+<div data-controller="scan">
   <div class="buttons are-large is-centered">
     <% if @package.box_id.blank? %>
       <button class="button is-success" data-action="scan#report" data-report-url="<%= url_for(controller: 'ship/me/packages', action: 'in', id: @package.id) %>">

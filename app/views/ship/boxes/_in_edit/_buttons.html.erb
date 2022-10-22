@@ -5,13 +5,7 @@
   <% end %>
 <% end %>
 </div>
-<div
-  data-controller="scan"
-  data-scan-debug-value="false"
-  data-scan-apis-value="<%= ['scanQRCode'].to_json %>"
-  data-scan-options-value="<%= current_js_app&.js_config(request.original_url).to_json %>"
-  data-scan-params-value="<%= { organ_id: @box.organ_id }.to_json %>"
->
+<div data-controller="scan" data-scan-debug-value="false" data-scan-params-value="<%= { organ_id: @box.organ_id }.to_json %>">
   <div class="buttons are-large is-centered">
   <% if current_user.organ_ids.include?(@box.organ_id) %>
     <button

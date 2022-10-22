@@ -1,10 +1,4 @@
-<div
-  data-controller="scan"
-  data-scan-debug-value="false"
-  data-scan-apis-value="<%= ['scanQRCode'].to_json %>"
-  data-scan-options-value="<%= current_js_app&.js_config(request.original_url).to_json %>"
-  class="buttons are-large is-centered"
->
+<div data-controller="scan" data-scan-debug-value="false" class="buttons are-large is-centered">
   <button
     class="button is-success"
     data-action="scan#report"
