@@ -20,6 +20,7 @@ module Ship
       }
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
+      belongs_to :user, class_name: 'Auth::User', optional: true # 车的实际拥有者
 
       has_many :car_drivers, dependent: :destroy_async
       has_many :drivers, through: :car_drivers
