@@ -18,10 +18,10 @@ module Ship
 
     def add
       @line = current_user.lines.build(line_params)
-      @line.stations.select(&->(i){ i.position > params[:position].to_i }).each do |i|
+      @line.line_stations.select(&->(i){ i.position > params[:position].to_i }).each do |i|
         i.position += 1
       end
-      @line.stations.build(position: params[:position].to_i + 1)
+      @line.line_stations.build(position: params[:position].to_i + 1)
     end
 
     def select

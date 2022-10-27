@@ -10,6 +10,7 @@ module Ship
 
       has_many :shipments
       has_many :line_stations, -> { includes(:station).order(position: :asc) }, dependent: :destroy_async
+      accepts_nested_attributes_for :line_stations
       has_many :stations, through: :line_stations, inverse_of: :lines
       accepts_nested_attributes_for :stations
       has_many :line_similars, dependent: :delete_all
