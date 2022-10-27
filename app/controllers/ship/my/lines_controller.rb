@@ -21,7 +21,8 @@ module Ship
       @line.line_stations.select(&->(i){ i.position > params[:position].to_i }).each do |i|
         i.position += 1
       end
-      @line.line_stations.build(position: params[:position].to_i + 1)
+      r = @line.line_stations.build(position: params[:position].to_i + 1)
+      r.build_station
     end
 
     def select
