@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
   scope RailsCom.default_routes_scope do
+    concern :my_ship do
+      resources :addresses do
+        collection do
+          get :cart
+          post :order
+          post :order_new
+          post :order_create
+        end
+        member do
+          get :plans
+        end
+      end
+    end
+
     namespace :ship, defaults: { business: 'ship' } do
       resources :box_hosts, only: [:index, :show] do
         collection do
@@ -186,6 +200,7 @@ Rails.application.routes.draw do
         end
       end
       namespace :our, defaults: { namespace: 'our' } do
+        concerns :my_ship
         resources :orders do
           member do
             get :payment_types
@@ -246,6 +261,7 @@ Rails.application.routes.draw do
         end
       end
       namespace :my, defaults: { namespace: 'my' } do
+        concerns :my_ship
         resource :driver
         resources :favorites
         resources :cars
@@ -292,17 +308,6 @@ Rails.application.routes.draw do
             post :start
           end
           resources :rents
-        end
-        resources :addresses do
-          collection do
-            get :cart
-            post :order
-            post :order_new
-            post :order_create
-          end
-          member do
-            get :plans
-          end
         end
         resources :packages do
           member do
