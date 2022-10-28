@@ -144,6 +144,10 @@ Rails.application.routes.draw do
           end
         end
         resources :box_hosts do
+          member do
+            get :wallet
+            patch 'wallet' => :update_wallet
+          end
           resources :box_proxy_sells do
             resources :box_sells
           end
