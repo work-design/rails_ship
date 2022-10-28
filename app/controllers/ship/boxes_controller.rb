@@ -1,6 +1,6 @@
 module Ship
   class BoxesController < BaseController
-    before_action :require_login, only: [:qrcode, :in_edit, :in_update, :in_create]
+    before_action :require_user, only: [:qrcode, :in_edit, :in_update, :in_create]
     before_action :set_box_host, only: [:index]
     before_action :set_box, only: [:qrcode, :in_edit, :in_update]
     before_action :set_box_from_scan, only: [:in_create]

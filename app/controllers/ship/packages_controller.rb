@@ -1,6 +1,6 @@
 module Ship
   class PackagesController < BaseController
-    before_action :require_login
+    before_action :require_user
     before_action :set_package, only: [:qrcode]
 
     def qrcode

@@ -4,7 +4,7 @@ module Ship
     before_action :set_new_package, only: [:new, :create]
     before_action :set_address, only: [:address]
     before_action :set_stations, only: [:edit, :update]
-    skip_before_action :require_login, only: [:print_data] if whether_filter :require_login
+    skip_before_action :require_user, only: [:print_data] if whether_filter :require_user
     skip_before_action :require_role, only: [:print_data] if whether_filter :require_role
 
     def index
