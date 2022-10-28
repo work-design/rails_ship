@@ -11,20 +11,11 @@
   </p>
 </td>
 <td>
-  <% if model.rentable %>
-    <i class="fa-solid fa-check has-text-success"></i>
-  <% else %>
-    <i class="fa-solid fa-times has-text-danger"></i>
-  <% end %>
   <% if model.rented %>
     <i class="fa-solid fa-check has-text-success"></i>
   <% else %>
     <i class="fa-solid fa-times has-text-danger"></i>
   <% end %>
-</td>
-<td>
-  <p><%= model.owned_organ&.name %></p>
-  <p class="has-text-info"><%= model.owned_user&.name %></p>
 </td>
 <td>
   <p><%= model.held_organ&.name %></p>

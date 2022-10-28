@@ -9,8 +9,8 @@
   <% end %>
 </td>
 <td>
-  <p><%= model.rentable_count %></p>
-  <p><%= model.rented_count %></p>
+  <p><%= model.tradable_count %></p>
+  <p><%= model.traded_count %></p>
 </td>
 <td><%= model.price.to_money.format(html_wrap: true).html_safe %></td>
 <td><%= (model.invest_ratio * 100).to_fs(:percentage, precision: 0) %></td>
