@@ -33,6 +33,7 @@ module Ship
         :box_specification_id,
         :price,
         :invest_ratio,
+        :rent_unit,
         :logo
       )
       p.merge! default_form_params

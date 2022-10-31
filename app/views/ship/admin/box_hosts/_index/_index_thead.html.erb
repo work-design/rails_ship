@@ -1,16 +1,19 @@
-<th><%= Ship::BoxSpecification.human_attribute_name(:name) %></th>
 <th>
-  <span><%= Ship::BoxSpecification.human_attribute_name(:width) %></span>
-  <span class="has-text-grey">*</span>
-  <span><%= Ship::BoxSpecification.human_attribute_name(:length) %></span>
-  <span class="has-text-grey">*</span>
-  <span><%= Ship::BoxSpecification.human_attribute_name(:height) %></span>
+  <p><%= Ship::BoxSpecification.human_attribute_name(:name) %></p>
+  <p>
+    <span><%= Ship::BoxSpecification.human_attribute_name(:width) %></span>
+    <span class="has-text-grey">*</span>
+    <span><%= Ship::BoxSpecification.human_attribute_name(:length) %></span>
+    <span class="has-text-grey">*</span>
+    <span><%= Ship::BoxSpecification.human_attribute_name(:height) %></span>
+  </p>
 </th>
 <th><%= Ship::BoxHost.human_attribute_name(:boxes_count) %></th>
 <th>
   <p><%= Ship::BoxHost.human_attribute_name(:tradable_count) %></p>
   <p><%= Ship::BoxHost.human_attribute_name(:traded_count) %></p>
 </th>
-<th><%= Ship::BoxSpecification.human_attribute_name(:price) %></th>
-<th><%= Ship::BoxSpecification.human_attribute_name(:wallet_price) %></th>
-<th><%= Ship::BoxSpecification.human_attribute_name(:invest_ratio) %></th>
+<th><%= Ship::BoxHost.human_attribute_name(:price) %></th>
+<th><%= Ship::BoxHost.human_attribute_name(:wallet_price) %></th>
+<th><%= Ship::BoxHost.human_attribute_name(:invest_ratio) %></th>
+<th>出租设置</th>

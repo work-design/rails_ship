@@ -3,8 +3,8 @@
     <%= image_tag model.logo, class: 'image is-24x24' if model.logo.attached? %>
     <span><%= model.name %></span>
   </div>
+  <p><%= model.box_specification.measure %></p>
 </td>
-<td><%= model.box_specification.measure %></td>
 <td>
   <%= link_to({ controller: 'boxes', box_host_id: model.id }, aria: { label: t('ship.panel.boxes.index.title') }, class: 'button is-small is-rounded is-light') do %>
     <i class="fa-solid fa-boxes-stacked"></i>
@@ -32,3 +32,9 @@
   <% end %>
 </td>
 <td><%= (model.invest_ratio * 100).to_fs(:percentage, precision: 0) %></td>
+<td>
+  <span><%= model.rent_unit_i18n %></span>
+  <%= link_to({ controller: 'trade/admin/rent_charges', rentable_type: model.class_name, rentable_id: model.id }, aria: { label: t('trade.admin.rent_charges.index.title') }, class: 'button is-small is-rounded is-light') do %>
+    <i class="fa-solid fa-clock-rotate-left"></i>
+  <% end %>
+</td>
