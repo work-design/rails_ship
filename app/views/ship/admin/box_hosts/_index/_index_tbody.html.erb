@@ -15,7 +15,7 @@
   <p><%= model.tradable_count %></p>
   <p><%= model.traded_count %></p>
 </td>
-<td><%= model.price.to_money.format(html_wrap: true).html_safe %></td>
+<td><%= model.price.to_money.format.html_safe %></td>
 <td>
   <div>
   <% model.wallet_price.each do |key, value| %>

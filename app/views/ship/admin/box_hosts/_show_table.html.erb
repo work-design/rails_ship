@@ -8,7 +8,7 @@
 </tr>
 <tr>
   <td class="has-text-right"><%= Ship::BoxSpecification.human_attribute_name(:price) %></td>
-  <td><%= @box_host.price.to_money.format(html_wrap: true).html_safe %></td>
+  <td><%= @box_host.price.to_money.format.html_safe %></td>
 </tr>
 <tr>
   <td class="has-text-right"><%= Ship::BoxSpecification.human_attribute_name(:covers) %></td>

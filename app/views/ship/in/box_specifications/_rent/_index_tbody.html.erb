@@ -3,7 +3,7 @@
 <td class="has-text-danger">
 <% model.rent_promotes.each do |promote| %>
   <p>
-    <span><%= promote.promote_charges[0].parameter.to_money.format(html_wrap: true).html_safe %></span>
+    <span><%= promote.promote_charges[0].parameter.to_money.format.html_safe %></span>
     <span>/</span>
     <span><%= promote.unit&.name %></span>
   </p>

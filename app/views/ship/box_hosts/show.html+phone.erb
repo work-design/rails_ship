@@ -7,12 +7,12 @@
   </div>
   <p>
     <span class="has-text-grey"><%= Ship::BoxHost.human_attribute_name(:price) %></span>
-    <span class="has-text-danger"><%= @box_host.price.to_money.format(html_wrap: true).html_safe %></span>
+    <span class="has-text-danger"><%= @box_host.price.to_money.format.html_safe %></span>
   </p>
   <% @box_host.rent_promotes.each do |promote| %>
     <p class="has-text-danger">
       <span class="has-text-grey">租金：</span>
-      <span><%= promote.promote_charges[0].parameter.to_money.format(html_wrap: true).html_safe %></span>
+      <span><%= promote.promote_charges[0].parameter.to_money.format.html_safe %></span>
       <span>/</span>
       <span><%= promote.unit_code_i18n %></span>
     </p>
