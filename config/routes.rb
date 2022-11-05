@@ -221,7 +221,7 @@ Rails.application.routes.draw do
         end
         resources :boxes
       end
-      namespace :driver, defaults: { namespace: 'driver' } do
+      namespace :dri, defaults: { namespace: 'dri' } do
         resources :favorites
       end
       namespace :me, defaults: { namespace: 'me' } do

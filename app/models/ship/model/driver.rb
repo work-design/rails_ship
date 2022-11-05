@@ -19,7 +19,7 @@ module Ship
       has_one_attached :license
 
       after_create_commit :ocr_later
-      after_create_commit :sync_to_favorite, if: -> { user&.inviter_id }
+      #after_create_commit :sync_to_favorite, if: -> { saved_change_to_user_id? }
     end
 
     def ocr_later

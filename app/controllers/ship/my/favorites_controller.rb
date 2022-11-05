@@ -3,12 +3,12 @@ module Ship
     before_action :set_favorite, only: [:show, :edit, :update, :destroy]
 
     def index
-      @favorites = current_user.favorites.page(params[:page])
+      @favorites = current_user.ship_favorites.page(params[:page])
     end
 
     private
     def set_favorite
-      @favorite = current_user.favorites.find(params[:id])
+      @favorite = current_user.ship_favorites.find(params[:id])
     end
 
     def favorite_params

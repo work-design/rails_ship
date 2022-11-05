@@ -1,15 +1,14 @@
 module Ship
-  class Me::FavoritesController < Me::BaseController
+  class Dri::FavoritesController < Dri::BaseController
     before_action :set_favorite, only: [:show, :edit, :update, :destroy]
 
     def index
-      @favorites = current_member.favorites.includes(:user).page(params[:page])
+      @favorites = current_driver.favorites.includes(:user).page(params[:page])
     end
-
 
     private
     def set_favorite
-      @favorite = Favorite.find(params[:id])
+      @favorite = current_driver.favorites.find(params[:id])
     end
 
     def favorite_params
