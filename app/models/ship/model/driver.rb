@@ -41,9 +41,10 @@ module Ship
 
     # depend on rails wechat
     def sync_to_favorite
-      user.user_inviters.each do |user_inviter|
+      user.user_inviters.map do |user_inviter|
         favorite = favorites.build(user_id: user_inviter.id)
         favorite.save
+        favorite
       end
     end
 
