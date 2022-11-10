@@ -1,6 +1,6 @@
 <tr>
   <td class="has-text-right"><%= Ship::Favorite.human_attribute_name(:avatar) %></td>
-  <td><%= image_tag @favorite.user.avatar %></td>
+  <td><%= image_tag @favorite.user.avatar if @favorite.user.avatar.attached? %></td>
 </tr>
 <tr>
   <td class="has-text-right"><%= Ship::Favorite.human_attribute_name(:name) %></td>
