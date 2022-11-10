@@ -39,9 +39,12 @@ module Ship
       broadcast_action_to 'driver_edit', action: :update, target: 'driver_update', partial: 'ship/my/drivers/edit_form', locals: { driver: self }
     end
 
+    # depend on rails wechat
     def sync_to_favorite
-      favorite = favorites.build(user_id: user.inviter_id)
-      favorite.save
+      user.user_inviters.each do |user_inviter|
+        favorite = favorites.build(user_id: user_inviter.id)
+        favorite.save
+      end
     end
 
   end
