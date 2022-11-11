@@ -1,5 +1,5 @@
-<div class="is-flex is-justify-content-space-between">
-  <span class="has-text-grey-light counter-section-item"></span>
-  <span class="has-text-danger pl-3"><%= model.price.to_money.format(html_wrap: true).html_safe %></span>
-  <span><%= model.sellable_count %></span>
-</div>
+<tr>
+  <td class="has-text-grey-light counter-section-item"></td>
+  <td class="has-text-danger pl-3"><%= model.price.to_money.format.html_safe %></td>
+  <td class="has-text-right"><%= model.sellable_count %></td>
+</tr>
