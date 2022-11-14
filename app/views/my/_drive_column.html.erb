@@ -1,12 +1,14 @@
 <div class="weui-panel" data-controller="empty">
-  <div class="weui-panel__hd">司机</div>
+  <div class="weui-panel__hd">
+    <span class="has-border-left-primary">司机</span>
+  </div>
   <div class="weui-panel__bd">
     <div class="columns is-4-mobile is-flex is-vcentered is-centered m-0" data-empty-target="content">
       <%= link_to({ controller: 'ship/dri/favorites' }, class: 'column has-block-centered') do %>
         <div class="has-text-grey-dark">
           <i class="fa-solid fa-fw fa-xl fa-users"></i>
         </div>
-        <div class="has-text-dark">
+        <div class="has-text-grey-dark is-size-0_9">
           <span><%= t('ship.dri.favorites.index.title') %></span>
         </div>
       <% end if current_user.driver %>
@@ -14,7 +16,7 @@
         <div class="has-text-grey-dark">
           <i class="fa-solid fa-fw fa-xl fa-paper-plane"></i>
         </div>
-        <div class="has-text-dark">
+        <div class="has-text-grey-dark is-size-0_9">
           <span><%= t('ship.my.ways.requirement.title') %></span>
         </div>
       <% end %>
@@ -22,7 +24,7 @@
         <div class="has-text-grey-dark">
           <i class="fa-solid fa-fw fa-xl fa-car"></i>
         </div>
-        <div class="has-text-dark">
+        <div class="has-text-grey-dark is-size-0_9">
           <span><%= t('ship.my.cars.index.title') %></span>
         </div>
       <% end %>
@@ -30,7 +32,7 @@
         <div class="has-text-grey-dark">
           <i class="fa-solid fa-fw fa-xl fa-id-card"></i>
         </div>
-        <div class="has-text-dark">
+        <div class="has-text-grey-dark is-size-0_9">
           <span><%= t('ship.my.drivers.show.title') %></span>
         </div>
       <% end %>
