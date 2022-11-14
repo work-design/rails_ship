@@ -8,6 +8,7 @@ module Ship
       attribute :finish_name, :string
       attribute :locations_count, :integer, default: 0
 
+      belongs_to :organ, class_name: 'Org::Organ', optional: true
       belongs_to :user, class_name: 'Auth::User'
 
       belongs_to :line, optional: true

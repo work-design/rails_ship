@@ -1,0 +1,13 @@
+<%= link_to({ action: 'show', id: model.id }, class: 'weui-actionsheet__cell') do %>
+  <i class="fa-solid fa-circle-info"></i>
+  <span><%= t('.show') %></span>
+<% end %>
+<%= link_to({ controller: 'line_stations', line_id: model.id }, class: 'weui-actionsheet__cell') do %>
+  <i class="fa-solid fa-location-dot"></i>
+  <span class="pl-1"><%= t('ship.admin.line_stations.index.title') %></span>
+  <span class="pl-1"><%= model.line_stations_count %></span>
+<% end %>
+<%= link_to({ controller: 'shipments', line_id: model.id }, class: 'weui-actionsheet__cell') do %>
+  <i class="fa-regular fa-list"></i>
+  <span class="pl-1"><%= t('ship.admin.shipments.index.title') %></span>
+<% end %>

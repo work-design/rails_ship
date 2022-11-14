@@ -143,6 +143,9 @@ Rails.application.routes.draw do
             end
           end
         end
+        resources :ways do
+          resources :locations
+        end
         resources :box_hosts do
           member do
             get :wallet

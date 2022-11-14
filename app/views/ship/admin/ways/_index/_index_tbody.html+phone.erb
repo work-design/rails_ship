@@ -1,0 +1,8 @@
+<p><%= model.name %></p>
+<p>
+<%= link_to({ controller: 'shipments', line_id: model.id }) do %>
+  <span><%= model.start_name %></span>
+  <i class="fa-solid fa-right-long has-text-grey px-1"></i>
+  <span><%= model.finish_name %></span>
+<% end %>
+</p>
