@@ -13,8 +13,6 @@ module Ship
       accepts_nested_attributes_for :line_stations
       has_many :stations, through: :line_stations, inverse_of: :lines
       accepts_nested_attributes_for :stations
-      has_many :line_similars, dependent: :delete_all
-      has_many :similars, through: :line_similars
 
       before_validation :set_name, if: -> { name.blank? && (start_name_changed? || finish_name_changed?) }
     end

@@ -14,6 +14,8 @@ module Ship
 
       has_many :locations, -> { order(position: :asc) }, dependent: :destroy_async
       accepts_nested_attributes_for :locations
+      has_many :line_similars, foreign_key: :similar_id, dependent: :delete_all
+      has_many :similars, through: :line_similars
     end
 
   end
