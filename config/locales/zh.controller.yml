@@ -97,7 +97,7 @@ zh:
         index:
           title: 站点
         shipments:
-          title: 作业班次
+          title: 班次
         lines:
           title: 线路
       box_hosts:
