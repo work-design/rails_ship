@@ -14,7 +14,7 @@
     <% end %>
   </td>
   <td style="width: 5em">
-    <%= button_to({ action: 'add', position: location.position }, class: 'button is-white') do %>
+    <%= button_to({ action: 'add', position: location.position }, params: { index: location.position.to_i }, class: 'button is-white') do %>
       <i class="fa-solid fa-lg fa-plus"></i>
     <% end %>
   </td>

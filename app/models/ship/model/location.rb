@@ -32,7 +32,7 @@ module Ship
         count = way.locations_count
       end
 
-      if position.to_i == 1
+      if position.to_i == 0
         '起点'
       elsif position.to_i >= count
         '终点'

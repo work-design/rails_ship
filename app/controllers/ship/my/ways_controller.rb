@@ -20,7 +20,7 @@ module Ship
       @way.locations.select(&->(i){ i.position > params[:position].to_i }).each do |i|
         i.position += 1
       end
-      @way.locations.build(position: params[:position].to_i + 1)
+      @location = @way.locations.build(position: params[:position].to_i + 1)
     end
 
     def select

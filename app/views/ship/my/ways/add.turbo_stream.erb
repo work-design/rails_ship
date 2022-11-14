@@ -1,1 +1,1 @@
-<%= turbo_stream.after "tr_#{params[:index]}", partial: 'item_location' %>
+<%= turbo_stream.after "tr_#{params[:index]}", partial: 'item_location', locals: { location: @location, f: form_object(@way) } %>
