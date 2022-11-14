@@ -1,7 +1,7 @@
 <tr id="tr_<%= location.position.to_i %>">
   <td class="has-text-right"><%= location.position_text %></td>
   <td>
-    <%= f.fields :locations, model: @way.locations.sort_by(&:position) do |ef| %>
+    <%= f.fields :locations, model: location, child_index: location.position do |ef| %>
       <%= ef.hidden_field :poiname, form: 'new_way' %>
       <%= ef.hidden_field :poiaddress, form: 'new_way' %>
       <%= ef.hidden_field :cityname, form: 'new_way' %>

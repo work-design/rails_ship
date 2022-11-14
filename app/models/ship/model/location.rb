@@ -12,17 +12,15 @@ module Ship
       attribute :lng, :decimal, precision: 11, scale: 8
       attribute :coordinate, :point
 
-      belongs_to :organ, class_name: 'Org::Organ', optional: true
       belongs_to :area, class_name: 'Profiled::Area', optional: true
       has_taxons :area
 
       belongs_to :way, counter_cache: true
       belongs_to :station, optional: true
 
-      acts_as_list scope: [:line_id]
+      acts_as_list scope: [:way_id]
 
-      before_validation :sync_organ, if: -> { station_id_changed? }
-      after_save_commit :sync_names_to_line, if: -> { saved_change_to_position? }
+      #after_save_commit :sync_names_to_line, if: -> { saved_change_to_position? }
     end
 
     def position_text
@@ -39,10 +37,6 @@ module Ship
       else
         "途经点#{position}"
       end
-    end
-
-    def sync_organ
-      self.organ_id = station.organ_id
     end
 
     def sync_names_to_line

@@ -1,6 +1,6 @@
 <table class="table is-fullwidth is-hoverable as-show" id="way-table" style="table-layout: fixed">
   <tbody>
-    <%= render partial: 'item_location', collection: @way.locations.sort_by(&:position), as: :location, locals: { f: form_object(@way) } %>
+    <%= render partial: 'item_location', locals: { location: @location, f: form_object(@way) } %>
   </tbody>
   <tfoot>
     <tr>

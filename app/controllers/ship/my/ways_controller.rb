@@ -1,6 +1,7 @@
 module Ship
   class My::WaysController < My::BaseController
     before_action :set_way, only: [:show, :edit, :update, :destroy]
+    before_action :set_new_way, only: [:new, :add, :select, :create]
 
     def index
       @ways = current_user.ways.order(id: :asc).page(params[:page])
@@ -11,20 +12,17 @@ module Ship
     end
 
     def new
-      @way = current_user.ways.build
-      @way.locations.build
+      @location = @way.locations.build
     end
 
     def add
-      @way = current_user.ways.build(way_params)
-      @way.locations.select(&->(i){ i.position > params[:position].to_i }).each do |i|
+      @way.locations.select(&->(i){ i.position > params[:index].to_i }).each do |i|
         i.position += 1
       end
-      @location = @way.locations.build(position: params[:position].to_i + 1)
+      @location = @way.locations.build(position: params[:index].to_i + 1)
     end
 
     def select
-      @way = current_user.ways.build
     end
 
     def show
