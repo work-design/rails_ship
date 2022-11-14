@@ -20,7 +20,7 @@ module Ship
 
       acts_as_list scope: [:way_id]
 
-      #after_save_commit :sync_names_to_line, if: -> { saved_change_to_position? }
+      after_save_commit :sync_names_to_way, if: -> { saved_change_to_position? }
     end
 
     def position_text
@@ -39,8 +39,8 @@ module Ship
       end
     end
 
-    def sync_names_to_line
-      line.sync_names_to_line
+    def sync_names_to_way
+      way.sync_names_from_locations
     end
 
     def next_item

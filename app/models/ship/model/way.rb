@@ -18,5 +18,11 @@ module Ship
       has_many :similars, through: :line_similars
     end
 
+    def sync_names_from_locations
+      self.start_name = locations[0].name
+      self.finish_name = locations[-1].name
+      self.save
+    end
+
   end
 end
