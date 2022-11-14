@@ -1,17 +1,20 @@
 module Ship
-  module Model::LineStation
+  module Model::Location
     extend ActiveSupport::Concern
 
     included do
+      attribute :name, :string
       attribute :position, :integer
-      attribute :expected_minutes, :integer, comment: '预计到下站分钟数'
       attribute :poiname, :string
       attribute :poiaddress, :string
       attribute :cityname, :string
       attribute :lat, :decimal, precision: 10, scale: 8
       attribute :lng, :decimal, precision: 11, scale: 8
+      attribute :coordinate, :point
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
+      belongs_to :area, class_name: 'Profiled::Area', optional: true
+      has_taxons :area
 
       belongs_to :way, counter_cache: true
       belongs_to :station, optional: true
@@ -23,10 +26,10 @@ module Ship
     end
 
     def position_text
-      if line.new_record?
-        count = line.line_stations.size
+      if way.new_record?
+        count = way.locations.size
       else
-        count = line.line_stations_count
+        count = way.locations_count
       end
 
       if position.to_i == 1

@@ -10,12 +10,12 @@
           <span><%= t('ship.dri.favorites.index.title') %></span>
         </div>
       <% end if current_user.driver %>
-      <%= link_to({ controller: 'ship/my/lines', action: 'requirement' }, class: 'column has-block-centered') do %>
+      <%= link_to({ controller: 'ship/my/ways', action: 'requirement' }, class: 'column has-block-centered') do %>
         <div class="has-text-grey-dark">
           <i class="fa-solid fa-fw fa-xl fa-paper-plane"></i>
         </div>
         <div class="has-text-dark">
-          <span><%= t('ship.my.lines.requirement.title') %></span>
+          <span><%= t('ship.my.ways.requirement.title') %></span>
         </div>
       <% end %>
       <%= link_to({ controller: 'ship/my/cars' }, class: 'column has-block-centered') do %>

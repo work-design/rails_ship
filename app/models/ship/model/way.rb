@@ -6,7 +6,7 @@ module Ship
       attribute :name, :string
       attribute :start_name, :string
       attribute :finish_name, :string
-      attribute :line_stations_count, :integer, default: 0
+      attribute :locations_count, :integer, default: 0
 
       belongs_to :line
       belongs_to :user, class_name: 'Auth::User', optional: true

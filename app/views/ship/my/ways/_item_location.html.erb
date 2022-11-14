@@ -1,13 +1,13 @@
 <tr id="tr_<%= location.position.to_i %>">
   <td class="has-text-right"><%= location.position_text %></td>
   <td>
-    <%= f.fields :line_stations, model: @line.line_stations.sort_by(&:position) do |ef| %>
-      <%= ef.hidden_field :poiname, form: 'new_line' %>
-      <%= ef.hidden_field :poiaddress, form: 'new_line' %>
-      <%= ef.hidden_field :cityname, form: 'new_line' %>
-      <%= ef.hidden_field :lat, form: 'new_line' %>
-      <%= ef.hidden_field :lng, form: 'new_line' %>
-      <%= ef.hidden_field :position, form: 'new_line' %>
+    <%= f.fields :locations, model: @way.locations.sort_by(&:position) do |ef| %>
+      <%= ef.hidden_field :poiname, form: 'new_way' %>
+      <%= ef.hidden_field :poiaddress, form: 'new_way' %>
+      <%= ef.hidden_field :cityname, form: 'new_way' %>
+      <%= ef.hidden_field :lat, form: 'new_way' %>
+      <%= ef.hidden_field :lng, form: 'new_way' %>
+      <%= ef.hidden_field :position, form: 'new_way' %>
     <% end %>
     <%= button_to({ action: 'select', index: location.position.to_i }, form_class: 'button_box') do %>
       <span id="<%= location.position.to_i %>_name"><%= location.poiname %></span>

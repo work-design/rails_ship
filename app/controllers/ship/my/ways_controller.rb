@@ -12,15 +12,15 @@ module Ship
 
     def new
       @way = current_user.ways.build
-      @way.way_stations.build
+      @way.locations.build
     end
 
     def add
       @way = current_user.ways.build(way_params)
-      @way.way_stations.select(&->(i){ i.position > params[:position].to_i }).each do |i|
+      @way.locations.select(&->(i){ i.position > params[:position].to_i }).each do |i|
         i.position += 1
       end
-      @way.way_stations.build(position: params[:position].to_i + 1)
+      @way.locations.build(position: params[:position].to_i + 1)
     end
 
     def select

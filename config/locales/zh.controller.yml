@@ -216,7 +216,7 @@ zh:
         index:
           title: 包裹列表
           wait: 叫号
-      lines:
+      ways:
         index:
           title: 找车
           new: 添加路线
