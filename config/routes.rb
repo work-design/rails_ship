@@ -269,7 +269,7 @@ Rails.application.routes.draw do
         resource :driver
         resources :favorites
         resources :cars
-        resources :lines do
+        resources :ways do
           collection do
             get :requirement
             post :add

@@ -1,12 +1,11 @@
 <table class="table is-fullwidth is-hoverable as-show" id="line-table" style="table-layout: fixed">
   <tbody>
-    <%= render partial: 'item_location', collection: @line.line_stations.sort_by(&:position), as: :location %>
+    <%= render partial: 'item_location', collection: @line.line_stations.sort_by(&:position), as: :location, locals: { f: form_object(@line) } %>
   </tbody>
   <tfoot>
     <tr>
       <td colspan="3">
         <%= form_with model: @line, url: { action: 'create' }, id: 'new_line' do |f| %>
-          <%= render partial: 'item_field', locals: { f: f } %>
           <button type="submit" form="new_line" class="weui-btn weui-btn_primary">确认</button>
         <% end %>
       </td>
