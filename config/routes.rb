@@ -88,6 +88,9 @@ Rails.application.routes.draw do
             get :lines
             get :shipments
           end
+          collection do
+            post :select
+          end
         end
         resources :users, only: [:index]
         resources :addresses do

@@ -1,3 +1,11 @@
 <%= f.text_field :name %>
 <%= render partial: 'com/nodes/outer_select', locals: { f: f, outer: 'area', node: f.object.area } %>
 <%= f.text_area :detail %>
+<div class="field is-horizontal">
+  <div class="field-label"></div>
+  <div class="field-body">
+    <%= link_to({ action: 'select' }, data: { turbo_method: 'post' }, class: 'button is-info') do %>
+      <span></span>
+    <% end %>
+  </div>
+</div>

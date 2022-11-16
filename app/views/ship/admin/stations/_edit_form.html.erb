@@ -1,0 +1,10 @@
+<div class="columns" style="height: 600px">
+  <%= form_with model: model, url: { action: 'update' }, class: 'column' do |f| %>
+    <%= render 'error_messages', target: f.object %>
+    <%= render partial: 'form', locals: { f: f } %>
+    <%= f.submit %>
+  <% end %>
+  <div class="column" id="select_map">
+
+  </div>
+</div>
