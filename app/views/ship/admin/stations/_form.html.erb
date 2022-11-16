@@ -1,3 +1,8 @@
+<%= f.hidden_field :lat %>
+<%= f.hidden_field :lng %>
+<%= f.hidden_field :poiname %>
+<%= f.hidden_field :poiaddress %>
+<%= f.hidden_field :cityname %>
 <%= f.text_field :name %>
 <%= render partial: 'com/nodes/outer_select', locals: { f: f, outer: 'area', node: f.object.area } %>
 <%= f.text_area :detail %>

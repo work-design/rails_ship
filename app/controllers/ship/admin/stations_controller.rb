@@ -48,6 +48,11 @@ module Ship
       p = params.fetch(:station, {}).permit(
         :name,
         :detail,
+        :lat,
+        :lng,
+        :poiname,
+        :poiaddress,
+        :cityname,
         :area_ancestors
       )
       p.merge! default_form_params

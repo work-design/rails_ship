@@ -1,10 +1,9 @@
 <iframe
-  class="is-fullheight"
+  class="is-fullheight is-shadow"
   id="qq-map"
   src="https://apis.map.qq.com/tools/locpicker?type=1&key=<%= SETTING.dig(:qq_map, :key) %>&referer=work_design"
   data-controller="qq-map"
-  data-action="message@window->qq-map#selected"
-  data-qq-map-name-value="way_locations_attributes"
-  data-qq-map-index-value="<%= params[:index] %>"
+  data-action="message@window->qq-map#select"
+  data-qq-map-name-value="station"
 >
 </iframe>
