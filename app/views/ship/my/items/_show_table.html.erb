@@ -1,6 +1,6 @@
 <tr>
   <td class="has-text-right"><%= Trade::Item.human_attribute_name(:single_price) %></td>
-  <td><%= @item.single_price.to_money.format(html_wrap: true).html_safe %></td>
+  <td><%= @item.single_price.to_money.format.html_safe %></td>
 </tr>
 <tr>
   <td class="has-text-right"><%= Trade::Item.human_attribute_name(:number) %></td>

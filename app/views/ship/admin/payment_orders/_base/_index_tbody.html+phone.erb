@@ -5,4 +5,4 @@
   <span><%= model.order.uuid %></span>
   <span class="tag is-danger"><%= model.state_i18n %></span>
 </p>
-<p><%= model.check_amount.to_money.format(html_wrap: true).html_safe %></p>
+<p><%= model.check_amount.to_money.format.html_safe %></p>

@@ -7,7 +7,7 @@
   </div>
   <%= link_to({ controller: 'trade/my/lawful_wallets', action: 'show' }) do %>
     <span class="has-text-grey">可用金额：</span>
-    <span class="has-text-danger"><%= @lawful_wallet.amount.to_money.format(html_wrap: true).html_safe %></span>
+    <span class="has-text-danger"><%= @lawful_wallet.amount.to_money.format.html_safe %></span>
   <% end %>
 </div>
 <div class="is-flex is-justify-content-space-between has-background-white px-4 pb-4">
@@ -17,6 +17,6 @@
   </div>
   <div>
     <span class="has-text-grey">持仓均价：</span>
-    <span><%= @box_hold.average_price.to_money.format(html_wrap: true).html_safe %></span>
+    <span><%= @box_hold.average_price.to_money.format.html_safe %></span>
   </div>
 </div>

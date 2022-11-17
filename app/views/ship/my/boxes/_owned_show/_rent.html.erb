@@ -8,7 +8,7 @@
       <span><%= model.duration %></span>
       <span><%= model.promote.unit.name %></span>
     </p>
-    <p><%= model.amount.to_money.format(html_wrap: true).html_safe %></p>
+    <p><%= model.amount.to_money.format.html_safe %></p>
   </td>
-  <td class="has-text-danger"><%= model.invest_amount.to_money.format(html_wrap: true).html_safe %></td>
+  <td class="has-text-danger"><%= model.invest_amount.to_money.format.html_safe %></td>
 </tr>

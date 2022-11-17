@@ -15,5 +15,5 @@
 </tr>
 <tr>
   <td class="has-text-right"><%= Trade::PaymentOrder.human_attribute_name(:check_amount) %></td>
-  <td><%= @payment_order.check_amount.to_money.format(html_wrap: true).html_safe %></td>
+  <td><%= @payment_order.check_amount.to_money.format.html_safe %></td>
 </tr>
