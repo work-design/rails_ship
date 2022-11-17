@@ -8,16 +8,16 @@ module Ship
       }
       q_params.merge! params.permit(:box_specification_id)
 
-      @boxes = Box.includes(:using_box_logs).default_where(q_params).page(params[:page])
+      @boxes = Box.includes(:box_specification, :using_box_logs, :shipment_items).default_where(q_params).page(params[:page])
     end
 
     def invest
       q_params = {
-        owned_organ_id: current_organ.id
+        held_organ_id: current_organ.id
       }
       q_params.merge! params.permit(:box_specification_id)
 
-      @boxes = Box.includes(:box_specification, :item).ordered.default_where(q_params).page(params[:page])
+      @boxes = Box.includes(:box_specification).default_where(q_params).page(params[:page])
     end
 
     def rent
