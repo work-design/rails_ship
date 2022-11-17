@@ -173,6 +173,8 @@ zh:
       orders:
         index:
           title: 物流箱订单
+        new:
+          title: 下单
       rents:
         index:
           title: 租用

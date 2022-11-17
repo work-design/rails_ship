@@ -1,5 +1,5 @@
 module Ship
-  class In::OrdersController < Trade::Admin::OrdersController
+  class In::OrdersController < Trade::In::OrdersController
     before_action :set_order, only: [:show, :edit, :update, :payment_types, :edit_payment_type]
 
     def index
