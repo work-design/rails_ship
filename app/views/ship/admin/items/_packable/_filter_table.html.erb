@@ -2,9 +2,9 @@
   <tr>
     <th><%= Trade::Item.human_attribute_name(:produce_plan_id) %></th>
     <td>
-      <%= link_to t('.all'), filter_params(except: [:produce_plan_id]), class: active_params(produce_plan_id: '', active: 'button is-info', item: 'button is-light') %>
+      <%= link_to t('.all'), filter_params(except: [:produce_plan_id]), class: active_helper(produce_plan_id: '', active: 'button is-info', item: 'button is-light') %>
       <% @produce_plans.each do |produce_plan| %>
-        <%= link_to produce_plan.produce_on, filter_params(produce_plan_id: produce_plan.id, except: [:produce_plan_id]), class: active_params(produce_plan_id: produce_plan.id, active: 'button is-info', item: 'button is-light') %>
+        <%= link_to produce_plan.produce_on, filter_params(produce_plan_id: produce_plan.id, except: [:produce_plan_id]), class: active_helper(produce_plan_id: produce_plan.id, active: 'button is-info', item: 'button is-light') %>
       <% end %>
     </td>
   </tr>

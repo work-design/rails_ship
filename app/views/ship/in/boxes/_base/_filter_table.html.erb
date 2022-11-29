@@ -2,9 +2,9 @@
   <tr>
     <th><%= Ship::Box.human_attribute_name(:box_specification_id) %></th>
     <td>
-      <%= link_to t('.all'), filter_params(except: [:box_specification_id]), class: active_params(box_specification_id: '', active: 'button is-info', item: 'button is-light') %>
+      <%= link_to t('.all'), filter_params(except: [:box_specification_id]), class: active_helper(box_specification_id: '', active: 'button is-info', item: 'button is-light') %>
       <% @box_specifications.each do |box_specification| %>
-        <%= link_to box_specification.name, filter_params(box_specification_id: box_specification.id, except: [:id]), class: active_params(box_specification_id: box_specification.id, active: 'button is-info', item: 'button is-light') %>
+        <%= link_to box_specification.name, filter_params(box_specification_id: box_specification.id, except: [:id]), class: active_helper(box_specification_id: box_specification.id, active: 'button is-info', item: 'button is-light') %>
       <% end %>
     </td>
   </tr>
