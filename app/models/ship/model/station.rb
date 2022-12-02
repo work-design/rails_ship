@@ -3,18 +3,12 @@ module Ship
     extend ActiveSupport::Concern
 
     included do
-      attribute :name, :string
-      attribute :detail, :string
       attribute :poiname, :string
       attribute :poiaddress, :string
       attribute :cityname, :string
       attribute :lat, :decimal, precision: 10, scale: 8
       attribute :lng, :decimal, precision: 11, scale: 8
       attribute :coordinate, :point
-
-      belongs_to :organ, class_name: 'Org::Organ'
-      belongs_to :area, class_name: 'Profiled::Area'
-      has_taxons :area
 
       has_many :line_stations, dependent: :destroy_async
       has_many :lines, through: :line_stations
