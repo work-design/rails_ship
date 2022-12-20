@@ -54,7 +54,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_trade.git
-  revision: 2b34f5d448e8884beb8669ebfe47e5b784ffe6e3
+  revision: a8074a12485b215b6e266709240f076ee458a0b3
   specs:
     rails_trade (0.0.3)
       money-rails (~> 1.14)
@@ -148,7 +148,7 @@ GEM
       with_advisory_lock (>= 4.0.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
-    date (3.3.1)
+    date (3.3.3)
     default_where (2.2.0)
       activerecord (>= 4.0.0)
     erubi (1.11.0)
@@ -200,7 +200,7 @@ GEM
       monetize (~> 1.9)
       money (~> 6.13)
       railties (>= 3.0)
-    net-http (0.3.1)
+    net-http (0.3.2)
       uri
     net-imap (0.3.2)
       date
@@ -257,7 +257,7 @@ GEM
     rdoc (6.5.0)
       psych (>= 4.0.0)
     ruby2_keywords (0.0.5)
-    sdoc (2.4.0)
+    sdoc (2.5.0)
       rdoc (>= 5.0)
     stringio (3.0.4)
     thor (1.2.1)
