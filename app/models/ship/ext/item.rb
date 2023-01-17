@@ -11,8 +11,8 @@ module Ship
 
       after_save :init_box_hold, if: -> { good.respond_to?(:box_specification_id) && saved_change_to_status? && ['deliverable'].include?(status) }
       after_save :init_box_proxy_buy, if: -> { good_type == 'Ship::BoxHost' && saved_change_to_status? && ['deliverable'].include?(status) }
-      after_save :reset_proxy_count, if: -> { saved_change_to_rest_number? }
-      after_destroy :reset_proxy_count
+      after_save :reset_proxy_count, if: -> { good_type == 'Ship::BoxHost' && saved_change_to_rest_number? }
+      after_destroy :reset_proxy_count, if: -> { good_type == 'Ship::BoxHost' }
     end
 
     def init_box_hold

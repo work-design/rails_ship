@@ -1,15 +1,14 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 9b882fc524190f0db715d4fd546b81c6393c2a48
+  revision: af5915f68a3c7cac516285150f5db1193d06bc67
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
-      jwt (>= 2.0, <= 3.0)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 69ada45dd11c0f480f75920488d0e384cd7ee383
+  revision: 50032ff2807dc2510cec6179f10697c1d414d175
   specs:
     rails_com (1.3.0)
       acme-client
@@ -26,35 +25,35 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_extend.git
-  revision: 58bb78046d012e81af45e66871b3740df91946a1
+  revision: 01e6eb57fdeff3df9ab79ad59186ef2d0d068e05
   specs:
     rails_extend (1.0.1)
       rails (>= 5.0)
 
 GIT
   remote: https://github.com/work-design/rails_notice.git
-  revision: cd3ea8208484bf310339f42e66b038e5ee91698a
+  revision: 801fef68cc446b221abec0190652a4e4d2338fc5
   specs:
     rails_notice (1.0.3)
       rails_extend
 
 GIT
   remote: https://github.com/work-design/rails_org.git
-  revision: 7093994d70fb199b3bd5c4102fef80c217ac61c6
+  revision: cd8b5efd550200c10648ecdcb98dcd8e56067a05
   specs:
     rails_org (0.0.1)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_profile.git
-  revision: 582c1b80892d926167ca0094b32641f51695733f
+  revision: cf668a1171530a87a97db46d050dc32453559988
   specs:
     rails_profile (0.0.1)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_trade.git
-  revision: a8074a12485b215b6e266709240f076ee458a0b3
+  revision: 056faf18d11b59ef9d746484f49e1abc03972d1d
   specs:
     rails_trade (0.0.3)
       money-rails (~> 1.14)
@@ -151,8 +150,8 @@ GEM
     date (3.3.3)
     default_where (2.2.0)
       activerecord (>= 4.0.0)
-    erubi (1.11.0)
-    faraday (2.7.2)
+    erubi (1.12.0)
+    faraday (2.7.3)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
@@ -161,11 +160,10 @@ GEM
       activesupport (>= 5.0)
     http-2-next (0.5.1)
     http-form_data (2.3.0)
-    httpx (0.21.1)
+    httpx (0.22.2)
       http-2-next (>= 0.4.1)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
-    jwt (2.5.0)
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.2)
@@ -181,7 +179,7 @@ GEM
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.8.0)
+    mail (2.8.0.1)
       mini_mime (>= 0.1.1)
       net-imap
       net-pop
@@ -189,8 +187,8 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.0)
-    minitest (5.16.3)
+    mini_portile2 (2.8.1)
+    minitest (5.17.0)
     monetize (1.12.0)
       money (~> 6.12)
     money (6.16.0)
@@ -202,7 +200,7 @@ GEM
       railties (>= 3.0)
     net-http (0.3.2)
       uri
-    net-imap (0.3.2)
+    net-imap (0.3.4)
       date
       net-protocol
     net-pop (0.1.2)
@@ -212,7 +210,7 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.13.10)
+    nokogiri (1.14.0)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     pg (1.4.5)
@@ -223,8 +221,8 @@ GEM
       railties (>= 7.0.0)
     psych (5.0.1)
       stringio
-    racc (1.6.1)
-    rack (2.2.4)
+    racc (1.6.2)
+    rack (2.2.6)
     rack-test (2.0.2)
       rack (>= 1.3)
     rails (7.0.4)
@@ -257,7 +255,7 @@ GEM
     rdoc (6.5.0)
       psych (>= 4.0.0)
     ruby2_keywords (0.0.5)
-    sdoc (2.5.0)
+    sdoc (2.6.0)
       rdoc (>= 5.0)
     stringio (3.0.4)
     thor (1.2.1)
