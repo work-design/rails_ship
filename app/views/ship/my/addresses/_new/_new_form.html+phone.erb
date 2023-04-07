@@ -1,5 +1,4 @@
-<%= form_with theme: 'weui', model: @address, url: { action: 'create' } do |f| %>
-  <%= hidden_field_tag :cart_id, params[:cart_id] %>
+<%= form_with theme: 'weui', model: @address, url: { action: 'create' }, state: 'redirect' do |f| %>
   <div class="weui-form__control-area">
     <div class="weui-cells__group weui-cells__group_form">
       <div class="weui-cells__title">填写收货地址</div>
