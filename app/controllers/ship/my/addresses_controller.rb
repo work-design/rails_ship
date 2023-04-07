@@ -3,6 +3,7 @@ module Ship
     before_action :set_address, only: [:show, :edit, :update, :destroy, :actions]
     before_action :set_new_address, only: [:new, :create, :order_new, :order_create]
     before_action :set_cart, only: [:cart, :new, :create]
+    before_action :set_stations, only: [:station]
 
     def index
       q_params = {}
@@ -38,6 +39,9 @@ module Ship
 
     def order_create
       @address.save
+    end
+
+    def station
     end
 
     private

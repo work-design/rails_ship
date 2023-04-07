@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :addresses do
         collection do
           get :cart
+          get :station
           post :order
           post :order_new
           post :order_create
