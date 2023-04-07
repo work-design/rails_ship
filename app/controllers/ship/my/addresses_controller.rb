@@ -1,8 +1,8 @@
 module Ship
-  class My::AddressesController < My::BaseController
+  class My::AddressesController < Profiled::My::AddressesController
     before_action :set_cart
     before_action :set_address, only: [:show, :edit, :update, :destroy, :actions]
-    before_action :set_new_address, only: [:new, :create, :order_new, :order_create]
+    before_action :set_new_address, only: [:new, :create]
     before_action :set_stations, only: [:station]
 
     def index
@@ -22,8 +22,8 @@ module Ship
     def create
       @cart.address = @address
       @address.class.transaction do
-        @address.save
-        @cart.save
+        @address.save!
+        @cart.save!
       end
     end
 
@@ -53,12 +53,6 @@ module Ship
 
     def set_address
       @address = Profiled::Address.find(params[:id])
-    end
-
-    def _prefixes
-      super do |pres|
-        pres + ["profiled/my/addresses/_#{params[:action]}", 'profiled/my/addresses/_base', 'profiled/my/addresses']
-      end
     end
 
     def address_params
