@@ -57,7 +57,7 @@ module Ship
 
     def _prefixes
       super do |pres|
-        pres + ["profiled/my/addresses/_#{params[:action]}", 'profiled/my/addresses/_base']
+        pres + ["profiled/my/addresses/_#{params[:action]}", 'profiled/my/addresses/_base', 'profiled/my/addresses']
       end
     end
 
