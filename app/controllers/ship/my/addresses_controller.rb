@@ -12,16 +12,6 @@ module Ship
       @addresses = current_user.addresses.includes(:area).default_where(q_params).page(params[:page])
     end
 
-    def cart
-      q_params = {}
-
-      @addresses = current_user.addresses.includes(:area).default_where(q_params).page(params[:page])
-    end
-
-    def order
-      @addresses = current_user.addresses.includes(:area).page(params[:page])
-    end
-
     def new
       @address = current_user.addresses.build(station_id: params[:station_id])
       @address.area = Profiled::Area.new
@@ -35,10 +25,6 @@ module Ship
         @address.save
         @cart.save
       end
-    end
-
-    def order_create
-      @address.save
     end
 
     def station
