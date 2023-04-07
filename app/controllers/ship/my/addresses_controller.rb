@@ -71,8 +71,8 @@ module Ship
 
     def _prefixes
       super do |pres|
-        if ['new'].include?(params[:action])
-          pres + ['profiled/my/addresses']
+        if ['new', 'cart'].include?(params[:action])
+          pres + ['profiled/my/addresses', 'profiled/my/addresses/_base']
         else
           pres
         end

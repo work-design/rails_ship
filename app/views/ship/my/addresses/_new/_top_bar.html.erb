@@ -1,13 +1,7 @@
 <div class="weui-panel is-borderless">
   <div data-controller="mini-program" data-mini-program-pt-class="pt-0" class="weui-panel__hd as-bar">
-    <% if params[:cart_id] %>
-      <%= link_to({ action: 'cart', cart_id: params[:cart_id] }, class: 'px-4') do %>
-        <i class="fa-solid fa-lg fa-fw-1 fa-angle-left"></i>
-      <% end %>
-    <% else %>
-      <%= link_to({ action: 'index', cart_id: params[:cart_id] }, class: 'px-4') do %>
-        <i class="fa-solid fa-lg fa-fw-1 fa-angle-left"></i>
-      <% end %>
+    <%= link_to({ action: 'index' }, state: 'return', class: 'px-4') do %>
+      <i class="fa-solid fa-lg fa-fw-1 fa-angle-left"></i>
     <% end %>
     <div class="weui-title"><%= t('.title') %></div>
     <i style="width: 3rem"></i>
