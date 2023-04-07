@@ -8,6 +8,9 @@ Rails.application.routes.draw do
           post :order
           post :order_new
           post :order_create
+          post :fork
+          post :wechat
+          post :program
         end
         member do
           get :plans
