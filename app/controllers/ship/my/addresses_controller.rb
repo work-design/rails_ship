@@ -1,8 +1,8 @@
 module Ship
   class My::AddressesController < My::BaseController
+    before_action :set_cart
     before_action :set_address, only: [:show, :edit, :update, :destroy, :actions]
     before_action :set_new_address, only: [:new, :create, :order_new, :order_create]
-    before_action :set_cart, only: [:cart, :new, :create]
     before_action :set_stations, only: [:station]
 
     def index
@@ -58,7 +58,7 @@ module Ship
     end
 
     def set_cart
-      @cart = Trade::Cart.find params[:cart_id] if params[:cart_id]
+      @cart = Trade::Cart.find params[:cart_id]
     end
 
     def set_new_address
