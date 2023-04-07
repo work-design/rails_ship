@@ -1,19 +1,21 @@
 Rails.application.routes.draw do
   scope RailsCom.default_routes_scope do
     concern :my_ship do
-      resources :addresses do
-        collection do
-          get :cart
-          get :station
-          post :order
-          post :order_new
-          post :order_create
-          post :fork
-          post :wechat
-          post :program
-        end
-        member do
-          get :plans
+      resources :carts do
+        resources :addresses do
+          collection do
+            get :cart
+            get :station
+            post :order
+            post :order_new
+            post :order_create
+            post :fork
+            post :wechat
+            post :program
+          end
+          member do
+            get :plans
+          end
         end
       end
     end
