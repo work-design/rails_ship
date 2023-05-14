@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 4cdf4c5bc1818e3b41824cb964cae167fd06608b
+  revision: 7c1b190e976c50b7dc4ed09feebe0050305dee40
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 3e5260029f9903e7644fd2303a8ee408110e470a
+  revision: 65dec7b3bd8fc9b9b2ff7d3b787ddd3c11ca1c3f
   specs:
     rails_com (1.3.0)
       acme-client
@@ -25,7 +25,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_extend.git
-  revision: 7646017d4a32223e8c819f699a6bd8ea685b4b85
+  revision: c013aef0b7e769e37010464b0d6c2db8e83601d8
   specs:
     rails_extend (1.0.1)
       rails (>= 5.0)
@@ -39,21 +39,21 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_org.git
-  revision: 513493ea2552a437a3dde91693a9057362b62d89
+  revision: 248ca6841c6f8bdc7dcb0a58600b0760ff7a7b9e
   specs:
     rails_org (0.0.1)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_profile.git
-  revision: 27c8c12bc320da25d8fec4bc6d491c5c68e50328
+  revision: 668d312828cb85f0b5098dd270b14edcbe816d5b
   specs:
     rails_profile (0.0.1)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_trade.git
-  revision: 743fb6963cc3e0853756bf0a0b13b44090ae06de
+  revision: dcbc4e80bd810532df1ca5d08a92c840d7fc9431
   specs:
     rails_trade (0.0.3)
       money-rails (~> 1.14)
@@ -161,7 +161,7 @@ GEM
       activesupport (>= 5.0)
     http-2-next (0.5.1)
     http-form_data (2.3.0)
-    httpx (0.22.5)
+    httpx (0.23.1)
       http-2-next (>= 0.4.1)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
