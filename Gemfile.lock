@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 7c1b190e976c50b7dc4ed09feebe0050305dee40
+  revision: 1e324be560c18999be76acabe009923717d27153
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 65dec7b3bd8fc9b9b2ff7d3b787ddd3c11ca1c3f
+  revision: 2b2e6a7174f262df431107ebf1f7d64a43d10b75
   specs:
     rails_com (1.3.0)
       acme-client
@@ -39,21 +39,21 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_org.git
-  revision: 4591196c82a4bc59ea8f0748bcb84582d315b829
+  revision: cc74021dd03119de43ba1bef289f9cf67c71bcf8
   specs:
     rails_org (0.0.1)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_profile.git
-  revision: 668d312828cb85f0b5098dd270b14edcbe816d5b
+  revision: 03b4ed0c6a3c14570dfa6a233dc18af9a79adaf4
   specs:
     rails_profile (0.0.1)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_trade.git
-  revision: cdefb5203c6e591b720e6ee2ec6e74c40a5db468
+  revision: b9f0308b351a698bf4663135bb17587823af0da2
   specs:
     rails_trade (0.0.3)
       money-rails (~> 1.14)
@@ -151,17 +151,17 @@ GEM
     default_where (2.2.0)
       activerecord (>= 4.0.0)
     erubi (1.12.0)
-    faraday (2.7.4)
+    faraday (2.7.5)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
-    faraday-retry (2.1.0)
+    faraday-retry (2.2.0)
       faraday (~> 2.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     http-2-next (0.5.1)
     http-form_data (2.3.0)
-    httpx (0.23.2)
+    httpx (0.23.3)
       http-2-next (>= 0.4.1)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)

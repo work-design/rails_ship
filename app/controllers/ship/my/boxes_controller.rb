@@ -23,7 +23,8 @@ module Ship
     end
 
     def start
-      @box_hold.do_rent(@box)
+      item = current_user.items.find params[:item_id]
+      @box.do_rent(item)
     end
 
     private
