@@ -7,7 +7,8 @@ module Ship
       q_params.merge! default_params
       q_params.merge! params.permit(:user_id)
 
-      @addresses = Trade::Item.packable.includes(:address).default_where(q_params).group_by(&:address)
+      @addresses = Trade::Item.packable.includes(:address).default_where(q_params).page(params[:page]).group_by(&:address)
+      @addresses.delete(nil)
     end
 
     def search
@@ -21,16 +22,16 @@ module Ship
       q_params = {}
       q_params.merge! default_params
 
-      r = Trade::Item.packable.default_where(q_params).select(:from_address_id).page(params[:page]).group(:from_address_id).count
-      @addresses = Profiled::Address.find(r.keys).zip r.values
+      @addresses = Trade::Item.packable.includes(:from_address).default_where(q_params).page(params[:page]).group_by(&:from_address)
+      @addresses.delete(nil)
     end
 
     def packaged
-      trade_q_params = {}
-      trade_q_params.merge! default_params
+      q_params = {}
+      q_params.merge! default_params
 
-      r = Trade::Item.packaged.default_where(trade_q_params).select(:address_id).page(params[:page]).group(:address_id).count
-      @addresses = Profiled::Address.find(r.keys).zip r.values
+      @addresses = Trade::Item.packaged.includes(:from_address).default_where(q_params).page(params[:page]).group_by(&:from_address)
+      @addresses.delete(nil)
     end
 
     private
