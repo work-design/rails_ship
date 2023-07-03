@@ -20,12 +20,12 @@ module Ship
     end
 
     def packable
-      @items = @address.items.includes(:produce_plan).packable.order(id: :asc).page(params[:page])
+      @items = Trade::Item.where(address_id: params[:address_id]).includes(:produce_plan).packable.order(id: :asc).page(params[:page])
       @produce_plans = @items.map(&:produce_plan).compact.uniq
     end
 
     def packaged
-      @items = @address.items.packaged.order(id: :desc).page(params[:page])
+      @items = Trade::Item.where(address_id: params[:address_id]).packaged.order(id: :desc).page(params[:page])
     end
 
     def user
