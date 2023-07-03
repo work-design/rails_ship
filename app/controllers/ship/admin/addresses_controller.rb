@@ -7,9 +7,7 @@ module Ship
       q_params.merge! default_params
       q_params.merge! params.permit(:user_id)
 
-      r = Trade::Item.packable.default_where(q_params).select(:address_id).group(:address_id).count
-      r.delete(nil)
-      @addresses = Profiled::Address.find(r.keys).zip r.values
+      @addresses = Trade::Item.packable.includes(:address).default_where(q_params).group_by(&:address)
     end
 
     def search
