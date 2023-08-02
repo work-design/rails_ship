@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: f65d92ae749b2e6ef84f40293a080e4dd4512a09
+  revision: bcbec48795941be794f81b603c0285c559ace42c
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: cedb6e1d575db9d4d874e0ca65ced4e61632ac89
+  revision: 33a4237bfd02e8417a8d03a184db599f6dcaac3b
   specs:
     rails_com (1.3.0)
       acme-client
@@ -25,35 +25,35 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_extend.git
-  revision: c013aef0b7e769e37010464b0d6c2db8e83601d8
+  revision: 9c316ffe1174d0e3b1d122bc4e81042d61d009f6
   specs:
     rails_extend (1.0.1)
       rails (>= 5.0)
 
 GIT
   remote: https://github.com/work-design/rails_notice.git
-  revision: 801fef68cc446b221abec0190652a4e4d2338fc5
+  revision: 61d11ccab771b5d8a57a5f7b7a527172238e0ed8
   specs:
     rails_notice (1.0.3)
       rails_extend
 
 GIT
   remote: https://github.com/work-design/rails_org.git
-  revision: b5218e48a90473a56239f7dc43ccce99ef3bbf7d
+  revision: 6577ae0bf87ec1d4b1ed7a89fa9208993b14afac
   specs:
     rails_org (0.0.1)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_profile.git
-  revision: 03b4ed0c6a3c14570dfa6a233dc18af9a79adaf4
+  revision: c918a6b791b825bbd976464e3f3962b9f73a8c32
   specs:
     rails_profile (0.0.1)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_trade.git
-  revision: dc4714a41d173324d40ff6de1fa8773ed228a815
+  revision: 23ee8a4991f1fc29ffa0f44e300c40b6c0021552
   specs:
     rails_trade (0.0.3)
       money-rails (~> 1.14)
@@ -151,7 +151,7 @@ GEM
     default_where (2.2.0)
       activerecord (>= 4.0.0)
     erubi (1.12.0)
-    faraday (2.7.9)
+    faraday (2.7.10)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
