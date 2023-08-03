@@ -44,7 +44,7 @@ module Ship
     end
 
     def set_cart
-      @cart = Trade::Cart.find params[:cart_id]
+      @cart = current_user.carts.find params[:cart_id]
     end
 
     def set_new_address
