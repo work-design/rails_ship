@@ -276,6 +276,9 @@ Rails.application.routes.draw do
           end
         end
       end
+      namespace :agent, defaults: { namespace: 'agent' } do
+        concerns :my_ship
+      end
       namespace :my, defaults: { namespace: 'my' } do
         concerns :my_ship
         resource :driver

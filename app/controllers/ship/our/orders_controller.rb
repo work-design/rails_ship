@@ -6,7 +6,7 @@ module Ship
       q_params = {}
       q_params.merge! params.permit(:id, :payment_type, :payment_status, :state)
 
-      @orders = current_organ.member_orders.includes(:trade_items).default_where(q_params).order(id: :desc).page(params[:page])
+      @orders = current_organ.organ_orders.includes(:trade_items).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def create
@@ -27,7 +27,7 @@ module Ship
 
     private
     def set_order
-      @order = current_organ.member_orders.find params[:id]
+      @order = current_organ.organ_orders.find params[:id]
     end
 
     def order_params
