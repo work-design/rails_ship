@@ -1,0 +1,4 @@
+<span class="menu-label"><%= t('ship.my.title') %></span>
+<div class="menu-list">
+  <%= link_to t('ship.my.addressess.index.title'), { controller: 'ship/my/carts' }, state: 'clear', class: active_helper(controllers: ['carts'], active: 'is-active') %>
+</div>
