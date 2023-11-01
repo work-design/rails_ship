@@ -1,0 +1,263 @@
+en:
+  ship:
+    title: Logistics
+    box_specifications:
+      index:
+        title: Buy Box
+      invest:
+        title: Invest Box
+    box_hosts:
+      index:
+        title: Buy Box
+      rent:
+        title: Rent
+      overview:
+        title: Summary
+      all:
+        title: Items
+      rentable:
+        title: Rentable
+      rented:
+        title: Rented
+    box_proxy_sells:
+      index:
+        title: Sell Out
+    box_proxy_buys:
+      index:
+        title: Buy In
+    panel:
+      title: Logistics
+      home:
+        index:
+          title: 运输
+      lines:
+        index:
+          title: 路线
+      stations:
+        index:
+          title: 站点
+      line_stations:
+        index:
+          title: 途经点
+      similars:
+        index:
+          title: 相似路线
+      box_specifications:
+        index:
+          title: 物流箱
+      boxes:
+        index:
+          title: 物流箱明细
+      box_logs:
+        index:
+          title: 使用记录
+    admin:
+      title: Logistics
+      home:
+        index:
+          title: Logistics
+      addresses:
+        index:
+          title: Addresses To Deal
+        from:
+          title: Addresses To Ship
+        packaged:
+          title: Packaged
+      cars:
+        index:
+          title: Cars
+      drivers:
+        index:
+          title: Drivers
+      lines:
+        index:
+          title: Lines
+      line_stations:
+        index:
+          title: Stations
+      ways:
+        index:
+          title: Ways
+      items:
+        index:
+          title: 订单
+        packable:
+          title: 待打包订单
+          package: 打包
+        packaged:
+          title: 已打包订单
+      packages:
+        index:
+          title: Packages
+        address:
+          title: 包裹列表
+        shipment_items:
+          title: Details
+      packageds:
+        index:
+          title: 包裹详情
+      stations:
+        index:
+          title: Stations
+        shipments:
+          title: 班次
+        lines:
+          title: 线路
+      box_hosts:
+        index:
+          title: 管理物流箱
+      box_proxy_sells:
+        index:
+          title: 卖出概览
+      box_proxy_buys:
+        index:
+          title: 买入概览
+      box_holds:
+        index:
+          title: 持有
+      boxes:
+        index:
+          title: 物流箱
+        batch_pdf:
+          title: 批量打印
+      box_logs:
+        index:
+          title: 物流箱日志
+      rents:
+        index:
+          title: 领用详情
+      shipments:
+        index:
+          title: Shipments
+        stations:
+          title: Stations
+        leave:
+          title: Left
+        arrive:
+          title: Arrived
+        unloaded:
+          title: Unloaded
+        transfer:
+          title: Transfer
+        loaded:
+          title: Loaded
+      shipment_items:
+        index:
+          title: 装车详情
+      shipment_logs:
+        index:
+          title: Shipment Logs
+      payment_orders:
+        index:
+          title: Proxy Pay
+        station:
+          title: 代收货款
+        payment_new:
+          title: 支付
+    in:
+      title: 订购/租用
+      box_specifications:
+        index:
+          title: 买/租物流箱
+        rent:
+          title: 租物流箱
+        buy:
+          title: 购买物流箱
+      boxes:
+        index:
+          title: 持有物流箱
+        invest:
+          title: 买入
+        rent:
+          title: 租入
+      box_logs:
+        index:
+          title: 使用记录
+      orders:
+        index:
+          title: 物流箱订单
+        new:
+          title: 下单
+      rents:
+        index:
+          title: 租用
+          compute: 刷新价格
+        promote:
+          title: 租金价格
+        job:
+          title: 价格更新
+    out:
+      rents:
+        index:
+          title: 出租明细
+    my:
+      boxes:
+        index:
+          title: 我的物流箱
+        owned:
+          title: 自购物流箱
+        invest:
+          title: 投资物流箱
+        start:
+          title: 交割/取用
+      box_holds:
+        index:
+          title: 我的物流箱
+        sell:
+          title: 我的收益
+        edit:
+          title: 卖出
+        buy:
+          title: 买入
+      items:
+        index:
+          title: 买入交割
+        rent:
+          title: 租用交割
+      box_sells:
+        index:
+          title: 卖出
+      packages:
+        index:
+          title: 包裹列表
+          wait: 叫号
+      ways:
+        index:
+          title: 找车
+          new: 添加路线
+        requirement:
+          title: 找人/找货
+          new: 添加路线
+      cars:
+        index:
+          title: 我的车辆
+          new: 添加车辆
+      drivers:
+        show:
+          title: 司机认证
+        edit:
+          title: 司机认证
+          show: 返回
+      favorites:
+        index:
+          title: 熟人司机
+      stations:
+        index:
+          title: 站点
+      addresses:
+        index:
+          title: 地址
+        order:
+          title: 选择地址
+        cart:
+          title: 选择地址
+        new:
+          title: 新增地址
+    our:
+      boxes:
+        index:
+          title: 物流箱（公司）
+    dri:
+      favorites:
+        index:
+          title: 熟客
