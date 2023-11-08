@@ -2,7 +2,7 @@
   <a class="menu-label" data-action="menu#toggle">
     <i class="fa-solid fa-fw fa-truck"></i>
     <span><%= t('ship.panel.title') %></span>
-    <i class="fa-solid dropdown"></i>
+    <i class="fa-solid fa-fw dropdown"></i>
   </a>
   <div class="menu-list" data-empty-traget="content">
     <%= link_to t('ship.panel.lines.index.title'), { controller: 'ship/panel/lines' }, class: active_helper(controllers: ['lines', 'similars'], active: 'is-active') %>

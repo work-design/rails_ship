@@ -2,7 +2,7 @@
   <a class="menu-label" data-action="menu#toggle">
     <i class="fa-solid fa-fw fa-truck"></i>
     <span><%= t('ship.admin.title') %></span>
-    <i class="fa-solid dropdown"></i>
+    <i class="fa-solid fa-fw dropdown"></i>
   </a>
   <div class="menu-list" data-empty-target="content">
     <%= link_to t('ship.admin.addresses.index.title'), { controller: 'ship/admin/addresses' }, class: active_helper(controllers: 'addresses', active: 'is-active') %>
@@ -15,7 +15,7 @@
   <a class="menu-label" data-action="menu#toggle">
     <i class="fa-solid fa-fw fa-box-open"></i>
     <span><%= t('ship.in.title') %></span>
-    <i class="fa-solid dropdown"></i>
+    <i class="fa-solid fa-fw dropdown"></i>
   </a>
   <div class="menu-list" data-empty-target="content">
     <%= link_to t('ship.in.boxes.index.title'), { controller: 'ship/in/boxes' }, class: active_helper(controllers: 'boxes', active: 'is-active') %>
@@ -27,7 +27,7 @@
   <a class="menu-label" data-action="menu#toggle">
     <i class="fa-solid fa-fw fa-list-check"></i>
     <span>运次管理</span>
-    <i class="fa-solid dropdown"></i>
+    <i class="fa-solid fa-fw dropdown"></i>
   </a>
   <div class="menu-list" data-empty-target="content">
     <%= link_to t('ship.admin.lines.index.title'), { controller: 'ship/admin/lines' }, class: active_helper(controllers: ['lines', 'line_stations'], active: 'is-active') %>
@@ -38,7 +38,7 @@
   <a class="menu-label" data-action="menu#toggle">
     <i class="fa-solid fa-fw fa-gears"></i>
     <span>系统设置</span>
-    <i class="fa-solid dropdown"></i>
+    <i class="fa-solid fa-fw dropdown"></i>
   </a>
   <div class="menu-list" data-empty-target="content">
     <%= link_to t('ship.admin.cars.index.title'), { controller: 'ship/admin/cars' }, class: active_helper(controllers: 'cars', active: 'is-active') %>
