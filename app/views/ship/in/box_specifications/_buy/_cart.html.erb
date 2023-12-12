@@ -1,4 +1,4 @@
-<% item = @cart.organ_item(good_id: model.id) %>
+<% item = @cart.find_item(good_id: model.id) %>
 
 <% if item %>
 <div class="is-flex is-justify-content-center">
