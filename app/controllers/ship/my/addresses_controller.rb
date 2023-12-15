@@ -15,7 +15,7 @@ module Ship
     def new
       @address = current_user.addresses.build(station_id: params[:station_id])
       @address.area = Profiled::Area.new
-      @address.contact = current_user.name
+      @address.contact_person = current_user.name
       @address.tel = current_account.identity if current_account.is_a?(Auth::MobileAccount)
     end
 
@@ -59,7 +59,7 @@ module Ship
       params.fetch(:address, {}).permit(
         :station_id,
         :area_id,
-        :contact,
+        :contact_person,
         :tel,
         :detail,
         :floor,
