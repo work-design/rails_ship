@@ -68,7 +68,7 @@ module Ship
     # 打包商品
     def package
       if @good_item
-        packaged = @package.packageds.find_or_initialize_by(good_item_type: @good_item.class_name, good_item_id: @good_item.id)
+        packaged = @package.packageds.find_or_initialize_by(good_item_type: @good_item.base_class_name, good_item_id: @good_item.id)
         packaged.save
       end
     end

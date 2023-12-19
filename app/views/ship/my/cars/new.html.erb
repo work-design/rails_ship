@@ -13,7 +13,7 @@
       <%= image_tag 'registration.jpg', data: { wechat_target: 'preview' }, class: 'weui-uploader__preview' %>
       <div class="weui-uploader__input" data-action="click->wechat#chooseImage"></div>
       <%= form_with theme: nil, model: Wechat::Media.new, url: { controller: 'wechat/my/medias', action: 'create' } do |f| %>
-        <%= f.hidden_field :source_type, value: @car.class_name %>
+        <%= f.hidden_field :source_type, value: @car.base_class_name %>
         <%= f.hidden_field :attachment_name, value: 'registration' %>
         <%= f.hidden_field :media_id, data: { wechat_target: 'media' } %>
       <% end %>

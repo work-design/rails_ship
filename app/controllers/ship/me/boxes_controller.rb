@@ -14,7 +14,7 @@ module Ship
     # 装入包裹
     def in
       if @boxed
-        bl = @box.box_logs.find_or_initialize_by(boxed_type: @boxed.class_name, boxed_id: @boxed.id)
+        bl = @box.box_logs.find_or_initialize_by(boxed_type: @boxed.base_class_name, boxed_id: @boxed.id)
         bl.boxed_in_at ||= Time.current
         bl.save
       end
@@ -23,7 +23,7 @@ module Ship
     # 取出包裹
     def out
       if @boxed
-        bl = @box.box_logs.find_by(boxed_type: @boxed.class_name, boxed_id: @boxed.id)
+        bl = @box.box_logs.find_by(boxed_type: @boxed.base_class_name, boxed_id: @boxed.id)
         bl.boxed_out_at = Time.current
         bl.save
       end

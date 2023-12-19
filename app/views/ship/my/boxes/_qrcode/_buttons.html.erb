@@ -2,7 +2,7 @@
   <div class="buttons are-large is-centered">
     <%= form_with model: @order, url: { controller: 'trade/my/orders', action: 'add' }, class: 'button_to' do |f| %>
       <%= f.fields :items do |ef| %>
-        <%= ef.hidden_field :good_type, value: @box.class_name %>
+        <%= ef.hidden_field :good_type, value: @box.base_class_name %>
         <%= ef.hidden_field :good_id, value: @box.id %>
         <%= ef.hidden_field :aim, value: 'rent' %>
       <% end %>
