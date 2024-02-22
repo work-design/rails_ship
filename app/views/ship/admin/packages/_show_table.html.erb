@@ -1,9 +1,9 @@
 <tr>
-  <td class="has-text-right"><%= Ship::Package.human_attribute_name(:id) %></td>
+  <td><%= Ship::Package.human_attribute_name(:id) %></td>
   <td><%= @package.id %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Ship::Package.human_attribute_name(:address) %></td>
+  <td><%= Ship::Package.human_attribute_name(:address) %></td>
   <td>
   <% if @package.address %>
     <p><%= @package.address.area.full_name %></p>
@@ -12,14 +12,14 @@
   </td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Ship::Package.human_attribute_name(:state) %></td>
+  <td><%= Ship::Package.human_attribute_name(:state) %></td>
   <td><%= @package.state_i18n %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Ship::Package.human_attribute_name(:expected_on) %></td>
+  <td><%= Ship::Package.human_attribute_name(:expected_on) %></td>
   <td><%= @package.expected_on %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Ship::Package.human_attribute_name(:enter_url) %></td>
+  <td><%= Ship::Package.human_attribute_name(:enter_url) %></td>
   <td><%= image_tag @package.qrcode_enter_url %></td>
 </tr>

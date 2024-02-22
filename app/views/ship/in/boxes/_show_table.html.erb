@@ -1,16 +1,16 @@
 <tr>
-  <td class="has-text-right"><%= Ship::Box.human_attribute_name(:code) %></td>
+  <td><%= Ship::Box.human_attribute_name(:code) %></td>
   <td><%= @box.code %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Ship::Box.human_attribute_name(:box_specification_id) %></td>
+  <td><%= Ship::Box.human_attribute_name(:box_specification_id) %></td>
   <td><%= @box.box_specification_id %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Ship::Box.human_attribute_name(:status) %></td>
+  <td><%= Ship::Box.human_attribute_name(:status) %></td>
   <td><%= @box.status %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Ship::Box.human_attribute_name(:enter_url) %></td>
+  <td><%= Ship::Box.human_attribute_name(:enter_url) %></td>
   <td><%= image_tag @box.qrcode_enter_url %></td>
 </tr>
