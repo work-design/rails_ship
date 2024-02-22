@@ -1,5 +1,5 @@
 module Ship
-  class Agent::AddressesController < Ship::My::AddressesController
+  class Agent::AddressesController < Ship::Admin::AddressesController
     before_action :set_cart
     before_action :set_address, only: [:show, :edit, :update, :destroy, :actions]
     before_action :set_new_address, only: [:new, :create]
@@ -9,7 +9,7 @@ module Ship
       q_params = {}
       q_params.merge! params.permit(:station_id)
 
-      @addresses = current_user.addresses.includes(:area).default_where(q_params).page(params[:page])
+      @addresses = current_member.agent_addresses.includes(:area).default_where(q_params).page(params[:page])
     end
 
     def new
