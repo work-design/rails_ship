@@ -7,7 +7,7 @@
       <span><%= model.box_specification.measure %></span>
       <span class="tag"><%= model.box_specification.name %></span>
     <% end %>
-    <div class="is-flex is-justify-content-space-between py-3">
+    <div class="is-flex justify-content-space-between py-3">
       <%= link_to({ action: 'all', id: model }, class: '') do %>
         <i class="fa-regular fa-clone has-text-primary"></i>
         <span class="has-text-grey-dark is-size-7 pl-0"><%= Ship::BoxHost.human_attribute_name(:boxes_count) %></span>

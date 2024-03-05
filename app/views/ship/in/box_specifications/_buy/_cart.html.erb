@@ -1,7 +1,7 @@
 <% item = @cart.find_item(good_id: model.id) %>
 
 <% if item %>
-<div class="is-flex is-justify-content-center">
+<div class="is-flex justify-content-center">
   <%= form_with theme: nil, scope: :item, url: { controller: 'trade/in/items', action: 'update', id: item.id }, method: :patch, class: 'button_to', data: { turbo_scroll: true } do |f| %>
     <%= f.hidden_field :current_cart_id, value: @cart.id %>
     <%= f.hidden_field :number, value: item.number - 1 %>

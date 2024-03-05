@@ -2,7 +2,7 @@
   <div class="weui-media-box__bd">
     <%= yield %>
   </div>
-  <div class="weui-media-box__ft is-flex-direction-column is-justify-content-space-evenly">
+  <div class="weui-media-box__ft flex-direction-column justify-content-space-evenly">
     <%= link_to({ action: 'loaded', from_station_id: model.station_id }, class: 'button is-small is-rounded is-light') do %>
       <i class="fa-solid fa-person-dolly has-text-success"></i>
       <span class="pl-1"><%= t('ship.admin.shipments.loaded.title') %></span>

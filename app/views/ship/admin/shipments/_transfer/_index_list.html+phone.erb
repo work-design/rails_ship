@@ -1,6 +1,6 @@
 <div class="weui-panel">
   <div class="weui-panel__hd">
-    <div data-controller="check" data-check-name-value="xx" class="is-flex is-justify-content-right">
+    <div data-controller="check" data-check-name-value="xx" class="is-flex justify-content-right">
       <%= check_box_tag 'xxd', 'xx', false, id: nil, data: { action: 'check#toggleAll' } %>
       <%= form_with url: { action: 'loaded_create' }, method: :post, class: 'button_to ml-2' do |f| %>
         <%= f.hidden_field :ids, data: { check_target: 'ids' } %>
