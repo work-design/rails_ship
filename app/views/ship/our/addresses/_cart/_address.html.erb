@@ -1,17 +1,17 @@
 <label class="weui-cell weui-cell_active weui-check__label" for="cart_address_id_<%= model.id %>">
-  <span class="weui-cell__bd is-flex flex-direction-column">
+  <span class="weui-cell__bd flex flex-direction-column">
     <span>
       <span><%= model.contact %></span>
       <span><%= model.tel %></span>
     </span>
-    <span class="is-size-7">
+    <span class="size-7">
       <span><%= Profiled::Address.human_attribute_name(:floor) %></span>
       <span><%= model.floor %></span>
     </span>
   </span>
   <span class="weui-cell__ft" data-controller="input">
     <% if model.id != @cart.address_id %>
-      <span class="has-text-grey is-size-7">选为默认</span>
+      <span class="has-text-grey size-7">选为默认</span>
     <% end %>
     <%= form_with theme: nil, scope: 'cart', url: { controller: 'trade/our/carts', action: 'update', id: params[:cart_id] }, method: :patch do |f| %>
       <%= hidden_field_tag :return_to, params[:return_to] %>

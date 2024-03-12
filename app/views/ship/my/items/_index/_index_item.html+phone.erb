@@ -12,7 +12,7 @@
   <time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time>
 </p>
 <div data-controller="clipboard" class="has-text-grey">
-  <span data-clipboard-target="source" class="is-size-7"><%= model.order.uuid %></span>
+  <span data-clipboard-target="source" class="size-7"><%= model.order.uuid %></span>
   <span data-action="click->clipboard#copy" class="weui-badge weui-badge__default">复制</span>
   <div data-clipboard-target="toast" class="weui-toast__wrap">
     <div class="weui-mask_transparent"></div>

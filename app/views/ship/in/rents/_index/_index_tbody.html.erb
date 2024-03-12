@@ -3,7 +3,7 @@
   <p><time data-controller="time"><%= model.finish_at&.to_fs(:iso8601) %></time></p>
 </td>
 <td>
-  <p class="has-text-grey is-size-7">
+  <p class="has-text-grey size-7">
     <time data-controller="time" data-value="<%= model.estimate_finish_at&.to_fs(:iso8601) %>"><%= model.estimate_finish_at&.to_fs(:short) %></time>
   </p>
   <p>

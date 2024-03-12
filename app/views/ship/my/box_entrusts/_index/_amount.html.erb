@@ -1,4 +1,4 @@
-<div class="is-flex justify-content-space-between has-background-white p-4">
+<div class="flex justify-content-space-between has-background-white p-4">
   <div>
     <% if @order.items[0].single_price > 0 %>
       <span class="has-text-grey">最大可买：</span>
@@ -10,7 +10,7 @@
     <span class="has-text-danger"><%= @lawful_wallet.amount.to_money.format.html_safe %></span>
   <% end %>
 </div>
-<div class="is-flex justify-content-space-between has-background-white px-4 pb-4">
+<div class="flex justify-content-space-between has-background-white px-4 pb-4">
   <div>
     <span class="has-text-grey">持仓：</span>
     <span><%= @box_hold.boxes_count %></span>

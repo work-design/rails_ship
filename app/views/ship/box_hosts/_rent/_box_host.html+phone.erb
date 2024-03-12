@@ -2,7 +2,7 @@
   <%= link_to({ action: 'show', id: model.id }, text: true, class: 'weui-media-box__hd') do %>
     <%= image_tag model.box_specification.logo, class: 'weui-media-box__thumb' if model.box_specification.logo.attached? %>
   <% end %>
-  <div class="weui-media-box__bd is-flex flex-direction-column">
+  <div class="weui-media-box__bd flex flex-direction-column">
     <%= link_to({ action: 'show', id: model.id }, text: true, class: 'weui-media-box__title') do %>
       <%= model.box_specification.name %>
     <% end %>
@@ -10,7 +10,7 @@
       <%= model.box_specification.measure %>
     </p>
     <% model.rent_charges.each do |charge| %>
-      <p class="is-flex justify-content-space-between pr-6">
+      <p class="flex justify-content-space-between pr-6">
         <span class="has-text-grey">
           <span><%= charge.min %></span>
           <span>~</span>

@@ -1,5 +1,5 @@
 <th>
-  <div data-controller="print" data-print-name-value="xx" data-print-url-value="<%= url_for(action: 'batch_pdf', only_path: false) %>" class="is-flex align-items-center">
+  <div data-controller="print" data-print-name-value="xx" data-print-url-value="<%= url_for(action: 'batch_pdf', only_path: false) %>" class="flex align-items-center">
     <%= check_box_tag 'xxd', 'xx', false, id: nil, data: { action: 'print#toggleAll' } %>
     <button data-action="print#batchPrint" class="button is-small is-dark ml-2">
       <i class="fa-solid fa-print"></i>
