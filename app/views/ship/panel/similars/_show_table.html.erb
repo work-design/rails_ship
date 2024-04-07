@@ -1,12 +1,12 @@
-<tr>
-  <td><%= Ship::Line.human_attribute_name(:name) %></td>
-  <td><%= @similar.name %></td>
-</tr>
-<tr>
-  <td><%= Ship::Line.human_attribute_name(:start_name) %></td>
-  <td><%= @similar.start_name %></td>
-</tr>
-<tr>
-  <td><%= Ship::Line.human_attribute_name(:finish_name) %></td>
-  <td><%= @similar.finish_name %></td>
-</tr>
+<div>
+  <dt><%= Ship::Line.human_attribute_name(:name) %></dt>
+  <dd><%= @similar.name %></dd>
+</div>
+<div>
+  <dt><%= Ship::Line.human_attribute_name(:start_name) %></dt>
+  <dd><%= @similar.start_name %></dd>
+</div>
+<div>
+  <dt><%= Ship::Line.human_attribute_name(:finish_name) %></dt>
+  <dd><%= @similar.finish_name %></dd>
+</div>

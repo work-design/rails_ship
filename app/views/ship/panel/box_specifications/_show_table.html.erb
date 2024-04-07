@@ -1,8 +1,8 @@
-<tr>
-  <td><%= Ship::BoxSpecification.human_attribute_name(:name) %></td>
-  <td><%= @box_specification.name %></td>
-</tr>
-<tr>
-  <td><%= Ship::BoxSpecification.human_attribute_name(:width) %></td>
-  <td><%= @box_specification.measure %></td>
-</tr>
+<div>
+  <dt><%= Ship::BoxSpecification.human_attribute_name(:name) %></dt>
+  <dd><%= @box_specification.name %></dd>
+</div>
+<div>
+  <dt><%= Ship::BoxSpecification.human_attribute_name(:width) %></dt>
+  <dd><%= @box_specification.measure %></dd>
+</div>

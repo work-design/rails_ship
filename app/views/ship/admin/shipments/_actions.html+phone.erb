@@ -1,28 +1,28 @@
-<%= button_to({ action: 'destroy', id: model.id }, method: :delete, class: 'has-text-danger', form: { data: { turbo_confirm: t('.confirm') }, class: 'weui-actionsheet__cell weui-actionsheet__cell_warn' }) do %>
+<%= button_to({ action: 'destroy', id: model.id }, method: :delete, class: 'has-text-danger', form: { data: { turbo_confirm: t('.confirm') }, class: 'cell weui-actionsheet__cell_warn' }) do %>
   <i class="fa-solid fa-trash"></i>
   <span><%= t('.destroy.title') %></span>
 <% end if model.organ_id == current_organ.id %>
-<%= link_to({ action: 'edit', id: model.id }, class: 'weui-actionsheet__cell') do %>
+<%= link_to({ action: 'edit', id: model.id }, class: 'cell') do %>
   <i class="fa-solid fa-pencil"></i>
   <span><%= t('.edit.title') %></span>
 <% end if model.organ_id == current_organ.id %>
-<%= link_to({ action: 'show', id: model.id }, class: 'weui-actionsheet__cell') do %>
+<%= link_to({ action: 'show', id: model.id }, class: 'cell') do %>
   <i class="fa-solid fa-circle-info"></i>
   <span><%= t('.show.title') %></span>
 <% end %>
-<%= link_to({ controller: 'shipment_items', shipment_id: model.id }, class: 'weui-actionsheet__cell') do %>
+<%= link_to({ controller: 'shipment_items', shipment_id: model.id }, class: 'cell') do %>
   <i class="fa-regular fa-list-check"></i>
   <span><%= t('ship.admin.shipment_items.index.title') %></span>
 <% end %>
-<%= link_to({ action: 'stations', id: model.id }, class: 'weui-actionsheet__cell') do %>
+<%= link_to({ action: 'stations', id: model.id }, class: 'cell') do %>
   <i class="fa-solid fa-location-dot"></i>
   <span><%= t('ship.admin.shipments.stations.title') %></span>
 <% end %>
-<%= link_to({ action: 'leave', id: model.id }, class: 'weui-actionsheet__cell') do %>
+<%= link_to({ action: 'leave', id: model.id }, class: 'cell') do %>
   <i class="fa-regular fa-play"></i>
   <span><%= t('ship.admin.shipments.leave.title') %></span>
 <% end %>
-<%= link_to({ action: 'arrive', id: model.id }, class: 'weui-actionsheet__cell') do %>
+<%= link_to({ action: 'arrive', id: model.id }, class: 'cell') do %>
   <i class="fa-regular fa-stop"></i>
   <span><%= t('ship.admin.shipments.arrive.title') %></span>
 <% end if model.state == 'left' %>

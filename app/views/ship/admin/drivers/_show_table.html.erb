@@ -1,16 +1,16 @@
-<tr>
-  <td><%= Ship::Driver.human_attribute_name(:name) %></td>
-  <td><%= @driver.name %></td>
-</tr>
-<tr>
-  <td><%= Ship::Driver.human_attribute_name(:number) %></td>
-  <td><%= @driver.number %></td>
-</tr>
-<tr>
-  <td><%= Ship::Driver.human_attribute_name(:detail) %></td>
-  <td><%= @driver.detail %></td>
-</tr>
-<tr>
-  <td><%= Ship::Driver.human_attribute_name(:user_id) %></td>
-  <td><%= @driver.user_id %></td>
-</tr>
+<div>
+  <dt><%= Ship::Driver.human_attribute_name(:name) %></dt>
+  <dd><%= @driver.name %></dd>
+</div>
+<div>
+  <dt><%= Ship::Driver.human_attribute_name(:number) %></dt>
+  <dd><%= @driver.number %></dd>
+</div>
+<div>
+  <dt><%= Ship::Driver.human_attribute_name(:detail) %></dt>
+  <dd><%= @driver.detail %></dd>
+</div>
+<div>
+  <dt><%= Ship::Driver.human_attribute_name(:user_id) %></dt>
+  <dd><%= @driver.user_id %></dd>
+</div>

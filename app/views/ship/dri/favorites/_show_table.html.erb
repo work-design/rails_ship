@@ -1,8 +1,8 @@
-<tr>
-  <td><%= Ship::Favorite.human_attribute_name(:avatar) %></td>
-  <td><%= image_tag @favorite.user.avatar if @favorite.user.avatar.attached? %></td>
-</tr>
-<tr>
-  <td><%= Ship::Favorite.human_attribute_name(:name) %></td>
-  <td><%= @favorite.user.name %></td>
-</tr>
+<div>
+  <dt><%= Ship::Favorite.human_attribute_name(:avatar) %></dt>
+  <dt><%= image_tag @favorite.user.avatar if @favorite.user.avatar.attached? %></dd>
+</div>
+<div>
+  <dt><%= Ship::Favorite.human_attribute_name(:name) %></dt>
+  <dd><%= @favorite.user.name %></dd>
+</div>

@@ -1,14 +1,14 @@
 <tr id="tr_<%= model.id %>" data-controller="show" data-action="mouseenter->show#show mouseleave->show#hide">
   <%= yield %>
   <td>
-    <div data-show-target="item" style="visibility: hidden">
+    <div data-show-target="item" class="visibility-hidden">
       <%= link_to({ action: 'stations', id: model.id }, aria: { label: t('ship.admin.shipments.stations.title') }, class: 'button is-small is-rounded is-light') do %>
         <i class="fa-solid fa-location-dot"></i>
       <% end %>
       <%= link_to({ controller: 'shipment_items', shipment_id: model.id }, aria: { label: t('ship.admin.shipment_items.index.title') }, class: 'button is-small is-rounded is-light') do %>
         <i class="fa-regular fa-list-check"></i>
       <% end %>
-      <%= button_to({ controller: 'ship/admin/shipments', action: 'leave', line_id: model.line_id, station_id: @station.id, id: model.id }, form: { data: { turbo_confirm: t('.confirm') }, class: 'weui-actionsheet__cell' }) do %>
+      <%= button_to({ controller: 'ship/admin/shipments', action: 'leave', line_id: model.line_id, station_id: @station.id, id: model.id }, form: { data: { turbo_confirm: t('.confirm') }, class: 'cell' }) do %>
         <i class="fa-solid fa-play has-text-danger"></i>
         <span class="has-text-danger"><%= t('ship.admin.shipments.leave.title') %></span>
       <% end #if model.line_stations.pluck(:station_id).last.to_s != params[:station_id] && ['left'].exclude?(model.state) %>

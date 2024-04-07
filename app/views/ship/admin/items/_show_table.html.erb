@@ -1,12 +1,12 @@
-<tr>
-  <td><%= Trade::Item.human_attribute_name(:good_id) %></td>
-  <td><%= @item.good_name %></td>
-</tr>
-<tr>
-  <td><%= Trade::Item.human_attribute_name(:number) %></td>
-  <td><%= @item.number %></td>
-</tr>
-<tr>
-  <td><%= Trade::Item.human_attribute_name(:status) %></td>
-  <td><%= @item.status_i18n %></td>
-</tr>
+<div>
+  <dt><%= Trade::Item.human_attribute_name(:good_id) %></dt>
+  <dd><%= @item.good_name %></dd>
+</div>
+<div>
+  <dt><%= Trade::Item.human_attribute_name(:number) %></dt>
+  <dd><%= @item.number %></dd>
+</div>
+<div>
+  <dt><%= Trade::Item.human_attribute_name(:status) %></dt>
+  <dd><%= @item.status_i18n %></dd>
+</div>

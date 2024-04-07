@@ -1,20 +1,20 @@
-<tr>
-  <td><%= Ship::Box.human_attribute_name(:id) %></td>
-  <td><%= @box.id %></td>
-</tr>
-<tr>
-  <td><%= Ship::Box.human_attribute_name(:code) %></td>
-  <td><%= @box.code %></td>
-</tr>
-<tr>
-  <td><%= Ship::Box.human_attribute_name(:box_specification_id) %></td>
-  <td><%= @box.box_specification_id %></td>
-</tr>
-<tr>
-  <td><%= Ship::Box.human_attribute_name(:status) %></td>
-  <td><%= @box.status_i18n %></td>
-</tr>
-<tr>
-  <td><%= Ship::Box.human_attribute_name(:enter_url) %></td>
-  <td><%= image_tag @box.qrcode_enter_url %></td>
-</tr>
+<div>
+  <dt><%= Ship::Box.human_attribute_name(:id) %></dt>
+  <dd><%= @box.id %></dd>
+</div>
+<div>
+  <dt><%= Ship::Box.human_attribute_name(:code) %></dt>
+  <dd><%= @box.code %></dd>
+</div>
+<div>
+  <dt><%= Ship::Box.human_attribute_name(:box_specification_id) %></dt>
+  <dd><%= @box.box_specification_id %></dd>
+</div>
+<div>
+  <dt><%= Ship::Box.human_attribute_name(:status) %></dt>
+  <dd><%= @box.status_i18n %></dd>
+</div>
+<div>
+  <dt><%= Ship::Box.human_attribute_name(:enter_url) %></dt>
+  <dt><%= image_tag @box.qrcode_enter_url %></dd>
+</div>

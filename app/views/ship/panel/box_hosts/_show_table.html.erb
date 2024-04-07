@@ -1,9 +1,9 @@
-<tr>
-  <td><%= Ship::BoxSpecification.human_attribute_name(:price) %></td>
-  <td><%= @box_host.price.to_money.format.html_safe %></td>
-</tr>
-<tr>
-  <td><%= Ship::BoxSpecification.human_attribute_name(:covers) %></td>
+<div>
+  <dt><%= Ship::BoxSpecification.human_attribute_name(:price) %></dt>
+  <dd><%= @box_host.price.to_money.format.html_safe %></dd>
+</div>
+<div>
+  <dt><%= Ship::BoxSpecification.human_attribute_name(:covers) %></dt>
   <td>
     <div class="flex">
     <% @box_host.box_specification.covers.each do |image| %>
@@ -11,4 +11,4 @@
     <% end %>
     </div>
   </td>
-</tr>
+</div>

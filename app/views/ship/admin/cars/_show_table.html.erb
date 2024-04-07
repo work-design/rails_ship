@@ -1,16 +1,16 @@
-<tr>
-  <td><%= Ship::Car.human_attribute_name(:registration) %></td>
-  <td><%= image_tag @car.registration if @car.registration.attached? %></td>
-</tr>
-<tr>
-  <td><%= Ship::Car.human_attribute_name(:number) %></td>
-  <td><%= @car.number %></td>
-</tr>
-<tr>
-  <td><%= Ship::Car.human_attribute_name(:detail) %></td>
-  <td><%= @car.detail %></td>
-</tr>
-<tr>
-  <td><%= Ship::Car.human_attribute_name(:enter_url) %></td>
-  <td><%= image_tag @car.qrcode_enter_url %></td>
-</tr>
+<div>
+  <dt><%= Ship::Car.human_attribute_name(:registration) %></dt>
+  <dt><%= image_tag @car.registration if @car.registration.attached? %></dd>
+</div>
+<div>
+  <dt><%= Ship::Car.human_attribute_name(:number) %></dt>
+  <dd><%= @car.number %></dd>
+</div>
+<div>
+  <dt><%= Ship::Car.human_attribute_name(:detail) %></dt>
+  <dd><%= @car.detail %></dd>
+</div>
+<div>
+  <dt><%= Ship::Car.human_attribute_name(:enter_url) %></dt>
+  <dt><%= image_tag @car.qrcode_enter_url %></dd>
+</div>

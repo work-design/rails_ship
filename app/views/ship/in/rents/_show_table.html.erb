@@ -1,20 +1,20 @@
-<tr>
-  <td><%= Trade::Rent.human_attribute_name(:start_at) %></td>
-  <td><time data-controller="time"><%= @rent.start_at.to_fs(:iso8601) %></time></td>
-</tr>
-<tr>
-  <td><%= Trade::Rent.human_attribute_name(:estimate_finish_at) %></td>
-  <td><time data-controller="time"><%= @rent.estimate_finish_at&.to_fs(:iso8601) %></time></td>
-</tr>
-<tr>
-  <td><%= Trade::Rent.human_attribute_name(:finish_at) %></td>
-  <td><time data-controller="time"><%= @rent.finish_at&.to_fs(:iso8601) %></time></td>
-</tr>
-<tr>
-  <td><%= Trade::Rent.human_attribute_name(:duration) %></td>
-  <td><%= simple_format @rent.compute_duration %></td>
-</tr>
-<tr>
-  <td><%= Trade::Rent.human_attribute_name(:amount) %></td>
-  <td><%= @rent.amount %></td>
-</tr>
+<div>
+  <dt><%= Trade::Rent.human_attribute_name(:start_at) %></dt>
+  <dd><time data-controller="time"><%= @rent.start_at.to_fs(:iso8601) %></time></dd>
+</div>
+<div>
+  <dt><%= Trade::Rent.human_attribute_name(:estimate_finish_at) %></dt>
+  <dd><time data-controller="time"><%= @rent.estimate_finish_at&.to_fs(:iso8601) %></time></dd>
+</div>
+<div>
+  <dt><%= Trade::Rent.human_attribute_name(:finish_at) %></dt>
+  <dd><time data-controller="time"><%= @rent.finish_at&.to_fs(:iso8601) %></time></dd>
+</div>
+<div>
+  <dt><%= Trade::Rent.human_attribute_name(:duration) %></dt>
+  <dt><%= simple_format @rent.compute_duration %></dd>
+</div>
+<div>
+  <dt><%= Trade::Rent.human_attribute_name(:amount) %></dt>
+  <dd><%= @rent.amount %></dd>
+</div>

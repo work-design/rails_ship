@@ -1,32 +1,32 @@
-<tr>
-  <td><%= Ship::Shipment.human_attribute_name(:enter_url) %></td>
-  <td><%= image_tag @shipment.qrcode_enter_url %></td>
-</tr>
-<tr>
-  <td><%= Ship::Shipment.human_attribute_name(:car_id) %></td>
-  <td><%= @shipment.car_id %></td>
-</tr>
-<tr>
-  <td><%= Ship::Shipment.human_attribute_name(:line_id) %></td>
-  <td><%= @shipment.line_id %></td>
-</tr>
-<tr>
-  <td><%= Ship::Shipment.human_attribute_name(:driver_id) %></td>
-  <td><%= @shipment.driver_id %></td>
-</tr>
-<tr>
-  <td><%= Ship::Shipment.human_attribute_name(:load_on) %></td>
-  <td><%= @shipment.load_on %></td>
-</tr>
-<tr>
-  <td><%= Ship::Shipment.human_attribute_name(:state) %></td>
-  <td><%= @shipment.state %></td>
-</tr>
-<tr>
-  <td><%= Ship::Shipment.human_attribute_name(:left_at) %></td>
-  <td><%= @shipment.left_at %></td>
-</tr>
-<tr>
-  <td><%= Ship::Shipment.human_attribute_name(:arrived_at) %></td>
-  <td><%= @shipment.arrived_at %></td>
-</tr>
+<div>
+  <dt><%= Ship::Shipment.human_attribute_name(:enter_url) %></dt>
+  <dt><%= image_tag @shipment.qrcode_enter_url %></dd>
+</div>
+<div>
+  <dt><%= Ship::Shipment.human_attribute_name(:car_id) %></dt>
+  <dd><%= @shipment.car_id %></dd>
+</div>
+<div>
+  <dt><%= Ship::Shipment.human_attribute_name(:line_id) %></dt>
+  <dd><%= @shipment.line_id %></dd>
+</div>
+<div>
+  <dt><%= Ship::Shipment.human_attribute_name(:driver_id) %></dt>
+  <dd><%= @shipment.driver_id %></dd>
+</div>
+<div>
+  <dt><%= Ship::Shipment.human_attribute_name(:load_on) %></dt>
+  <dd><%= @shipment.load_on %></dd>
+</div>
+<div>
+  <dt><%= Ship::Shipment.human_attribute_name(:state) %></dt>
+  <dd><%= @shipment.state %></dd>
+</div>
+<div>
+  <dt><%= Ship::Shipment.human_attribute_name(:left_at) %></dt>
+  <dd><%= @shipment.left_at %></dd>
+</div>
+<div>
+  <dt><%= Ship::Shipment.human_attribute_name(:arrived_at) %></dt>
+  <dd><%= @shipment.arrived_at %></dd>
+</div>

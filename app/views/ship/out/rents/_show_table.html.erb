@@ -1,16 +1,16 @@
-<tr>
-  <td><%= Lease::Rent.human_attribute_name(:start_at) %></td>
-  <td><%= @rent.start_at %></td>
-</tr>
-<tr>
-  <td><%= Lease::Rent.human_attribute_name(:finish_at) %></td>
-  <td><%= @rent.finish_at %></td>
-</tr>
-<tr>
-  <td><%= Lease::Rent.human_attribute_name(:estimate_finish_at) %></td>
-  <td><%= @rent.estimate_finish_at %></td>
-</tr>
-<tr>
-  <td><%= Lease::Rent.human_attribute_name(:price) %></td>
-  <td><%= @rent.price %></td>
-</tr>
+<div>
+  <dt><%= Lease::Rent.human_attribute_name(:start_at) %></dt>
+  <dd><%= @rent.start_at %></dd>
+</div>
+<div>
+  <dt><%= Lease::Rent.human_attribute_name(:finish_at) %></dt>
+  <dd><%= @rent.finish_at %></dd>
+</div>
+<div>
+  <dt><%= Lease::Rent.human_attribute_name(:estimate_finish_at) %></dt>
+  <dd><%= @rent.estimate_finish_at %></dd>
+</div>
+<div>
+  <dt><%= Lease::Rent.human_attribute_name(:price) %></dt>
+  <dd><%= @rent.price %></dd>
+</div>

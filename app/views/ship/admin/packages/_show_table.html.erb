@@ -1,25 +1,25 @@
-<tr>
-  <td><%= Ship::Package.human_attribute_name(:id) %></td>
-  <td><%= @package.id %></td>
-</tr>
-<tr>
-  <td><%= Ship::Package.human_attribute_name(:address) %></td>
+<div>
+  <dt><%= Ship::Package.human_attribute_name(:id) %></dt>
+  <dd><%= @package.id %></dd>
+</div>
+<div>
+  <dt><%= Ship::Package.human_attribute_name(:address) %></dt>
   <td>
   <% if @package.address %>
     <p><%= @package.address.area.full_name %></p>
     <p><%= @package.address.detail %></p>
   <% end %>
   </td>
-</tr>
-<tr>
-  <td><%= Ship::Package.human_attribute_name(:state) %></td>
-  <td><%= @package.state_i18n %></td>
-</tr>
-<tr>
-  <td><%= Ship::Package.human_attribute_name(:expected_on) %></td>
-  <td><%= @package.expected_on %></td>
-</tr>
-<tr>
-  <td><%= Ship::Package.human_attribute_name(:enter_url) %></td>
-  <td><%= image_tag @package.qrcode_enter_url %></td>
-</tr>
+</div>
+<div>
+  <dt><%= Ship::Package.human_attribute_name(:state) %></dt>
+  <dd><%= @package.state_i18n %></dd>
+</div>
+<div>
+  <dt><%= Ship::Package.human_attribute_name(:expected_on) %></dt>
+  <dd><%= @package.expected_on %></dd>
+</div>
+<div>
+  <dt><%= Ship::Package.human_attribute_name(:enter_url) %></dt>
+  <dt><%= image_tag @package.qrcode_enter_url %></dd>
+</div>

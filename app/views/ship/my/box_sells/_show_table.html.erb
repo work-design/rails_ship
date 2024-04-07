@@ -1,20 +1,20 @@
-<tr>
-  <td><%= Ship::BoxSell.human_attribute_name(:state) %></td>
-  <td><%= @box_sell.state_i18n %></td>
-</tr>
-<tr>
-  <td><%= Ship::BoxSell.human_attribute_name(:price) %></td>
-  <td><%= @box_sell.price.to_money.format.html_safe %></td>
-</tr>
-<tr>
-  <td><%= Ship::BoxSell.human_attribute_name(:amount) %></td>
-  <td><%= @box_sell.amount %></td>
-</tr>
-<tr>
-  <td><%= Ship::BoxSell.human_attribute_name(:done_amount) %></td>
-  <td><%= @box_sell.done_amount %></td>
-</tr>
-<tr>
-  <td><%= Ship::BoxSell.human_attribute_name(:rest_amount) %></td>
-  <td><%= @box_sell.rest_amount %></td>
-</tr>
+<div>
+  <dt><%= Ship::BoxSell.human_attribute_name(:state) %></dt>
+  <dd><%= @box_sell.state_i18n %></dd>
+</div>
+<div>
+  <dt><%= Ship::BoxSell.human_attribute_name(:price) %></dt>
+  <dd><%= @box_sell.price.to_money.format.html_safe %></dd>
+</div>
+<div>
+  <dt><%= Ship::BoxSell.human_attribute_name(:amount) %></dt>
+  <dd><%= @box_sell.amount %></dd>
+</div>
+<div>
+  <dt><%= Ship::BoxSell.human_attribute_name(:done_amount) %></dt>
+  <dd><%= @box_sell.done_amount %></dd>
+</div>
+<div>
+  <dt><%= Ship::BoxSell.human_attribute_name(:rest_amount) %></dt>
+  <dd><%= @box_sell.rest_amount %></dd>
+</div>
