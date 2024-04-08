@@ -1,15 +1,15 @@
-<div class="weui-media-box weui-media-box_appmsg">
-  <div class="weui-media-box__hd">
+<div class="media">
+  <div class="media-left">
     <%= image_tag package.user.avatar if package.user.avatar.attached? %>
   </div>
-  <div class="weui-media-box__bd">
+  <div class="media-content">
     <h4 class="weui-media-box__title"><%= package.user.account_identities.join(',') %></h4>
     <div class="weui-media-box__desc">
       <%= package.trade_items.map(&->(o){ o.good.name }).join(',') %>
       <p><%= package.state_i18n %></p>
     </div>
   </div>
-  <div class="weui-media-box__ft">
+  <div class="media-right as-x">
     <%= button_to({ action: 'actions', id: package.id }, class: 'button is-borderless') do %>
       <i class="fa-solid fa-lg fa-ellipsis-h"></i>
     <% end %>

@@ -2,14 +2,14 @@
   <div class="weui-panel__hd">收货点</div>
   <div class="weui-panel__bd">
     <% @rallies.each do |rally| %>
-    <div class="weui-media-box weui-media-box_appmsg">
-      <div class="weui-media-box__bd">
+    <div class="media">
+      <div class="media-content">
         <h6 class="weui-media-box__title">
           <%= link_to rally.name, my_rally_path(rally) %>
         </h6>
         <div class="weui-media-box__desc"><%= rally.area.full_name %><%= rally.detail %></div>
       </div>
-      <div class="weui-media-box__ft">
+      <div class="media-right as-x">
         <div class="weui-btn weui-btn_default">
           <%= link_to '召集', my_rally_url(rally.id) %>
         </div>
