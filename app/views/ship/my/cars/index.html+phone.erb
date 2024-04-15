@@ -4,7 +4,7 @@
   </div>
   <div class="weui-panel__bd">
   <% @cars.each do |car| %>
-    <%= link_to({ action: 'show', id: car.id }, class: 'weui-media-box weui-media-box_appmsg') do %>
+    <%= link_to({ action: 'show', id: car.id }, class: 'media') do %>
       <div class="media-left">
         <%= image_tag car.registration, class: 'image is-64x64' if car.registration.attached? %>
       </div>

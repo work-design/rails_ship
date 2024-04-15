@@ -1,9 +1,11 @@
-<%= link_to({ station_id: model.id }, class: 'weui-cell weui-cell_active weui-cell_access') do %>
-  <div class="weui-cell__hd">
+<%= link_to({ station_id: model.id }, class: 'media') do %>
+  <div class="media-left">
     <span><%= model.name %></span>
   </div>
-  <div class="weui-cell__bd">
+  <div class="media-content">
     <span class="has-text-grey has-text-weight-normal"><%= model.area.full_name %></span>
   </div>
-  <div class="weui-cell__ft"></div>
+  <div class="media-right">
+    <i class="fa-solid fa-chevron-right"></i>
+  </div>
 <% end %>

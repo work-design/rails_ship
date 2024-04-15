@@ -6,7 +6,7 @@
   <i class="fa-solid fa-circle-info"></i>
   <span><%= t('.show.title') %></span>
 <% end %>
-<%= link_to({ action: 'edit', id: model.id }, class: 'cell') do %>
+<%= button_to({ action: 'edit', id: model.id }, class: 'cell') do %>
   <i class="fa-solid fa-pencil"></i>
   <span><%= t('.edit.title') %></span>
 <% end %>

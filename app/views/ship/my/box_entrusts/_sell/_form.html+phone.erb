@@ -2,7 +2,7 @@
 <%= form_with theme: 'weui', model: @box_sell, url: { controller: 'box_sells', action: 'create', box_hold_id: @box_hold.id }, class: 'pt-0' do |f| %>
   <div class="weui-cells mt-0">
     <div class="weui-cell">
-      <div class="weui-cell__hd">
+      <div class="media-left">
         <label class="weui-label"><%= Ship::BoxSell.human_attribute_name(:price) %></label>
       </div>
       <div data-controller="modify" class="weui-cell__bd flex align-items-center">
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="weui-cell">
-      <div class="weui-cell__hd">
+      <div class="media-left">
         <label class="weui-label"><%= Ship::BoxSell.human_attribute_name(:amount) %></label>
       </div>
       <div data-controller="modify" class="weui-cell__bd flex align-items-center">

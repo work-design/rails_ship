@@ -1,28 +1,36 @@
-<%= link_to({ controller: 'ship/dri/favorites' }, class: 'weui-cell weui-cell_access') do %>
-  <div class="weui-cell__bd">
+<%= link_to({ controller: 'ship/dri/favorites' }, class: 'media') do %>
+  <div class="media-content">
     <i class="fa-solid fa-fw fa-users"></i>
     <span><%= t('ship.dri.favorites.index.title') %></span>
   </div>
-  <div class="weui-cell__ft"></div>
+  <div class="media-right">
+    <i class="fa-solid fa-chevron-right"></i>
+  </div>
 <% end if current_user.driver %>
-<%= link_to({ controller: 'ship/my/lines', action: 'requirement' }, class: 'weui-cell weui-cell_access') do %>
-  <div class="weui-cell__bd">
+<%= link_to({ controller: 'ship/my/lines', action: 'requirement' }, class: 'media') do %>
+  <div class="media-content">
     <i class="fa-solid fa-fw fa-paper-plane"></i>
     <span><%= t('ship.my.lines.requirement.title') %></span>
   </div>
-  <div class="weui-cell__ft"></div>
+  <div class="media-right">
+    <i class="fa-solid fa-chevron-right"></i>
+  </div>
 <% end %>
-<%= link_to({ controller: 'ship/my/cars' }, class: 'weui-cell weui-cell_access') do %>
-  <div class="weui-cell__bd">
+<%= link_to({ controller: 'ship/my/cars' }, class: 'media') do %>
+  <div class="media-content">
     <i class="fa-solid fa-fw fa-car"></i>
     <span><%= t('ship.my.cars.index.title') %></span>
   </div>
-  <div class="weui-cell__ft"></div>
+  <div class="media-right">
+    <i class="fa-solid fa-chevron-right"></i>
+  </div>
 <% end %>
-<%= link_to({ controller: 'ship/my/drivers', action: 'show' }, class: 'weui-cell weui-cell_access') do %>
-  <div class="weui-cell__bd">
+<%= link_to({ controller: 'ship/my/drivers', action: 'show' }, class: 'media') do %>
+  <div class="media-content">
     <i class="fa-solid fa-fw fa-id-card"></i>
     <span><%= t('ship.my.drivers.show.title') %></span>
   </div>
-  <div class="weui-cell__ft"></div>
+  <div class="media-right">
+    <i class="fa-solid fa-chevron-right"></i>
+  </div>
 <% end %>

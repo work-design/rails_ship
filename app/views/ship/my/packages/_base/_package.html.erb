@@ -8,7 +8,7 @@
       <%= package.trade_items.map(&->(o){ o.good.name }).join(',') %>
     </div>
   </div>
-  <div class="media-right as-x">
+  <div class="media-right">
     <% if package.wait_item %>
       <div class="weui-btn weui-btn_mini weui-btn_primary">
         <p><%= package.wait_item.position %></p>

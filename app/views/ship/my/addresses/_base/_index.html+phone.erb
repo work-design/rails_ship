@@ -6,9 +6,11 @@
     </div>
   </div>
   <div class="weui-panel__ft">
-    <%= button_to({ action: 'order_new' }, class: 'weui-cell weui-cell_access weui-cell_link') do %>
-      <div class="weui-cell__bd"><%= t('.new.title') %></div>
-      <span class="weui-cell__ft"></span>
+    <%= button_to({ action: 'order_new' }, class: 'media') do %>
+      <div class="media-content"><%= t('.new.title') %></div>
+      <div class="media-right">
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
     <% end %>
   </div>
 </div>

@@ -1,7 +1,7 @@
-<div class="weui-cell weui-cell_access" data-controller="weui-dialog" data-weui-dialog-id-value="fetch_dialog" data-action="click->weui-dialog#toggle">
-  <div class="weui-cell__hd">预计结束时间</div>
-  <div class="weui-cell__bd"></div>
-  <div class="weui-cell__ft">
+<div class="media" data-controller="weui-dialog" data-weui-dialog-id-value="fetch_dialog" data-action="click->weui-dialog#toggle">
+  <div class="media-left">预计结束时间</div>
+  <div class="media-content"></div>
+  <div class="media-right">
     <time data-controller="time"><%= @trade_item.rent_estimate_finish_at&.to_fs(:iso8601) %></time>
   </div>
 </div>

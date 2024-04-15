@@ -9,7 +9,7 @@
         </h6>
         <div class="weui-media-box__desc"><%= rally.area.full_name %><%= rally.detail %></div>
       </div>
-      <div class="media-right as-x">
+      <div class="media-right">
         <div class="weui-btn weui-btn_default">
           <%= link_to '召集', my_rally_url(rally.id) %>
         </div>
@@ -18,9 +18,11 @@
     <% end %>
   </div>
   <div class="weui-panel__ft">
-    <%= link_to new_my_rally_path, class: 'weui-cell weui-cell_access weui-cell_link' do %>
-      <div class="weui-cell__bd"><%= t('.new.title') %></div>
-      <span class="weui-cell__ft"></span>
+    <%= link_to new_my_rally_path, class: 'media' do %>
+      <div class="media-content"><%= t('.new.title') %></div>
+      <div class="media-right">
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
     <% end %>
   </div>
 </div>

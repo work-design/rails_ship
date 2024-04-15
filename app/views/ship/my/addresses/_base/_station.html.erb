@@ -9,9 +9,11 @@
     </div>
   </div>
   <div class="weui-panel__ft">
-    <%= link_to({ action: 'new', station_id: model.id, return_to: params[:return_to] }, class: 'weui-cell weui-cell_access weui-cell_link') do %>
-      <div class="weui-cell__bd">完善地址</div>
-      <span class="weui-cell__ft"></span>
+    <%= link_to({ action: 'new', station_id: model.id, return_to: params[:return_to] }, class: 'media') do %>
+      <div class="media-content">完善地址</div>
+      <div class="media-right">
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
     <% end %>
   </div>
 </div>
