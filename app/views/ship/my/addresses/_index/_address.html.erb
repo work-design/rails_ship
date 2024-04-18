@@ -20,6 +20,7 @@
     <% end %>
     <%= form_with theme: nil, scope: 'cart', url: { controller: 'trade/my/carts', action: 'update', id: params[:cart_id] }, method: :patch do |f| %>
       <%= f.radio_button :address_id, model.id, checked: model.id == @cart.address_id, class: 'weui-check', data: { action: 'input#form' } %>
+      <span class="weui-icon-checked"></span>
     <% end %>
   </span>
 </label>
