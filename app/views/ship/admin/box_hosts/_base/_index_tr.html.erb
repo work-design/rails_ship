@@ -3,19 +3,19 @@
   <td>
     <div data-show-target="item" class="visibility-hidden">
       <%= link_to({ controller: 'box_proxy_sells', box_host_id: model.id }, aria: { label: t('ship.admin.box_proxy_sells.index.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-gavel has-text-danger"></i>
+        <i class="fa-solid fa-gavel color-danger"></i>
       <% end %>
       <%= link_to({ controller: 'box_proxy_buys', box_host_id: model.id }, aria: { label: t('ship.admin.box_proxy_buys.index.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-handshake-simple has-text-success"></i>
+        <i class="fa-solid fa-handshake-simple color-success"></i>
       <% end %>
       <%= link_to({ controller: 'box_holds', box_host_id: model.id }, aria: { label: t('ship.admin.box_holds.index.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-hand-holding has-text-info"></i>
+        <i class="fa-solid fa-hand-holding color-info"></i>
       <% end %>
       <%= button_to({ action: 'edit', id: model.id }, aria: { label: t('.edit.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-pencil has-text-link"></i>
+        <i class="fa-solid fa-pencil color-link"></i>
       <% end %>
       <%= button_to({ action: 'show', id: model.id }, aria: { label: t('.show.title') }, class: 'button is-small is-rounded is-light') do %>
-        <i class="fa-solid fa-circle-info has-text-info"></i>
+        <i class="fa-solid fa-circle-info color-info"></i>
       <% end %>
     </div>
   </td>

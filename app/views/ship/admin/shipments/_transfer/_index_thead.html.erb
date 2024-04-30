@@ -5,7 +5,7 @@
       <%= f.hidden_field :ids, data: { check_target: 'ids' } %>
       <%= f.hidden_field :address_id, value: params[:address_id] %>
       <%= button_tag data: { action: 'check#doSubmit' }, aria: { label: t('.title') }, class: 'button is-small is-dark' do %>
-        <i class="fa-solid fa-person-dolly-empty has-text-danger"></i>
+        <i class="fa-solid fa-person-dolly-empty color-danger"></i>
       <% end %>
     <% end %>
   </div>
@@ -15,7 +15,7 @@
 <th><%= Ship::Package.human_attribute_name(:state) %></th>
 <th>
   <p><%= Ship::Package.human_attribute_name(:box_id) %></p>
-  <p class="has-text-info-dark"><%= Ship::Package.human_attribute_name(:boxed_in_at) %></p>
+  <p class="color-info-dark"><%= Ship::Package.human_attribute_name(:boxed_in_at) %></p>
   <p class="has-text-warning-dark"><%= Ship::Package.human_attribute_name(:boxed_out_at) %></p>
 </th>
 <th><%= Ship::Package.human_attribute_name(:created_at) %></th>

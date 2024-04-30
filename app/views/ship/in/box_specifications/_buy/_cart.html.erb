@@ -10,7 +10,7 @@
     <% end %>
   <% end if item.number > 1 %>
   <%= button_to({ controller: 'trade/in/items', action: 'destroy', id: item.id }, method: :delete, class: 'mr-1', form: { data: { turbo_scroll: true } }) do %>
-    <i class="fa-solid fa-trash fa-xl has-text-danger-dark"></i>
+    <i class="fa-solid fa-trash fa-xl color-danger-dark"></i>
   <% end if item.number <= 1 %>
   <%= form_with theme: nil, scope: 'item', url: { controller: 'trade/in/items', action: 'update', id: item.id }, method: :patch, data: { controller: 'input', turbo_scroll: true } do |f| %>
     <%= f.hidden_field :current_cart_id, value: @cart.id %>
@@ -24,7 +24,7 @@
     <% end %>
   <% end %>
 </div>
-<p class="has-text-grey pl-2">
+<p class="color-grey pl-2">
   <span>下单人： </span>
   <span><%= item.member.name %></span>
 </p>

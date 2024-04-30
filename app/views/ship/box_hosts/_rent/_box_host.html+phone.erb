@@ -11,13 +11,13 @@
     </p>
     <% model.rent_charges.each do |charge| %>
       <p class="flex justify-content-space-between pr-6">
-        <span class="has-text-grey">
+        <span class="color-grey">
           <span><%= charge.min %></span>
           <span>~</span>
           <span><%= charge.max %></span>
           <span><%= model.rent_unit_i18n %></span>
         </span>
-        <span class="has-text-danger">
+        <span class="color-danger">
           <span><%= charge.parameter.to_money.format.html_safe %></span>
           <span>/</span>
           <span><%= model.rent_unit_i18n %></span>

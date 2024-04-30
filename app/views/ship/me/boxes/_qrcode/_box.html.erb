@@ -18,20 +18,20 @@
     <% if @box.current_rent %>
       <div class="weui-form-preview__item">
         <label class="weui-form-preview__label"><%= Trade::Rent.human_attribute_name(:rent_start_at) %></label>
-        <span class="weui-form-preview__value has-text-success">
+        <span class="weui-form-preview__value color-success">
           <time data-controller="time"><%= @box.current_rent.rent_start_at.to_fs(:iso8601) %></time>
         </span>
       </div>
     <% elsif @box.last_rent %>
       <div class="weui-form-preview__item">
         <label class="weui-form-preview__label"><%= Trade::Rent.human_attribute_name(:rent_start_at) %></label>
-        <span class="weui-form-preview__value has-text-success">
+        <span class="weui-form-preview__value color-success">
           <time data-controller="time"><%= @box.last_rent.rent_start_at.to_fs(:iso8601) %></time>
         </span>
       </div>
       <div class="weui-form-preview__item">
         <label class="weui-form-preview__label"><%= Trade::Rent.human_attribute_name(:rent_finish_at) %></label>
-        <span class="weui-form-preview__value has-text-danger">
+        <span class="weui-form-preview__value color-danger">
           <time data-controller="time"><%= @box.last_rent.rent_finish_at.to_fs(:iso8601) %></time>
         </span>
       </div>

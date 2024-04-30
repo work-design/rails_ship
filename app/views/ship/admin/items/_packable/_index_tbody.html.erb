@@ -5,12 +5,12 @@
 <td><%= model.number %></td>
 <td>
   <span><%= model.user&.name %></span>
-  <span class="has-text-grey">（<%= model.user_id %>）</span>
+  <span class="color-grey">（<%= model.user_id %>）</span>
 </td>
 <td><%= model.produce_plan&.title %></td>
 <td>
   <p><%= model.status_i18n %></p>
-  <p class="has-text-grey size-7"><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></p>
+  <p class="color-grey size-7"><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></p>
 </td>
 <td>
   <%= link_to({ controller: 'factory/admin/production_items', production_id: model.good_id }, target: '_blank') do %>

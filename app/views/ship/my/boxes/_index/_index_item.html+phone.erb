@@ -2,6 +2,6 @@
   <%= link_to model.code, { action: 'show', id: model.id }, text: true %>
 </div>
 <p>
-  <span class="has-text-grey">交割时间：</span>
+  <span class="color-grey">交割时间：</span>
   <time data-controller="time"><%= model.current_rent&.start_at&.to_fs(:iso8601) %></time>
 </p>

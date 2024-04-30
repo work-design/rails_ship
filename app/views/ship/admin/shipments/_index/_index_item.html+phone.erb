@@ -11,7 +11,7 @@
 <p>
   <time data-controller="time"><%= model.left_at&.to_fs(:iso8601) %></time>
   <% if model.left_at && model.arrived_at %>
-    <i class="fa-solid fa-right-long has-text-grey"></i>
+    <i class="fa-solid fa-right-long color-grey"></i>
   <% end %>
   <time data-controller="time"><%= model.arrived_at&.to_fs(:iso8601) %></time>
 </p>

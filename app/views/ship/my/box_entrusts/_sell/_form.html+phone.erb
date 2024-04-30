@@ -6,9 +6,9 @@
         <label class="weui-label"><%= Ship::BoxSell.human_attribute_name(:price) %></label>
       </div>
       <div data-controller="modify" class="weui-cell__bd flex align-items-center">
-        <i class="fa-solid fa-xl fa-circle-minus has-text-grey-dark flex-none" data-action="click->modify#minus"></i>
+        <i class="fa-solid fa-xl fa-circle-minus color-grey-dark flex-none" data-action="click->modify#minus"></i>
         <%= f.number_field :price, all: { normal: nil }, wrap: { input: nil }, label: nil, data: { modify_target: 'input' }, class: 'weui-input flex-grow-1' %>
-        <i class="fa-solid fa-xl fa-circle-plus has-text-grey-dark flex-none pr-1" data-action="click->modify#plus"></i>
+        <i class="fa-solid fa-xl fa-circle-plus color-grey-dark flex-none pr-1" data-action="click->modify#plus"></i>
         <span class="flex-none" style="width: 3em"></span>
       </div>
     </div>
@@ -17,9 +17,9 @@
         <label class="weui-label"><%= Ship::BoxSell.human_attribute_name(:amount) %></label>
       </div>
       <div data-controller="modify" class="weui-cell__bd flex align-items-center">
-        <i class="fa-solid fa-xl fa-circle-minus has-text-grey-dark flex-none" data-action="click->modify#minus"></i>
+        <i class="fa-solid fa-xl fa-circle-minus color-grey-dark flex-none" data-action="click->modify#minus"></i>
         <%= f.number_field :amount, all: { normal: nil }, wrap: { input: nil }, label: nil, data: { modify_target: 'input' }, class: 'weui-input flex-grow-1' %>
-        <i class="fa-solid fa-xl fa-circle-plus has-text-grey-dark flex-none pr-1" data-action="click->modify#plus"></i>
+        <i class="fa-solid fa-xl fa-circle-plus color-grey-dark flex-none pr-1" data-action="click->modify#plus"></i>
         <span class="flex-none" style="width: 3em"></span>
       </div>
     </div>

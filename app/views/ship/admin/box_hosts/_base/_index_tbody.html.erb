@@ -28,7 +28,7 @@
   <% end %>
   </div>
   <%= link_to({ action: 'wallet', id: model.id }, data: { turbo_frame: 'modal', show_target: 'item' }, aria: { label: t('bench.admin.facilitates.wallet.title') }) do %>
-    <i class="fa-solid fa-sm fa-pencil has-text-grey"></i>
+    <i class="fa-solid fa-sm fa-pencil color-grey"></i>
   <% end %>
 </td>
 <td><%= (model.invest_ratio * 100).to_fs(:percentage, precision: 0) %></td>

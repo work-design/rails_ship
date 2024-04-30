@@ -1,7 +1,7 @@
-<td class="has-text-centered has-text-success"><%= model.single_price.to_money.format.html_safe %></td>
+<td class="has-text-centered color-success"><%= model.single_price.to_money.format.html_safe %></td>
 <td class="has-text-centered">
   <span><%= model.done_number %></span>
   <span>/</span>
   <span><%= model.number %></span>
 </td>
-<td class="has-text-centered"><time data-controller="time" class="has-text-grey"><%= model.created_at.to_fs(:iso8601) %></time></td>
+<td class="has-text-centered"><time data-controller="time" class="color-grey"><%= model.created_at.to_fs(:iso8601) %></time></td>

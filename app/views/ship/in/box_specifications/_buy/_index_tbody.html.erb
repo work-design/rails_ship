@@ -3,7 +3,7 @@
   <p><%= model.organ.name %></p>
 </td>
 <td><%= model.box_specification.measure %></td>
-<td class="has-text-danger"><%= model.price.to_money.format.html_safe %></td>
+<td class="color-danger"><%= model.price.to_money.format.html_safe %></td>
 <td class="has-text-centered">
   <%= render partial: 'cart', locals: { model: model } %>
 </td>

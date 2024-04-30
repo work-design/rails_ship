@@ -4,7 +4,7 @@
 <td>
 <td>
   <p><%= model.box&.code %></p>
-  <p class="has-text-info-dark"><time data-controller="time"><%= model.boxed_in_at&.to_fs(:iso8601) %></time></p>
+  <p class="color-info-dark"><time data-controller="time"><%= model.boxed_in_at&.to_fs(:iso8601) %></time></p>
   <p class="has-text-warning-dark"><time data-controller="time"><%= model.boxed_out_at&.to_fs(:iso8601) %></time></p>
 </td>
 <td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>

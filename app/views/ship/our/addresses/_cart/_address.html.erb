@@ -11,7 +11,7 @@
   </span>
   <span class="weui-cell__ft" data-controller="input">
     <% if model.id != @cart.address_id %>
-      <span class="has-text-grey size-7">选为默认</span>
+      <span class="color-grey size-7">选为默认</span>
     <% end %>
     <%= form_with theme: nil, scope: 'cart', url: { controller: 'trade/our/carts', action: 'update', id: params[:cart_id] }, method: :patch do |f| %>
       <%= hidden_field_tag :return_to, params[:return_to] %>

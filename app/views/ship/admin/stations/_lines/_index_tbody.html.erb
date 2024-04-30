@@ -1,13 +1,13 @@
 <td><%= model.line.name %></td>
 <td>
   <span><%= model.line.start_name %></span>
-  <i class="fa-solid fa-right-long has-text-grey px-1"></i>
+  <i class="fa-solid fa-right-long color-grey px-1"></i>
   <span><%= model.line.finish_name %></span>
 </td>
 <td>
   <%= link_to({ controller: 'line_stations', line_id: model.line_id }, aria: { label: t('ship.admin.line_stations.index.title') }, class: 'button is-small is-rounded is-light') do %>
     <span><%= model.position %></span>
-    <span class="has-text-grey">/</span>
+    <span class="color-grey">/</span>
     <span><%= model.line.line_stations_count %></span>
   <% end %>
 </td>

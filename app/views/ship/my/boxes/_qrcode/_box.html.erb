@@ -27,15 +27,15 @@
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::Box.human_attribute_name(:organ_id) %></label>
-      <span class="weui-form-preview__value has-text-danger"><%= @box.organ&.name %></span>
+      <span class="weui-form-preview__value color-danger"><%= @box.organ&.name %></span>
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::BoxHold.human_attribute_name(:owned_amount) %></label>
-      <span class="weui-form-preview__value <%= @box_hold.owned_amount > 0 ? 'has-text-success' : 'has-text-danger' %>"><%= @box_hold.owned_amount %></span>
+      <span class="weui-form-preview__value <%= @box_hold.owned_amount > 0 ? 'color-success' : 'color-danger' %>"><%= @box_hold.owned_amount %></span>
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::BoxHold.human_attribute_name(:rented_amount) %></label>
-      <span class="weui-form-preview__value <%= @box_hold.rented_amount > 0 ? 'has-text-success' : 'has-text-danger' %>"><%= @box_hold.rented_amount %></span>
+      <span class="weui-form-preview__value <%= @box_hold.rented_amount > 0 ? 'color-success' : 'color-danger' %>"><%= @box_hold.rented_amount %></span>
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::BoxHold.human_attribute_name(:boxes_count) %></label>
@@ -43,12 +43,12 @@
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::BoxHold.human_attribute_name(:total_amount) %></label>
-      <span class="weui-form-preview__value <%= @box_hold.total_amount > 0 ? 'has-text-success' : 'has-text-danger' %>"><%= @box_hold.total_amount %></span>
+      <span class="weui-form-preview__value <%= @box_hold.total_amount > 0 ? 'color-success' : 'color-danger' %>"><%= @box_hold.total_amount %></span>
     </div>
     <% if @box.current_rent && @box.held_user_id == current_user.id %>
       <div class="weui-form-preview__item">
         <label class="weui-form-preview__label"><%= Trade::Rent.human_attribute_name(:start_at) %></label>
-        <span class="weui-form-preview__value has-text-success">
+        <span class="weui-form-preview__value color-success">
           <time data-controller="time"><%= @box.current_rent.start_at.to_fs(:iso8601) %></time>
         </span>
       </div>

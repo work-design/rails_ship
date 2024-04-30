@@ -6,16 +6,16 @@
         <span><%# model.shipment %></span>
       </div>
       <div class="level-right mt-0">
-        <span class="<%= ['loaded'].include?(model.state) ? 'has-text-success' : 'has-text-danger' %>"><%= model.state_i18n %></span>
+        <span class="<%= ['loaded'].include?(model.state) ? 'color-success' : 'color-danger' %>"><%= model.state_i18n %></span>
         <span class="tag"><%= model.confirm_mode_i18n %></span>
       </div>
     </div>
     <p>
-      <span class="has-text-grey"><%= Ship::Package.human_attribute_name(:loaded_at) %></span>
+      <span class="color-grey"><%= Ship::Package.human_attribute_name(:loaded_at) %></span>
       <time data-controller="time" data-format="human"><%= model.loaded_at&.to_fs(:iso8601) %></time>
     </p>
     <p data-controller="empty">
-      <span class="has-text-grey"><%= Ship::Package.human_attribute_name(:unloaded_at) %></span>
+      <span class="color-grey"><%= Ship::Package.human_attribute_name(:unloaded_at) %></span>
       <time data-controller="time" data-format="human" data-empty-target="text"><%= model.unloaded_at&.to_fs(:iso8601) %></time>
     </p>
   </div>
