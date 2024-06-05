@@ -11,7 +11,7 @@ module Ship
         button: 'button',
         scan: 'scan',
         batch: 'batch'
-      }, _prefix: true
+      }, prefix: true
 
       belongs_to :box, counter_cache: true
       belongs_to :boxed, polymorphic: true

@@ -24,13 +24,13 @@ module Ship
         unloaded: 'unloaded',
         delivered: 'delivered',
         received: 'received'
-      }, _prefix: true, _default: 'init'
+      }, prefix: true, default: 'init'
 
       enum :confirm_mode, {
         button: 'button',
         scan: 'scan',
         batch: 'batch'
-      }, _prefix: true
+      }, prefix: true
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
       belongs_to :address, class_name: 'Profiled::Address', optional: true

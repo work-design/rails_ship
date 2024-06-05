@@ -10,16 +10,16 @@ module Ship
         button: 'button',
         scan: 'scan',
         batch: 'batch'
-      }, _prefix: true
+      }, prefix: true
 
       enum :state, {
         loaded: 'loaded',
         unloaded: 'unloaded'
-      }, _prefix: true
+      }, prefix: true
 
       enum :status, {
         never_loaded: 'never_loaded'
-      }, _prefix: true
+      }, prefix: true
 
       belongs_to :loaded_station, class_name: 'Station', optional: true
       belongs_to :unloaded_station, class_name: 'Station', optional: true

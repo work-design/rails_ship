@@ -36,7 +36,7 @@ module Ship
         prepared: 'prepared',
         left: 'left',
         arrived: 'arrived'
-      }, _prefix: true, _default: 'preparing'
+      }, prefix: true, default: 'preparing'
 
       before_create :init_current_station
       after_save_commit :sync_state_to_item, if: -> { saved_change_to_state? }

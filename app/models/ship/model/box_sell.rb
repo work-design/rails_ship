@@ -12,7 +12,7 @@ module Ship
         init: 'init',
         pending: 'pending',
         transacted: 'transacted'
-      }, _default: 'init'
+      }, default: 'init'
 
       belongs_to :box_specification
       belongs_to :organ, class_name: 'Org::Organ', optional: true

@@ -11,13 +11,13 @@ module Ship
         born: 'born',
         free: 'free',
         using: 'using'
-      }, _default: 'born', _prefix: true
+      }, default: 'born', prefix: true
       enum :state, {
         grid_in: 'grid_in',
         grid_out: 'grid_out',
         loaded: 'loaded',
         unloaded: 'unloaded'
-      }, _prefix: true
+      }, prefix: true
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 
