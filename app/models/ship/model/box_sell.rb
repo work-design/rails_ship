@@ -8,7 +8,7 @@ module Ship
       attribute :done_amount, :integer, default: 0
       attribute :rest_amount, :integer
 
-      enum state: {
+      enum :state, {
         init: 'init',
         pending: 'pending',
         transacted: 'transacted'

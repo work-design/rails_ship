@@ -31,7 +31,7 @@ module Ship
       has_many :boxes, through: :shipment_items
       has_many :payment_orders, through: :shipment_items
 
-      enum state: {
+      enum :state, {
         preparing: 'preparing',
         prepared: 'prepared',
         left: 'left',

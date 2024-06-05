@@ -11,23 +11,23 @@ module Ship
       attribute :price, :decimal
       attribute :settle_ratio, :integer, comment: '预付比例'
 
-      enum settle_kind: {
+      enum :settle_kind, {
         spot_payment: 'spot_payment',
         freight_collect: 'freight_collect',
         included_goods: 'included_goods'
       }
-      enum settle_period: {
+      enum :settle_period, {
         daily: 'daily',
         weekly: 'weekly',
         monthly: 'monthly',
         bimonthly: 'bimonthly',
         quarterly: 'quarterly'
       }
-      enum weight_unit: {
+      enum :weight_unit, {
         gram: 'gram',
         kilogram: 'kilogram'
       }
-      enum volume_unit: {
+      enum :volume_unit, {
         cubic_meter: 'cubic_meter',
         cubic_kilometer: 'cubic_kilometer',
         cubic_millimeter: 'cubic_millimeter'

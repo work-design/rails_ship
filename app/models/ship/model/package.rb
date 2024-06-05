@@ -12,11 +12,11 @@ module Ship
       attribute :packageds_count, :integer, default: 0
       attribute :shipment_items_count, :integer, default: 0
 
-      enum pick_mode: {
+      enum :pick_mode, {
         by_self: 'by_self',
         by_man: 'by_man'
       }
-      enum state: {
+      enum :state, {
         init: 'init',
         packaged: 'packaged',
         loaded: 'loaded',
@@ -26,7 +26,7 @@ module Ship
         received: 'received'
       }, _prefix: true, _default: 'init'
 
-      enum confirm_mode: {
+      enum :confirm_mode, {
         button: 'button',
         scan: 'scan',
         batch: 'batch'

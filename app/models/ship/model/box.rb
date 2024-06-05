@@ -7,12 +7,12 @@ module Ship
       attribute :shipment_items_count, :integer, default: 0
       attribute :box_logs_count, :integer, default: 0
 
-      enum status: {
+      enum :status, {
         born: 'born',
         free: 'free',
         using: 'using'
       }, _default: 'born', _prefix: true
-      enum state: {
+      enum :state, {
         grid_in: 'grid_in',
         grid_out: 'grid_out',
         loaded: 'loaded',

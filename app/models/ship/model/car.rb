@@ -9,11 +9,11 @@ module Ship
       attribute :tel, :string, comment: '随车电话'
       attribute :detail, :json
 
-      enum carriage: {
+      enum :carriage, {
         freight: 'freight',
         passenger: 'passenger'
       }
-      enum kind: {
+      enum :kind, {
         van: 'van',
         minibus: 'minibus',
         truck: 'truck'
