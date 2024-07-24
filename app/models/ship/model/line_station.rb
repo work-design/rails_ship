@@ -11,7 +11,7 @@ module Ship
       belongs_to :line, counter_cache: true
       belongs_to :station
 
-      acts_as_list scope: [:line_id]
+      positioned on: [:line_id]
 
       before_validation :sync_organ, if: -> { station_id_changed? }
       after_save_commit :sync_names_to_line, if: -> { saved_change_to_position? }

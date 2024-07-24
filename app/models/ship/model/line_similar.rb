@@ -9,7 +9,7 @@ module Ship
       belongs_to :line
       belongs_to :similar, class_name: 'Way', foreign_key: :similar_id
 
-      acts_as_list
+      positioned
     end
 
   end

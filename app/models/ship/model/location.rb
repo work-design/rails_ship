@@ -18,7 +18,7 @@ module Ship
       belongs_to :way, counter_cache: true
       belongs_to :station, optional: true
 
-      acts_as_list scope: [:way_id]
+      positioned on: [:way_id]
 
       after_save_commit :sync_names_to_way, if: -> { saved_change_to_position? }
     end
