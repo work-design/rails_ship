@@ -1,17 +1,17 @@
 <% if params[:station_id] %>
-  <th class="has-text-left">
+  <th class="text-left">
     <%= link_to({ action: 'station', station_id: params[:station_id] }, class: 'button is-borderless') do %>
       <i class="fa-solid fa-lg fa-fw-1 fa-angle-left"></i>
     <% end %>
   </th>
 <% else %>
-  <th class="has-text-left">
+  <th class="text-left">
     <%= link_to({ action: 'index' }, class: 'button is-borderless') do %>
       <i class="fa-solid fa-lg fa-fw-1 fa-angle-left"></i>
     <% end %>
   </th>
 <% end %>
-<th class="has-text-right">
+<th class="text-right">
   <%= button_to({ action: 'actions', station_id: params[:station_id] }, class: 'button is-borderless') do %>
     <i class="fa-solid fa-lg fa-ellipsis-h"></i>
   <% end %>

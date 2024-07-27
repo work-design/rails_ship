@@ -7,9 +7,9 @@
 </p>
 <p><%= model.box&.code %></p>
 <p class="size-7">
-  <time data-controller="time" class="color-info-dark"><%= model.boxed_in_at&.to_fs(:iso8601) %></time>
-  <i class="fa-solid fa-right-long color-grey px-1"></i>
-  <time data-controller="time" class="has-text-warning-dark"><%= model.boxed_out_at&.to_fs(:iso8601) %></time>
+  <time data-controller="time" class="text-info-dark"><%= model.boxed_in_at&.to_fs(:iso8601) %></time>
+  <i class="fa-solid fa-right-long text-grey px-1"></i>
+  <time data-controller="time" class="text-warning-dark"><%= model.boxed_out_at&.to_fs(:iso8601) %></time>
 </p>
 <p><%= model.expected_on %></p>
-<p class="color-grey size-7"><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></p>
+<p class="text-grey size-7"><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></p>

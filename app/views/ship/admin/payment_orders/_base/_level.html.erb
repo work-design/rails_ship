@@ -1,23 +1,23 @@
 <nav class="level is-mobile">
-  <div class="level-item has-text-centered">
+  <div class="level-item text-centered">
     <div>
       <p class="heading">代收总额</p>
       <p class="title"><%= @payment_orders.unscope(:limit, :offset).sum(:amount).to_money.format(:html_wrap).html_safe %></p>
     </div>
   </div>
-  <div class="level-item has-text-centered">
+  <div class="level-item text-centered">
     <div>
       <p class="heading">已收</p>
       <p class="title"><%= @payment_orders.state_pending.unscope(:limit, :offset).sum(:amount).to_money.format(:html_wrap).html_safe %></p>
     </div>
   </div>
-  <div class="level-item has-text-centered">
+  <div class="level-item text-centered">
     <div>
       <p class="heading">未收</p>
       <p class="title"><%= @payment_orders.state_init.unscope(:limit, :offset).sum(:amount).to_money.format(:html_wrap).html_safe %></p>
     </div>
   </div>
-  <div class="level-item has-text-centered">
+  <div class="level-item text-centered">
     <div>
       <p class="heading">订单数</p>
       <p class="title"><%= @payment_orders.total_count %></p>

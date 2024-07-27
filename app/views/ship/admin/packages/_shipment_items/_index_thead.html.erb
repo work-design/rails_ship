@@ -1,9 +1,9 @@
 <th>
   <p><%= Ship::Line.human_attribute_name(:name) %></p>
-  <p class="color-grey"><%= Ship::ShipmentItem.human_attribute_name(:box_id) %></p>
+  <p class="text-grey"><%= Ship::ShipmentItem.human_attribute_name(:box_id) %></p>
 </th>
 <th><%= Ship::ShipmentItem.human_attribute_name(:state) %></th>
 <th>
-  <p class="color-success"><%= Ship::ShipmentItem.human_attribute_name(:loaded_at) %></p>
-  <p class="color-danger"><%= Ship::ShipmentItem.human_attribute_name(:unloaded_at) %></p>
+  <p class="text-success"><%= Ship::ShipmentItem.human_attribute_name(:loaded_at) %></p>
+  <p class="text-danger"><%= Ship::ShipmentItem.human_attribute_name(:unloaded_at) %></p>
 </th>

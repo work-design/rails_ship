@@ -1,10 +1,10 @@
 <tr>
   <td class="<%= ['loaded'].include?(model.state) ? 'color-success' : 'color-danger' %>"><%= model.state_i18n %></td>
-  <td class="has-text-centered">
+  <td class="text-centered">
     <p><%= model.package.id %></p>
     <p><%= model.box_id %></p>
   </td>
-  <td class="has-text-right">
+  <td class="text-right">
     <p><time data-controller="time" data-format="human"><%= model.loaded_at&.to_fs(:iso8601) %></time></p>
     <p><time data-controller="time" data-format="human"><%= model.unloaded_at&.to_fs(:iso8601) %></time></p>
   </td>

@@ -5,18 +5,18 @@
   <div class="weui-panel__bd">
     <div class="columns is-4-mobile flex is-vcentered is-centered m-0" data-empty-target="content">
       <%= link_to({ controller: 'ship/my/box_holds' }, class: 'column has-column-centered') do %>
-        <div class="has-text-primary">
+        <div class="text-primary">
           <i class="fa-solid fa-fw fa-xl fa-boxes-packing"></i>
         </div>
-        <div class="color-grey-dark">
+        <div class="text-grey-dark">
           <span><%= t('ship.my.box_holds.index.title') %></span>
         </div>
       <% end %>
       <%= link_to({ controller: 'ship/my/box_holds', action: 'sell' }, class: 'column has-column-centered') do %>
-        <div class="has-text-primary">
+        <div class="text-primary">
           <i class="fa-solid fa-fw fa-xl fa-hand-holding-dollar"></i>
         </div>
-        <div class="color-grey-dark">
+        <div class="text-grey-dark">
           <span><%= t('ship.my.box_holds.sell.title') %></span>
         </div>
       <% end %>

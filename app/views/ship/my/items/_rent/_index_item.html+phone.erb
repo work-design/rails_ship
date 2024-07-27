@@ -2,16 +2,16 @@
   <span class="tag"><%= model.status_i18n %></span>
   <span><%= model.single_price.to_money.format.html_safe %></span>
   <span class="pl-3">
-    <span class="color-grey">成交：</span>
+    <span class="text-grey">成交：</span>
     <span><%= model.done_number %></span>
     <span>/</span>
     <span><%= model.number %></span>
   </span>
 </p>
-<p class="color-grey">
+<p class="text-grey">
   <time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time>
 </p>
-<div data-controller="clipboard" class="color-grey">
+<div data-controller="clipboard" class="text-grey">
   <span data-clipboard-target="source" class="size-7"><%= model.order.uuid %></span>
   <span data-action="click->clipboard#copy" class="weui-badge weui-badge__default">复制</span>
   <div data-clipboard-target="toast" class="weui-toast__wrap">

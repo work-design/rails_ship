@@ -1,22 +1,22 @@
-<div class="flex justify-content-space-between has-background-white p-4">
+<div class="flex justify-content-space-between background-white p-4">
   <div>
     <% if @order.items[0].single_price > 0 %>
-      <span class="color-grey">最大可买：</span>
+      <span class="text-grey">最大可买：</span>
       <span id="quantity"><%= (@lawful_wallet.amount / @order.items[0].single_price).floor %></span>
     <% end %>
   </div>
   <%= link_to({ controller: 'trade/my/lawful_wallets', action: 'show' }) do %>
-    <span class="color-grey">可用金额：</span>
-    <span class="color-danger"><%= @lawful_wallet.amount.to_money.format.html_safe %></span>
+    <span class="text-grey">可用金额：</span>
+    <span class="text-danger"><%= @lawful_wallet.amount.to_money.format.html_safe %></span>
   <% end %>
 </div>
-<div class="flex justify-content-space-between has-background-white px-4 pb-4">
+<div class="flex justify-content-space-between background-white px-4 pb-4">
   <div>
-    <span class="color-grey">持仓：</span>
+    <span class="text-grey">持仓：</span>
     <span><%= @box_hold.boxes_count %></span>
   </div>
   <div>
-    <span class="color-grey">持仓均价：</span>
+    <span class="text-grey">持仓均价：</span>
     <span><%= @box_hold.average_price.to_money.format.html_safe %></span>
   </div>
 </div>

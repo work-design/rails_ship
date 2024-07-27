@@ -27,7 +27,7 @@
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::Box.human_attribute_name(:organ_id) %></label>
-      <span class="weui-form-preview__value color-danger"><%= @box.organ&.name %></span>
+      <span class="weui-form-preview__value text-danger"><%= @box.organ&.name %></span>
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::BoxHold.human_attribute_name(:owned_amount) %></label>
@@ -48,7 +48,7 @@
     <% if @box.current_rent && @box.held_user_id == current_user.id %>
       <div class="weui-form-preview__item">
         <label class="weui-form-preview__label"><%= Trade::Rent.human_attribute_name(:start_at) %></label>
-        <span class="weui-form-preview__value color-success">
+        <span class="weui-form-preview__value text-success">
           <time data-controller="time"><%= @box.current_rent.start_at.to_fs(:iso8601) %></time>
         </span>
       </div>

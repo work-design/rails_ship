@@ -3,7 +3,7 @@
     <i class="fa-solid fa-box"></i>
     <span class="p-1"><%= model.id %></span>
   </td>
-  <td class="has-text-mono">
+  <td class="family-monospace">
     <p><time data-controller="time" data-format="human"><%= model.boxed_in_at&.to_fs(:iso8601) %></time></p>
     <p><time data-controller="time" data-format="human"><%= model.boxed_out_at&.to_fs(:iso8601) %></time></p>
   </td>

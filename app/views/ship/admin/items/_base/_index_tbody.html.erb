@@ -1,25 +1,25 @@
 <td>
   <p>
     <span><%= model.good_name %></span>
-    <span class="color-grey">（<%= model.number %>）</span>
+    <span class="text-grey">（<%= model.number %>）</span>
   </p>
   <p>
     <span><%= model.good_type_i18n %></span>
   </p>
 </td>
 <td>
-  <p class="color-success"><%= model.from_station&.name %></p>
-  <p class="color-danger"><%= model.station&.name %></p>
+  <p class="text-success"><%= model.from_station&.name %></p>
+  <p class="text-danger"><%= model.station&.name %></p>
 </td>
 <td>
-  <p class="color-success">
+  <p class="text-success">
   <% if model.from_address %>
     <span><%= model.from_address.area.full_name %></span>
     <span><%= model.from_address.detail %></span>
   <% end %>
   </p>
   <% if model.address %>
-  <p class="color-danger">
+  <p class="text-danger">
     <span><%= model.address.area.full_name %></span>
     <span><%= model.address.detail %></span>
   </p>

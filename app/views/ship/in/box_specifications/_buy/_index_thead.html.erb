@@ -1,13 +1,13 @@
 <th>
   <p><%= Ship::BoxSpecification.human_attribute_name(:name) %></p>
-  <p class="color-grey"><%= Ship::BoxSpecification.human_attribute_name(:organ_id) %></p>
+  <p class="text-grey"><%= Ship::BoxSpecification.human_attribute_name(:organ_id) %></p>
 </th>
 <th>
   <span><%= Ship::BoxSpecification.human_attribute_name(:width) %></span>
-  <span class="color-grey">*</span>
+  <span class="text-grey">*</span>
   <span><%= Ship::BoxSpecification.human_attribute_name(:length) %></span>
-  <span class="color-grey">*</span>
+  <span class="text-grey">*</span>
   <span><%= Ship::BoxSpecification.human_attribute_name(:height) %></span>
 </th>
 <th><%= Ship::BoxHost.human_attribute_name(:price) %></th>
-<th class="has-text-centered">买入</th>
+<th class="text-centered">买入</th>

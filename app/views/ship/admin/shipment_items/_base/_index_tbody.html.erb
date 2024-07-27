@@ -5,6 +5,6 @@
   <p><%= model.box&.code %></p>
 </td>
 <td>
-  <p class="color-success"><time data-controller="time"><%= model.loaded_at&.to_fs(:iso8601) %></time></p>
-  <p class="color-danger"><time data-controller="time"><%= model.unloaded_at&.to_fs(:iso8601) %></time></p>
+  <p class="text-success"><time data-controller="time"><%= model.loaded_at&.to_fs(:iso8601) %></time></p>
+  <p class="text-danger"><time data-controller="time"><%= model.unloaded_at&.to_fs(:iso8601) %></time></p>
 </td>

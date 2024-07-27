@@ -1,7 +1,7 @@
 <tr>
-  <td class="has-text-mono size-7">
-    <p class="color-success"><time data-controller="time" data-format="human"><%= model.start_at&.to_fs(:iso8601) %></time></p>
-    <p class="color-danger"><time data-controller="time" data-format="human"><%= model.finish_at&.to_fs(:iso8601) %></time></p>
+  <td class="family-monospace size-7">
+    <p class="text-success"><time data-controller="time" data-format="human"><%= model.start_at&.to_fs(:iso8601) %></time></p>
+    <p class="text-danger"><time data-controller="time" data-format="human"><%= model.finish_at&.to_fs(:iso8601) %></time></p>
   </td>
   <td>
     <p class="p-1">
@@ -10,5 +10,5 @@
     </p>
     <p><%= model.amount.to_money.format.html_safe %></p>
   </td>
-  <td class="color-danger"><%= model.invest_amount.to_money.format.html_safe %></td>
+  <td class="text-danger"><%= model.invest_amount.to_money.format.html_safe %></td>
 </tr>

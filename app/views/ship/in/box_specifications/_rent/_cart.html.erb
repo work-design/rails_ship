@@ -5,21 +5,21 @@
   <%= f.hidden_field :current_cart_id, value: @cart.id %>
   <%= f.hidden_field :number, value: item.number - 1 %>
   <%= button_tag class: 'mr-1' do %>
-    <i class="fa-solid fa-circle-minus fa-xl has-text-dark-grey"></i>
+    <i class="fa-solid fa-circle-minus fa-xl text-dark-grey"></i>
   <% end %>
 <% end if item.number > 1 %>
 <%= button_to({ controller: 'trade/in/items', action: 'destroy', id: item.id }, method: :delete, class: 'mr-1', form: { data: { turbo_scroll: true } }) do %>
-  <i class="fa-solid fa-circle-minus fa-xl has-text-dark-grey"></i>
+  <i class="fa-solid fa-circle-minus fa-xl text-dark-grey"></i>
 <% end if item.number <= 1 %>
 <%= form_with(theme: nil, scope: 'item', url: { controller: 'trade/in/items', action: 'update', id: item.id }, method: :patch, data: { controller: 'input', turbo_scroll: true }) do |f| %>
   <%= f.hidden_field :current_cart_id, value: @cart.id %>
-  <%= f.number_field :number, value: item.number, data: { action: 'change->input#form' }, class: 'has-background-light has-text-centered', style: 'width: 3rem' %>
+  <%= f.number_field :number, value: item.number, data: { action: 'change->input#form' }, class: 'background-light text-centered', style: 'width: 3rem' %>
 <% end %>
 <%= form_with theme: nil, scope: 'item', url: { controller: 'trade/in/items', action: 'update', id: item.id }, method: :patch, class: 'button_to', data: { turbo_scroll: true } do |f| %>
   <%= f.hidden_field :current_cart_id, value: @cart.id %>
   <%= f.hidden_field :number, value: item.number + 1 %>
   <%= button_tag class: 'ml-1' do %>
-    <i class="fa-solid fa-circle-plus fa-xl has-text-dark-grey"></i>
+    <i class="fa-solid fa-circle-plus fa-xl text-dark-grey"></i>
   <% end %>
 <% end %>
 <% end %>
@@ -29,6 +29,6 @@
   <%= f.hidden_field :good_type, value: model.base_class_name %>
   <%= f.hidden_field :good_id, value: model.id %>
   <%= button_tag do %>
-    <i class="fa-solid fa-circle-plus fa-xl has-text-dark-grey"></i>
+    <i class="fa-solid fa-circle-plus fa-xl text-dark-grey"></i>
   <% end %>
 <% end unless item %>

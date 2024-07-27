@@ -6,7 +6,7 @@
         <%= f.hidden_field :ids, data: { check_target: 'ids' } %>
         <%= f.hidden_field :address_id, value: params[:address_id] %>
         <%= button_tag data: { action: 'check#doSubmit' }, aria: { label: t('.package') }, class: 'button is-small is-light' do %>
-          <i class="fa-solid fa-person-dolly-empty color-danger"></i>
+          <i class="fa-solid fa-person-dolly-empty text-danger"></i>
         <% end %>
       <% end %>
     </div>

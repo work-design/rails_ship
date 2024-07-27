@@ -1,6 +1,6 @@
 <td><%= model.name %></td>
 <td><%= model.box_specification.measure %></td>
-<td class="color-danger">
+<td class="text-danger">
 <% model.rent_promotes.each do |promote| %>
   <p>
     <span><%= promote.promote_charges[0].parameter.to_money.format.html_safe %></span>
