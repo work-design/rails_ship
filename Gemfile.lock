@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: b0c5604934075b7af0406bd79c3f96d2ed0d2fa2
+  revision: b7ff4891e015f382c785cb15a2095cc815c15c5b
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: d4beb93fb735ec64322650dd48d25c713705447c
+  revision: 48809bfd0524efe9df4c3ce900718dc4da4856a5
   specs:
     rails_com (1.3.0)
       acme-client
@@ -29,28 +29,28 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_notice.git
-  revision: 193cf9ead844a2b6c1fcad2bd5c5e1ea0679a822
+  revision: 8de901ff8bb67af3b5de11f291aac81be569b455
   specs:
     rails_notice (1.0.3)
       rails_com
 
 GIT
   remote: https://github.com/work-design/rails_org.git
-  revision: 33cbc7ed0076a92c7f58f211192c75cc70b77f9c
+  revision: c3fbaf15723efc4ef31d829e0a31ae8ec8263d51
   specs:
     rails_org (0.0.1)
       rails_com
 
 GIT
   remote: https://github.com/work-design/rails_profile.git
-  revision: 390b10223de97c54f6c2dea06d6168fe142c1d0d
+  revision: 26fca7c4a31b956726d2c0332132eb564681160d
   specs:
     rails_profile (0.0.1)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_trade.git
-  revision: 47535c326bed31af923c0933caf5caca20c710f2
+  revision: f52c7501304abb4a0ce5bd11bf1e0238b925b03f
   specs:
     rails_trade (0.0.3)
       rails_com
@@ -158,7 +158,7 @@ GEM
       activerecord (>= 4.0.0)
     drb (2.2.1)
     erubi (1.12.0)
-    faraday (2.10.0)
+    faraday (2.10.1)
       faraday-net_http (>= 2.0, < 3.2)
       logger
     faraday-net_http (3.1.1)
@@ -167,7 +167,7 @@ GEM
       faraday (~> 2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    http-2 (1.0.0)
+    http-2 (1.0.1)
     http-form_data (2.3.0)
     httpx (1.3.0)
       http-2 (>= 1.0.0)
@@ -228,7 +228,7 @@ GEM
       racc (~> 1.4)
     ostruct (0.6.0)
     pg (1.5.6)
-    positioning (0.2.3)
+    positioning (0.2.4)
       activerecord (>= 6.1)
       activesupport (>= 6.1)
     propshaft (0.9.0)
@@ -344,11 +344,11 @@ CHECKSUMS
   default_where (2.2.0) sha256=77f54769256ad5d961c44a6dd88d8d485a1c4487a549d2c178da9101f6fed0a0
   drb (2.2.1) sha256=e9d472bf785f558b96b25358bae115646da0dbfd45107ad858b0bc0d935cb340
   erubi (1.12.0) sha256=27bedb74dfb1e04ff60674975e182d8ca787f2224f2e8143268c7696f42e4723
-  faraday (2.10.0)
+  faraday (2.10.1)
   faraday-net_http (3.1.1)
   faraday-retry (2.2.1) sha256=4146fed14549c0580bf14591fca419a40717de0dd24f267a8ec2d9a728677608
   globalid (1.2.1) sha256=70bf76711871f843dbba72beb8613229a49429d1866828476f9c9d6ccc327ce9
-  http-2 (1.0.0)
+  http-2 (1.0.1)
   http-form_data (2.3.0) sha256=cc4eeb1361d9876821e31d7b1cf0b68f1cf874b201d27903480479d86448a5f3
   httpx (1.3.0)
   i18n (1.14.5) sha256=26dcbc05e364b57e27ab430148b3377bc413987d34cc042336271d8f42e9d1b9
@@ -378,7 +378,7 @@ CHECKSUMS
   nokogiri (1.16.5) sha256=ec36162c68984fa0a90a5c4ae7ab7759460639e716cc1ce75f34c3cb54158ad2
   ostruct (0.6.0) sha256=3b1736c99f4d985de36bde1155be5e22aaf6e564b30ff9bd481e2ef7c2d9ba85
   pg (1.5.6) sha256=4bc3ad2438825eea68457373555e3fd4ea1a82027b8a6be98ef57c0d57292b1c
-  positioning (0.2.3)
+  positioning (0.2.4)
   propshaft (0.9.0) sha256=fe1d2e6368b1147f4de844a58bcd90a0d9d7bd2930aaf225c84d31c068346091
   psych (5.1.2) sha256=337322f58fc2bf24827d2b9bd5ab595f6a72971867d151bb39980060ea40a368
   racc (1.8.0) sha256=09349a65c37c4fe710a435f25c9f1652e39f29ad6b1fa08d4a8d30c0553d3a08
