@@ -1,0 +1,9 @@
+<% if area.children.present? %>
+  <%= button_to({ action: 'follow', id: area.id }, form: { class: 'panel-block' }, class: 'is-fullwidth') do %>
+    <span><%= area.name %></span>
+  <% end %>
+<% else %>
+  <%= button_to({ action: 'input', id: area.id }, form: { class: 'panel-block' }, class: 'is-fullwidth') do %>
+    <span><%= area.name %></span>
+  <% end %>
+<% end %>

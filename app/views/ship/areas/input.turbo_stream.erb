@@ -1,0 +1,7 @@
+<%= turbo_stream.update 'area_id_wrapper' do %>
+  <%= hidden_field_tag 'address[area_id]', value: @area.id %>
+  <% @area.self_and_ancestors.reverse_each do |ancestor| %>
+    <%= text_field_tag :provinceName, ancestor.name, readonly: true, data: { url: url_for(controller: '/ship/areas', action: 'child', id: ancestor.id), action: 'click->common#stream' }, id: nil, class: 'input' %>
+  <% end %>
+<% end %>
+<%= turbo_stream.remove 'areas_modal' %>

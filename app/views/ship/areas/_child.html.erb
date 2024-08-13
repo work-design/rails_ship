@@ -1,0 +1,24 @@
+<div
+  id="areas_modal"
+  data-controller="modal"
+  class="modal is-mobile is-active"
+>
+  <div data-action="click->modal#close" class="modal-background has-animate-fade-in"></div>
+  <div class="modal-card has-animate-slide-up" id="area_select">
+    <header class="modal-card-head">
+      <button class="modal-close is-large" aria-label="close"></button>
+      <p class="modal-card-title"><%= t('.title') %></p>
+    </header>
+    <section class="modal-card-body p-0">
+      <div id="areas_panel" class="panel is-borderless">
+        <div class="panel-block">
+
+        </div>
+        <%= render partial: 'area', collection: @area.self_and_siblings, as: :area %>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-fullwidth is-borderless" data-action="modal#close">取消</button>
+    </footer>
+  </div>
+</div>

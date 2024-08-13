@@ -1,0 +1,9 @@
+<%= turbo_stream.update 'areas_panel' do %>
+  <div class="panel-block">
+    <% @area.names.each do |name| %>
+      <span><%= name %></span>
+      <span>/</span>
+    <% end %>
+  </div>
+  <%= render partial: 'area', collection: @area.children.includes(:children), as: :area %>
+<% end %>
