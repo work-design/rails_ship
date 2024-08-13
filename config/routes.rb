@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   scope RailsCom.default_routes_scope do
     concern :my_ship do
-      resources :carts do
-        resources :addresses do
+      resources :addresses
+      resources :carts, only: [] do
+        resources :addresses, controller: 'cart/addresses' do
           collection do
             get :cart
             get :station
