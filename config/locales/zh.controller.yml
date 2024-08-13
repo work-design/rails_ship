@@ -30,6 +30,12 @@ zh:
       home:
         index:
           title: 运输
+      areas:
+        index:
+          title: 地区
+      addresses:
+        index:
+          title: 地址列表
       lines:
         index:
           title: 路线
