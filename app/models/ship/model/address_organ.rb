@@ -1,4 +1,4 @@
-module Profiled
+module Ship
   module Model::AddressOrgan
     extend ActiveSupport::Concern
 

@@ -1,4 +1,4 @@
-module Profiled
+module Ship
   class Area < ApplicationRecord
     include Model::Area
     include Com::Ext::Taxon

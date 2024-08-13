@@ -1,4 +1,4 @@
-module Profiled
+module Ship
   class Panel::AreasController < Panel::BaseController
     before_action :set_area, only: [:show, :edit, :update, :destroy]
 

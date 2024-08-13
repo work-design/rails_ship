@@ -1,4 +1,4 @@
-module Profiled
+module Ship
   class Address < ApplicationRecord
     include Model::Address
     include Factory::Model::Address if defined? RailsFactory

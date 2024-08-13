@@ -1,4 +1,4 @@
-module Profiled
+module Ship
   class AddressUse < ApplicationRecord
     include Model::AddressUse
   end

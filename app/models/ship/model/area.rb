@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module Profiled
+module Ship
   module Model::Area
     extend ActiveSupport::Concern
 

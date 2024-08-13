@@ -1,4 +1,4 @@
-module Profiled
+module Ship
   class Panel::AddressesController < Panel::BaseController
     before_action :set_address, only: [:show, :edit, :update, :destroy]
 
