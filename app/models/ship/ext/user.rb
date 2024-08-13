@@ -5,6 +5,7 @@ module Ship
     included do
       has_one :driver, class_name: 'Ship::Driver'
 
+      has_many :addresses, class_name: 'Ship::Address'
       has_many :cars, class_name: 'Ship::Car'
       has_many :ways, class_name: 'Ship::Way', dependent: :destroy
 

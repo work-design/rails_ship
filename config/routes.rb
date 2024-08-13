@@ -58,6 +58,7 @@ Rails.application.routes.draw do
       end
       namespace :panel, defaults: { namespace: 'panel' } do
         root 'home#index'
+        resources :areas
         resources :lines do
           resources :similars
           resources :line_stations do
