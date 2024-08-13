@@ -1,7 +1,24 @@
 Rails.application.routes.draw do
   scope RailsCom.default_routes_scope do
     concern :my_ship do
-      resources :addresses
+      resources :addresses do
+          collection do
+            get :list
+            post :select
+            post :fork
+            post :wechat
+            post :program
+            post :order
+            post :order_from
+            post :order_new
+            post :order_create
+            post :from_new
+            post :from_create
+          end
+          member do
+            get :join
+          end
+        end
       resources :carts, only: [] do
         resources :addresses, controller: 'cart/addresses' do
           collection do
@@ -22,6 +39,17 @@ Rails.application.routes.draw do
     end
 
     namespace :ship, defaults: { business: 'ship' } do
+      resources :areas, only: [:index] do
+        collection do
+          get :search
+          get :list
+        end
+        member do
+          match :follow, via: [:get, :post]
+          get :child
+          post :input
+        end
+      end
       resources :box_hosts, only: [:index, :show] do
         collection do
           get :overview
