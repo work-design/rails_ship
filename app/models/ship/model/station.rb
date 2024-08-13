@@ -13,7 +13,7 @@ module Ship
       has_many :line_stations, dependent: :destroy_async
       has_many :lines, through: :line_stations
       has_many :shipments, through: :lines
-      has_many :addresses, class_name: 'Profiled::Address'
+      has_many :addresses
 
       after_save_commit :geo_later, if: -> { saved_change_to_lat? || saved_change_to_lng? }
       after_save_commit :sync_to_line, if: -> { saved_change_to_name? }
@@ -31,7 +31,7 @@ module Ship
     def geo
       result = QqMapHelper.geocoder(lat: lat, lng: lng)
       r = result['address_component']
-      area = Profiled::Area.sure_find [r['province'], r['city'], r['district']]
+      area = Area.sure_find [r['province'], r['city'], r['district']]
       self.area = area
       self.save
       result

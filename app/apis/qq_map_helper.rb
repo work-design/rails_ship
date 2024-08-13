@@ -70,15 +70,15 @@ module QqMapHelper
   def sync_to_areas
     results = districts
     results[0].each do |result|
-      area = Profiled::Area.find_or_initialize_by(name: result['name'])
+      area = Ship::Area.find_or_initialize_by(name: result['name'])
       area.full = result['fullname']
       area.code = result['id']
       area.save
     end
 
     results[1].each do |result|
-      area = Profiled::Area.find_or_initialize_by(name: result['name'])
-      parent = Profiled::Area.find_by(code: "#{result['id'][0..1]}0000")
+      area = Ship::Area.find_or_initialize_by(name: result['name'])
+      parent = Ship::Area.find_by(code: "#{result['id'][0..1]}0000")
       area.parent = parent
       area.full = result['fullname']
       area.code = result['id']
@@ -86,8 +86,8 @@ module QqMapHelper
     end
 
     results[2].each do |result|
-      area = Profiled::Area.find_or_initialize_by(name: result['fullname'])
-      parent = Profiled::Area.find_by(code: "#{result['id'][0..3]}00")
+      area = Ship::Area.find_or_initialize_by(name: result['fullname'])
+      parent = Ship::Area.find_by(code: "#{result['id'][0..3]}00")
       area.parent = parent
       area.full = result['fullname']
       area.code = result['id']

@@ -1,0 +1,19 @@
+<label class="weui-cell weui-cell_active weui-check__label" for="cart_address_id_<%= model.id %>">
+  <span class="weui-cell__bd flex flex-direction-column">
+    <span>
+      <span><%= model.contact %></span>
+      <span><%= model.tel %></span>
+    </span>
+    <span class="size-7">
+      <span><%= model.area.full_name %></span>
+      <span><%= model.detail %></span>
+    </span>
+  </span>
+  <span class="weui-cell__ft" data-controller="input">
+    <span class="text-grey"></span>
+    <%= form_with theme: nil, url: { action: 'update' }, method: :patch do |f| %>
+      <%= f.radio_button :address_id, model.id, checked: model.id == current_cart.address_id, class: 'weui-check', data: { action: 'input#form' } %>
+      <span class="weui-icon-checked">选为默认</span>
+    <% end %>
+  </span>
+</label>

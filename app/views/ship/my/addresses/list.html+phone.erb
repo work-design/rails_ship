@@ -1,0 +1,60 @@
+<div class="weui-panel is-borderless">
+  <div class="weui-panel__hd as-bar pt-0">
+    <%= link_to(params[:return_to], class: 'px-4') do %>
+      <i class="fa-solid fa-lg fa-fw-1 fa-angle-left"></i>
+    <% end %>
+    <div class="weui-title"><%= t('.title') %></div>
+    <i style="width: 3rem"></i>
+  </div>
+</div>
+
+<% if current_cart.member %>
+<div class="weui-panel">
+  <div class="weui-panel__hd"><%= current_cart.member.organ.name %></div>
+  <div class="weui-panel__bd">
+    <div class="weui-cells weui-cells_radio">
+    <% if current_cart.member.organ.addresses.blank? %>
+      <div class="weui-cell text-grey">暂无地址，请联系企业负责人添加</div>
+    <% else %>
+      <%= render partial: 'address', collection: current_cart.member.organ.addresses, as: :model %>
+    <% end %>
+    </div>
+  </div>
+</div>
+<div class="text-centered text-grey mt-6">如地址有误，请联系企业负责人修改</div>
+
+<% else %>
+<div class="weui-panel" id="wechat_panel">
+  <div class="weui-panel__hd level is-mobile">
+    <div class="level-left"><%= t('.title') %></div>
+    <div class="level-right mt-0">
+      <%= link_to t('profiled.my.addresses.index.title'), { action: 'index' } %>
+    </div>
+  </div>
+  <div class="weui-panel__bd">
+    <div class="weui-cells weui-cells_radio">
+      <%= render partial: 'address', collection: @current_user.addresses, as: :model %>
+    </div>
+  </div>
+  <% if @current_user.addresses.blank? %>
+    <div
+      class="weui-panel__ft"
+      data-controller="mini-program"
+      data-mini-program-url-value="/pages/profiled/addresses/index?url=<%= url_for(action: 'program', only_path: false) %>"
+      data-wechat-url-value="<%= url_for(action: 'fork', only_path: false) %>"
+      data-wechat-options-value="<%= current_wechat_app.js_config(request.original_url).to_json %>"
+      data-wechat-apis-value="<%= ['openAddress', 'getLocation', 'openLocation', 'scanQRCode'].to_json %>"
+      id="wechat_address"
+    >
+      <div class="weui-cells">
+        <div class="media" data-action="click->wechat#openAddress">
+          <div class="media-content"><%= t('.new.title') %></div>
+          <div class="media-right">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<% end %>

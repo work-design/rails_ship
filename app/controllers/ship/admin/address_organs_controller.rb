@@ -1,4 +1,4 @@
-module Profiled
+module Ship
   class Admin::AddressOrgansController < Admin::BaseController
     before_action :set_new_address_organ, only: [:new]
     before_action :set_create_address_organ, only: [:create]

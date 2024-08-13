@@ -12,7 +12,7 @@ module Ship
       attribute :lng, :decimal, precision: 11, scale: 8
       attribute :coordinate, :point
 
-      belongs_to :area, class_name: 'Profiled::Area', optional: true
+      belongs_to :area, optional: true
       has_taxons :area
 
       belongs_to :way, counter_cache: true

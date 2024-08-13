@@ -1,0 +1,30 @@
+<div id="dialog" data-controller="modal" class="modal is-mobile is-active">
+  <div data-action="click->modal#hide" class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <button class="button is-small">返回</button>
+      <div class="modal-card-title">选择</div>
+      <button class="delete" data-action="modal#hide"></button>
+    </header>
+    <div class="modal-card-body">
+      <%= form_with theme: 'weui', model: @address, url: { action: 'wechat' }, data: { controller: 'wechat_address' } do |f| %>
+        <%= f.text_field :contact_person %>
+        <%= f.text_field :tel %>
+        <div class="weui-cell weui-cell_active weui-cell_readonly">
+          <div class="media-left">
+            <label class="weui-label"><%= Ship::Address.human_attribute_name(:area_id) %></label>
+          </div>
+          <div class="weui-cell__bd flex">
+            <%= text_field_tag :provinceName, params[:provinceName], class: 'weui-input', readonly: true %>
+            <%= text_field_tag :cityName, params[:cityName], class: 'weui-input', readonly: true %>
+            <%= text_field_tag :countyName, params[:countyName], class: 'weui-input', readonly: true %>
+          </div>
+        </div>
+        <%= f.text_area :detail %>
+        <%= f.text_field :post_code %>
+        <%= hidden_field_tag :return_to, params[:return_to] %>
+        <%= f.submit nil, all: { submit: nil } %>
+      <% end %>
+    </div>
+  </div>
+</div>

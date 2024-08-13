@@ -1,0 +1,16 @@
+<%= render 'top_bar' %>
+
+<div class="weui-panel">
+  <div class="weui-panel__hd"><%= t('.title') %></div>
+  <div class="weui-panel__bd">
+    <%= render partial: 'address', collection: @addresses, as: :address %>
+  </div>
+  <div class="weui-panel__ft">
+    <%= link_to({ action: 'new' }, class: 'media') do %>
+      <div class="media-content"><%= t('.new.title') %></div>
+      <div class="media-right">
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -36,7 +36,7 @@ module Ship
 
     private
     def set_address
-      @address = Profiled::Address.find(params[:id])
+      @address = Address.find(params[:id])
     end
 
     def address_params

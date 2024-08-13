@@ -6,7 +6,7 @@
     </span>
     <span class="size-7">
     <% if model.floor.present? %>
-      <span><%= Profiled::Address.human_attribute_name(:floor) %></span>
+      <span><%= Ship::Address.human_attribute_name(:floor) %></span>
       <span><%= model.floor %></span>
     <% else %>
       <span><%= model.area.full_name %></span>

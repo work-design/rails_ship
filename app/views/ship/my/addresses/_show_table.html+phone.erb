@@ -1,0 +1,25 @@
+<div class="weui-form-preview">
+  <div class="weui-form-preview__hd">
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= @address.contact %></label>
+      <em class="weui-form-preview__value"><%= @address.tel %></em>
+    </div>
+  </div>
+  <div class="weui-form-preview__bd">
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= Address.human_attribute_name(:area) %></label>
+      <span class="weui-form-preview__value"><%= @address.area.full_name %></span>
+    </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= Address.human_attribute_name(:detail) %></label>
+      <span class="weui-form-preview__value"><%= @address.detail %></span>
+    </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= Address.human_attribute_name(:post_code) %></label>
+      <span class="weui-form-preview__value"><%= @address.post_code %></span>
+    </div>
+  </div>
+  <div class="weui-form-preview__ft">
+    <a class="weui-form-preview__btn weui-form-preview__btn_primary">操作</a>
+  </div>
+</div>

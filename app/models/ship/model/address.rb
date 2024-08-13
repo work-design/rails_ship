@@ -13,7 +13,7 @@ module Ship
       attribute :principal, :boolean, default: false
 
       has_taxons :area
-      belongs_to :area, class_name: 'Profiled::Area'
+      belongs_to :area
       belongs_to :organ, class_name: 'Org::Organ', optional: true
 
       belongs_to :user, class_name: 'Auth::User', optional: true
