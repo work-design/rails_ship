@@ -1,0 +1,1 @@
+Area = Ship::Area unless defined? Area

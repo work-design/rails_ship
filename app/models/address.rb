@@ -1,0 +1,1 @@
+Address = Ship::Address unless defined? Address
