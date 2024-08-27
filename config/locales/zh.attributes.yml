@@ -98,7 +98,13 @@ zh:
         detail: 详细地址
         lat: 纬度
         lng: 经度
-      profiled/address:
+      ship/address:
         floor: 楼层
         room: 房间
         station_id: 站点
+        contact_person: 联系人
+        tel: 手机号
+        detail: 详细地址
+        area_id: 地区
+        post_code: 邮政编码
+        principal: 默认地址

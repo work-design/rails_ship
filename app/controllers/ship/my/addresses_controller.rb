@@ -120,7 +120,7 @@ module Ship
     def address_params
       params.fetch(:address, {}).permit(
         :name,
-        :contact,
+        :contact_person,
         :tel,
         :detail,
         :post_code,
