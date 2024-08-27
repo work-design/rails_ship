@@ -197,6 +197,7 @@ zh:
         index:
           title: 出租明细
     my:
+      title: 地址/物流
       boxes:
         index:
           title: 我的物流箱
