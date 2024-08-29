@@ -63,7 +63,8 @@ module Ship
         :tel,
         :detail,
         :floor,
-        :room
+        :room,
+        :area_ancestors
       )
     end
 

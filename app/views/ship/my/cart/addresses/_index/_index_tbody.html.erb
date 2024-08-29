@@ -1,5 +1,14 @@
-<td><%= model.contact %></td>
+<td><%= model.contact_person %></td>
 <td><%= model.tel %></td>
 <td><%= model.area.full_name %></td>
 <td><%= model.floor %></td>
 <td><%= model.room %></td>
+<td>
+  <span data-controller="input" class="media-right flex">
+    <% if model.id != @cart.address_id %>
+      <span class="text-grey size-7">选为默认</span>
+    <% end %>
+    <%= radio_button_tag 'cart[address_id]', model.id, model.id == @cart.address_id, data: { action: 'input#form' }, form: 'cart_address_form', class: 'toggle-check' %>
+    <i class="fa-solid fa-check text-success"></i>
+  </span>
+</td>
