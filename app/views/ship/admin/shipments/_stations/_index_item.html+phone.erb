@@ -1,5 +1,5 @@
 <p>
-  <i class="fa-solid fa-location-dot <%= current_organ.station_ids.include?(model.station_id) ? 'color-success' : 'color-grey' %>"></i>
+  <i class="fa-solid fa-location-dot <%= current_organ.station_ids.include?(model.station_id) ? 'text-success' : 'text-grey' %>"></i>
   <span class="pl-1"><%= model.station.name %></span>
 </p>
 <div>

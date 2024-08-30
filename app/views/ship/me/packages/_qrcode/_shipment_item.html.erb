@@ -6,7 +6,7 @@
         <span><%# model.shipment %></span>
       </div>
       <div class="level-right mt-0">
-        <span class="<%= ['loaded'].include?(model.state) ? 'color-success' : 'color-danger' %>"><%= model.state_i18n %></span>
+        <span class="<%= ['loaded'].include?(model.state) ? 'text-success' : 'text-danger' %>"><%= model.state_i18n %></span>
         <span class="tag"><%= model.confirm_mode_i18n %></span>
       </div>
     </div>

@@ -31,11 +31,11 @@
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::BoxHold.human_attribute_name(:owned_amount) %></label>
-      <span class="weui-form-preview__value <%= @box_hold.owned_amount > 0 ? 'color-success' : 'color-danger' %>"><%= @box_hold.owned_amount %></span>
+      <span class="weui-form-preview__value <%= @box_hold.owned_amount > 0 ? 'text-success' : 'text-danger' %>"><%= @box_hold.owned_amount %></span>
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::BoxHold.human_attribute_name(:rented_amount) %></label>
-      <span class="weui-form-preview__value <%= @box_hold.rented_amount > 0 ? 'color-success' : 'color-danger' %>"><%= @box_hold.rented_amount %></span>
+      <span class="weui-form-preview__value <%= @box_hold.rented_amount > 0 ? 'text-success' : 'text-danger' %>"><%= @box_hold.rented_amount %></span>
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::BoxHold.human_attribute_name(:boxes_count) %></label>
@@ -43,7 +43,7 @@
     </div>
     <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::BoxHold.human_attribute_name(:total_amount) %></label>
-      <span class="weui-form-preview__value <%= @box_hold.total_amount > 0 ? 'color-success' : 'color-danger' %>"><%= @box_hold.total_amount %></span>
+      <span class="weui-form-preview__value <%= @box_hold.total_amount > 0 ? 'text-success' : 'text-danger' %>"><%= @box_hold.total_amount %></span>
     </div>
     <% if @box.current_rent && @box.held_user_id == current_user.id %>
       <div class="weui-form-preview__item">
