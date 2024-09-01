@@ -15,6 +15,14 @@ module Ship
       @items = Trade::Item.includes(:produce_plan, :order, :user, :station, :from_station, address: :area, from_address: :area).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
+    def packages
+      q_params = {}
+      q_params.merge! default_params
+      q_params.merge! params.permit(:user_id)
+
+      @items = Trade::Item.packable.includes(:address).where.not(address_id: nil).default_where(q_params).page(params[:page]).group_by(&:address)
+    end
+
     def box
 
     end

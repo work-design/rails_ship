@@ -2,14 +2,7 @@ module Ship
   class Admin::AddressesController < Admin::BaseController
     before_action :set_address, only: [:show, :edit, :update, :destroy, :actions]
 
-    def index
-      q_params = {}
-      q_params.merge! default_params
-      q_params.merge! params.permit(:user_id)
 
-      @addresses = Trade::Item.packable.includes(:address).default_where(q_params).page(params[:page]).group_by(&:address)
-      @addresses.delete(nil)
-    end
 
     def search
       q_params = {}
