@@ -43,7 +43,7 @@ module Ship
       params.fetch(:address, {}).permit(
         :area_id,
         :station_id,
-        :contact,
+        :contact_person,
         :tel,
         :detail
       )
