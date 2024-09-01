@@ -33,13 +33,13 @@ module Ship
       }, prefix: true
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
-      belongs_to :address, optional: true
-      belongs_to :from_address, optional: true
       belongs_to :user, class_name: 'Auth::User', optional: true
       belongs_to :produce_plan, class_name: 'Factory::ProducePlan', optional: true if defined? RailsFactory
 
       belongs_to :from_station, class_name: 'Station', optional: true
+      belongs_to :from_address, class_name: 'Address', optional: true
       belongs_to :station, optional: true
+      belongs_to :address, optional: true
       belongs_to :box, optional: true
       belongs_to :current_shipment, class_name: 'Shipment', optional: true
 
