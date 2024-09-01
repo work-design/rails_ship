@@ -23,6 +23,23 @@ module Ship
       @items = Trade::Item.packable.includes(:address).where.not(address_id: nil).default_where(q_params).page(params[:page]).group_by(&:address)
     end
 
+    def from
+      q_params = {}
+      q_params.merge! default_params
+
+      @addresses = Trade::Item.packable.includes(:from_address).default_where(q_params).page(params[:page]).group_by(&:from_address)
+      @addresses.delete(nil)
+    end
+
+    def packageds
+      q_params = {}
+      q_params.merge! default_params
+
+      @addresses = Trade::Item.packaged.includes(:from_address).default_where(q_params).page(params[:page]).group_by(&:from_address)
+      @addresses.delete(nil)
+    end
+
+
     def box
 
     end

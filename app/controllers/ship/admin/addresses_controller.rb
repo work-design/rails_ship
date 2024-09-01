@@ -1,8 +1,20 @@
 module Ship
   class Admin::AddressesController < Admin::BaseController
     before_action :set_address, only: [:show, :edit, :update, :destroy, :actions]
+    before_action :set_new_address, only: [:create]
 
+    def index
+      q_params = {}
+      q_params.merge! default_params
+      q_params.merge! params.permit('user_id')
 
+      @addresses = Address.includes(:area, :station).default_where(q_params).page(params[:page])
+    end
+
+    def new
+      @address = Address.new params.permit(*address_permit_params)
+      @address.area ||= Area.new
+    end
 
     def search
       q_params = {}
@@ -11,35 +23,32 @@ module Ship
       @stations = Station.default_where(q_params)
     end
 
-    def from
-      q_params = {}
-      q_params.merge! default_params
-
-      @addresses = Trade::Item.packable.includes(:from_address).default_where(q_params).page(params[:page]).group_by(&:from_address)
-      @addresses.delete(nil)
-    end
-
-    def packaged
-      q_params = {}
-      q_params.merge! default_params
-
-      @addresses = Trade::Item.packaged.includes(:from_address).default_where(q_params).page(params[:page]).group_by(&:from_address)
-      @addresses.delete(nil)
-    end
-
     private
     def set_address
       @address = Address.find(params[:id])
     end
 
+    def set_new_address
+      @address = Address.new(address_params)
+    end
+
     def address_params
-      params.fetch(:address, {}).permit(
-        :area_id,
-        :station_id,
+      p = params.fetch(:address, {}).permit(*address_permit_params)
+      p.merge! default_form_params
+    end
+
+    def address_permit_params
+      [
+        :kind,
+        :name,
         :contact_person,
         :tel,
-        :detail
-      )
+        :detail,
+        :area_id,
+        :principal,
+        :station_id,
+        :area_ancestors
+      ]
     end
 
   end
