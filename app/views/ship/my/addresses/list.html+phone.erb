@@ -1,5 +1,5 @@
-<div class="weui-panel is-borderless">
-  <div class="weui-panel__hd as-bar pt-0">
+<div class="box is-padding-less mx-3">
+  <div class="box-header as-bar pt-0">
     <%= link_to(params[:return_to], class: 'px-4') do %>
       <i class="fa-solid fa-lg fa-fw-1 fa-angle-left"></i>
     <% end %>
@@ -9,8 +9,8 @@
 </div>
 
 <% if current_cart.member %>
-<div class="weui-panel">
-  <div class="weui-panel__hd"><%= current_cart.member.organ.name %></div>
+<div class="box is-padding-less mx-3">
+  <div class="box-header"><%= current_cart.member.organ.name %></div>
   <div class="weui-panel__bd">
     <div class="weui-cells weui-cells_radio">
     <% if current_cart.member.organ.addresses.blank? %>
@@ -24,8 +24,8 @@
 <div class="text-centered text-grey mt-6">如地址有误，请联系企业负责人修改</div>
 
 <% else %>
-<div class="weui-panel" id="wechat_panel">
-  <div class="weui-panel__hd level is-mobile">
+<div class="box is-padding-less mx-3" id="wechat_panel">
+  <div class="box-header level is-mobile">
     <div class="level-left"><%= t('.title') %></div>
     <div class="level-right mt-0">
       <%= link_to t('profiled.my.addresses.index.title'), { action: 'index' } %>

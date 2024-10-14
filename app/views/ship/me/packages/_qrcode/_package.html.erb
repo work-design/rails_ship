@@ -32,7 +32,7 @@
         <span class="weui-form-preview__value"><time data-controller="time"><%= @package.boxed_out_at.to_fs(:iso8601) %></time></span>
       </div>
     <% end %>
-    <div class="weui-form-preview__item" data-controller="empty">
+    <div class="weui-form-preview__item">
       <label class="weui-form-preview__label"><%= Ship::Package.human_attribute_name(:box_id) %></label>
       <span class="weui-form-preview__value" data-empty-target="text"><%= @package.box&.code %></span>
     </div>

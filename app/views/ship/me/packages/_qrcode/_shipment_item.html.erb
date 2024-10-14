@@ -14,7 +14,7 @@
       <span class="text-grey"><%= Ship::Package.human_attribute_name(:loaded_at) %></span>
       <time data-controller="time" data-format="human"><%= model.loaded_at&.to_fs(:iso8601) %></time>
     </p>
-    <p data-controller="empty">
+    <p>
       <span class="text-grey"><%= Ship::Package.human_attribute_name(:unloaded_at) %></span>
       <time data-controller="time" data-format="human" data-empty-target="text"><%= model.unloaded_at&.to_fs(:iso8601) %></time>
     </p>

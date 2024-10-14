@@ -18,8 +18,8 @@
   </tbody>
 </table>
 
-<div class="weui-panel">
-  <div class="weui-panel__hd"><%= t('.title') %></div>
+<div class="box is-padding-less mx-3">
+  <div class="box-header"><%= t('.title') %></div>
   <div class="weui-panel__bd">
     <div class="weui-cells mt-0">
       <%= render partial: 'index_tbody', layout: 'index_tr', collection: @similars, as: :model %>
