@@ -1,6 +1,6 @@
 module QqMapHelper
-  KEY = Rails.application.credentials.dig(:qq_map, :ws)
-  SK = Rails.application.credentials.dig(:qq_map, :sk)
+  KEY = Rails.application.credentials.dig(:qq_map, :key)
+  SK = Rails.application.credentials.dig(:qq_map, :secret)
   BASE = 'https://apis.map.qq.com/'
   extend self
 

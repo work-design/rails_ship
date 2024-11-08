@@ -14,7 +14,7 @@
 <div data-controller="clipboard" class="text-grey">
   <span data-clipboard-target="source" class="size-7"><%= model.order.uuid %></span>
   <span data-action="click->clipboard#copy" class="weui-badge weui-badge__default">复制</span>
-  <div data-clipboard-target="toast" class="weui-toast__wrap">
+  <div data-clipboard-target="toast" class="display-none">
     <div class="weui-mask_transparent"></div>
     <div class="weui-toast">
       <i class="weui-icon-success-no-circle weui-icon_toast"></i>
