@@ -4,7 +4,7 @@
     <div data-show-target="item" class="visibility-hidden">
       <%= link_to({ controller: 'box_logs', box_id: model.id }, aria: { label: t('ship.in.box_logs.index.title') }, class: 'button is-small is-rounded is-light') do %>
         <i class="fa-regular fa-clock-rotate-left"></i>
-        <span class="pl-1"><%= model.box_logs_count %></span>
+        <span class="ml-1"><%= model.box_logs_count %></span>
       <% end %>
       <%= link_to({ controller: 'rents', box_id: model.id }, aria: { label: t('ship.in.rents.index.title') }, class: 'button is-small is-rounded is-light') do %>
         <i class="fa-regular fa-face-meh"></i>
