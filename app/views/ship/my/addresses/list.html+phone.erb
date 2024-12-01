@@ -1,4 +1,4 @@
-<div class="box is-padding-less mx-3">
+<div class="box is-padding-less">
   <div class="box-header as-bar pt-0">
     <%= link_to(params[:return_to], class: 'px-4') do %>
       <i class="fa-solid fa-lg fa-fw-1 fa-angle-left"></i>
@@ -9,7 +9,7 @@
 </div>
 
 <% if current_cart.member %>
-<div class="box is-padding-less mx-3">
+<div class="box is-padding-less">
   <div class="box-header"><%= current_cart.member.organ.name %></div>
   <div class="weui-panel__bd">
     <div class="weui-cells weui-cells_radio">
@@ -24,7 +24,7 @@
 <div class="text-centered text-grey mt-6">如地址有误，请联系企业负责人修改</div>
 
 <% else %>
-<div class="box is-padding-less mx-3" id="wechat_panel">
+<div class="box is-padding-less" id="wechat_panel">
   <div class="box-header level is-mobile">
     <div class="level-left"><%= t('.title') %></div>
     <div class="level-right mt-0">
