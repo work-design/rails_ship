@@ -11,7 +11,12 @@
       <%= text_field_tag :provinceName, ancestor.name, readonly: true, data: { url: url_for(controller: '/ship/areas', action: 'child', id: ancestor.id), action: 'click->common#stream' }, class: 'input' %>
     <% end if f.object.area.names %>
     <%= text_field_tag :provinceName, nil, readonly: true, data: { url: url_for(controller: '/ship/areas'), action: 'click->common#stream' }, class: 'input' if f.object.area.names.blank? %>
-    <button type="button" data-controller="common" data-url="<%= url_for(action: 'select') %>" data-action="common#streamPost">
+    <button
+      type="button"
+      data-controller="common"
+      data-common-url-value="<%= url_for(action: 'select') %>"
+      data-action="common#streamPost"
+    >
       <i class="fa-solid fa-location"></i>
     </button>
   </div>
