@@ -8,7 +8,11 @@ module Ship
       attribute :cityname, :string
       attribute :lat, :decimal, precision: 10, scale: 8
       attribute :lng, :decimal, precision: 11, scale: 8
-      attribute :coordinate, :point
+      if connection.adapter_name == 'PostgreSQL'
+        attribute :coordinate, :point
+      else
+        attribute :coordinate, :string
+      end
 
       has_many :line_stations, dependent: :destroy_async
       has_many :lines, through: :line_stations
