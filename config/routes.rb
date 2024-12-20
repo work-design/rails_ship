@@ -47,7 +47,7 @@ Rails.application.routes.draw do
         end
         member do
           match :follow, via: [:get, :post]
-          get :child
+          post :child
           post :input
         end
       end
