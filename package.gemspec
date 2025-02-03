@@ -15,4 +15,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails_com'
   s.add_dependency 'rails_trade'
+  s.add_dependency 'rails_space'
 end
