@@ -8,7 +8,7 @@ module Ship
       attribute :full, :string
       attribute :published, :boolean, default: true
       attribute :popular, :boolean, default: false
-      #attribute :names, :json, default: []
+      attribute :names, :json, default: []
       attribute :timezone, :string
       attribute :locale, :string
       attribute :code, :string
