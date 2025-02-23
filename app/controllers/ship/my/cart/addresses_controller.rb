@@ -9,7 +9,7 @@ module Ship
       q_params = {}
       q_params.merge! params.permit(:station_id)
 
-      @addresses = current_user.addresses.includes(:area).default_where(q_params).page(params[:page])
+      @addresses = current_user.addresses.includes(:area).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def new
