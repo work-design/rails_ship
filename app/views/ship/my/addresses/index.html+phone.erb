@@ -1,5 +1,8 @@
-<div id="wechat_panel" class="box">
-  <%= render partial: 'address', collection: @addresses, as: :model %>
-</div>
+<%= render 'filter_form' %>
+<%= render 'filter_table' %>
 
-<%= render 'button' %>
+<%= render layout: 'index_list' do %>
+  <%= render partial: 'index_item', layout: 'index_item_actions', collection: @addresses, as: :model %>
+<% end %>
+
+<%= paginate @addresses %>
