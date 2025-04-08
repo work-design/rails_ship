@@ -1,6 +1,6 @@
 <div>
   <dt><%= Ship::Address.human_attribute_name(:contact_person) %></dt>
-  <dd><%= @address.contact_person %></dd>
+  <dd><%= text_field_tag 'contact_person', @address.contact_person, class: 'text-right' %></dd>
 </div>
 <div>
   <dt><%= Ship::Address.human_attribute_name(:detail) %></dt>
