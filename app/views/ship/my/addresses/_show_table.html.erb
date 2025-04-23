@@ -7,7 +7,7 @@
 <div>
   <dt><%= Ship::Address.human_attribute_name(:detail) %></dt>
   <dd data-controller="single-input" data-single-input-single-form-outlet="#bottom-field">
-    <%= text_field_tag 'address[contact_person]', @address.detail, data: { single_input_target: 'input', action: 'click->single-input#prepare' } %>
+    <%= text_area_tag 'address[detail]', @address.detail, data: { single_input_target: 'input', action: 'click->single-input#prepare' } %>
   </dd>
 </div>
 <div>
